@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,33 +11,38 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0b4293 0%, #163056 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
-        
+
         .container {
             text-align: center;
             color: white;
         }
-        
+
         h1 {
             margin-bottom: 40px;
             font-size: 2.5em;
         }
-        
+
         .links {
             display: grid;
-            grid-template-columns: repeat(3, 250px);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             justify-content: center;
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
         }
+        
         
         a {
             padding: 20px;
@@ -48,7 +54,7 @@
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         a:hover {
             background: rgba(255, 255, 255, 0.2);
             border-color: white;
@@ -56,19 +62,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Landing Pages Crefaz</h1>
         <div class="links">
             <a href="https://cleiltoncrefaz.github.io/landingpagescrefaz/CP_Energia_TelevendasA">CP_Energia_Televendas A</a>
-            <a href="hhttps://cleiltoncrefaz.github.io/CP_Energia_TelevendasB">CP_Energia_Televendas B</a>
-            <a href="https://google.com">Google</a>
-            <a href="https://developer.mozilla.org">MDN Docs</a>
-            <a href="https://nodejs.org">Node.js</a>
-            <a href="https://react.dev">React</a>
+            <a href="https://cleiltoncrefaz.github.io/landingpagescrefaz/CP_Energia_TelevendasB">CP_Energia_Televendas B</a>
         </div>
     </div>
 </body>
+
 </html>
-
-
