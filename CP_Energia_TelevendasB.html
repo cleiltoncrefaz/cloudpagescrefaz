@@ -100,7 +100,7 @@
         margin: 0 auto;
       }
 
-      .hero h1 {
+      #hero .hero h1 {
         font-size: 60px;
         color: #ffffff;
         font-weight: 400;
@@ -120,22 +120,13 @@
         text-align: left;
       }
 
-      .hero h3 {
-        color: #fff;
-        font-size: 26px;
-        font-weight: 300;
-        margin: 10px 0 20px 0;
-        line-height: 1;
-        text-align: left;
-      }
-
       .hero ul {
         margin: 0;
         padding: 0 0 0px 20px;
       }
 
       .hero li {
-        font-size: 20px;
+        font-size: 22px;
         color: #ffffff;
         margin: 20px 0;
         font-weight: 400;
@@ -157,8 +148,8 @@
         z-index: 1;
       }
 
-      @media (max-width: 767px) {
 
+      @media (max-width: 767px) {
         #hero .container {
           padding: 0 20px;
           flex-direction: column;
@@ -191,6 +182,7 @@
           width: 100%;
           padding: 0;
         }
+
       }
     </style>
 
@@ -203,8 +195,8 @@
         <h2>Você pode ter de <strong>R$ 400 </strong><br> a <strong>R$ 4.000 ainda hoje!</strong></h2>
         <ul>
           <li>Parcelado em até <strong>24x </strong>na <strong>conta de luz</strong></li>
-          <li>Não precisa comprovar renda;</li>
-          <li>Flexível pra quem tem restrição no nome.</li>
+          <li><strong>Não precisa</strong> comprovar renda;</li>
+          <li>Flexível pra quem tem <strong>restrição no nome.</strong></li>
         </ul>
         <div class="image-lampada">
           <img
@@ -214,22 +206,17 @@
       </div>
       <div class="form-box">
         <style>
-          .form-box {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 20px;
-            max-width: 50vw;
-          }
-
-          form#leadForm {
+          form {
             display: grid;
             align-items: center;
             justify-content: center;
           }
 
-          .form-box label,
-          .form-box input {
-            font-size: 18px;
+          .form-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 20px;
+            max-width: 50vw;
           }
 
           .form-box h2 {
@@ -252,20 +239,26 @@
           .name-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px;
+            gap: 24px;
           }
 
           .adress-group {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            padding: 0 0 20px 0;
+            gap: 24px;
           }
 
           .finaly-group {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 24px;
+            padding: 10px 0 0 0;
+          }
+
+          label {
+            font-weight: bold;
+            color: #000;
+            font-size: 12px;
           }
 
           input,
@@ -373,15 +366,14 @@
           }
 
           .input-group label {
-            color: #163056;
+            color: #0B2A56;
             font-size: 14px;
             font-weight: 500;
           }
 
           .input-group input,
           .input-group select {
-            color: #163056;
-            background: #fff;
+            background-color: #fff;
             border: 1px solid #E4EBF3;
             border-radius: 8px;
           }
@@ -417,7 +409,7 @@
           }
 
           .lgpd-checkbox-container .lgpdTextSpan {
-            color: #163056;
+            color: #0B2A56;
             transition: color 0.3s ease;
           }
 
@@ -429,15 +421,22 @@
           .lgpd-checkbox-container label {
             font-size: 14px;
             font-weight: 400;
-            color: #163056;
+            color: #0B2A56;
           }
 
           .lgpd-checkbox-container input[type="checkbox"]:checked+.lgpdTextSpan {
             color: #EF6B22;
           }
 
-          .lgpd-checkbox-container a#lgpdLink {
-            color: #0000FF;
+          .lgpd-checkbox-container a#lgpdLink,
+          .modal-terms a {
+            color: #0957f8;
+            text-decoration: none;
+            font-size: 14px;
+          }
+
+          .lgpd-checkbox-container a#lgpdLink:hover,
+          .modal-terms a:hover {
             text-decoration: underline;
           }
 
@@ -446,9 +445,6 @@
             text-decoration: none;
           }
 
-          .lgpd-checkbox-container a:hover {
-            text-decoration: underline;
-          }
 
           .lgpd-modal {
             display: none;
@@ -461,6 +457,7 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            text-align: center;
           }
 
           .lgpd-modal-content {
@@ -469,8 +466,8 @@
             border-radius: 8px;
             max-width: 500px;
             width: 90%;
-            max-height: 80vh;
             color: #163056;
+            margin: 0 20px;
           }
 
           .lgpd-modal-content h3 {
@@ -481,23 +478,25 @@
           .lgpd-modal-content p {
             margin: 0;
             padding: 0 0 10px 0;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 400;
+            line-height: 1.3;
+            text-align: center;
           }
 
           .modal-terms {
-            overflow-y: scroll;
             max-height: 420px;
-            background: #f1f1f1;
             border-radius: 10px;
-            padding: 1rem;
+            /* overflow-y: scroll; */
+            /* background: #f1f1f1; */
+            /* padding: 1rem; */
           }
 
           .lgpd-modal-buttons {
             display: flex;
             gap: 10px;
             justify-content: center;
-            padding: 20px;
+            padding: 20px 0 0 0;
           }
 
           .lgpd-modal-buttons button {
@@ -516,6 +515,7 @@
           .lgpd-modal-buttons .reject-btn {
             background: #EF6B22;
             color: #fff;
+            display: none;
           }
 
           .lgpd-modal-buttons .accept-btn:hover,
@@ -547,10 +547,27 @@
             display: none;
           }
 
+          @media (max-width: 768px) {
+
+            .name-group,
+            .adress-group,
+            .finaly-group {
+              grid-template-columns: 1fr;
+            }
+
+            .form-box {
+              max-width: 100%;
+            }
+
+            input[type="submit"] {
+              justify-self: center;
+              max-width: 100%;
+            }
+          }
 
           .char-counter {
             font-size: 12px;
-            color: #163056;
+            color: #0B2A56;
             transition: color 0.2s;
             display: none;
           }
@@ -595,7 +612,7 @@
             gap: 8px;
             cursor: pointer;
             margin: 0;
-            color: #163056;
+            color: #0B2A56;
             font-size: 16px;
             font-weight: 500;
           }
@@ -623,6 +640,9 @@
           }
 
           .fake-select-display {
+            position: relative;
+            padding-right: 38px;
+            cursor: pointer;
             padding: 12px 16px;
             background-color: #fff;
             border: 1px solid #E4EBF3;
@@ -633,15 +653,37 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: #163056;
+            color: #0B2A56;
             font-weight: 400;
             user-select: none;
+          }
+
+
+          /* Placeholder + seta (fake select) */
+          .fake-select-display {
+            padding-right: 38px;
+            position: relative;
+          }
+
+          .fake-select-display::after {
+            content: "▼";
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 9px;
+            color: #ef6b22;
+            pointer-events: none;
+          }
+
+          .fake-select-display:not(.filled) {
+            color: #B1BBC6;
           }
 
           .fake-select-display:focus,
           .fake-select-display.filled {
             outline: none;
-            color: #163056;
+            color: #0B2A56;
             font-weight: 400;
           }
 
@@ -664,7 +706,7 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
             display: none;
             margin-top: 4px;
-            color: #163056;
+            color: #0B2A56;
           }
 
           .fake-select-dropdown.show {
@@ -680,7 +722,7 @@
           .fake-select-item:hover,
           .fake-select-item.highlighted {
             background: #EF6B22;
-            color: #163056;
+            color: #0B2A56;
           }
 
           .fake-select-item strong {
@@ -721,18 +763,6 @@
 
           .cep-status-message.success {
             color: #27ae60;
-          }
-
-          @media (max-width: 768px) {
-            .form-box {
-              max-width: 100%;
-            }
-
-            .name-group,
-            .adress-group,
-            .finaly-group {
-              grid-template-columns: 1fr;
-            }
           }
         </style>
         <h2>Quer saber quantos <strong>reais pode ter disponível?</strong></h2>
@@ -808,7 +838,7 @@
                       input.value = '';
                       return;
                     }
-                    const isCell = value.length &gt; 10;
+                    const isCell = value.length > 10;
                     let formatted = '';
                     if (isCell) {
                       if (value.length > 0) formatted += `(${value.substring(0, 2)}`;
@@ -837,16 +867,6 @@
               <div class="error-message-input" id="cepError"></div>
             </div>
 
-            <!-- <div class="input-group" id="estadoCepReadonlyGroup">
-              <label>Estado</label>
-              <input type="text" id="estadoCepReadonly" readonly="" style="background-color: #f8f9fa;">
-            </div> -->
-
-            <!-- <div class="input-group" id="cidadeCepReadonlyGroup">
-              <label>Cidade</label>
-              <input type="text" id="cidadeCepReadonly" style="background-color: #f8f9fa;">
-            </div> -->
-
             <div id="ufCidadeSection">
               <div class="input-group">
                 <label for="estadoManual">Estado <span class="required-asterisk">*</span></label>
@@ -855,7 +875,7 @@
                   <div class="fake-select-dropdown"></div>
                 </div>
                 <select id="estadoManual" name="StateManual" required="" style="display: none;">
-                  <option value="" disabled="">Selecione o estado</option>
+                  <option value="" disabled="" selected>Selecione</option>
                   <option value="AC">Acre</option>
                   <option value="AL">Alagoas</option>
                   <option value="AP">Amapá</option>
@@ -910,8 +930,12 @@
 
             <div class="input-group">
               <label for="creditPurpose">Finalidade Do Crédito <span class="required-asterisk">*</span></label>
-              <select id="creditPurpose" name="00NbJ00000EVAny" required="">
-                <option value="" disabled="" selected=""></option>
+              <div class="fake-select-wrapper" data-target="creditPurpose">
+                <div class="fake-select-display" contenteditable="true" spellcheck="false"></div>
+                <div class="fake-select-dropdown"></div>
+              </div>
+              <select id="creditPurpose" name="00NbJ00000EVAny" required="" style="display: none;">
+                <option value="" disabled="" selected>Selecione</option>
                 <option value="Pagamento de contas">Pagamento de contas</option>
                 <option value="Questões de saúde">Questões de saúde</option>
                 <option value="Manutenção">Manutenção</option>
@@ -935,7 +959,7 @@
             <div class="input-group" id="hasVehicleGroup" style="display: none;">
               <label for="hasVehicle">Possui Veículo no Nome? <span class="required-asterisk">*</span></label>
               <select id="hasVehicle" name="00NbJ00000EVAo9">
-                <option value="" disabled="" selected=""></option>
+                <option value="" disabled="" selected="">Selecione</option>
                 <option value="true">Sim</option>
                 <option value="false">Não</option>
               </select>
@@ -945,8 +969,12 @@
             <div class="input-group" id="isEnergyBillHolderGroup">
               <label for="isEnergyBillHolder">Titular da Conta de Energia? <span
                   class="required-asterisk">*</span></label>
-              <select id="isEnergyBillHolder" name="00NbJ00000EVAoE" required="">
-                <option value="" disabled="" selected=""></option>
+              <div class="fake-select-wrapper" data-target="isEnergyBillHolder">
+                <div class="fake-select-display" contenteditable="true" spellcheck="false"></div>
+                <div class="fake-select-dropdown"></div>
+              </div>
+              <select id="isEnergyBillHolder" name="00NbJ00000EVAoE" required="" style="display: none;">
+                <option value="" disabled="" selected>Selecione</option>
                 <option value="true">Sim</option>
                 <option value="false">Não</option>
               </select>
@@ -970,128 +998,14 @@
             <div class="lgpd-modal-content">
               <h3>Termos da LGPD e Consulta de Dados</h3>
               <div class="modal-terms">
-                <p>6.4 PROTEÇÃO DE DADOS PESSOAIS</p>
-                <p> 6.4.1 Os clientes participantes declaram-se cientes de que, com base nos itens II e V do artigo 7º
-                  da
-                  LGPD(L13.709/2018) seus dados pessoais coletados em decorrência de sua participação nesta promoção
-                  serão armazenados, tratados, utilizados e compartilhados entre a empresa promotora, parceiros
-                  envolvidos na
-                  realização desta promoção e com a autoridade fiscalizadora (SEAE), limitando-se esse compartilhamento
-                  aos dados estritamente necessários para a operacionalização e divulgação da própria promoção e entrega
-                  dos
-                  prêmios desta promoção, além do cumprimento de deveres legais pelas citadas empresas, observados,
-                  sempre os limites
-                  da legislação aplicável, e sem qualquer ônus para a promotora e suas parceiras supracitadas.
-                  <br><br>
-                  Ademais, declaram-se
-                  devidamente informados de que a promotora poderá, ainda, realizar a formação de cadastro e/ou banco de
-                  dados com
-                  as informações coletadas de acordo com o que dispõe o artigo 11 da Portaria nº 41/2008 do Ministério
-                  da
-                  Fazenda/Economia, e,
-
-                  também para adequada realização, divulgação e conclusão desta promoção e, quando assim o fizer, estará
-                  tratando
-
-                  dados para o cumprimento de dever legal.
-
-                  <br><br>As empresas parceiras, todavia, devolverão à promotora os
-                  dados
-                  que
-
-                  porventura receberem em razão da realização de tarefas em razão desta promoção, não lhes sendo
-                  permitida
-                  a
-
-                  manutenção das referidas informações, salvo se em cumprimento de obrigação legal. A oposição do
-                  participante
-
-                  Página 3 de 9
-
-                  quanto ao disposto neste item implica na impossibilidade de sua participação nesta promoção, vez que
-                  são
-                  ações
-
-                  (tratamento de dados) imprescindíveis à sua realização.
-                </p>
-                <p>6.4.2 Ao participar da presente promoção, o cliente concorda em fornecer seus dados à CREFAZ, e o
-                  contemplado
-
-                  concorda em fornecer, além de seus dados, também sua imagem, nos termos da Lei Geral de Proteção de
-                  Dados (Lei
-
-                  nº 13.709/2018) em até um ano após o término da promoção.</p>
-                <p> 6.4.3 Ao participar da presente promoção, o participante declara estar de acordo em receber
-                  promoções,
-                  ofertas e/ou
-
-                  comunicados da CREFAZ - através de e-mail marketing, mensagens de texto (SMS) e WhatsApp, bem como
-                  declara
-
-                  estar ciente de que as informações cadastrais da presente campanha são utilizadas pela mandatária para
-                  identificação
-
-                  de cliente, encaminhamento de ofertas, identificação de seu perfil de compra e consumo.</p>
-                <p> 6.4.4 Caso, por qualquer motivo, o participante deseje alterar seu cadastro ou cancelar o
-                  consentimento
-                  para o uso
-
-                  de seus dados, neste período, poderá entrar em contato com a mandatária, através do e-mail
-
-                  campanhaegoldacrefaz@crefaz.com.br.</p>
-                <p> 6.4.5 Ao cancelar o consentimento para o uso de seus dados, o participante perde o direito de
-                  concorrer
-                  aos prêmios
-
-                  da presente promoção.</p>
-                <p>6.4.6 A CREFAZ pode coletar (1) toda e quaisquer informações que sejam fornecidas pelo participante
-                  ao
-                  preencher
-
-                  o cadastro para participar da presente promoção, nos termos do regulamento, (2) toda e quaisquer
-                  informações que
-
-                  sejam fornecidas pelo participante ao usufruir os benefícios da promoção, e (3) outras informações
-                  voluntária ou
-
-                  involuntariamente fornecidas pelo participante durante a sua interação com a presente promoção.</p>
-                <p>6.4.7 A CREFAZ não vende ou comercializa os dados pessoais dos participantes coletados durante a
-                  execução da
-
-                  promoção e toma as precauções necessárias para mantê-los em segurança.</p>
-                <p> 6.4.8 Os dados pessoais coletados dos participantes são armazenados e tratados pela CREFAZ com as
-                  seguintes
-
-                  finalidades: aproximar a CREFAZ de seus clientes, conhecendo mais de suas preferências e fornecendo um
-                  novo
-
-                  canal de comunicação entre as partes; contatar os participantes para informar-lhes sobre (1) a
-                  operação
-                  da promoção,
-
-                  (2) eventuais mudanças nos termos da promoção (3) o resultado da promoção; aprimorar as iniciativas
-                  comerciais e
-
-                  promocionais da CREFAZ; desenvolver internamente uma análise sobre os interesses, comportamentos e
-                  localização
-
-                  dos consumidores para compreender melhor suas preferências pessoais com o intuito de aprimorar e
-                  customizar a
-
-                  sua experiência; classificar e agrupar informações de participantes.</p>
-                <p>
-
-                  REGULAMENTO/PLANO DE OPERAÇÃO DA
-                  PROMOÇÃO
-
-                  É GOL DA CREFAZ
-
-                  CERTIFICADO DE AUTORIZAÇÃO SEAE/ME Nº 04.022814/2022
-                </p>
+                <p>Ao preencher este campo/formulário, você concorda que usaremos seus dados exclusivamente para cumprir
+                  com a sua requisição, com base no legítimo interesse. Para mais informações, consulte nossa <a
+                    href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank">Política
+                    de Privacidade e Cookies</a></p>
               </div>
               <div class="lgpd-modal-buttons">
                 <button type="button" class="reject-btn" id="rejectLgpd">Eu não aceito</button>
-                <button type="button" class="accept-btn" id="acceptLgpd">Eu aceito</button>
+                <button type="button" class="accept-btn" id="acceptLgpd">OK</button>
               </div>
             </div>
           </div>
@@ -1138,7 +1052,7 @@
                   input.classList.add("error-input-character");
                 } else {
                   counter.textContent = `Número de caracteres: ${current}/${maxLength}`;
-                  counter.style.color = "#163056";
+                  counter.style.color = "#0B2A56";
                   input.classList.remove("error-input-character");
                 }
               }
@@ -1508,7 +1422,7 @@
                 modal.style.display = "none";
                 if (hidden) hidden.value = "false";
                 const span = document.querySelector(".lgpdTextSpan");
-                if (span) span.style.color = "#163056";
+                if (span) span.style.color = "#0B2A56";
               });
             }
 
@@ -1516,7 +1430,7 @@
               checkbox.addEventListener("change", function () {
                 if (hidden) hidden.value = this.checked ? "true" : "false";
                 const span = document.querySelector(".lgpdTextSpan");
-                if (span) span.style.color = this.checked ? "#EF6B22" : "#163056";
+                if (span) span.style.color = this.checked ? "#EF6B22" : "#0B2A56";
                 if (this.checked) {
                   const err = $("lgpdConsentError");
                   if (err) { err.style.display = "none"; err.innerHTML = ""; }
@@ -1560,6 +1474,8 @@
 
             const { wrapper, display, dropdown } = parts;
 
+            const PLACEHOLDER = "Selecione";
+
             const options = Array.from(selectEl.options)
               .filter((opt) => opt.value && !opt.disabled)
               .map((opt) => ({ value: opt.value, label: opt.textContent }));
@@ -1600,7 +1516,7 @@
               display.textContent = label;
               display.classList.toggle("filled", !!label);
             } else {
-              display.textContent = "";
+              display.textContent = PLACEHOLDER;
               display.classList.remove("filled");
             }
 
@@ -1609,16 +1525,29 @@
               if (wrapper.classList.contains("disabled")) return;
               closeAllFakeSelects(wrapper);
               dropdown.classList.add("show");
-              render(display.textContent);
+              render(display.classList.contains("filled") ? display.textContent : "");
             };
 
-            display.addEventListener("focus", open);
-            display.addEventListener("click", open);
+            display.addEventListener("focus", () => {
+              if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+                display.textContent = "";
+              }
+              open();
+            });
+            display.addEventListener("click", () => {
+              if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+                display.textContent = "";
+              }
+              open();
+            });
 
             // filtrar enquanto digita
             display.addEventListener("input", () => {
+              if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+                display.textContent = "";
+              }
               if (!dropdown.classList.contains("show")) dropdown.classList.add("show");
-              render(display.textContent);
+              render(display.classList.contains("filled") ? display.textContent : "");
             });
 
             // fechar ao clicar fora
@@ -1639,8 +1568,13 @@
             selectEl.addEventListener("change", () => {
               const selOpt = selectEl.options[selectEl.selectedIndex];
               const label = selOpt ? (selOpt.textContent || "") : "";
-              display.textContent = label;
-              display.classList.toggle("filled", !!label && !!selectEl.value);
+              if (selectEl.value) {
+                display.textContent = label;
+                display.classList.add("filled");
+              } else {
+                display.textContent = PLACEHOLDER;
+                display.classList.remove("filled");
+              }
             });
 
             // render inicial
@@ -1672,7 +1606,7 @@
             opt0.value = "";
             opt0.disabled = true;
             opt0.selected = true;
-            opt0.textContent = "Selecione a cidade";
+            opt0.textContent = "Selecione";
             cidadeSelect.appendChild(opt0);
 
             try {
@@ -1914,6 +1848,12 @@
             setupCep();
             setupLGPD();
             setupEstadoCidade();
+            // fake-select para selects nativos
+            const cpSel = $("creditPurpose");
+            if (cpSel) buildFakeSelect(cpSel);
+            const holderSel = $("isEnergyBillHolder");
+            if (holderSel) buildFakeSelect(holderSel);
+
             setupSubmit();
           });
         </script>
@@ -2415,10 +2355,10 @@
       }
 
       @media (max-width: 767px) {
-      #whats-floating {
-        bottom: 20px;
-        right: 20px;
-      }
+        #whats-floating {
+          bottom: 20px;
+          right: 20px;
+        }
       }
 
       @keyframes float {
@@ -2434,10 +2374,6 @@
           transform: translateY(0px);
         }
       }
-
-      
-
-
     </style>
     <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10.02">
       <path class="cls-1"
