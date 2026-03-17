@@ -66,7 +66,6 @@
                 top: 0;
                 width: 100%;
                 backdrop-filter: blur(15px);
-                background: #1630568a;
                 -webkit-backdrop-filter: blur(15px);
                 z-index: 999;
             }
@@ -91,6 +90,8 @@
             .header {
                 width: 100%;
                 padding: 25px 0;
+                background: #163056;
+
             }
 
             .sticky {
@@ -102,6 +103,10 @@
                     padding: 0;
                     font-size: 0;
                 }
+
+                .header {
+                    background: #1630568a;
+                }
             }
 
             .logo-topo {
@@ -112,6 +117,12 @@
             }
 
             @media (max-width: 767px) {
+
+                .header {
+                    width: 100%;
+                    padding: 30px 0;
+                }
+
                 .logo-topo {
                     width: 250px;
                 }
@@ -145,16 +156,17 @@
                 color: #fff;
 
                 p {
-                    font-size: 24px;
+                    font-size: 30px;
                     margin: 0;
                     padding: 0;
                 }
             }
 
             h1 {
-                font-size: 50px;
+                font-size: 55px;
                 margin: 0;
                 padding: 0 0 20px 0;
+                line-height: 1;
             }
 
             .container {
@@ -189,10 +201,10 @@
                 padding-top: 0;
                 padding-bottom: 0;
                 align-items: center;
-                gap: 60px;
+                gap: 50px;
                 display: grid;
                 grid-template-columns: 0.8fr 1fr;
-                max-width: 1100px;
+                max-width: 1200px;
                 z-index: 1;
             }
 
@@ -211,13 +223,17 @@
                 align-items: center;
                 justify-content: start;
                 gap: 10px;
-                font-size: 16px;
+                font-size: 20px;
+                max-width: 200px;
+                background: #163056;
+                border-radius: 50px;
+                padding: 10px 15px;
             }
 
             .arrow-icon {
-                width: 30px;
+                width: 35px;
                 fill: #ffffff;
-                background: #163056;
+                background: #ef6b22;
                 padding: 8px;
                 border-radius: 50px;
             }
@@ -229,8 +245,8 @@
             .flex-itens {
                 padding: 20px 0 0 0;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                grid-template-columns: 0.8fr 1fr;
+                gap: 20px 0px;
                 font-size: 18px;
             }
 
@@ -490,14 +506,11 @@
 
                 .flex-itens {
                     grid-template-columns: 1fr;
-                    gap: 30px;
+                    gap: 20px;
                     padding: 30px 0 0 0;
                 }
 
-                .header {
-                    width: 100%;
-                    padding: 30px 0;
-                }
+
 
                 h1 {
                     font-size: 42px;
@@ -514,7 +527,9 @@
                 }
 
                 .hero-item {
-                    font-size: 22px;
+                    font-size: 20px;
+                    max-width: 100%;
+                    padding: 10px;
                 }
 
                 .hero h2 {
@@ -655,10 +670,7 @@
 
         <div class="container">
             <div class="headline">
-                <h1>
-                    O dinheiro que você precisa, <span class="text-crefaz-orange">sem vender seu
-                        carro.</span>
-                </h1>
+                <h1>O dinheiro que você precisa, sem vender seu carro.</h1>
                 <p>Transforme seu veículo em crédito rápido de <strong>R$ 5.000 a R$ 100 mil</strong> com taxas
                     reduzidas.
                 </p>
@@ -1030,7 +1042,7 @@
             .icon-social {
                 background: #163056;
                 width: 38px;
-                fill: #ef6b22;
+                fill: #ffffff;
                 border-radius: 10px;
                 padding: 6px;
                 transition: all 0.2s ease;
