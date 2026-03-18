@@ -218,26 +218,6 @@
                 text-align: left;
             }
 
-            .hero-item {
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                gap: 10px;
-                font-size: 20px;
-                max-width: 200px;
-                background: #163056;
-                border-radius: 0px 50px 50px 50px;
-                padding: 10px 15px;
-            }
-
-            .arrow-icon {
-                width: 35px;
-                fill: #ffffff;
-                background: #ef6b22;
-                padding: 8px;
-                border-radius: 50px;
-            }
-
             .highlights {
                 color: #ef6b22;
             }
@@ -245,9 +225,26 @@
             .flex-itens {
                 padding: 20px 0 0 0;
                 display: grid;
-                grid-template-columns: 0.8fr 1fr;
-                gap: 20px 0px;
-                font-size: 18px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .hero-item {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                gap: 10px;
+                font-size: 20px;
+                max-width: 160px;
+                background: #163056;
+                border-radius: 0px 30px 30px 30px;
+                padding: 15px;
+            }
+
+            .arrow-icon {
+                width: 25px;
+                fill: #ef6b22;
             }
 
             .step-content {
@@ -286,13 +283,11 @@
             .form-buttons {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                gap: 10px;
                 font-family: 'Anteb', sans-serif;
-
             }
 
             button {
-                margin-top: 20px;
                 padding: 15px;
                 color: #fff;
                 font-family: 'Anteb', sans-serif;
@@ -319,7 +314,6 @@
             }
 
             .primary-button:hover {
-                margin-top: 20px;
                 padding: 15px;
                 color: #fff;
                 background: #284b80;
@@ -338,7 +332,6 @@
                 padding: 11px 10px;
             }
 
-
             .steps {
                 display: flex;
                 gap: 20px;
@@ -353,7 +346,7 @@
                 padding: 20px;
                 border-radius: 10px;
                 border: 1px solid #edf3fb;
-                margin: 20px 0 0 0;
+                margin: 20px 0;
             }
 
             .text-slider-header,
@@ -447,6 +440,7 @@
                 position: relative;
                 display: flex;
                 align-items: center;
+                margin: 0 0 15px 0;
             }
 
             .vehicle-stats,
@@ -504,16 +498,28 @@
                     gap: 40px;
                 }
 
+                h1 {
+                    font-size: 42px;
+                }
+
+                .hero h2 {
+                    font-size: 25px;
+                    width: 90%;
+                }
+
                 .flex-itens {
                     grid-template-columns: 1fr;
-                    gap: 20px;
+                    gap: 15px;
                     padding: 30px 0 0 0;
                 }
 
-
-
-                h1 {
-                    font-size: 42px;
+                .hero-item {
+                    font-size: 18px;
+                    max-width: 100%;
+                    padding: 15px 15px 15px 25px;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: start;
                 }
 
                 .form-group {
@@ -526,16 +532,6 @@
                     }
                 }
 
-                .hero-item {
-                    font-size: 20px;
-                    max-width: 100%;
-                    padding: 10px;
-                }
-
-                .hero h2 {
-                    font-size: 25px;
-                    width: 90%;
-                }
 
                 .tag {
                     width: 100% !important;
@@ -568,7 +564,7 @@
 
                 .form-buttons {
                     display: flex;
-                    gap: 0px;
+                    gap: 10px;
                     flex-direction: column-reverse;
                 }
 
@@ -677,36 +673,39 @@
 
                 <div class="flex-itens">
                     <div class="hero-item">
-                        <svg class="arrow-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 34.7 33.97">
-                            <path
-                                d="M34.24,15.48c-8.54,0-15.48-6.95-15.48-15.48h-3c0,6.48,3.36,12.18,8.42,15.48H0v3h24.18c-5.06,3.3-8.42,9-8.42,15.48h3c0-8.54,6.95-15.48,15.48-15.48h.45v-3h-.45Z" />
-                        </svg>
+                        <div class="arrow-icon">
+                            <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 30.76 30.14">
+                                <path
+                                    d="M24.76,0l-.29,17.36c-.01.71-.13,1.41-.35,2.06L4.79.09.55,4.34l19.39,19.39c-.79.29-1.63.44-2.49.41L.1,23.85l-.1,6,17.35.29c.07,0,.15,0,.22,0,3.36,0,6.54-1.28,8.96-3.63,2.48-2.39,3.87-5.61,3.93-9.06L30.76.1l-6-.1Z" />
+                            </svg>
+                        </div>
                         <span>Carro continua com você!</span>
                     </div>
                     <div class="hero-item">
-                        <svg class="arrow-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 34.7 33.97">
-                            <path
-                                d="M34.24,15.48c-8.54,0-15.48-6.95-15.48-15.48h-3c0,6.48,3.36,12.18,8.42,15.48H0v3h24.18c-5.06,3.3-8.42,9-8.42,15.48h3c0-8.54,6.95-15.48,15.48-15.48h.45v-3h-.45Z" />
-                        </svg>
+                        <div class="arrow-icon">
+                            <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 30.76 30.14">
+                                <path
+                                    d="M24.76,0l-.29,17.36c-.01.71-.13,1.41-.35,2.06L4.79.09.55,4.34l19.39,19.39c-.79.29-1.63.44-2.49.41L.1,23.85l-.1,6,17.35.29c.07,0,.15,0,.22,0,3.36,0,6.54-1.28,8.96-3.63,2.48-2.39,3.87-5.61,3.93-9.06L30.76.1l-6-.1Z" />
+                            </svg>
+                        </div>
                         <span>Pague em até 48x fixas!</span>
                     </div>
                     <div class="hero-item">
-                        <svg class="arrow-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                        <div class="arrow-icon">
+                            <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 30.76 30.14">
+                                <path
+                                    d="M24.76,0l-.29,17.36c-.01.71-.13,1.41-.35,2.06L4.79.09.55,4.34l19.39,19.39c-.79.29-1.63.44-2.49.41L.1,23.85l-.1,6,17.35.29c.07,0,.15,0,.22,0,3.36,0,6.54-1.28,8.96-3.63,2.48-2.39,3.87-5.61,3.93-9.06L30.76.1l-6-.1Z" />
+                            </svg>
+                        </div>
+                        <!-- <svg class="arrow-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 34.7 33.97">
                             <path
                                 d="M34.24,15.48c-8.54,0-15.48-6.95-15.48-15.48h-3c0,6.48,3.36,12.18,8.42,15.48H0v3h24.18c-5.06,3.3-8.42,9-8.42,15.48h3c0-8.54,6.95-15.48,15.48-15.48h.45v-3h-.45Z" />
-                        </svg>
-                        <span>Até R$100 Mil Reais!</span>
-                    </div>
-                    <div class="hero-item">
-                        <svg class="arrow-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 34.7 33.97">
-                            <path
-                                d="M34.24,15.48c-8.54,0-15.48-6.95-15.48-15.48h-3c0,6.48,3.36,12.18,8.42,15.48H0v3h24.18c-5.06,3.3-8.42,9-8.42,15.48h3c0-8.54,6.95-15.48,15.48-15.48h.45v-3h-.45Z" />
-                        </svg>
-                        <span>Contratação Facilitada!</span>
+                        </svg> -->
+                        <span>Contratação facilitada!</span>
                     </div>
                 </div>
             </div>
@@ -723,7 +722,7 @@
                     <h3>Quanto você precisa?</h3>
                     <div class="credit-slider">
                         <div class="text-slider-header">
-                            <span>Valor do Crédito</span>
+                            <span>Valor do crédito</span>
                             <span id="display-value">R$ 25.000</span>
                         </div>
                         <input type="range" id="slider-valor" min="5000" max="100000" step="100" value="25000">
@@ -740,14 +739,12 @@
                     <div class="form">
                         <div class="form-group">
                             <div class="form-item">
-                                <input type="text" id="nome" placeholder="Nome Completo"
-                                    class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-crefaz-orange transition-all">
+                                <input type="text" id="nome" placeholder="Nome completo">
                                 <p id="error-nome" class="error-label">Digite seu nome completo (nome e
                                     sobrenome).</p>
                             </div>
                             <div class="form-item">
-                                <input type="text" id="cpf" placeholder="CPF" maxlength="14"
-                                    class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-crefaz-orange transition-all">
+                                <input type="text" id="cpf" placeholder="CPF" maxlength="14">
                                 <p id="error-cpf" class="error-label">CPF inválido.</p>
                             </div>
                         </div>
@@ -755,21 +752,18 @@
                         <div class="form-group">
                             <div class="form-item">
                                 <input type="text" id="data_nascimento" placeholder="Nascimento (DD/MM/AAAA)"
-                                    maxlength="10"
-                                    class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-crefaz-orange transition-all">
+                                    maxlength="10">
                                 <p id="error-data" class="error-label">Data inválida ou menor de 18 anos.
                                 </p>
                             </div>
                             <div class="form-item">
 
-                                <input type="tel" id="whatsapp" placeholder="WhatsApp" maxlength="15"
-                                    class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-crefaz-orange transition-all">
+                                <input type="tel" id="whatsapp" placeholder="WhatsApp" maxlength="15">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-item">
-                                <input type="text" id="cep" placeholder="CEP" maxlength="9"
-                                    class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-crefaz-orange transition-all">
+                                <input type="text" id="cep" placeholder="CEP" maxlength="9">
                                 <p id="error-cep" class="error-label">CEP inválido.</p>
                             </div>
                             <div class="form-checkbox">
@@ -955,30 +949,25 @@
                 <!-- FAQ Item 1 -->
                 <div class="faq-item">
                     <h4>O carro fica comigo?</h4>
-                    <p>Sim! O veículo é apenas uma garantia para reduzirmos as taxas. Você continua usando-o normalmente
-                        para trabalho e lazer.</p>
+                    <p>Sim, você continua sendo o dono do carro, usando normalmente e ainda pode conseguir aquela grana que precisa!</p>
                 </div>
 
                 <!-- FAQ Item 2 -->
                 <div class="faq-item">
-                    <h4>Quanto do valor eu recebo?</h4>
-                    <p>Liberamos até 70% do valor da Tabela FIPE em crédito, variando de acordo com a análise e o ano do
-                        veículo (aceitamos até 25 anos).</p>
+                    <h4>Qual valor posso conseguir?</h4>
+                    <p>A contratação é rápida e segura, com a liberação de até 70% do valor do carro sob a FIPE.</p>
                 </div>
 
                 <!-- FAQ Item 3 -->
                 <div class="faq-item">
-                    <h4>Como funciona a vistoria?
-                    </h4>
-                    <p>A vistoria é 100% digital. Você mesmo tira as fotos solicitadas pelo nosso app e envia. Rápido e
-                        sem precisar sair de casa.</p>
+                    <h4>Como fazer a vistoria?</h4>
+                    <p>A vistoria é 100% digital. Você mesmo tira as fotos solicitadas pelo nosso aplicativo e envia. Rápido e sem precisar sair de casa.</p>
                 </div>
 
                 <!-- FAQ Item 4 -->
                 <div class="faq-item">
                     <h4>Posso quitar antes?</h4>
-                    <p>Com certeza! Você pode solicitar a liquidação antecipada do contrato com desconto proporcional de
-                        juros a qualquer momento.</p>
+                    <p>Você pode antecipar o pagamento total do contrato a qualquer momento.</p>
                 </div>
 
             </div>
