@@ -138,7 +138,7 @@
             #hero {
                 font-family: 'Anteb', sans-serif;
                 margin: 0;
-                background: #163056 url(assets/background-azul-crefaz.jpg) no-repeat center center/cover;
+                /* background: #163056 url(assets/background-azul-crefaz.jpg) no-repeat center center/cover; */
                 background: #163056 url(https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/86a74b09-d848-4b1c-aa41-295be45de3f0.jpg) no-repeat center center/cover;
                 overflow: hidden;
                 padding: 50px 0;
@@ -148,35 +148,21 @@
             #hero .container {
                 display: grid;
                 gap: 60px;
-                max-width: 900px;
-                align-items: start;
+                max-width: 1100px;
+                align-items: center;
                 margin: 0 auto;
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .text-box {
-                padding: 0 0 20px 0;
+                grid-template-columns: 0.8fr 1fr;
             }
 
             h1 {
-                font-size: 54px;
-                color: #ffffff;
+                font-size: 32px;
+                color: #163056;
                 font-weight: 600;
                 line-height: 1.1;
-                text-align: left;
+                text-align: center;
                 letter-spacing: -1px;
-                margin: 0 0 10px 0;
+                padding: 0 10px 10px 10px;
             }
-
-            h2 {
-                font-size: 22px;
-                color: #ffffff;
-                margin: 0;
-                font-weight: 400;
-                line-height: 1.2;
-                padding: 0 0 30px 0;
-            }
-
 
             .primary-content,
             .secondary-content {
@@ -195,10 +181,6 @@
                 width: 100%;
             }
 
-            /*------------------------------------------*/
-            /*----------------Responsivo----------------*/
-            /*------------------------------------------*/
-
             @media (max-width: 767px) {
 
                 #hero {
@@ -206,43 +188,30 @@
                 }
 
                 h1 {
-                    font-size: 42px;
-                    line-height: 1.1;
-                    text-align: left;
+                    font-size: 36px;
+                    line-height: 1;
+                    padding: 0;
                 }
 
                 #hero .container {
                     grid-template-columns: 1fr;
                     padding: 0 30px;
-                    gap: 0px;
+                    gap: 30px;
                 }
 
             }
         </style>
 
         <div class="container">
+
             <!-- Sessao 1 -->
             <div class="primary-content">
-                <div class="text-box">
-                    <h1>Essa é sua chance de concorrer a um iPhone 16!</h1>
-                    <h2>Você está a poucos cliques de aproveitar essa oportunidade, é só preencher o formulário e
-                        pronto, já está participando!</h2>
-                </div>
-                <div class="iphone">
-                    <!-- <img src="assets/premio-iphone.png" alt="iPhone 16"> -->
-                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/388d78da-f49f-4fc1-88f4-b080f537a5a3.png" alt="iPhone 16">
-                </div>
-            </div>
-
-
-            <!-- Sessao 2 -->
-            <div class="secondary-content">
                 <style>
                     /* FORMULARIO */
                     .form-box {
                         background: #ffffff;
                         border-radius: 20px;
-                        padding: 60px 30px;
+                        padding: 20px 30px;
                         font-family: 'Anteb', sans-serif;
                         height: fit-content;
                         max-width: 500px;
@@ -467,8 +436,10 @@
                 </style>
 
                 <div class="form-box">
+                    <h1>Para concorrer a um <span style="color: #ef6b22;">iPhone 16</span>, é só preencher abaixo:</h1>
                     <!-- <form method="post" id="form-simulacao" action="confirmacao.html"> -->
-                    <form method="post" id="form-simulacao" action="https://cleiltoncrefaz.github.io/cloudpagescrefaz/confirmacao">
+                    <form method="post" id="form-simulacao"
+                        action="https://cleiltoncrefaz.github.io/cloudpagescrefaz/confirmacao">
                         <input type="hidden" name="submitted" value="true">
                         <div class="form-group">
                             <label for="nome">Nome completo</label>
@@ -513,7 +484,7 @@
                             </div>
 
                             <div class="form-item" id="corbanGroup" style="display: none;">
-                                <label>Você é gerente ou dono do Corban?</label>
+                                <label>Você é gerente ou <br>dono do Corban?</label>
                                 <div class="toggle-group">
                                     <label class="toggle-option">
                                         <input type="radio" name="corban" value="sim">
@@ -865,6 +836,15 @@
 
                         updateCorbanVisibility();
                     </script>
+                </div>
+            </div>
+
+            <!-- Sessao 2 -->
+            <div class="secondary-content">
+                <div class="iphone">
+                    <!-- <img src="assets/premio-iphone.png" alt="iPhone 16"> -->
+                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/4cbf065d-d969-41e1-9618-31545b354592.png"
+                        alt="iPhone 16">
                 </div>
             </div>
 
