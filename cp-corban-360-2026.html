@@ -296,7 +296,7 @@
                         display: grid;
                         grid-template-columns: 0.8fr 1fr;
                         gap: 10px;
-                        padding: 10px 0 0 0;
+                        padding: 12px 0;
                     }
 
                     .form-item {
@@ -499,12 +499,95 @@
                             </div>
                         </div>
 
+                        <label class="check-custom">
+                            <style>
+                                .check-custom {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 8px;
+                                    cursor: pointer;
+                                    color: #163056;
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                }
+
+                                .check-custom input {
+                                    display: none;
+                                }
+
+                                .check-custom a {
+                                    color: #ef6b22;
+                                    text-decoration: none;
+                                }
+
+                                .check-custom a:hover {
+                                    text-decoration: underline;
+                                }
+
+                                .check-custom p {
+                                    margin: 0;
+                                    padding: 5px 0 0 0;
+                                }
+
+                                .check-mark {
+                                    width: 18px;
+                                    height: 18px;
+                                    border: 2px solid #E4EBF3;
+                                    border-radius: 5px;
+                                    background: #fff;
+                                    position: relative;
+                                    transition: all 0.2s ease;
+                                    flex-shrink: 0;
+                                }
+
+                                .check-mark::after {
+                                    content: "";
+                                    position: absolute;
+                                    left: 4px;
+                                    top: 0px;
+                                    width: 5px;
+                                    height: 8px;
+                                    border: solid #fff;
+                                    border-width: 0 2px 2px 0;
+                                    transform: rotate(45deg) scale(0);
+                                    transition: all 0.2s ease;
+                                }
+
+                                .check-custom input:checked+.check-mark {
+                                    background: #ef6b22;
+                                    border-color: #ef6b22;
+                                }
+
+                                .check-custom input:checked+.check-mark::after {
+                                    transform: rotate(45deg) scale(1);
+                                }
+
+                                .check-custom:hover .check-mark {
+                                    border-color: #ef6b22;
+                                }
+
+                                @media (max-width: 767px) {
+                                    .check-custom p {
+                                        font-size: 16px;
+                                    }
+                                }
+                            </style>
+                            <input type="checkbox" id="lgpd" required>
+                            <span class="check-mark"></span>
+                            <p>
+                                Eu aceito o <a href="#">regulamento</a> e a <a
+                                    href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank">Política
+                                    de Privacidade</a>
+
+                            </p>
+                        </label>
+
                         <button type="submit">Enviar</button>
                     </form>
 
-                    <p id="successMsg">
+                    <!-- <p id="successMsg">
                         Você vai receber o material no seu <strong>e-mail.</strong>
-                    </p>
+                    </p> -->
                     <script>
                         const form = document.getElementById('form-simulacao');
                         const cpfInput = document.getElementById('cpf');
