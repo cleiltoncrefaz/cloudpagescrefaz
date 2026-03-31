@@ -275,7 +275,7 @@
                         color: #163056;
                     }
 
-                    .form-box button {
+                    .form-button {
                         width: 100%;
                         padding: 12px;
                         background: #ef6b22;
@@ -288,7 +288,7 @@
                         margin: 20px 0 0 0;
                     }
 
-                    .form-box button:hover {
+                    .form-button:hover {
                         background: #e55a12;
                     }
 
@@ -438,8 +438,7 @@
                 <div class="form-box">
                     <h1>Para concorrer a um <span style="color: #ef6b22;">iPhone 16</span>, é só preencher abaixo:</h1>
                     <!-- <form method="post" id="form-simulacao" action="confirmacao.html"> -->
-                    <form method="post" id="form-simulacao"
-                        action="https://cleiltoncrefaz.github.io/cloudpagescrefaz/confirmacao">
+                    <form method="post" id="form-simulacao" action="#">
                         <input type="hidden" name="submitted" value="true">
                         <div class="form-group">
                             <label for="nome">Nome completo</label>
@@ -499,45 +498,41 @@
                             </div>
                         </div>
 
-                        <label class="check-custom">
+                        <!-- modal LGPD -->
+                        <div class="lgpd-checkbox-wrapper">
+
                             <style>
+                                .check-field {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 6px;
+                                    padding: 5px 0;
+                                }
+
                                 .check-custom {
                                     display: flex;
                                     align-items: center;
                                     gap: 8px;
                                     cursor: pointer;
+                                    font-size: 14px;
                                     color: #163056;
-                                    font-size: 16px;
-                                    line-height: 1.2;
                                 }
 
                                 .check-custom input {
-                                    display: none;
-                                }
-
-                                .check-custom a {
-                                    color: #ef6b22;
-                                    text-decoration: none;
-                                }
-
-                                .check-custom a:hover {
-                                    text-decoration: underline;
-                                }
-
-                                .check-custom p {
-                                    margin: 0;
-                                    padding: 5px 0 0 0;
+                                    opacity: 0;
+                                    position: absolute;
                                 }
 
                                 .check-mark {
                                     width: 18px;
                                     height: 18px;
                                     border: 2px solid #E4EBF3;
-                                    border-radius: 5px;
+                                    border-radius: 6px;
                                     background: #fff;
                                     position: relative;
                                     transition: all 0.2s ease;
                                     flex-shrink: 0;
+                                    margin-top: 2px;
                                 }
 
                                 .check-mark::after {
@@ -546,7 +541,7 @@
                                     left: 4px;
                                     top: 0px;
                                     width: 5px;
-                                    height: 8px;
+                                    height: 10px;
                                     border: solid #fff;
                                     border-width: 0 2px 2px 0;
                                     transform: rotate(45deg) scale(0);
@@ -554,8 +549,8 @@
                                 }
 
                                 .check-custom input:checked+.check-mark {
-                                    background: #ef6b22;
-                                    border-color: #ef6b22;
+                                    background: #EF6B22;
+                                    border-color: #EF6B22;
                                 }
 
                                 .check-custom input:checked+.check-mark::after {
@@ -563,31 +558,407 @@
                                 }
 
                                 .check-custom:hover .check-mark {
-                                    border-color: #ef6b22;
+                                    border-color: #EF6B22;
                                 }
 
-                                @media (max-width: 767px) {
-                                    .check-custom p {
-                                        font-size: 16px;
-                                    }
+                                .check-text {
+                                    padding: 5px 0 0 0;
+                                }
+
+                                .check-text a {
+                                    color: #EF6B22;
+                                    text-decoration: underline;
+                                }
+
+                                .field-error {
+                                    display: none;
+                                    font-size: 13px;
+                                    color: #dc2626;
+                                    margin: 0;
+                                }
+
+                                .check-mark.error {
+                                    border-color: #dc2626 !important;
+                                    background: #fff7f7;
+                                }
+
+                                .modal-overlay {
+                                    display: none;
+                                    position: fixed;
+                                    inset: 0;
+                                    background: rgba(0, 0, 0, 0.5);
+                                    z-index: 9999;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 20px;
+                                }
+
+                                .modal-overlay.show {
+                                    display: flex;
+                                }
+
+                                .modal-box {
+                                    width: 100%;
+                                    max-width: 560px;
+                                    background: #fff;
+                                    border-radius: 16px;
+                                    overflow: hidden;
+                                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+                                }
+
+                                .modal-header {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding: 18px 20px;
+                                    border-bottom: 1px solid #E4EBF3;
+                                }
+
+                                .modal-header h3 {
+                                    margin: 0;
+                                    color: #163056;
+                                    font-size: 22px;
+                                    font-weight: 700;
+                                }
+
+                                .modal-close {
+                                    background: transparent;
+                                    border: none;
+                                    font-size: 34px;
+                                    line-height: 1;
+                                    cursor: pointer;
+                                    color: #163056;
+                                    border-radius: 8px;
+                                    width: 40px;
+                                    height: 40px;
+                                }
+
+                                .modal-close:hover {
+                                    color: #EF6B22;
+                                    background: #f3f3f3;
+                                }
+
+                                .modal-content {
+                                    padding: 20px;
+                                    max-height: 50vh;
+                                    overflow-y: auto;
+                                    color: #163056;
+                                    font-size: 14px;
+                                    line-height: 1.5;
+                                }
+
+                                .modal-content h3 {
+                                    font-size: 20px;
+                                    letter-spacing: -0.3px;
+                                    line-height: 1.2;
+                                }
+
+                                .modal-content::-webkit-scrollbar {
+                                    width: 6px;
+                                }
+
+                                .modal-content::-webkit-scrollbar-thumb {
+                                    background: #d3dae2;
+                                    border-radius: 3px;
+                                }
+
+                                .modal-content::-webkit-scrollbar-track {
+                                    background: transparent;
+                                }
+
+                                .modal-content p {
+                                    margin: 0 0 12px 0;
+                                }
+
+                                .modal-actions {
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 12px;
+                                    padding: 20px;
+                                    border-top: 1px solid #E4EBF3;
+                                }
+
+                                .btn {
+                                    border: none;
+                                    border-radius: 10px;
+                                    padding: 12px 18px;
+                                    cursor: pointer;
+                                    font-size: 16px;
+                                }
+
+                                .btn-primary {
+                                    background: #163056;
+                                    color: #fff;
+                                    font-family: 'Anteb', sans-serif;
+                                }
+
+                                .btn-secondary {
+                                    background: #EF6B22;
+                                    color: #fff;
+                                    font-family: 'Anteb', sans-serif;
+                                }
+
+                                .btn-secondary:hover {
+                                    filter: brightness(0.9);
                                 }
                             </style>
-                            <input type="checkbox" id="lgpd" required>
-                            <span class="check-mark"></span>
-                            <p>
-                                Eu aceito o <a href="#">regulamento</a> e a <a
-                                    href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank">Política
-                                    de Privacidade</a>
 
-                            </p>
-                        </label>
+                            <div class="check-field">
+                                <label class="check-custom">
+                                    <input type="checkbox" id="lgpd" name="lgpd" required>
+                                    <span class="check-mark"></span>
 
-                        <button type="submit">Enviar</button>
+                                    <span class="check-text">
+                                        Eu aceito o
+                                        <a href="#" id="openRegulamento">regulamento</a>
+                                        e a
+                                        <a href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Política de Privacidade
+                                        </a>
+                                    </span>
+                                </label>
+
+                                <p id="lgpdError" class="field-error">Você precisa aceitar os termos.</p>
+                            </div>
+
+                            <!-- MODAL -->
+                            <div class="modal-overlay" id="regulamentoModal" aria-hidden="true">
+                                <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                                    <div class="modal-header">
+                                        <h3 id="modalTitle">Regulamento</h3>
+                                        <button type="button" class="modal-close" id="closeModal"
+                                            aria-label="Fechar modal">×</button>
+                                    </div>
+
+                                    <div class="modal-content">
+                                        <h3><strong>A&Ccedil;&Atilde;O DE RELACIONAMENTO CREFAZ (EVENTO
+                                            CORBAN 360)</strong></h3>
+                                        <p><strong>1. DISPOSI&Ccedil;&Otilde;ES INICIAIS</strong></p>
+                                        <p>A presente a&ccedil;&atilde;o de relacionamento &eacute; promovida pela
+                                            CREFAZ Sociedade de Cr&eacute;dito ao Microempreendedor e &agrave; Empresa
+                                            de Pequeno Porte S.A.. (&ldquo;Crefaz&rdquo;), no contexto de sua
+                                            participa&ccedil;&atilde;o institucional no evento Corban 360, tendo por
+                                            finalidade fomentar intera&ccedil;&atilde;o com participantes presentes no
+                                            local.</p>
+                                        <p>A a&ccedil;&atilde;o possui car&aacute;ter exclusivamente promocional e
+                                            institucional, sendo realizada de forma pontual no evento, sem qualquer
+                                            vincula&ccedil;&atilde;o a produtos, servi&ccedil;os ou
+                                            opera&ccedil;&otilde;es financeiras.</p>
+                                        <p>A participa&ccedil;&atilde;o &eacute; volunt&aacute;ria e implica a
+                                            aceita&ccedil;&atilde;o integral e irrestrita das disposi&ccedil;&otilde;es
+                                            constantes neste regulamento.</p>
+                                        <p><strong>2. PER&Iacute;ODO E ABRANG&Ecirc;NCIA</strong></p>
+                                        <p>A a&ccedil;&atilde;o ser&aacute; realizada exclusivamente durante o evento
+                                            Corban 360, nos dias 16 e 17 de abril, no local do evento.</p>
+                                        <p>As inscri&ccedil;&otilde;es estar&atilde;o abertas at&eacute; o prazo limite
+                                            de 2 (duas) horas antes da realiza&ccedil;&atilde;o da
+                                            apura&ccedil;&atilde;o final, sendo desconsideradas
+                                            participa&ccedil;&otilde;es realizadas ap&oacute;s esse per&iacute;odo.</p>
+                                        <p>A a&ccedil;&atilde;o &eacute; restrita aos participantes presentes no evento,
+                                            n&atilde;o se estendendo a canais externos ou p&uacute;blicos em geral.</p>
+                                        <p><strong>3. CONDI&Ccedil;&Otilde;ES DE PARTICIPA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Poder&atilde;o participar pessoas f&iacute;sicas maiores de 18 (dezoito)
+                                            anos, presentes no evento, mediante preenchimento de cadastro na
+                                            p&aacute;gina eletr&ocirc;nica disponibilizada pela Crefaz.</p>
+                                        <p>Para fins de participa&ccedil;&atilde;o, poder&atilde;o ser solicitadas
+                                            informa&ccedil;&otilde;es b&aacute;sicas de identifica&ccedil;&atilde;o,
+                                            tais como nome, telefone e endere&ccedil;o eletr&ocirc;nico.</p>
+                                        <p>A participa&ccedil;&atilde;o &eacute; inteiramente gratuita, n&atilde;o
+                                            estando condicionada &agrave; aquisi&ccedil;&atilde;o de bens,
+                                            contrata&ccedil;&atilde;o de servi&ccedil;os, realiza&ccedil;&atilde;o de
+                                            opera&ccedil;&otilde;es financeiras ou qualquer forma de
+                                            contrapresta&ccedil;&atilde;o.</p>
+                                        <p>Cada participante poder&aacute; efetuar apenas uma &uacute;nica
+                                            inscri&ccedil;&atilde;o v&aacute;lida, sendo vedada a
+                                            utiliza&ccedil;&atilde;o de dados de terceiros, informa&ccedil;&otilde;es
+                                            inver&iacute;dicas ou m&uacute;ltiplos registros com a finalidade de
+                                            obten&ccedil;&atilde;o de vantagem indevida.</p>
+                                        <p><strong>4. MEC&Acirc;NICA DE APURA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Ao t&eacute;rmino do per&iacute;odo de inscri&ccedil;&otilde;es, ser&aacute;
+                                            realizada uma sele&ccedil;&atilde;o aleat&oacute;ria entre os participantes
+                                            regularmente cadastrados, com o objetivo de identificar o contemplado da
+                                            a&ccedil;&atilde;o.</p>
+                                        <p>A apura&ccedil;&atilde;o ser&aacute; realizada por meio de ferramenta digital
+                                            id&ocirc;nea, que permita a escolha aleat&oacute;ria dentre os participantes
+                                            eleg&iacute;veis, observados crit&eacute;rios de imparcialidade e isonomia.
+                                        </p>
+                                        <p>Ser&aacute; considerado contemplado o participante indicado pela ferramenta
+                                            no momento da apura&ccedil;&atilde;o.</p>
+                                        <p><strong>5. PREMIA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Ser&aacute; disponibilizado ao participante selecionado 1 (um) pr&ecirc;mio,
+                                            consistente em 01 (um) aparelho celular (iPhone ou equivalente).</p>
+                                        <p>O pr&ecirc;mio &eacute; pessoal, intransfer&iacute;vel e n&atilde;o
+                                            poder&aacute; ser convertido em dinheiro, substitu&iacute;do por outro item
+                                            ou transferido a terceiros.</p>
+                                        <p><strong>6. COMUNICA&Ccedil;&Atilde;O E VALIDA&Ccedil;&Atilde;O</strong></p>
+                                        <p>O participante selecionado ser&aacute; comunicado por meio dos dados
+                                            informados no cadastro.</p>
+                                        <p>Para fins de valida&ccedil;&atilde;o, poder&aacute; ser solicitado ao
+                                            participante a confirma&ccedil;&atilde;o de seus dados e
+                                            apresenta&ccedil;&atilde;o de documento de identifica&ccedil;&atilde;o.</p>
+                                        <p>Caso n&atilde;o seja poss&iacute;vel estabelecer contato ou validar as
+                                            informa&ccedil;&otilde;es no prazo de at&eacute; 5 (cinco) dias, a Crefaz
+                                            poder&aacute; realizar nova apura&ccedil;&atilde;o entre os participantes
+                                            remanescentes.</p>
+                                        <p><strong>7. HIP&Oacute;TESES DE INVALIDA&Ccedil;&Atilde;O DA
+                                            PARTICIPA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Ser&atilde;o consideradas inv&aacute;lidas as participa&ccedil;&otilde;es que
+                                            apresentem inconsist&ecirc;ncias, irregularidades ou ind&iacute;cios de
+                                            utiliza&ccedil;&atilde;o indevida, incluindo, mas n&atilde;o se limitando,
+                                            ao fornecimento de dados incompletos, incorretos ou inver&iacute;dicos,
+                                            &agrave; realiza&ccedil;&atilde;o de m&uacute;ltiplos cadastros por um mesmo
+                                            participante, ao uso de informa&ccedil;&otilde;es de terceiros sem
+                                            autoriza&ccedil;&atilde;o ou &agrave; ado&ccedil;&atilde;o de qualquer
+                                            conduta que comprometa a regularidade, a lisura ou a equidade da presente
+                                            a&ccedil;&atilde;o. A constata&ccedil;&atilde;o de tais
+                                            situa&ccedil;&otilde;es poder&aacute; ensejar a
+                                            desconsidera&ccedil;&atilde;o da participa&ccedil;&atilde;o, sem que disso
+                                            decorra qualquer direito de indeniza&ccedil;&atilde;o ou
+                                            compensa&ccedil;&atilde;o ao participante.</p>
+                                        <p><strong>8. TRATAMENTO DE DADOS PESSOAIS</strong></p>
+                                        <p>Os dados pessoais fornecidos pelos participantes ser&atilde;o utilizados
+                                            exclusivamente para viabilizar a participa&ccedil;&atilde;o na
+                                            a&ccedil;&atilde;o, permitir a identifica&ccedil;&atilde;o dos participantes
+                                            e possibilitar a comunica&ccedil;&atilde;o com o participante selecionado. O
+                                            tratamento dessas informa&ccedil;&otilde;es observar&aacute; as
+                                            disposi&ccedil;&otilde;es da Lei n&ordm; 13.709/2018 (Lei Geral de
+                                            Prote&ccedil;&atilde;o de Dados &ndash; LGPD), sendo realizado de forma
+                                            adequada, proporcional e limitada &agrave;s finalidades aqui descritas. O
+                                            participante poder&aacute;, a qualquer tempo, solicitar a
+                                            atualiza&ccedil;&atilde;o ou exclus&atilde;o de seus dados pessoais, ciente
+                                            de que tal solicita&ccedil;&atilde;o poder&aacute; inviabilizar sua
+                                            perman&ecirc;ncia na presente a&ccedil;&atilde;o, na medida em que tais
+                                            dados s&atilde;o necess&aacute;rios &agrave; sua execu&ccedil;&atilde;o.</p>
+                                        <p><strong>9. LIMITA&Ccedil;&Atilde;O DE RESPONSABILIDADE</strong></p>
+                                        <p>A Crefaz n&atilde;o se responsabiliza por eventuais falhas t&eacute;cnicas,
+                                            operacionais ou de conex&atilde;o que impe&ccedil;am ou dificultem a
+                                            realiza&ccedil;&atilde;o do cadastro, bem como por informa&ccedil;&otilde;es
+                                            incorretas, incompletas ou desatualizadas fornecidas pelos participantes. Da
+                                            mesma forma, n&atilde;o ser&aacute; respons&aacute;vel por eventual
+                                            impossibilidade de contato com o participante selecionado</p>
+                                        <p>decorrente de dados incorretos ou desatualizados, hip&oacute;tese em que
+                                            poder&aacute; ser realizada nova apura&ccedil;&atilde;o, nos termos deste
+                                            regulamento.</p>
+                                        <p><strong>10. DISPOSI&Ccedil;&Otilde;ES FINAIS</strong></p>
+                                        <p>A presente a&ccedil;&atilde;o possui car&aacute;ter pontual e restrito ao
+                                            evento Corban 360, n&atilde;o gerando qualquer expectativa de direito em
+                                            rela&ccedil;&atilde;o a futuras a&ccedil;&otilde;es ou campanhas. A Crefaz
+                                            poder&aacute; promover ajustes operacionais necess&aacute;rios &agrave;
+                                            execu&ccedil;&atilde;o da a&ccedil;&atilde;o, desde que preservados os
+                                            princ&iacute;pios de transpar&ecirc;ncia, boa-f&eacute; e isonomia entre os
+                                            participantes. Os casos omissos ou situa&ccedil;&otilde;es n&atilde;o
+                                            previstas neste regulamento ser&atilde;o solucionados com base em
+                                            crit&eacute;rios de razoabilidade e equidade, observando-se as normas
+                                            aplic&aacute;veis e a finalidade da a&ccedil;&atilde;o.</p>
+                                    </div>
+
+                                    <div class="modal-actions">
+                                        <!-- <button type="button" class="btn btn-primary" id="rejectLgpd">Eu não aceito</button> -->
+                                        <button type="button" class="btn btn-secondary"
+                                            id="acceptLgpd">Concordo</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Script Modal -->
+                            <script>
+                                const checkbox = document.getElementById("lgpd");
+                                const error = document.getElementById("lgpdError");
+                                const mark = document.querySelector(".check-mark");
+
+                                const openRegulamento = document.getElementById("openRegulamento");
+                                const modal = document.getElementById("regulamentoModal");
+                                const closeModal = document.getElementById("closeModal");
+                                const acceptLgpd = document.getElementById("acceptLgpd");
+                                const rejectLgpd = document.getElementById("rejectLgpd");
+
+                                function showError() {
+                                    if (error) error.style.display = "block";
+                                    if (mark) mark.classList.add("error");
+                                }
+
+                                function hideError() {
+                                    if (error) error.style.display = "none";
+                                    if (mark) mark.classList.remove("error");
+                                }
+
+                                function openModal(event) {
+                                    event.preventDefault();
+                                    modal.classList.add("show");
+                                    modal.setAttribute("aria-hidden", "false");
+                                }
+
+                                function hideModal() {
+                                    modal.classList.remove("show");
+                                    modal.setAttribute("aria-hidden", "true");
+                                }
+
+                                if (openRegulamento) {
+                                    openRegulamento.addEventListener("click", openModal);
+                                }
+
+                                if (closeModal) {
+                                    closeModal.addEventListener("click", hideModal);
+                                }
+
+                                if (rejectLgpd) {
+                                    rejectLgpd.addEventListener("click", function () {
+                                        checkbox.checked = false;
+                                        showError();
+                                        hideModal();
+                                    });
+                                }
+
+                                if (acceptLgpd) {
+                                    acceptLgpd.addEventListener("click", function () {
+                                        checkbox.checked = true;
+                                        hideError();
+                                        hideModal();
+                                    });
+                                }
+
+                                if (checkbox) {
+                                    checkbox.addEventListener("change", function () {
+                                        if (checkbox.checked) {
+                                            hideError();
+                                        }
+                                    });
+                                }
+
+                                if (modal) {
+                                    modal.addEventListener("click", function (event) {
+                                        if (event.target === modal) {
+                                            hideModal();
+                                        }
+                                    });
+                                }
+
+                                document.addEventListener("keydown", function (event) {
+                                    if (event.key === "Escape" && modal.classList.contains("show")) {
+                                        hideModal();
+                                    }
+                                });
+
+                                if (form) {
+                                    form.addEventListener("submit", function (event) {
+                                        if (!checkbox.checked) {
+                                            event.preventDefault();
+                                            showError();
+                                        }
+                                    });
+                                }
+                            </script>
+                        </div>
+
+                        <button class="form-button" type="submit">Enviar</button>
                     </form>
 
                     <!-- <p id="successMsg">
                         Você vai receber o material no seu <strong>e-mail.</strong>
                     </p> -->
+
                     <script>
                         const form = document.getElementById('form-simulacao');
                         const cpfInput = document.getElementById('cpf');
