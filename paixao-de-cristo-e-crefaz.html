@@ -154,7 +154,7 @@
             }
 
             h1 {
-                font-size: 42px;
+                font-size: 35px;
                 color: #163056;
                 font-weight: 600;
                 line-height: 1.1;
@@ -184,6 +184,7 @@
 
             .hamper {
                 position: relative;
+                pointer-events: none;
             }
 
             .hamper img {
@@ -237,10 +238,10 @@
                 }
 
                 h1 {
-                    font-size: 28px;
+                    font-size: 33px;
                     line-height: 1.1;
                     text-align: center;
-                    margin: 0 0 10px 0;
+                    margin: 0 0 15px 0;
                 }
 
                 #hero .container {
@@ -252,8 +253,8 @@
                     padding: 20px;
                 }
 
-                .form-box label,
-                .form-box input {
+                .form-group label,
+                .form-group input {
                     font-size: 18px;
                 }
 
@@ -313,7 +314,7 @@
             <div class="primary-content">
 
                 <div class="form-box">
-                    <h1>Pra concorrer a 10 cestas é só preencher abaixo:</h1>
+                    <h1>Pra concorrer a cestas de Páscoa é só preencher abaixo:</h1>
                     <style>
                         /* FORMULARIO */
 
@@ -383,7 +384,7 @@
                             color: #163056;
                         }
 
-                        .form-box button {
+                        .form-button {
                             width: 100%;
                             padding: 12px;
                             background: #ef6b22;
@@ -393,9 +394,10 @@
                             font-size: 18px;
                             cursor: pointer;
                             font-family: 'Anteb', sans-serif;
+                            margin-top: 10px;
                         }
 
-                        .form-box button:hover {
+                        .form-button:hover {
                             background: #e55a12;
                         }
 
@@ -415,8 +417,8 @@
                                 padding: 20px;
                             }
 
-                            .form-box label,
-                            .form-box input {
+                            .form-group label,
+                            .form-group input {
                                 font-size: 18px;
                             }
 
@@ -442,16 +444,518 @@
                             <label for="celular">WhatsApp</label>
                         </div>
 
-                        <button type="submit">Enviar</button>
+                        <!-- modal LGPD -->
+                        <div class="lgpd-checkbox-wrapper">
+
+                            <style>
+                                .check-field {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 6px;
+                                    padding: 5px 0;
+                                }
+
+                                .check-custom {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 8px;
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    color: #163056;
+                                }
+
+                                .check-custom input {
+                                    opacity: 0;
+                                    position: absolute;
+                                }
+
+                                .check-mark {
+                                    width: 18px;
+                                    height: 18px;
+                                    border: 2px solid #E4EBF3;
+                                    border-radius: 6px;
+                                    background: #fff;
+                                    position: relative;
+                                    transition: all 0.2s ease;
+                                    flex-shrink: 0;
+                                    margin-top: 2px;
+                                }
+
+                                .check-mark::after {
+                                    content: "";
+                                    position: absolute;
+                                    left: 4px;
+                                    top: 0px;
+                                    width: 5px;
+                                    height: 10px;
+                                    border: solid #fff;
+                                    border-width: 0 2px 2px 0;
+                                    transform: rotate(45deg) scale(0);
+                                    transition: all 0.2s ease;
+                                }
+
+                                .check-custom input:checked+.check-mark {
+                                    background: #EF6B22;
+                                    border-color: #EF6B22;
+                                }
+
+                                .check-custom input:checked+.check-mark::after {
+                                    transform: rotate(45deg) scale(1);
+                                }
+
+                                .check-custom:hover .check-mark {
+                                    border-color: #EF6B22;
+                                }
+
+                                .check-text {
+                                    padding: 5px 0 0 0;
+                                }
+
+                                .check-text a {
+                                    color: #EF6B22;
+                                    text-decoration: underline;
+                                }
+
+                                .field-error {
+                                    display: none;
+                                    font-size: 13px;
+                                    color: #dc2626;
+                                    margin: 0;
+                                }
+
+                                .check-mark.error {
+                                    border-color: #dc2626 !important;
+                                    background: #fff7f7;
+                                }
+
+                                .modal-overlay {
+                                    display: none;
+                                    position: fixed;
+                                    inset: 0;
+                                    background: rgba(0, 0, 0, 0.5);
+                                    z-index: 9999;
+                                    align-items: center;
+                                    justify-content: center;
+                                    padding: 20px;
+                                }
+
+                                .modal-overlay.show {
+                                    display: flex;
+                                }
+
+                                .modal-box {
+                                    width: 100%;
+                                    max-width: 560px;
+                                    background: #fff;
+                                    border-radius: 16px;
+                                    overflow: hidden;
+                                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+                                }
+
+                                .modal-header {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding: 18px 20px;
+                                    border-bottom: 1px solid #E4EBF3;
+                                }
+
+                                .modal-header h3 {
+                                    margin: 0;
+                                    color: #163056;
+                                    font-size: 22px;
+                                    font-weight: 700;
+                                }
+
+                                .modal-close {
+                                    background: transparent;
+                                    border: none;
+                                    font-size: 34px;
+                                    line-height: 1;
+                                    cursor: pointer;
+                                    color: #163056;
+                                    border-radius: 8px;
+                                    width: 40px;
+                                    height: 40px;
+                                }
+
+                                .modal-close:hover {
+                                    color: #EF6B22;
+                                    background: #f3f3f3;
+                                }
+
+                                .modal-content {
+                                    padding: 20px;
+                                    max-height: 50vh;
+                                    overflow-y: auto;
+                                    color: #163056;
+                                    font-size: 14px;
+                                    line-height: 1.5;
+                                }
+
+                                .modal-content h3 {
+                                    font-size: 20px;
+                                    letter-spacing: -0.3px;
+                                    line-height: 1.2;
+                                }
+
+                                .modal-content::-webkit-scrollbar {
+                                    width: 6px;
+                                }
+
+                                .modal-content::-webkit-scrollbar-thumb {
+                                    background: #d3dae2;
+                                    border-radius: 3px;
+                                }
+
+                                .modal-content::-webkit-scrollbar-track {
+                                    background: transparent;
+                                }
+
+                                .modal-content p {
+                                    margin: 0 0 12px 0;
+                                }
+
+                                .modal-actions {
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 12px;
+                                    padding: 20px;
+                                    border-top: 1px solid #E4EBF3;
+                                }
+
+                                .btn {
+                                    border: none;
+                                    border-radius: 10px;
+                                    padding: 12px 18px;
+                                    cursor: pointer;
+                                    font-size: 16px;
+                                }
+
+                                .btn-primary {
+                                    background: #163056;
+                                    color: #fff;
+                                    font-family: 'Anteb', sans-serif;
+                                }
+
+                                .btn-secondary {
+                                    background: #EF6B22;
+                                    color: #fff;
+                                    font-family: 'Anteb', sans-serif;
+                                }
+
+                                .btn-secondary:hover {
+                                    filter: brightness(0.9);
+                                }
+                            </style>
+
+                            <div class="check-field">
+                                <label class="check-custom">
+                                    <input type="checkbox" id="lgpd" name="lgpd" required>
+                                    <span class="check-mark"></span>
+
+                                    <span class="check-text">
+                                        Eu aceito o
+                                        <a href="#" id="openRegulamento">regulamento</a>
+                                        e a
+                                        <a href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Política de Privacidade
+                                        </a>
+                                    </span>
+                                </label>
+
+                                <p id="lgpdError" class="field-error">Você precisa aceitar os termos.</p>
+                            </div>
+
+                            <!-- MODAL -->
+                            <div class="modal-overlay" id="regulamentoModal" aria-hidden="true">
+                                <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                                    <div class="modal-header">
+                                        <h3 id="modalTitle">Regulamento</h3>
+                                        <button type="button" class="modal-close" id="closeModal"
+                                            aria-label="Fechar modal">×</button>
+                                    </div>
+
+                                    <div class="modal-content">
+                                        <h3><strong>A&Ccedil;&Atilde;O DE RELACIONAMENTO CREFAZ (EVENTO PAIX&Atilde;O DE
+                                                CRISTO)</strong></h3>
+                                        <p><strong>1. DISPOSI&Ccedil;&Otilde;ES INICIAIS</strong></p>
+                                        <p>A presente a&ccedil;&atilde;o de relacionamento &eacute; promovida pela
+                                            Crefaz Sociedade de Cr&eacute;dito ao Microempreendedor e &agrave;
+                                            Empresa de Pequeno Porte S.A. (&ldquo;Crefaz&rdquo;), no contexto de sua
+                                            participa&ccedil;&atilde;o institucional no evento &ldquo;Paix&atilde;o
+                                            de Cristo&rdquo;, realizado no espa&ccedil;o Ecogarden, em
+                                            Maring&aacute;/PR, tendo por finalidade fomentar intera&ccedil;&atilde;o
+                                            com os participantes presentes no local. A a&ccedil;&atilde;o possui
+                                            car&aacute;ter exclusivamente promocional e institucional, sendo
+                                            realizada de forma pontual no evento, sem qualquer
+                                            vincula&ccedil;&atilde;o &agrave; contrata&ccedil;&atilde;o de produtos,
+                                            servi&ccedil;os ou opera&ccedil;&otilde;es financeiras. A
+                                            participa&ccedil;&atilde;o &eacute; volunt&aacute;ria e implica a
+                                            aceita&ccedil;&atilde;o integral e irrestrita das
+                                            disposi&ccedil;&otilde;es constantes neste regulamento.</p>
+                                        <p><strong>2. PER&Iacute;ODO E ABRANG&Ecirc;NCIA</strong></p>
+                                        <p>A a&ccedil;&atilde;o ser&aacute; realizada exclusivamente durante o
+                                            evento &ldquo;Paix&atilde;o de Cristo&rdquo;, nos dias 1&ordm; e 3 de
+                                            abril de 2026, no local do evento. As inscri&ccedil;&otilde;es
+                                            estar&atilde;o dispon&iacute;veis at&eacute; &agrave;s 20h30 de cada um
+                                            dos dias, sendo desconsideradas participa&ccedil;&otilde;es realizadas
+                                            ap&oacute;s esse hor&aacute;rio. Cada data corresponde a uma
+                                            a&ccedil;&atilde;o independente, com apura&ccedil;&atilde;o e
+                                            premia&ccedil;&atilde;o pr&oacute;prias. A a&ccedil;&atilde;o &eacute;
+                                            restrita aos participantes presentes no evento, n&atilde;o se estendendo
+                                            a canais externos ou ao p&uacute;blico em geral.</p>
+                                        <p><strong>3. CONDI&Ccedil;&Otilde;ES DE
+                                                PARTICIPA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Poder&atilde;o participar pessoas f&iacute;sicas maiores de 18
+                                            (dezoito) anos, presentes no evento, mediante preenchimento de cadastro
+                                            na p&aacute;gina eletr&ocirc;nica disponibilizada pela Crefaz, por meio
+                                            do link: www.crefaz.com.br/pascoa. Para fins de
+                                            participa&ccedil;&atilde;o, ser&atilde;o solicitadas
+                                            informa&ccedil;&otilde;es b&aacute;sicas de identifica&ccedil;&atilde;o,
+                                            tais como nome completo, CPF e n&uacute;mero de WhatsApp. A
+                                            participa&ccedil;&atilde;o &eacute; inteiramente gratuita, n&atilde;o
+                                            estando condicionada &agrave; aquisi&ccedil;&atilde;o de bens,
+                                            contrata&ccedil;&atilde;o de servi&ccedil;os, realiza&ccedil;&atilde;o
+                                            de opera&ccedil;&otilde;es financeiras ou qualquer forma de
+                                            contrapresta&ccedil;&atilde;o. Cada participante poder&aacute; efetuar
+                                            uma &uacute;nica inscri&ccedil;&atilde;o por dia de evento, podendo
+                                            participar em ambos os dias, desde que realize novo cadastro na
+                                            respectiva data, ficando, contudo, limitado ao recebimento de apenas um
+                                            pr&ecirc;mio em toda a a&ccedil;&atilde;o. &Eacute; vedada a
+                                            utiliza&ccedil;&atilde;o de dados de terceiros,
+                                            informa&ccedil;&otilde;es inver&iacute;dicas ou a
+                                            realiza&ccedil;&atilde;o de m&uacute;ltiplos cadastros com a finalidade
+                                            de obten&ccedil;&atilde;o de vantagem indevida.</p>
+                                        <p><strong>4. MEC&Acirc;NICA DE APURA&Ccedil;&Atilde;O</strong></p>
+                                        <p>A apura&ccedil;&atilde;o ser&aacute; realizada separadamente em cada
+                                            dia do evento, &agrave;s 20h30, momento em que ser&aacute; encerrado o
+                                            per&iacute;odo de inscri&ccedil;&otilde;es e extra&iacute;da a base de
+                                            participantes v&aacute;lidos daquele dia. Em seguida, ser&aacute;
+                                            realizada a sele&ccedil;&atilde;o aleat&oacute;ria dos contemplados por
+                                            meio de ferramenta digital id&ocirc;nea, que assegure crit&eacute;rios
+                                            de imparcialidade e isonomia. Participar&atilde;o do sorteio de cada
+                                            data exclusivamente os participantes que tiverem realizado cadastro no
+                                            respectivo dia. Caso um participante seja contemplado no primeiro dia,
+                                            ficar&aacute; automaticamente ineleg&iacute;vel para
+                                            premia&ccedil;&atilde;o no segundo dia, ainda que tenha realizado nova
+                                            inscri&ccedil;&atilde;o.</p>
+                                        <p><strong>5. PREMIA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Ser&atilde;o disponibilizadas aos participantes selecionados 30
+                                            (trinta) cestas de P&aacute;scoa, limitadas a uma cesta por
+                                            participante, distribu&iacute;das da seguinte forma: 10 (dez) cestas no
+                                            dia 01/04/2026 e 20 (vinte) cestas no dia 03/04/2026. As cestas
+                                            s&atilde;o compostas por produtos da marca Cacau Show, com valor
+                                            aproximado de R$ 230,00 (duzentos e trinta reais) cada, estando
+                                            previamente montadas e prontas para entrega ap&oacute;s o sorteio. O
+                                            pr&ecirc;mio &eacute; pessoal e intransfer&iacute;vel, n&atilde;o
+                                            podendo ser convertido em dinheiro, substitu&iacute;do por outro item ou
+                                            transferido a terceiros.</p>
+                                        <p><strong>6. COMUNICA&Ccedil;&Atilde;O E
+                                                VALIDA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Os nomes dos participantes contemplados ser&atilde;o divulgados no
+                                            tel&atilde;o principal do evento ao final de cada
+                                            apresenta&ccedil;&atilde;o, bem como poder&atilde;o ser contatados
+                                            posteriormente por meio do n&uacute;mero de WhatsApp informado no
+                                            cadastro. N&atilde;o &eacute; obrigat&oacute;ria a presen&ccedil;a do
+                                            participante no momento do sorteio para fins de valida&ccedil;&atilde;o
+                                            da premia&ccedil;&atilde;o. Para fins de valida&ccedil;&atilde;o,
+                                            poder&aacute; ser solicitada a confirma&ccedil;&atilde;o dos dados
+                                            informados e a apresenta&ccedil;&atilde;o de documento oficial com foto
+                                            e CPF.</p>
+                                        <p><strong>7. RETIRADA DO PR&Ecirc;MIO</strong></p>
+                                        <p>Os participantes contemplados dever&atilde;o retirar seus pr&ecirc;mios
+                                            at&eacute; o dia 10 de abril de 2026, na unidade da Crefaz localizada na
+                                            Av. Advogado Hor&aacute;cio Raccanello Filho, 5840, Sala T&eacute;rreo,
+                                            Zona 7, Maring&aacute;/PR, CEP 87020-025. A retirada poder&aacute; ser
+                                            realizada pelo pr&oacute;prio ganhador, mediante
+                                            apresenta&ccedil;&atilde;o de documento oficial com foto e CPF, ou por
+                                            terceiro, desde que este apresente documento do ganhador, f&iacute;sico
+                                            ou digital, al&eacute;m de documento pr&oacute;prio. Caso o pr&ecirc;mio
+                                            n&atilde;o seja retirado dentro do prazo estipulado, a Crefaz
+                                            poder&aacute; realizar nova apura&ccedil;&atilde;o entre os
+                                            participantes remanescentes, sem que disso decorra qualquer direito de
+                                            reivindica&ccedil;&atilde;o por parte do participante originalmente
+                                            contemplado.&nbsp;</p>
+                                        <p><strong>8. HIP&Oacute;TESES DE INVALIDA&Ccedil;&Atilde;O DA
+                                                PARTICIPA&Ccedil;&Atilde;O</strong></p>
+                                        <p>Ser&atilde;o consideradas inv&aacute;lidas as
+                                            participa&ccedil;&otilde;es que apresentem inconsist&ecirc;ncias,
+                                            irregularidades ou ind&iacute;cios de utiliza&ccedil;&atilde;o indevida,
+                                            incluindo, mas n&atilde;o se limitando, ao fornecimento de dados
+                                            incompletos, incorretos ou inver&iacute;dicos, &agrave;
+                                            utiliza&ccedil;&atilde;o de dados de terceiros sem
+                                            autoriza&ccedil;&atilde;o, &agrave; realiza&ccedil;&atilde;o de
+                                            m&uacute;ltiplos cadastros por um mesmo participante ou &agrave;
+                                            ado&ccedil;&atilde;o de qualquer conduta que comprometa a regularidade,
+                                            a lisura ou a equidade da presente a&ccedil;&atilde;o. A
+                                            constata&ccedil;&atilde;o de tais situa&ccedil;&otilde;es poder&aacute;
+                                            ensejar a desconsidera&ccedil;&atilde;o da participa&ccedil;&atilde;o,
+                                            sem que disso decorra qualquer direito de indeniza&ccedil;&atilde;o ou
+                                            compensa&ccedil;&atilde;o.</p>
+                                        <p><strong>9. TRATAMENTO DE DADOS PESSOAIS</strong></p>
+                                        <p>Os dados pessoais fornecidos pelos participantes ser&atilde;o
+                                            utilizados exclusivamente para viabilizar a participa&ccedil;&atilde;o
+                                            na a&ccedil;&atilde;o, permitir a identifica&ccedil;&atilde;o dos
+                                            participantes e possibilitar a comunica&ccedil;&atilde;o com os
+                                            contemplados. O tratamento dessas informa&ccedil;&otilde;es
+                                            observar&aacute; as disposi&ccedil;&otilde;es da Lei n&ordm; 13.709/2018
+                                            (Lei Geral de Prote&ccedil;&atilde;o de Dados &ndash; LGPD), sendo
+                                            realizado de forma adequada, proporcional e limitada &agrave;s
+                                            finalidades aqui descritas. O participante poder&aacute;, a qualquer
+                                            tempo, solicitar a atualiza&ccedil;&atilde;o ou exclus&atilde;o de seus
+                                            dados pessoais, ciente de que tal solicita&ccedil;&atilde;o
+                                            poder&aacute; inviabilizar sua perman&ecirc;ncia na presente
+                                            a&ccedil;&atilde;o.</p>
+                                        <p><strong>10. LIMITA&Ccedil;&Atilde;O DE RESPONSABILIDADE</strong>
+                                        </p>
+                                        <p>A Crefaz n&atilde;o se responsabiliza por eventuais falhas
+                                            t&eacute;cnicas, operacionais ou de conex&atilde;o que impe&ccedil;am ou
+                                            dificultem a realiza&ccedil;&atilde;o do cadastro, bem como por
+                                            informa&ccedil;&otilde;es incorretas, incompletas ou desatualizadas
+                                            fornecidas pelos participantes. Da mesma forma, n&atilde;o ser&aacute;
+                                            respons&aacute;vel por eventual impossibilidade de contato com o
+                                            participante contemplado decorrente de dados incorretos ou
+                                            desatualizados, hip&oacute;tese em que poder&aacute; ser realizada nova
+                                            apura&ccedil;&atilde;o, nos termos deste regulamento.</p>
+                                        <p><strong>11. DISPOSI&Ccedil;&Otilde;ES FINAIS</strong></p>
+                                        <p>A presente a&ccedil;&atilde;o possui car&aacute;ter pontual e restrito
+                                            ao evento &ldquo;Paix&atilde;o de Cristo&rdquo;, n&atilde;o gerando
+                                            qualquer expectativa de direito em rela&ccedil;&atilde;o a futuras
+                                            a&ccedil;&otilde;es ou campanhas. A Crefaz poder&aacute; promover
+                                            ajustes operacionais necess&aacute;rios &agrave; execu&ccedil;&atilde;o
+                                            da a&ccedil;&atilde;o, desde que preservados os princ&iacute;pios de
+                                            transpar&ecirc;ncia, boa-f&eacute; e isonomia entre os participantes. Os
+                                            casos omissos ou situa&ccedil;&otilde;es n&atilde;o previstas neste
+                                            regulamento ser&atilde;o solucionados com base em crit&eacute;rios de
+                                            razoabilidade e equidade, observando-se as normas aplic&aacute;veis e a
+                                            finalidade da a&ccedil;&atilde;o.</p>
+                                    </div>
+
+                                    <div class="modal-actions">
+                                        <!-- <button type="button" class="btn btn-primary" id="rejectLgpd">Eu não aceito</button> -->
+                                        <button type="button" class="btn btn-secondary"
+                                            id="acceptLgpd">Concordo</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <script>
+                                const form = document.querySelector("form");
+                                const checkbox = document.getElementById("lgpd");
+                                const error = document.getElementById("lgpdError");
+                                const mark = document.querySelector(".check-mark");
+
+                                const openRegulamento = document.getElementById("openRegulamento");
+                                const modal = document.getElementById("regulamentoModal");
+                                const closeModal = document.getElementById("closeModal");
+                                const acceptLgpd = document.getElementById("acceptLgpd");
+                                const rejectLgpd = document.getElementById("rejectLgpd");
+
+                                function showError() {
+                                    if (error) error.style.display = "block";
+                                    if (mark) mark.classList.add("error");
+                                }
+
+                                function hideError() {
+                                    if (error) error.style.display = "none";
+                                    if (mark) mark.classList.remove("error");
+                                }
+
+                                function openModal(event) {
+                                    event.preventDefault();
+                                    modal.classList.add("show");
+                                    modal.setAttribute("aria-hidden", "false");
+                                }
+
+                                function hideModal() {
+                                    modal.classList.remove("show");
+                                    modal.setAttribute("aria-hidden", "true");
+                                }
+
+                                if (openRegulamento) {
+                                    openRegulamento.addEventListener("click", openModal);
+                                }
+
+                                if (closeModal) {
+                                    closeModal.addEventListener("click", hideModal);
+                                }
+
+                                if (rejectLgpd) {
+                                    rejectLgpd.addEventListener("click", function () {
+                                        checkbox.checked = false;
+                                        showError();
+                                        hideModal();
+                                    });
+                                }
+
+                                if (acceptLgpd) {
+                                    acceptLgpd.addEventListener("click", function () {
+                                        checkbox.checked = true;
+                                        hideError();
+                                        hideModal();
+                                    });
+                                }
+
+                                if (checkbox) {
+                                    checkbox.addEventListener("change", function () {
+                                        if (checkbox.checked) {
+                                            hideError();
+                                        }
+                                    });
+                                }
+
+                                if (modal) {
+                                    modal.addEventListener("click", function (event) {
+                                        if (event.target === modal) {
+                                            hideModal();
+                                        }
+                                    });
+                                }
+
+                                document.addEventListener("keydown", function (event) {
+                                    if (event.key === "Escape" && modal.classList.contains("show")) {
+                                        hideModal();
+                                    }
+                                });
+
+                                if (form) {
+                                    form.addEventListener("submit", function (event) {
+                                        if (!checkbox.checked) {
+                                            event.preventDefault();
+                                            showError();
+                                        }
+                                    });
+                                }
+                            </script>
+                        </div>
+
+                        <button class="form-button" type="submit">Enviar</button>
                     </form>
                     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
                     <p id="successMsg">
-                        Você vai receber o material no seu <strong>e-mail.</strong>
+                        Enviado com <strong>sucesso!</strong>
                     </p>
+
                 </div>
 
                 <script>
+
+                    /* === UTILIDADES === */
+                    const $ = (id) => document.getElementById(id);
+                    const soDigitos = (v) => (v || "").toString().replace(/\D/g, "");
+
+                    const normalizeText = (s) => (s || "")
+                        .toString()
+                        .normalize("NFD")
+                        .replace(/[\u0300-\u036f]/g, "")
+                        .toLowerCase()
+                        .trim();
+
                     // Máscara de CPF
                     document.getElementById('cpf').addEventListener('input', function (e) {
                         let value = e.target.value.replace(/\D/g, '');
@@ -543,7 +1047,63 @@
                             }
                         });
                     })();
+
+                    /* === LGPD MODAL === */
+                    function setupLGPD() {
+                        const lgpdLink = $("lgpdLink");
+                        const modal = $("lgpdModal");
+                        const accept = $("acceptLgpd");
+                        const reject = $("rejectLgpd");
+                        const checkbox = $("lgpdConsent");
+                        const hidden = $("hasLGPDConsent");
+
+                        if (lgpdLink && modal) {
+                            lgpdLink.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                modal.style.display = "flex";
+                            });
+                        }
+
+                        if (accept && modal && checkbox) {
+                            accept.addEventListener("click", () => {
+                                checkbox.checked = true;
+                                modal.style.display = "none";
+                                if (hidden) hidden.value = "true";
+                                const span = document.querySelector(".lgpdTextSpan");
+                                if (span) span.style.color = "#EF6B22";
+                                const err = $("lgpdConsentError");
+                                if (err) { err.style.display = "none"; err.innerHTML = ""; }
+                                checkbox.classList.remove("error-input");
+                            });
+                        }
+
+                        if (reject && modal && checkbox) {
+                            reject.addEventListener("click", () => {
+                                checkbox.checked = false;
+                                modal.style.display = "none";
+                                if (hidden) hidden.value = "false";
+                                const span = document.querySelector(".lgpdTextSpan");
+                                if (span) span.style.color = "#163056";
+                            });
+                        }
+
+                        if (checkbox) {
+                            checkbox.addEventListener("change", function () {
+                                if (hidden) hidden.value = this.checked ? "true" : "false";
+                                const span = document.querySelector(".lgpdTextSpan");
+                                if (span) span.style.color = this.checked ? "#EF6B22" : "#163056";
+                                if (this.checked) {
+                                    const err = $("lgpdConsentError");
+                                    if (err) { err.style.display = "none"; err.innerHTML = ""; }
+                                    this.classList.remove("error-input");
+                                }
+                            });
+                        }
+                    }
+                    /*FIM DO LGPD MODAL*/
+
                 </script>
+
             </div>
 
 
