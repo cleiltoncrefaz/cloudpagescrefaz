@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anúncio - Vagas para trabalhar Lojas CFZ</title>
+  <link rel="shortcut icon" href="assets/favicon-crefaz.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Global styles -->
+  <style>
+    @font-face {
+      font-family: 'Anteb';
+      src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Anteb';
+      src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-ExtraBold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Anteb', sans-serif;
+      overflow-x: hidden;
+    }
+
+
+    .input-success {
+      border: 2px solid #22c55e !important;
+    }
+
+    .input-error {
+      border: 2px solid #ef4444 !important;
+    }
+
+    .error-label {
+      color: #ef4444;
+      font-size: 11px;
+      margin-top: 4px;
+      font-weight: 600;
+      display: none;
+    }
+
+    ::selection {
+      background: #4dbeffbb;
+      color: #ffffff;
+    }
+
+    strong {
+      font-weight: 800;
+    }
+  </style>
+
+  <!-- Tag legal -->
+  <section id="atention">
+    <style>
+      #atention {
+        background: #ef6b22;
+        padding: 10px 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1000;
+      }
+
+      #atention p {
+        margin: 0;
+        font-family: 'Anteb', sans-serif;
+        color: #ffffff;
+        font-size: 14px;
+      }
+
+      @media (max-width: 767px) {
+        #atention p {
+          font-size: 12px;
+        }
+      }
+    </style>
+    <div>
+      <p><strong>ATENÇÃO:</strong> A Crefaz não cobra nenhum valor para participação em processos seletivos de
+        prestadores de serviço.</p>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section id="form-only">
+    <style>
+      #form-only {
+        font-family: 'Anteb', sans-serif;
+        background: #eceff3;
+        background: #163056 url(https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/9932e4b7-94f9-4b54-b309-0b3ed636c799.jpg) no-repeat center center;
+        background-size: cover;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      .form-container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        max-width: 700px;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .form-container h2 {
+        color: #EF6B22;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .form-container p {
+        color: #163056;
+        margin-bottom: 20px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        gap: 6px;
+      }
+
+      .input-group input:focus {
+        border: 2px solid #ef6b22;
+        background: transparent;
+      }
+
+      label {
+        font-size: 16px;
+        color: #163056;
+        font-weight: 500;
+      }
+
+      input,
+      select {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #E4EBF3;
+        font-size: 15px;
+        color: #163056;
+        background: #fff;
+      }
+
+      input,
+      input[readonly] {
+        padding: 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #fff;
+        box-sizing: border-box;
+        font-family: 'Anteb', Arial, sans-serif;
+        font-size: 16px;
+      }
+
+      .input-group input {
+        width: 100%;
+        color: #163056;
+        padding: 14px 12px;
+        border: 2px solid #E4EBF3;
+        border-radius: 12px;
+        background: transparent;
+        outline: none;
+        font-family: 'Anteb', sans-serif;
+        margin: 5px 0 0 0;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #637992;
+      }
+
+      .required-asterisk {
+        color: #E74C3C;
+      }
+
+
+      /* SELECT */
+
+      select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23163056" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        font-family: 'Anteb', Arial, sans-serif;
+        background-size: 16px;
+        /* width: 100%; */
+        padding: 12px 16px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      .fake-select-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .fake-select-display {
+        position: relative;
+        padding-right: 38px;
+        cursor: pointer;
+        padding: 12px 16px;
+        background-color: #fff;
+        border: 1px solid #E4EBF3;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: text;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #0B2A56;
+        font-weight: 400;
+        user-select: none;
+      }
+
+      .fake-select-display:not(.filled) {
+        color: #B1BBC6;
+      }
+
+      .fake-select-display::after {
+        content: "▼";
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 9px;
+        color: #ef6b22;
+        pointer-events: none;
+      }
+
+      .fake-select-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 0 0 12px 12px;
+        max-height: 170px;
+        overflow-y: auto;
+        z-index: 100;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        display: none;
+        margin-top: 4px;
+        color: #0B2A56;
+      }
+
+      .fake-select-dropdown.show {
+        display: block;
+      }
+
+      .fake-select-item {
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .fake-select-item:hover,
+      .fake-select-item.highlighted {
+        background: #EF6B22;
+        color: #ffffff;
+      }
+
+      /* RADIO CUSTOM */
+      .radio-group {
+        display: flex;
+        gap: 10px;
+        margin: 16px 0;
+        flex-wrap: wrap;
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        border: 1px solid #E4EBF3;
+        padding: 12px;
+        border-radius: 10px;
+        transition: all 0.2s;
+      }
+
+      .radio-option input {
+        display: none;
+      }
+
+      .radio-circle {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        position: relative;
+      }
+
+      .radio-circle::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: #EF6B22;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        transform: scale(0);
+        transition: 0.2s;
+      }
+
+      .radio-option input:checked+.radio-circle::after {
+        transform: scale(1);
+      }
+
+      .radio-option input:checked~span {
+        color: #EF6B22;
+        font-weight: 500;
+      }
+
+      .radio-option:has(input:checked) {
+        border-color: #EF6B22;
+        background: #fff7f2;
+      }
+
+      /* botão */
+
+      .btn {
+        border: none;
+        border-radius: 10px;
+        padding: 12px 18px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn-primary {
+        background: #163056;
+        color: #fff;
+        font-family: 'Anteb', sans-serif;
+        width: 100%;
+      }
+
+      .btn-secondary {
+        background: #EF6B22;
+        color: #fff;
+        font-family: 'Anteb', sans-serif;
+      }
+
+      .btn-primary:hover {
+        filter: brightness(1.3);
+      }
+
+      .btn-secondary:hover {
+        filter: brightness(0.9);
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          padding: 20px;
+        }
+      }
+    </style>
+
+    <div class="money">
+      <style>
+        /* .money {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        } */
+
+        .cedula {
+          position: absolute;
+          animation: floatMoney 6s ease-in-out infinite;
+        }
+
+        .cedula1 {
+          width: 200px;
+          top: 20px;
+          left: 150px;
+          animation-delay: 1.5s;
+        }
+
+        .cedula2 {
+          width: 230px;
+          right: 100px;
+          top: 40px;
+          animation-delay: 3s;
+        }
+
+        .cedula3 {
+          width: 250px;
+          bottom: 50px;
+          left: 100px;
+          animation-delay: 4.5s;
+        }
+
+        .cedula4 {
+          width: 350px;
+          bottom: 30px;
+          right: 30px;
+          animation-delay: 4.5s;
+        }
+
+        /* Animação cedulas
+         @keyframes floatMoney {
+          0% {
+            transform: translateY(0) rotate(0deg);
+          }
+
+          50% {
+            transform: translateY(-20px) rotate(10deg);
+          }
+
+          100% {
+            transform: translateY(0) rotate(0deg);
+          }
+        } */
+
+        @media (max-width: 767px) {
+          .cedula1 {
+            width: 120px;
+            top: 10px;
+            left: -30px;
+          }
+
+          .cedula2 {
+            width: 140px;
+            top: 50px;
+          }
+
+          .cedula3 {
+            width: 140px;
+            bottom: 50px;
+            left: -50px;
+          }
+
+          .cedula4 {
+            width: 150px;
+            bottom: 30px;
+            right: -30px;
+          }
+        }
+      </style>
+      <img class="cedula cedula1"
+        src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/b9b3d780-14fc-4a65-9722-d398fe388466.png"
+        alt="">
+      <img class="cedula cedula2"
+        src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/322b1fdf-b602-4efc-8a47-6c9b512c0347.png"
+        alt="">
+      <img class="cedula cedula3"
+        src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/7f98c168-a5db-460a-9d8d-ac1df7226b46.png"
+        alt="">
+      <img class="cedula cedula4"
+        src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/79d8e4c5-8789-41d2-8296-c2637e4f5621.png"
+        alt="">
+    </div>
+    <div class="form-container">
+
+      <!-- <h2>Faça seu cadastro</h2>
+      <p>Preencha as informações abaixo e entraremos em contato com você.</p> -->
+
+      <form>
+
+        <div class="input-group">
+          <label for="nome">Nome completo<span class="required-asterisk">*</span></label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" maxlength="100" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail<span class="required-asterisk">*</span></label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+          <p id="emailError" class="field-error">Digite um e-mail válido.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="telefone">Telefone<span class="required-asterisk">*</span></label>
+          <input type="tel" id="telefone" name="telefone" maxlength="15" placeholder="(00) 00000-0000" required>
+        </div>
+
+        <!-- <div class="input-group">
+              <label for="cep">CEP <span class="required-asterisk">*</span></label>
+              <input type="text" name="zip" id="cep" placeholder="00000-000" required="">
+              <div class="cep-status-message" id="cepStatus" style="display:none;"></div>
+              <div class="error-message-input" id="cepError"></div>
+            </div> -->
+
+        <div id="ufCidadeSection">
+          <div class="input-group">
+            <label for="estadoManual">Estado <span class="required-asterisk">*</span></label>
+            <div class="fake-select-wrapper" data-target="estadoManual">
+              <div class="fake-select-display" contenteditable="true" spellcheck="false"></div>
+              <div class="fake-select-dropdown"></div>
+            </div>
+            <select id="estadoManual" name="StateManual" required="" style="display: none;">
+              <option value="" disabled="" selected>Selecione</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+            <div class="error-message-input" id="estadoManualError"></div>
+          </div>
+        </div>
+
+        <div id="ufCidadeSectionCity">
+          <div class="input-group">
+            <label for="cidadeManual">Cidade <span class="required-asterisk">*</span></label>
+            <div class="fake-select-wrapper disabled" data-target="cidadeManual" id="cidadeWrapper">
+              <div class="fake-select-display" contenteditable="true" spellcheck="false"></div>
+              <div class="fake-select-dropdown"></div>
+            </div>
+            <select id="cidadeManual" name="CityManual" required="" disabled="" style="display: none;"></select>
+            <div class="error-message-input" id="cidadeManualError"></div>
+          </div>
+        </div>
+
+        <input type="text" name="state" id="estado" readonly="" style="display:none;">
+        <input type="text" name="city" id="cidade" readonly="" style="display:none;">
+
+
+        <!-- <div class="input-group">
+          <label>Cidade*</label>
+          <select required>
+            <option value="">Selecione</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Estado*</label>
+          <select required>
+            <option value="">Selecione</option>
+            <option>São Paulo</option>
+            <option>Paraná</option>
+            <option>Minas Gerais</option>
+          </select>
+        </div> -->
+
+        <!-- Pergunta 1 -->
+        <label>Você tem interesse em atuar como prestador?</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="interesse">
+            <span class="radio-circle"></span>
+            <span>Sim</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="interesse">
+            <span class="radio-circle"></span>
+            <span>Não</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="interesse">
+            <span class="radio-circle"></span>
+            <span>Quero entender melhor</span>
+          </label>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <label>Disponibilidade segunda a sexta?</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="semana">
+            <span class="radio-circle"></span>
+            <span>Sim</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="semana">
+            <span class="radio-circle"></span>
+            <span>Não</span>
+          </label>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <label>Disponibilidade aos sábados?</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="sabado">
+            <span class="radio-circle"></span>
+            <span>Sim</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="sabado">
+            <span class="radio-circle"></span>
+            <span>Não</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="sabado" id="parcial">
+            <span class="radio-circle"></span>
+            <span>Parcial</span>
+          </label>
+        </div>
+
+        <!-- campo condicional -->
+        <div class="input-group" id="campoParcial" style="display:none;">
+          <label>Informe sua disponibilidade</label>
+          <input type="text">
+        </div>
+
+        <!-- Pergunta 4 -->
+        <label>Podemos entrar em contato?</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="contato">
+            <span class="radio-circle"></span>
+            <span>Sim</span>
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="contato">
+            <span class="radio-circle"></span>
+            <span>Não</span>
+          </label>
+        </div>
+
+        <!-- Modal LGPD -->
+        <div class="lgpd-checkbox-wrapper">
+
+          <style>
+            .check-field {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              padding: 5px 0 18px 0;
+            }
+
+            .check-custom {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              cursor: pointer;
+              font-size: 14px;
+              color: #163056;
+            }
+
+            .check-custom input {
+              opacity: 0;
+              position: absolute;
+            }
+
+            .check-mark {
+              width: 18px;
+              height: 18px;
+              border: 2px solid #E4EBF3;
+              border-radius: 6px;
+              background: #fff;
+              position: relative;
+              transition: all 0.2s ease;
+              flex-shrink: 0;
+              margin-top: 2px;
+            }
+
+            .check-mark::after {
+              content: "";
+              position: absolute;
+              left: 4px;
+              top: 0px;
+              width: 5px;
+              height: 10px;
+              border: solid #fff;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg) scale(0);
+              transition: all 0.2s ease;
+            }
+
+            .check-custom input:checked+.check-mark {
+              background: #EF6B22;
+              border-color: #EF6B22;
+            }
+
+            .check-custom input:checked+.check-mark::after {
+              transform: rotate(45deg) scale(1);
+            }
+
+            .check-custom:hover .check-mark {
+              border-color: #EF6B22;
+            }
+
+            .check-text {
+              padding: 5px 0 0 0;
+            }
+
+            .check-text a {
+              color: #EF6B22;
+              text-decoration: underline;
+            }
+
+            .field-error {
+              display: none;
+              font-size: 13px;
+              color: #dc2626;
+              margin: 0;
+            }
+
+            .check-mark.error {
+              border-color: #dc2626 !important;
+              background: #fff7f7;
+            }
+
+            .modal-overlay {
+              display: none;
+              position: fixed;
+              inset: 0;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 9999;
+              align-items: center;
+              justify-content: center;
+              padding: 20px;
+            }
+
+            .modal-overlay.show {
+              display: flex;
+            }
+
+            .modal-box {
+              width: 100%;
+              max-width: 560px;
+              background: #fff;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+            }
+
+            .modal-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 18px 20px;
+              border-bottom: 1px solid #E4EBF3;
+            }
+
+            .modal-header h3 {
+              margin: 0;
+              color: #163056;
+              font-size: 22px;
+              font-weight: 700;
+            }
+
+            .modal-close {
+              background: transparent;
+              border: none;
+              font-size: 34px;
+              line-height: 1;
+              cursor: pointer;
+              color: #163056;
+              border-radius: 8px;
+              width: 40px;
+              height: 40px;
+            }
+
+            .modal-close:hover {
+              color: #EF6B22;
+              background: #f3f3f3;
+            }
+
+            .modal-content {
+              padding: 20px;
+              max-height: 50vh;
+              overflow-y: auto;
+              color: #163056;
+              font-size: 14px;
+              line-height: 1.5;
+            }
+
+            .modal-content h3 {
+              font-size: 20px;
+              letter-spacing: -0.3px;
+              line-height: 1.2;
+            }
+
+            .modal-content::-webkit-scrollbar {
+              width: 6px;
+            }
+
+            .modal-content::-webkit-scrollbar-thumb {
+              background: #d3dae2;
+              border-radius: 3px;
+            }
+
+            .modal-content::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            .modal-content p {
+              margin: 0 0 12px 0;
+            }
+
+            .modal-actions {
+              display: flex;
+              justify-content: center;
+              gap: 12px;
+              padding: 20px;
+              border-top: 1px solid #E4EBF3;
+            }
+          </style>
+
+          <div class="check-field">
+            <label class="check-custom">
+              <input type="checkbox" id="lgpd" name="lgpd" required>
+              <span class="check-mark"></span>
+
+              <span class="check-text">
+                Eu aceito o
+                <a href="#" id="openRegulamento">regulamento</a>
+                e a
+                <a href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">
+                  Política de Privacidade
+                </a>
+              </span>
+            </label>
+
+            <p id="lgpdError" class="field-error">Você precisa aceitar os termos.</p>
+          </div>
+
+          <!-- MODAL -->
+          <div class="modal-overlay" id="regulamentoModal" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+              <div class="modal-header">
+                <h3 id="modalTitle">Regulamento</h3>
+                <button type="button" class="modal-close" id="closeModal" aria-label="Fechar modal">×</button>
+              </div>
+
+              <div class="modal-content">
+                <!-- <h3><strong>A&Ccedil;&Atilde;O DE RELACIONAMENTO CREFAZ (EVENTO
+                                                CORBAN 360)</strong></h3> -->
+                <p><strong>1. DISPOSI&Ccedil;&Otilde;ES INICIAIS</strong></p>
+                <p>A presente a&ccedil;&atilde;o de relacionamento &eacute; promovida pela
+                  CREFAZ Sociedade de Cr&eacute;dito ao Microempreendedor e &agrave; Empresa
+                  de Pequeno Porte S.A.. (&ldquo;Crefaz&rdquo;), no contexto de sua
+                  participa&ccedil;&atilde;o institucional no evento Corban 360, tendo por
+                  finalidade fomentar intera&ccedil;&atilde;o com participantes presentes no
+                  local.</p>
+                <p>A a&ccedil;&atilde;o possui car&aacute;ter exclusivamente promocional e
+                  institucional, sendo realizada de forma pontual no evento, sem qualquer
+                  vincula&ccedil;&atilde;o a produtos, servi&ccedil;os ou
+                  opera&ccedil;&otilde;es financeiras.</p>
+                <p>A participa&ccedil;&atilde;o &eacute; volunt&aacute;ria e implica a
+                  aceita&ccedil;&atilde;o integral e irrestrita das disposi&ccedil;&otilde;es
+                  constantes neste regulamento.</p>
+                <p><strong>2. PER&Iacute;ODO E ABRANG&Ecirc;NCIA</strong></p>
+                <p>A a&ccedil;&atilde;o ser&aacute; realizada exclusivamente durante o evento
+                  Corban 360, nos dias 16 e 17 de abril, no local do evento.</p>
+                <p>As inscri&ccedil;&otilde;es estar&atilde;o abertas at&eacute; o prazo limite
+                  de 2 (duas) horas antes da realiza&ccedil;&atilde;o da
+                  apura&ccedil;&atilde;o final, sendo desconsideradas
+                  participa&ccedil;&otilde;es realizadas ap&oacute;s esse per&iacute;odo.</p>
+                <p>A a&ccedil;&atilde;o &eacute; restrita aos participantes presentes no evento,
+                  n&atilde;o se estendendo a canais externos ou p&uacute;blicos em geral.</p>
+                <p><strong>3. CONDI&Ccedil;&Otilde;ES DE PARTICIPA&Ccedil;&Atilde;O</strong></p>
+                <p>Poder&atilde;o participar pessoas f&iacute;sicas maiores de 18 (dezoito)
+                  anos, presentes no evento, mediante preenchimento de cadastro na
+                  p&aacute;gina eletr&ocirc;nica disponibilizada pela Crefaz.</p>
+              </div>
+
+              <div class="modal-actions">
+                <!-- <button type="button" class="btn btn-primary" id="rejectLgpd">Eu não aceito</button> -->
+                <button type="button" class="btn btn-secondary" id="acceptLgpd">Concordo</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Script Modal -->
+          <script>
+            const checkbox = document.getElementById("lgpd");
+            const error = document.getElementById("lgpdError");
+            const mark = document.querySelector(".check-mark");
+
+            const openRegulamento = document.getElementById("openRegulamento");
+            const modal = document.getElementById("regulamentoModal");
+            const closeModal = document.getElementById("closeModal");
+            const acceptLgpd = document.getElementById("acceptLgpd");
+            const rejectLgpd = document.getElementById("rejectLgpd");
+
+            function showError() {
+              if (error) error.style.display = "block";
+              if (mark) mark.classList.add("error");
+            }
+
+            function hideError() {
+              if (error) error.style.display = "none";
+              if (mark) mark.classList.remove("error");
+            }
+
+            function openModal(event) {
+              event.preventDefault();
+              modal.classList.add("show");
+              modal.setAttribute("aria-hidden", "false");
+            }
+
+            function hideModal() {
+              modal.classList.remove("show");
+              modal.setAttribute("aria-hidden", "true");
+            }
+
+            if (openRegulamento) {
+              openRegulamento.addEventListener("click", openModal);
+            }
+
+            if (closeModal) {
+              closeModal.addEventListener("click", hideModal);
+            }
+
+            if (rejectLgpd) {
+              rejectLgpd.addEventListener("click", function () {
+                checkbox.checked = false;
+                showError();
+                hideModal();
+              });
+            }
+
+            if (acceptLgpd) {
+              acceptLgpd.addEventListener("click", function () {
+                checkbox.checked = true;
+                hideError();
+                hideModal();
+              });
+            }
+
+            if (checkbox) {
+              checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                  hideError();
+                }
+              });
+            }
+
+            if (modal) {
+              modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                  hideModal();
+                }
+              });
+            }
+
+            document.addEventListener("keydown", function (event) {
+              if (event.key === "Escape" && modal.classList.contains("show")) {
+                hideModal();
+              }
+            });
+
+            if (form) {
+              form.addEventListener("submit", function (event) {
+                if (!checkbox.checked) {
+                  event.preventDefault();
+                  showError();
+                }
+              });
+            }
+          </script>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar</button>
+
+      </form>
+    </div>
+
+    <script>
+
+
+      const parcial = document.getElementById("parcial");
+      const campo = document.getElementById("campoParcial");
+
+
+
+
+
+      document.querySelectorAll('input[name="sabado"]').forEach(radio => {
+        radio.addEventListener("change", () => {
+          campo.style.display = parcial.checked ? "flex" : "none";
+        });
+      });
+
+      /* === UTILIDADES === */
+      const $ = (id) => document.getElementById(id);
+      const soDigitos = (v) => (v || "").toString().replace(/\D/g, "");
+
+      const normalizeText = (s) => (s || "")
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+
+      let pendingCityFromCep = ""; // usada para selecionar cidade automaticamente após busca de CEP
+
+      /* === CONTADOR DE CARACTERES === */
+      function addCharacterCount(inputId, maxLength, counterId) {
+        const input = $(inputId);
+        const counter = $(counterId);
+        if (!input || !counter) return;
+
+        const update = () => {
+          let current = input.value.length;
+          if (current > maxLength) {
+            input.value = input.value.substring(0, maxLength);
+            current = maxLength;
+          }
+
+          if (current === 0) {
+            counter.style.display = "none";
+            counter.textContent = `0/${maxLength}`;
+            input.classList.remove("error-input-character");
+          } else {
+            counter.style.display = "block";
+            if (current >= maxLength) {
+              counter.textContent = `Limite de caracteres atingido: ${maxLength}/${maxLength}`;
+              counter.style.color = "#EF6B22";
+              input.classList.add("error-input-character");
+            } else {
+              counter.textContent = `Número de caracteres: ${current}/${maxLength}`;
+              counter.style.color = "#0B2A56";
+              input.classList.remove("error-input-character");
+            }
+          }
+        };
+
+        ["input", "keyup", "paste", "cut", "focusout"].forEach((ev) => {
+          input.addEventListener(ev, () => requestAnimationFrame(() => requestAnimationFrame(update)));
+        });
+
+        update();
+      }
+
+      /* === UTM / GCLID === */
+      function fillHiddenFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const map = {
+          utmSource: "utm_source",
+          utmMedium: "utm_medium",
+          utmCampaign: "utm_campaign",
+          utmTerm: "utm_term",
+          utmId: "utm_id",
+          gadSource: "gad_source",
+          gadCampaignId: "gad_campaignid",
+          gbraid: "gbraid",
+          gclid: "gclid",
+        };
+
+        Object.entries(map).forEach(([fieldId, key]) => {
+          const el = $(fieldId);
+          if (el) el.value = urlParams.get(key) || "";
+        });
+      }
+
+      /* === TELEFONES (MÁSCARA + HIDDENS) === */
+      function mascaraTelefoneInput(inputEl) {
+        const digits = soDigitos(inputEl.value).slice(0, 11);
+
+        let formatted = "";
+        if (digits.length > 10) {
+          formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+        } else if (digits.length > 6) {
+          formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+        } else if (digits.length > 2) {
+          formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+        } else {
+          formatted = digits;
+        }
+
+        inputEl.value = formatted;
+
+        // Preenche hidden fields APENAS para o telefone principal
+        if (inputEl.id === "phoneInput") {
+          const isMobile = digits.length === 11;
+
+          const phoneType = $("phoneType");
+          const mobile = $("mobile");
+          const fixed = $("fixedPhoneHidden");
+
+          if (phoneType) phoneType.value = isMobile ? "mobile" : "landline";
+          if (mobile) mobile.value = "";
+          if (fixed) fixed.value = "";
+
+          if (isMobile && mobile) mobile.value = digits;
+          if (!isMobile && digits.length === 10 && fixed) fixed.value = digits;
+        }
+      }
+
+      function telefoneValidoBR(digits) {
+        // Regras simples: 11 dígitos (celular) começa 7/8/9 após DDD; 10 dígitos (fixo) começa 2/3/4/5 após DDD
+        if (!digits) return false;
+        if (digits.length !== 10 && digits.length !== 11) return false;
+        if (digits.length < 3) return false;
+        const firstDigitAfterDDD = digits[2];
+
+        if (digits.length === 11) return ["7", "8", "9"].includes(firstDigitAfterDDD);
+        return ["2", "3", "4", "5"].includes(firstDigitAfterDDD);
+      }
+
+      /* === CPF === */
+      function cpfValido(cpf) {
+        cpf = soDigitos(cpf);
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+        let sum = 0;
+        for (let i = 0; i < 9; i++) sum += parseInt(cpf[i], 10) * (10 - i);
+        let dv1 = (sum * 10) % 11;
+        if (dv1 === 10) dv1 = 0;
+
+        sum = 0;
+        for (let i = 0; i < 10; i++) sum += parseInt(cpf[i], 10) * (11 - i);
+        let dv2 = (sum * 10) % 11;
+        if (dv2 === 10) dv2 = 0;
+
+        return dv1 === parseInt(cpf[9], 10) && dv2 === parseInt(cpf[10], 10);
+      }
+
+      function mascaraCPF(inputEl) {
+        let value = soDigitos(inputEl.value).slice(0, 11);
+
+        if (value.length > 9) value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+        else if (value.length > 6) value = value.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+        else if (value.length > 3) value = value.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+
+        inputEl.value = value;
+      }
+
+      /* === DATA NASC === */
+      function mascaraData(inputEl) {
+        let v = soDigitos(inputEl.value).substring(0, 8);
+        if (v.length >= 5) v = v.replace(/^(\d{2})(\d{2})(\d{0,4})$/, "$1/$2/$3");
+        else if (v.length >= 3) v = v.replace(/^(\d{2})(\d{0,2})$/, "$1/$2");
+        inputEl.value = v;
+      }
+
+      function validarDataNascimento(inputEl) {
+        const valor = (inputEl.value || "").trim();
+        const errorDiv = $("birthdateError");
+
+        if (errorDiv) {
+          errorDiv.style.display = "none";
+          errorDiv.innerHTML = "";
+        }
+        inputEl.classList.remove("error-input");
+
+        if (!valor) {
+          if (errorDiv) {
+            errorDiv.innerHTML = "Preencha a data de nascimento.";
+            errorDiv.style.display = "block";
+          }
+          inputEl.classList.add("error-input");
+          return false;
+        }
+
+        if (!/^\d{2}\/\d{2}\/\d{4}$/.test(valor)) {
+          if (errorDiv) {
+            errorDiv.innerHTML = "Data inválida. Use o formato DD/MM/AAAA.";
+            errorDiv.style.display = "block";
+          }
+          inputEl.classList.add("error-input");
+          return false;
+        }
+
+        const [dia, mes, ano] = valor.split("/").map((n) => parseInt(n, 10));
+        const data = new Date(ano, mes - 1, dia);
+
+        if (data.getUTCDate() !== dia || data.getUTCMonth() !== mes - 1 || data.getUTCFullYear() !== ano) {
+          if (errorDiv) {
+            errorDiv.innerHTML = "Data inválida.";
+            errorDiv.style.display = "block";
+          }
+          inputEl.classList.add("error-input");
+          return false;
+        }
+
+        const hoje = new Date();
+        const maxDate = new Date(hoje.getFullYear() - 16, hoje.getMonth(), hoje.getDate()); // mínimo 16 anos
+        const minDate = new Date(hoje.getFullYear() - 84, hoje.getMonth(), hoje.getDate()); // máximo 84 anos
+
+        if (data > maxDate) {
+          if (errorDiv) {
+            errorDiv.innerHTML = "Você precisa ter pelo menos 16 anos.";
+            errorDiv.style.display = "block";
+          }
+          inputEl.classList.add("error-input");
+          return false;
+        }
+
+        if (data < minDate) {
+          if (errorDiv) {
+            errorDiv.innerHTML = "A idade máxima permitida é 84 anos.";
+            errorDiv.style.display = "block";
+          }
+          inputEl.classList.add("error-input");
+          return false;
+        }
+
+        return true;
+      }
+
+      /* === FINALIDADE DO CRÉDITO (OUTROS) === */
+      function setupCreditPurpose() {
+        const select = $("creditPurpose");
+        const input = $("otherCreditPurpose");
+        const group = input ? input.closest(".input-group") : null;
+
+        if (!select || !input || !group) return;
+
+        const update = () => {
+          const isOutros = select.value === "Outros";
+          group.style.display = isOutros ? "flex" : "none";
+          input.required = isOutros;
+
+          if (!isOutros) {
+            input.value = "";
+            const err = $("otherCreditPurposeError");
+            if (err) { err.style.display = "none"; err.innerHTML = ""; }
+            input.classList.remove("error-input");
+          }
+        };
+
+        select.addEventListener("change", update);
+        update();
+      }
+
+      /* === + ADICIONAR OUTRO TELEFONE === */
+      function setupAddPhone() {
+        const btn = $("addPhoneBtn");
+        const group = $("phoneAdditionalGroup");
+        const otherPhone = $("otherPhoneInput");
+
+        if (!btn || !group) return;
+
+        btn.addEventListener("click", () => {
+          group.style.display = "block";  // usa o campo que já existe na estrutura
+          btn.style.display = "none";
+          if (otherPhone) otherPhone.focus();
+        });
+      }
+
+      /* === CEP (MÁSCARA + VIA CEP) === */
+      function setupCep() {
+        const cepInput = $("cep");
+        if (!cepInput) return;
+
+        // máscara
+        cepInput.addEventListener("input", function () {
+          let v = soDigitos(this.value).slice(0, 8);
+          if (v.length > 5) v = v.replace(/^(\d{5})(\d{1,3})/, "$1-$2");
+          this.value = v;
+
+          // limpa erro ao digitar
+          const err = $("cepError");
+          const status = $("cepStatus");
+          if (err) { err.style.display = "none"; err.innerHTML = ""; }
+          if (status) { status.style.display = "none"; status.className = "cep-status-message"; }
+          this.classList.remove("error-input");
+        });
+
+
+        // busca automática (quando completar 8 dígitos) + fallback no blur
+        let lastCepFetched = "";
+        let cepTimer = null;
+
+        async function lookupCepAndPrefill(cepDigits) {
+          if (!cepDigits || cepDigits.length !== 8) return;
+          if (cepDigits === lastCepFetched) return;
+
+          lastCepFetched = cepDigits;
+
+          const cepErrorDiv = $("cepError");
+          const cepStatusDiv = $("cepStatus");
+          const estadoHidden = $("estado");
+          const cidadeHidden = $("cidade");
+
+          if (cepErrorDiv) { cepErrorDiv.style.display = "none"; cepErrorDiv.innerHTML = ""; }
+          if (cepStatusDiv) {
+            cepStatusDiv.textContent = "Pesquisando CEP...";
+            cepStatusDiv.className = "cep-status-message show loading";
+            cepStatusDiv.style.display = "block";
+          }
+
+          cepInput.classList.remove("error-input");
+          if (estadoHidden) estadoHidden.value = "";
+          if (cidadeHidden) cidadeHidden.value = "";
+          pendingCityFromCep = "";
+
+          try {
+            const response = await fetch(`https://viacep.com.br/ws/${cepDigits}/json/`);
+            const data = await response.json();
+
+            if (data.erro || !data.uf) {
+              if (cepErrorDiv) {
+                cepErrorDiv.innerHTML = "CEP não encontrado!";
+                cepErrorDiv.style.display = "block";
+              }
+              if (cepStatusDiv) cepStatusDiv.style.display = "none";
+              cepInput.classList.add("error-input");
+              return;
+            }
+
+            // Preenche hiddens
+            if (estadoHidden) estadoHidden.value = data.uf;
+            if (cidadeHidden) cidadeHidden.value = data.localidade || "";
+
+            // IMPORTANTE: define cidade pendente ANTES de disparar o change do estado
+            pendingCityFromCep = data.localidade || "";
+
+            // Dispara seleção de UF (isso carrega as cidades via IBGE e depois tenta casar a cidade do CEP)
+            const estadoSel = $("estadoManual");
+            if (estadoSel) {
+              estadoSel.value = data.uf;
+              estadoSel.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+
+            if (cepStatusDiv) {
+              cepStatusDiv.textContent = "CEP válido";
+              cepStatusDiv.className = "cep-status-message show success";
+              cepStatusDiv.style.display = "block";
+            }
+          } catch (err) {
+            if (cepStatusDiv) {
+              cepStatusDiv.textContent = "Erro ao buscar CEP";
+              cepStatusDiv.className = "cep-status-message show error";
+              cepStatusDiv.style.display = "block";
+            }
+            if (cepErrorDiv) {
+              cepErrorDiv.innerHTML = "Erro ao buscar CEP. Tente novamente.";
+              cepErrorDiv.style.display = "block";
+            }
+            cepInput.classList.add("error-input");
+          }
+        }
+
+        // dispara automaticamente quando completar 8 dígitos (sem precisar sair do campo)
+        cepInput.addEventListener("input", function () {
+          const cepDigits = soDigitos(this.value);
+          if (cepDigits.length === 8) {
+            clearTimeout(cepTimer);
+            cepTimer = setTimeout(() => lookupCepAndPrefill(cepDigits), 250);
+          }
+        });
+
+        // fallback no blur (caso o usuário cole e saia rápido, etc.)
+        cepInput.addEventListener("blur", function () {
+          const cepDigits = soDigitos(this.value);
+          if (cepDigits.length === 8) {
+            clearTimeout(cepTimer);
+            lookupCepAndPrefill(cepDigits);
+          }
+        });
+
+      }
+
+      /* === LGPD MODAL === */
+      function setupLGPD() {
+        const lgpdLink = $("lgpdLink");
+        const modal = $("lgpdModal");
+        const accept = $("acceptLgpd");
+        const reject = $("rejectLgpd");
+        const checkbox = $("lgpdConsent");
+        const hidden = $("hasLGPDConsent");
+
+        if (lgpdLink && modal) {
+          lgpdLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.style.display = "flex";
+          });
+        }
+
+        if (accept && modal && checkbox) {
+          accept.addEventListener("click", () => {
+            checkbox.checked = true;
+            modal.style.display = "none";
+            if (hidden) hidden.value = "true";
+            const span = document.querySelector(".lgpdTextSpan");
+            if (span) span.style.color = "#EF6B22";
+            const err = $("lgpdConsentError");
+            if (err) { err.style.display = "none"; err.innerHTML = ""; }
+            checkbox.classList.remove("error-input");
+          });
+        }
+
+        if (reject && modal && checkbox) {
+          reject.addEventListener("click", () => {
+            checkbox.checked = false;
+            modal.style.display = "none";
+            if (hidden) hidden.value = "false";
+            const span = document.querySelector(".lgpdTextSpan");
+            if (span) span.style.color = "#0B2A56";
+          });
+        }
+
+        if (checkbox) {
+          checkbox.addEventListener("change", function () {
+            if (hidden) hidden.value = this.checked ? "true" : "false";
+            const span = document.querySelector(".lgpdTextSpan");
+            if (span) span.style.color = this.checked ? "#EF6B22" : "#0B2A56";
+            if (this.checked) {
+              const err = $("lgpdConsentError");
+              if (err) { err.style.display = "none"; err.innerHTML = ""; }
+              this.classList.remove("error-input");
+            }
+          });
+        }
+      }
+
+
+      /* === ESTADO/CIDADE (FAKE SELECT + IBGE) === */
+      function escapeHtml(s) {
+        return (s || "").replace(/[&<>"']/g, (c) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[c]));
+      }
+
+      function getFakeSelectParts(selectEl) {
+        const wrapper = document.querySelector(`.fake-select-wrapper[data-target="${selectEl.id}"]`);
+        if (!wrapper) return null;
+        const display = wrapper.querySelector(".fake-select-display");
+        const dropdown = wrapper.querySelector(".fake-select-dropdown");
+        return { wrapper, display, dropdown };
+      }
+
+      function closeAllFakeSelects(exceptWrapper = null) {
+        document.querySelectorAll(".fake-select-dropdown.show").forEach((dd) => {
+          const w = dd.closest(".fake-select-wrapper");
+          if (exceptWrapper && w === exceptWrapper) return;
+          dd.classList.remove("show");
+        });
+      }
+
+      function buildFakeSelect(selectEl) {
+        const parts = getFakeSelectParts(selectEl);
+        if (!parts) return;
+
+        const { wrapper, display, dropdown } = parts;
+
+        const PLACEHOLDER = "Selecione";
+
+        const options = Array.from(selectEl.options)
+          .filter((opt) => opt.value && !opt.disabled)
+          .map((opt) => ({ value: opt.value, label: opt.textContent }));
+
+        const render = (filterText = "") => {
+          const ft = (filterText || "").trim().toLowerCase();
+          const filtered = ft
+            ? options.filter((o) => o.label.toLowerCase().includes(ft) || o.value.toLowerCase().includes(ft))
+            : options;
+
+          dropdown.innerHTML = filtered
+            .map(
+              (o) =>
+                `<div class="fake-select-item" data-value="${escapeHtml(o.value)}">${escapeHtml(o.label)}</div>`
+            )
+            .join("");
+
+          dropdown.querySelectorAll(".fake-select-item").forEach((item) => {
+            item.addEventListener("mousedown", (e) => {
+              // mousedown para não perder foco do contenteditable antes do click
+              e.preventDefault();
+              const val = item.getAttribute("data-value") || "";
+              selectEl.value = val;
+              display.textContent = options.find((x) => x.value === val)?.label || "";
+              display.classList.add("filled");
+              dropdown.classList.remove("show");
+
+              // dispara change do select real
+              selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+            });
+          });
+        };
+
+        // valor inicial
+        const selected = selectEl.value;
+        if (selected) {
+          const label = options.find((o) => o.value === selected)?.label || "";
+          display.textContent = label;
+          display.classList.toggle("filled", !!label);
+        } else {
+          display.textContent = PLACEHOLDER;
+          display.classList.remove("filled");
+        }
+
+        // abrir dropdown ao focar/clicar
+        const open = () => {
+          if (wrapper.classList.contains("disabled")) return;
+          closeAllFakeSelects(wrapper);
+          dropdown.classList.add("show");
+          render(display.classList.contains("filled") ? display.textContent : "");
+        };
+
+        display.addEventListener("focus", () => {
+          if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+            display.textContent = "";
+          }
+          open();
+        });
+        display.addEventListener("click", () => {
+          if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+            display.textContent = "";
+          }
+          open();
+        });
+
+        // filtrar enquanto digita
+        display.addEventListener("input", () => {
+          if (!display.classList.contains("filled") && display.textContent.trim() === PLACEHOLDER) {
+            display.textContent = "";
+          }
+          if (!dropdown.classList.contains("show")) dropdown.classList.add("show");
+          render(display.classList.contains("filled") ? display.textContent : "");
+        });
+
+        // fechar ao clicar fora
+        document.addEventListener("click", (e) => {
+          if (!wrapper.contains(e.target)) dropdown.classList.remove("show");
+        });
+
+        // fechar com ESC
+        display.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            dropdown.classList.remove("show");
+            display.blur();
+          }
+        });
+
+
+        // mantém o display sincronizado quando o <select> muda por código (ex.: CEP preenchendo UF/cidade)
+        selectEl.addEventListener("change", () => {
+          const selOpt = selectEl.options[selectEl.selectedIndex];
+          const label = selOpt ? (selOpt.textContent || "") : "";
+          if (selectEl.value) {
+            display.textContent = label;
+            display.classList.add("filled");
+          } else {
+            display.textContent = PLACEHOLDER;
+            display.classList.remove("filled");
+          }
+        });
+
+        // render inicial
+        render("");
+      }
+
+      async function loadCitiesForUF(uf) {
+        const cidadeSelect = $("cidadeManual");
+        const cidadeWrapper = $("cidadeWrapper");
+        const cidadeHidden = $("cidade");
+        const cidadeDisplay = cidadeWrapper ? cidadeWrapper.querySelector(".fake-select-display") : null;
+
+        if (!cidadeSelect || !cidadeWrapper) return;
+
+        // reset
+        cidadeSelect.innerHTML = "";
+        cidadeSelect.disabled = true;
+        cidadeWrapper.classList.add("disabled");
+        if (cidadeHidden) cidadeHidden.value = "";
+        if (cidadeDisplay) {
+          cidadeDisplay.textContent = "";
+          cidadeDisplay.classList.remove("filled");
+        }
+
+        if (!uf) return;
+
+        // placeholder (select real escondido)
+        const opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.disabled = true;
+        opt0.selected = true;
+        opt0.textContent = "Selecione";
+        cidadeSelect.appendChild(opt0);
+
+        try {
+          const res = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${encodeURIComponent(uf)}/municipios?orderBy=nome`);
+          const data = await res.json();
+          (Array.isArray(data) ? data : []).forEach((m) => {
+            const opt = document.createElement("option");
+            opt.value = m.nome;
+            opt.textContent = m.nome;
+            cidadeSelect.appendChild(opt);
+          });
+
+          cidadeSelect.disabled = false;
+          cidadeWrapper.classList.remove("disabled");
+
+          // reconstruir fake select da cidade com novas opções
+          buildFakeSelect(cidadeSelect);
+
+          // Se veio de CEP, tenta selecionar automaticamente
+          if (pendingCityFromCep) {
+            const target = pendingCityFromCep;
+            pendingCityFromCep = "";
+            // tenta casar por value e por texto
+            let matched = false;
+            for (const opt of Array.from(cidadeSelect.options)) {
+              if (!opt.value) continue;
+              if (normalizeText(opt.value) === normalizeText(target) || normalizeText(opt.textContent) === normalizeText(target)) {
+                cidadeSelect.value = opt.value;
+                cidadeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+                matched = true;
+                break;
+              }
+            }
+            // fallback: se não achar, apenas preenche hidden
+            if (!matched) {
+              const cidadeHidden2 = $("cidade");
+              if (cidadeHidden2) cidadeHidden2.value = target;
+            }
+          }
+        } catch (e) {
+          // se IBGE falhar, mantém desabilitado
+          cidadeSelect.disabled = true;
+          cidadeWrapper.classList.add("disabled");
+        }
+      }
+
+      function setupEstadoCidade() {
+        const estadoSelect = $("estadoManual");
+        const cidadeSelect = $("cidadeManual");
+        const estadoHidden = $("estado");
+        const cidadeHidden = $("cidade");
+
+        if (!estadoSelect || !cidadeSelect) return;
+
+        // monta fake selects
+        buildFakeSelect(estadoSelect);
+        buildFakeSelect(cidadeSelect);
+
+        // quando muda estado: seta hidden, carrega cidades
+        estadoSelect.addEventListener("change", async () => {
+          const uf = estadoSelect.value || "";
+          if (estadoHidden) estadoHidden.value = uf;
+
+          // limpa cidade selecionada
+          cidadeSelect.value = "";
+          if (cidadeHidden) cidadeHidden.value = "";
+
+          await loadCitiesForUF(uf);
+        });
+
+        // quando muda cidade: seta hidden
+        cidadeSelect.addEventListener("change", () => {
+          if (cidadeHidden) cidadeHidden.value = cidadeSelect.value || "";
+        });
+
+        // se já vier UF preenchido (ex.: de CEP ou prefill), carrega cidades
+        const initialUF = estadoSelect.value || (estadoHidden ? estadoHidden.value : "");
+        if (initialUF && !estadoSelect.value) estadoSelect.value = initialUF;
+
+        if (initialUF) {
+          loadCitiesForUF(initialUF).then(() => {
+            const initialCity = cidadeHidden ? cidadeHidden.value : "";
+            if (initialCity) {
+              cidadeSelect.value = initialCity;
+              // atualiza display fake
+              buildFakeSelect(cidadeSelect);
+            }
+          });
+        }
+      }
+
+      /* === SUBMIT (VALIDAÇÕES) === */
+      function setupSubmit() {
+        const form = $("leadForm");
+        if (!form) return;
+
+        let formSubmitting = false;
+
+        form.addEventListener("submit", (e) => {
+          if (formSubmitting) return;
+
+          formSubmitting = true;
+
+          const submitButton = form.querySelector('input[type="submit"]');
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.value = "Enviando...";
+          }
+
+          // limpa mensagens
+          document.querySelectorAll(".error-message-input").forEach((div) => {
+            div.style.display = "none";
+            div.innerHTML = "";
+          });
+          document.querySelectorAll("input, select").forEach((el) => el.classList.remove("error-input"));
+
+          let firstError = null;
+
+          const required = [
+            { id: "lastName", msg: "Preencha seu nome completo." },
+            { id: "cpfInput", msg: "Preencha o CPF." },
+            { id: "phoneInput", msg: "Preencha o telefone." },
+            { id: "birthdate", msg: "Preencha a data de nascimento." },
+            { id: "cep", msg: "Preencha o CEP." },
+            { id: "estadoManual", msg: "Selecione o estado." },
+            { id: "cidadeManual", msg: "Selecione a cidade." },
+            { id: "creditPurpose", msg: "Selecione a finalidade do crédito." },
+            { id: "isEnergyBillHolder", msg: "Selecione se é titular da conta de energia." },
+          ];
+
+          // outros (condicional)
+          const creditPurpose = $("creditPurpose") ? $("creditPurpose").value : "";
+          if (creditPurpose === "Outros") {
+            required.push({ id: "otherCreditPurpose", msg: "Descreva a outra finalidade." });
+          }
+
+          required.forEach(({ id, msg }) => {
+            const el = $(id);
+            if (!el) return;
+            const value = (el.value || "").trim();
+            const isSelect = el.tagName.toLowerCase() === "select";
+
+            if ((isSelect && !value) || (!isSelect && value === "")) {
+              const err = $(`${id}Error`);
+              if (err) {
+                err.innerHTML = msg;
+                err.style.display = "block";
+              }
+              el.classList.add("error-input");
+              if (!firstError) firstError = el;
+            }
+          });
+
+          // regras específicas
+          const cpfEl = $("cpfInput");
+          if (cpfEl && !cpfValido(cpfEl.value)) {
+            const err = $("cpfError");
+            if (err) { err.innerHTML = "CPF inválido."; err.style.display = "block"; }
+            cpfEl.classList.add("error-input");
+            if (!firstError) firstError = cpfEl;
+          }
+
+          const birthEl = $("birthdate");
+          if (birthEl && !validarDataNascimento(birthEl)) {
+            if (!firstError) firstError = birthEl;
+          }
+
+          const phoneEl = $("phoneInput");
+          if (phoneEl) {
+            const digits = soDigitos(phoneEl.value);
+            if (!telefoneValidoBR(digits)) {
+              const err = $("phoneError");
+              if (err) { err.innerHTML = "Telefone principal inválido."; err.style.display = "block"; }
+              phoneEl.classList.add("error-input");
+              if (!firstError) firstError = phoneEl;
+            }
+          }
+
+          const otherPhoneEl = $("otherPhoneInput");
+          if (otherPhoneEl) {
+            const digits = soDigitos(otherPhoneEl.value);
+            if (digits && !telefoneValidoBR(digits)) {
+              const err = $("otherPhoneError");
+              if (err) { err.innerHTML = "Telefone opcional inválido."; err.style.display = "block"; }
+              otherPhoneEl.classList.add("error-input");
+              if (!firstError) firstError = otherPhoneEl;
+            }
+          }
+
+          const lgpd = $("lgpdConsent");
+          if (lgpd && !lgpd.checked) {
+            const err = $("lgpdConsentError");
+            if (err) { err.innerHTML = "Você deve aceitar os termos da LGPD."; err.style.display = "block"; }
+            lgpd.classList.add("error-input");
+            if (!firstError) firstError = lgpd;
+          }
+
+          if (firstError) {
+            e.preventDefault();
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.value = "Enviar";
+            }
+            firstError.focus();
+            formSubmitting = false;
+            return;
+          }
+
+          // normaliza antes de enviar
+          if ($("hasLGPDConsent")) $("hasLGPDConsent").value = "true";
+          if (phoneEl) phoneEl.value = soDigitos(phoneEl.value);
+          if (otherPhoneEl) otherPhoneEl.value = soDigitos(otherPhoneEl.value);
+          if (cpfEl) cpfEl.value = soDigitos(cpfEl.value);
+        });
+      }
+
+      /* === INIT === */
+      document.addEventListener("DOMContentLoaded", () => {
+        addCharacterCount("lastName", 80, "lastNameCounter");
+        addCharacterCount("otherCreditPurpose", 250, "otherCreditPurposeCounter");
+
+        fillHiddenFromUrl();
+
+        // máscaras
+        const cpf = $("cpfInput");
+        if (cpf) cpf.addEventListener("input", () => mascaraCPF(cpf));
+
+        const birth = $("birthdate");
+        if (birth) birth.addEventListener("input", () => mascaraData(birth));
+
+        const phone = $("phoneInput");
+        if (phone) phone.addEventListener("input", function () { mascaraTelefoneInput(this); });
+
+        const otherPhone = $("otherPhoneInput");
+        if (otherPhone) otherPhone.addEventListener("input", function () { mascaraTelefoneInput(this); });
+
+        setupAddPhone();
+        setupCreditPurpose();
+        setupCep();
+        setupLGPD();
+        setupEstadoCidade();
+        // fake-select para selects nativos
+        const cpSel = $("creditPurpose");
+        if (cpSel) buildFakeSelect(cpSel);
+        const holderSel = $("isEnergyBillHolder");
+        if (holderSel) buildFakeSelect(holderSel);
+
+        setupSubmit();
+      });
+    </script>
+
+
+  </section>
+
+</body>
+
+</html>
