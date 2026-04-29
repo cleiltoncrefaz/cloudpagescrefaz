@@ -217,6 +217,12 @@
                 line-height: 1.1;
                 letter-spacing: -1px;
                 padding: 0 30px 0 0;
+                margin: 0;
+            }
+
+            .content-text p {
+                margin: 0;
+                padding: 0;
             }
 
             .content-image {
@@ -224,11 +230,16 @@
                 display: grid;
                 grid-template-columns: 0.9fr 1fr;
                 align-items: center;
-                padding: 0 5px;
+                padding: 5px;
                 justify-content: center;
                 background: #163056;
                 border-radius: 30px;
                 height: 280px;
+            }
+
+            .content-text {
+                color: #fff;
+                padding: 30px 0;
             }
 
             .iphone {
@@ -258,7 +269,6 @@
                 h1 {
                     font-size: 30px;
                     line-height: 1.1;
-                    padding: 0 10px 0px 10px;
                 }
 
                 #hero .container {
@@ -289,13 +299,14 @@
             <div class="content-image">
                 <div class="content-iphone">
                     <div class="iphone">
-                        <!-- <img src="assets/iphone-17-dois-celulares.png" alt="iPhone 17" class="iPhone 17"> -->
-                        <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/eb9b62ca-3200-4b80-9308-3463dbf48477.png" alt="iPhone 17" class="iPhone 17">
+                        <img src="assets/iphone-17-dois-celulares-celular.png" alt="iPhone 17" class="iPhone 17">
+                        <!-- <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/eb9b62ca-3200-4b80-9308-3463dbf48477.png" alt="iPhone 17" class="iPhone 17"> -->
                     </div>
 
                 </div>
-                <h1>Concorra a um iPhone 17. Preencha o formulário!</h1>
-
+                <div class="content-text">
+                    <h1>Concorra a um iPhone 17!</h1>
+                </div>
             </div>
 
             <!-- Sessao 2 -->
@@ -309,6 +320,13 @@
                         font-family: 'Anteb', sans-serif;
                         height: fit-content;
                         max-width: 500px;
+                    }
+
+                    .form-box p {
+                        font-size: 24px;
+                        color: #163056;
+                        font-weight: 600;
+                        letter-spacing: -0.3px;
                     }
 
                     .form-group {
@@ -510,6 +528,8 @@
                 </style>
 
                 <div class="form-box">
+                    <p>Preencha o formulário:</p>
+
                     <!-- <form method="post" id="form-simulacao" action="confirmacao.html"> -->
                     <form method="post" id="form-simulacao" action="#">
                         <input type="hidden" name="submitted" value="true">
@@ -1011,556 +1031,7 @@
                         <button class="btn btn-primary" type="submit">Enviar</button>
 
                     </form>
-                    <div class="client-confirmation">
-                        <style>
-                            .client-confirmation {
-                                display: grid;
-                                grid-template-columns: 1fr 1fr;
-                                gap: 12px;
-                                margin-top: 10px;
-                            }
 
-                            .btn-confirmation {
-                                /* background: #edf2f4; */
-                                background: #ef6b22;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                gap: 16px;
-                                font-size: 16px;
-                                color: #fff;
-                                text-decoration: none;
-                            }
-
-                            .btn-icon {
-                                width: 30px;
-                                fill: #fff;
-                            }
-
-                            @media (max-width: 768px) {
-                                .client-confirmation {
-                                    grid-template-columns: 1fr;
-                                }
-
-                            }
-                        </style>
-                        <!-- <a href="#" id="btnRegulamento" class="btn btn-confirmation "> -->
-                        <a href="#" class="btn btn-confirmation ">
-                            Regulamento
-                            <svg class="btn-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 50.83 50.85">
-                                <path
-                                    d="M50.83,11.6c0-6.41-5.19-11.6-11.6-11.6H11.6C5.19,0,0,5.19,0,11.6v27.63c0,6.41,5.19,11.6,11.6,11.6h27.16c.1,0,.2.02.3.02.26,0,.51-.03.77-.05.23-.01.46-.02.68-.04.07,0,.13-.02.2-.03,5.58-.71,9.91-5.38,10.1-11.11,0-.09.01-.18.01-.28,0-.04,0-.07,0-.11V11.6ZM3.5,39.23V11.6C3.5,7.13,7.13,3.5,11.6,3.5h27.63c4.47,0,8.1,3.63,8.1,8.1v19.14c-.7-.69-1.49-1.32-2.38-1.83-1.85-1.07-3.87-1.58-5.87-1.58-4.06,0-8.02,2.11-10.19,5.88-.74,1.28-1.2,2.65-1.42,4.03h-15.94v3.5h15.91c.35,2.46,1.47,4.78,3.26,6.59H11.6c-4.47,0-8.1-3.63-8.1-8.1ZM40.12,47.28c-.12.02-.25.01-.38.03-.17.01-.34.03-.51.03h-.46c-1.34-.05-2.65-.41-3.82-1.09-1.91-1.1-3.28-2.88-3.85-5.01-.57-2.13-.28-4.36.82-6.27,1.47-2.55,4.22-4.13,7.16-4.13,1.44,0,2.86.38,4.12,1.11,3.94,2.28,5.3,7.34,3.02,11.28-1.28,2.21-3.51,3.69-6,4.04-.03,0-.07.01-.1.02ZM39.3,16.11H11.53v-3.5h27.77v3.5ZM27,28.42h-15.47v-3.5h15.47v3.5ZM45.73,39.09c0,.92-.36,1.79-1.01,2.44l-4.75,4.75-2.47-2.47,3.06-3.06h-6.97v-3.5h6.81l-2.9-2.86,2.47-2.47,4.75,4.75c.65.65,1.01,1.52,1.01,2.44Z" />
-                            </svg>
-                        </a>
-                        <!-- Script Botão Modal Regulamento-->
-                        <script>
-
-                            const btnRegulamento = document.getElementById("btnRegulamento");
-
-                            function openModal(event) {
-                                event.preventDefault();
-                                modal.classList.add("show");
-                                modal.setAttribute("aria-hidden", "false");
-                            }
-
-                            if (btnRegulamento) {
-                                btnRegulamento.addEventListener("click", openModal);
-                            }
-
-                        </script>
-                        <a href="#" class="btn btn-confirmation" id="openList">
-                            Números da Sorte
-
-                            <svg class="btn-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 53.13 53.13">
-                                <path
-                                    d="M51.84,23.94c.59-1.18,1.29-2.93,1.29-4.61,0-4.74-3.12-7.93-7.77-7.94h0c-1.56,0-3.42.7-5.39,1.78,1.08-1.97,1.78-3.83,1.78-5.39,0-2.17-.69-4.06-2.01-5.46-1.43-1.52-3.48-2.32-5.93-2.32-1.68,0-3.44.7-4.61,1.29-1.65.82-3.62.82-5.26,0-1.18-.59-2.93-1.29-4.61-1.29-4.74,0-7.93,3.12-7.94,7.77,0,1.56.7,3.43,1.78,5.39-1.97-1.08-3.83-1.78-5.39-1.78h0c-2.17,0-4.05.69-5.45,2.01-1.52,1.43-2.32,3.48-2.32,5.93,0,1.68.7,3.44,1.29,4.61.82,1.65.82,3.62,0,5.26-.59,1.18-1.29,2.93-1.29,4.61,0,4.74,3.12,7.93,7.77,7.94h0c1.56,0,3.42-.7,5.39-1.78-1.08,1.97-1.78,3.83-1.78,5.39,0,2.17.69,4.06,2.01,5.46,1.43,1.52,3.48,2.32,5.93,2.32,1.68,0,3.44-.7,4.61-1.29,1.65-.82,3.62-.82,5.26,0,1.18.59,2.93,1.29,4.61,1.29,4.74,0,7.93-3.12,7.94-7.77,0-1.56-.7-3.43-1.78-5.39,1.97,1.08,3.83,1.78,5.39,1.78h0c2.17,0,4.05-.69,5.45-2.01,1.52-1.43,2.32-3.48,2.32-5.93,0-1.68-.7-3.44-1.29-4.61-.82-1.65-.82-3.62,0-5.26h0ZM15.18,7.77c0-1.49.54-3.98,4.14-3.98.72,0,1.79.32,2.92.89,2.71,1.35,5.94,1.35,8.66,0,1.13-.57,2.19-.89,2.92-.89,1.4,0,2.46.38,3.17,1.12.81.86.97,2.02.97,2.85,0,3.35-6.4,11.02-11.26,15.98-.04.04-.09.08-.13.12-.04-.04-.08-.08-.12-.12-5.09-5.21-11.26-12.8-11.26-15.98h0ZM7.77,37.95c-1.49,0-3.98-.54-3.98-4.14,0-.72.32-1.79.89-2.92,1.35-2.71,1.35-5.94,0-8.66-.57-1.13-.89-2.19-.89-2.92,0-1.4.38-2.46,1.12-3.17.86-.81,2.02-.97,2.85-.97h0c3.35,0,11.01,6.4,15.98,11.26.04.04.09.09.13.13-.04.04-.08.08-.12.12-5.21,5.09-12.79,11.26-15.98,11.26h0ZM37.95,45.36c0,1.49-.54,3.98-4.14,3.98-.72,0-1.79-.32-2.92-.89-1.35-.68-2.84-1.01-4.33-1.01s-2.97.34-4.33,1.01c-1.13.57-2.19.89-2.92.89-1.4,0-2.46-.38-3.17-1.12-.81-.86-.97-2.02-.97-2.85,0-3.35,6.4-11.01,11.26-15.98.04-.04.09-.09.13-.12.04.04.08.08.12.12,5.09,5.21,11.26,12.8,11.26,15.98ZM48.45,30.9c.57,1.13.89,2.19.89,2.92,0,1.4-.38,2.46-1.12,3.17-.86.81-2.02.97-2.85.97h0c-3.35,0-11.01-6.4-15.98-11.26-.04-.04-.09-.09-.13-.13.04-.04.08-.08.12-.12,5.21-5.09,12.79-11.26,15.98-11.26,1.49,0,3.98.54,3.98,4.14,0,.72-.32,1.79-.89,2.92-1.35,2.71-1.35,5.94,0,8.66Z" />
-                            </svg>
-                        </a>
-
-                        <!-- <a href="#" class="btn btn-primary" id="openList">Números da Sorte</a> -->
-
-                        <!-- MODAL -->
-                        <div class="modal-overlay" id="listModal" aria-hidden="true">
-                            <style>
-                                .btn-modal {
-                                    background: #EF6B22;
-                                    color: #fff;
-                                    width: 100px;
-                                }
-
-                                .lgpd-checkbox-wrapper {
-                                    padding: 0 0 10px 0;
-                                }
-
-                                .check-field {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 6px;
-                                    padding: 5px 0;
-                                }
-
-                                .check-custom {
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 8px;
-                                    cursor: pointer;
-                                    font-size: 14px;
-                                    color: #163056;
-                                }
-
-                                .check-custom input {
-                                    opacity: 0;
-                                    position: absolute;
-                                }
-
-                                .check-mark {
-                                    width: 18px;
-                                    height: 18px;
-                                    border: 2px solid #E4EBF3;
-                                    border-radius: 6px;
-                                    background: #fff;
-                                    position: relative;
-                                    transition: all 0.2s ease;
-                                    flex-shrink: 0;
-                                    margin-top: 2px;
-                                }
-
-                                .check-mark::after {
-                                    content: "";
-                                    position: absolute;
-                                    left: 4px;
-                                    top: 0px;
-                                    width: 5px;
-                                    height: 10px;
-                                    border: solid #fff;
-                                    border-width: 0 2px 2px 0;
-                                    transform: rotate(45deg) scale(0);
-                                    transition: all 0.2s ease;
-                                }
-
-                                .check-custom input:checked+.check-mark {
-                                    background: #EF6B22;
-                                    border-color: #EF6B22;
-                                }
-
-                                .check-custom input:checked+.check-mark::after {
-                                    transform: rotate(45deg) scale(1);
-                                }
-
-                                .check-custom:hover .check-mark {
-                                    border-color: #EF6B22;
-                                }
-
-                                .check-text {
-                                    padding: 5px 0 0 0;
-                                }
-
-                                .check-text a {
-                                    color: #EF6B22;
-                                    text-decoration: underline;
-                                }
-
-                                .field-error {
-                                    display: none;
-                                    font-size: 13px;
-                                    color: #dc2626;
-                                    margin: 0;
-                                }
-
-                                .check-mark.error {
-                                    border-color: #dc2626 !important;
-                                    background: #fff7f7;
-                                }
-
-                                .modal-overlay {
-                                    display: none;
-                                    position: fixed;
-                                    inset: 0;
-                                    background: rgba(0, 0, 0, 0.5);
-                                    z-index: 9999;
-                                    align-items: center;
-                                    justify-content: center;
-                                    padding: 20px;
-                                }
-
-                                .modal-overlay.show {
-                                    display: flex;
-                                }
-
-                                .modal-header {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: space-between;
-                                    padding: 18px 20px;
-                                    border-bottom: 1px solid #E4EBF3;
-                                    gap: 20px;
-                                }
-
-                                .modal-header h3 {
-                                    margin: 0;
-                                    color: #163056;
-                                    font-size: 20px;
-                                    font-weight: 700;
-                                }
-
-                                .modal-close {
-                                    background: transparent;
-                                    border: none;
-                                    font-size: 34px;
-                                    line-height: 1;
-                                    cursor: pointer;
-                                    color: #163056;
-                                    border-radius: 8px;
-                                    width: 40px;
-                                    height: 40px;
-                                }
-
-                                .modal-close:hover {
-                                    color: #EF6B22;
-                                    background: #f3f3f3;
-                                }
-
-                                .modal-list {
-                                    min-height: 60vh;
-                                    color: #163056;
-                                    font-size: 14px;
-                                    line-height: 1.5;
-                                }
-
-                                .modal-list h3 {
-                                    font-size: 20px;
-                                    letter-spacing: -0.3px;
-                                    line-height: 1.2;
-                                }
-
-                                .modal-list::-webkit-scrollbar {
-                                    width: 6px;
-                                }
-
-                                .modal-list::-webkit-scrollbar-thumb {
-                                    background: #d3dae2;
-                                    border-radius: 3px;
-                                }
-
-                                .modal-list::-webkit-scrollbar-track {
-                                    background: transparent;
-                                }
-
-                                .modal-list p {
-                                    margin: 0 0 12px 0;
-                                }
-
-                                .modal-actions {
-                                    display: flex;
-                                    justify-content: center;
-                                    gap: 12px;
-                                    padding: 20px;
-                                    border-top: 1px solid #E4EBF3;
-                                }
-
-
-                                .page-section {
-                                    background: #163056;
-                                    padding: 40px 20px;
-                                    min-height: calc(100vh - 160px);
-                                }
-
-                                .tools-card {
-                                    border-radius: 20px;
-                                    margin-bottom: 24px;
-                                    display: grid;
-                                    grid-template-columns: 1fr 180px;
-                                    gap: 12px;
-                                    align-items: end;
-                                }
-
-                                .input-group {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 8px;
-                                    text-align: left;
-                                }
-
-                                .input-group label {
-                                    color: #ffffff;
-                                    font-size: 15px;
-                                }
-
-                                .input-group input {
-                                    width: 100%;
-                                    color: #163056;
-                                    padding: 10px 12px;
-                                    border: 2px solid #ffffff;
-                                    border-radius: 12px;
-                                    background: #fff;
-                                    outline: none;
-                                    font-family: 'Anteb', sans-serif;
-                                    font-size: 16px;
-                                    height: 40px;
-                                }
-
-                                .input-group input:focus {
-                                    border-color: #ef6b22;
-                                }
-
-                                .table-card {
-                                    background: #fff;
-                                    overflow: hidden;
-                                }
-
-
-                                .table-wrap {
-                                    overflow-x: auto;
-                                    height: 550px;
-                                }
-
-                                table {
-                                    width: 100%;
-                                    border-collapse: collapse;
-                                }
-
-                                thead th {
-                                    position: sticky;
-                                    top: 0;
-                                    background: #163056;
-                                    color: #fff;
-                                    z-index: 10;
-                                }
-
-                                th,
-                                td {
-                                    padding: 10px;
-                                    text-align: left;
-                                    font-size: 15px;
-                                    border-bottom: 1px solid #E4EBF3;
-                                }
-
-                                tbody {
-                                    overflow-y: scroll;
-                                }
-
-                                tbody tr:hover {
-                                    background: #fff7f2;
-                                }
-
-                                .lucky-number {
-                                    display: inline-flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    min-width: 68px;
-                                    padding: 8px 12px;
-                                    border-radius: 999px;
-                                    background: #ef6b22;
-                                    color: #fff;
-                                    font-weight: 800;
-                                    letter-spacing: 1px;
-                                }
-
-                                .cpf-mask {
-                                    color: #637992;
-                                }
-
-                                .empty-message {
-                                    display: none;
-                                    color: #163056;
-                                    background: #f8fafc;
-                                    border-radius: 14px;
-                                    padding: 16px;
-                                    margin-top: 16px;
-                                    text-align: center;
-                                }
-
-                                .footer-note {
-                                    background: #163056;
-                                    color: #778fb3;
-                                    padding: 18px;
-                                    text-align: center;
-                                    border-top: 1px solid #657a992e;
-                                    line-height: 1.5;
-                                    font-size: 12px;
-                                }
-
-                                .footer-note p {
-                                    margin: 0;
-                                }
-
-                                @media (max-width: 767px) {
-                                    .logo-topo {
-                                        padding: 20px 0;
-                                        width: 300px;
-                                    }
-
-                                    .page-section {
-                                        padding: 35px 16px;
-                                    }
-
-                                    .intro-card h1 {
-                                        font-size: 32px;
-                                    }
-
-                                    .intro-card p {
-                                        font-size: 16px;
-                                    }
-
-                                    .tools-card {
-                                        grid-template-columns: 1fr;
-                                    }
-
-                                    .table-wrap {
-                                        max-height: 400px;
-                                    }
-
-                                    .btn {
-                                        width: 100%;
-                                    }
-
-                                    .table-info {
-                                        flex-direction: column;
-                                        align-items: flex-start;
-                                    }
-                                }
-                            </style>
-                            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-                                <div class="modal-header">
-                                    <h3 id="modalTitle">Confira abaixo a lista de participantes cadastrados</h3>
-                                    <button type="button" class="modal-close" id="modalClose"
-                                        aria-label="Fechar modal">×</button>
-                                </div>
-
-                                <div class="modal-list">
-                                    <div class="table-wrap">
-                                        <table id="luckyTable">
-                                            <thead>
-                                                <tr>
-                                                    <th>Número</th>
-                                                    <th>Nome</th>
-                                                    <th>CPF</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><span class="lucky-number">001</span></td>
-                                                    <td>Maria da Silva</td>
-                                                    <td class="cpf-mask">***.123.456-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">002</span></td>
-                                                    <td>João Neto</td>
-                                                    <td class="cpf-mask">***.987.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">003</span></td>
-                                                    <td>Pedro Cavalcante</td>
-                                                    <td class="cpf-mask">***.456.789-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">004</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">005</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="lucky-number">006</span></td>
-                                                    <td>Aldemar Barbosa</td>
-                                                    <td class="cpf-mask">***.321.654-**</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <div class="modal-actions">
-                                    <button type="button" class="btn btn-modal" id="okModal">OK</button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Script Botão Números da sorte -->
-                        <script>
-
-                            const openList = document.getElementById("openList");
-                            const modalLucky = document.getElementById("listModal");
-                            const modalClose = document.getElementById("modalClose");
-                            const okModal = document.getElementById("okModal");
-
-                            function openModal(event) {
-                                event.preventDefault();
-                                modalLucky.classList.add("show");
-                                modalLucky.setAttribute("aria-hidden", "false");
-                            }
-
-                            function hideModal() {
-                                modalLucky.classList.remove("show");
-                                modalLucky.setAttribute("aria-hidden", "true");
-                            }
-
-                            if (openList) {
-                                openList.addEventListener("click", openModal);
-                            }
-
-                            if (modalClose) {
-                                modalClose.addEventListener("click", hideModal);
-                            }
-
-                            if (okModal) {
-                                okModal.addEventListener("click", hideModal);
-                            }
-
-                            if (modalLucky) {
-                                modalLucky.addEventListener("click", function (event) {
-                                    if (event.target === modalLucky) {
-                                        hideModal();
-                                    }
-                                });
-                            }
-
-                            document.addEventListener("keydown", function (event) {
-                                if (event.key === "Escape" && modal.classList.contains("show")) {
-                                    hideModal();
-                                }
-                            });
-
-                        </script>
-
-
-                    </div>
 
 
                     <!-- script formulario -->
@@ -1896,7 +1367,564 @@
                         updateCorbanVisibility();
                     </script>
                 </div>
+                <div class="client-confirmation">
+                    <style>
+                        .client-confirmation {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 12px;
+                            margin-top: 20px;
+                        }
 
+                        .btn-confirmation {
+                            /* background: #edf2f4; */
+                            background: #ef6b22;
+                            border: 2px solid;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: 16px;
+                            font-size: 16px;
+                            color: #fff;
+                            height: 65px;
+                            text-decoration: none;
+                        }
+
+                        .btn-confirmation:hover {
+                            background: #ffffff;
+                            color: #163056;
+                            border: 2px solid #fff;
+                        }
+
+                        .btn-confirmation:hover svg {
+                            fill: #163056;
+                        }
+
+                        .btn-icon {
+                            width: 30px;
+                            fill: #fff;
+                        }
+
+                        @media (max-width: 768px) {
+                            .client-confirmation {
+                                grid-template-columns: 1fr;
+                            }
+
+                        }
+                    </style>
+                    <!-- <a href="#" id="btnRegulamento" class="btn btn-confirmation "> -->
+                    <a href="#" class="btn btn-confirmation ">
+                        Regulamento
+                        <svg class="btn-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 50.83 50.85">
+                            <path
+                                d="M50.83,11.6c0-6.41-5.19-11.6-11.6-11.6H11.6C5.19,0,0,5.19,0,11.6v27.63c0,6.41,5.19,11.6,11.6,11.6h27.16c.1,0,.2.02.3.02.26,0,.51-.03.77-.05.23-.01.46-.02.68-.04.07,0,.13-.02.2-.03,5.58-.71,9.91-5.38,10.1-11.11,0-.09.01-.18.01-.28,0-.04,0-.07,0-.11V11.6ZM3.5,39.23V11.6C3.5,7.13,7.13,3.5,11.6,3.5h27.63c4.47,0,8.1,3.63,8.1,8.1v19.14c-.7-.69-1.49-1.32-2.38-1.83-1.85-1.07-3.87-1.58-5.87-1.58-4.06,0-8.02,2.11-10.19,5.88-.74,1.28-1.2,2.65-1.42,4.03h-15.94v3.5h15.91c.35,2.46,1.47,4.78,3.26,6.59H11.6c-4.47,0-8.1-3.63-8.1-8.1ZM40.12,47.28c-.12.02-.25.01-.38.03-.17.01-.34.03-.51.03h-.46c-1.34-.05-2.65-.41-3.82-1.09-1.91-1.1-3.28-2.88-3.85-5.01-.57-2.13-.28-4.36.82-6.27,1.47-2.55,4.22-4.13,7.16-4.13,1.44,0,2.86.38,4.12,1.11,3.94,2.28,5.3,7.34,3.02,11.28-1.28,2.21-3.51,3.69-6,4.04-.03,0-.07.01-.1.02ZM39.3,16.11H11.53v-3.5h27.77v3.5ZM27,28.42h-15.47v-3.5h15.47v3.5ZM45.73,39.09c0,.92-.36,1.79-1.01,2.44l-4.75,4.75-2.47-2.47,3.06-3.06h-6.97v-3.5h6.81l-2.9-2.86,2.47-2.47,4.75,4.75c.65.65,1.01,1.52,1.01,2.44Z" />
+                        </svg>
+                    </a>
+                    <!-- Script Botão Modal Regulamento-->
+                    <script>
+
+                        const btnRegulamento = document.getElementById("btnRegulamento");
+
+                        function openModal(event) {
+                            event.preventDefault();
+                            modal.classList.add("show");
+                            modal.setAttribute("aria-hidden", "false");
+                        }
+
+                        if (btnRegulamento) {
+                            btnRegulamento.addEventListener("click", openModal);
+                        }
+
+                    </script>
+                    <a href="#" class="btn btn-confirmation" id="openList">
+                        Números da Sorte
+
+                        <svg class="btn-icon" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 53.13 53.13">
+                            <path
+                                d="M51.84,23.94c.59-1.18,1.29-2.93,1.29-4.61,0-4.74-3.12-7.93-7.77-7.94h0c-1.56,0-3.42.7-5.39,1.78,1.08-1.97,1.78-3.83,1.78-5.39,0-2.17-.69-4.06-2.01-5.46-1.43-1.52-3.48-2.32-5.93-2.32-1.68,0-3.44.7-4.61,1.29-1.65.82-3.62.82-5.26,0-1.18-.59-2.93-1.29-4.61-1.29-4.74,0-7.93,3.12-7.94,7.77,0,1.56.7,3.43,1.78,5.39-1.97-1.08-3.83-1.78-5.39-1.78h0c-2.17,0-4.05.69-5.45,2.01-1.52,1.43-2.32,3.48-2.32,5.93,0,1.68.7,3.44,1.29,4.61.82,1.65.82,3.62,0,5.26-.59,1.18-1.29,2.93-1.29,4.61,0,4.74,3.12,7.93,7.77,7.94h0c1.56,0,3.42-.7,5.39-1.78-1.08,1.97-1.78,3.83-1.78,5.39,0,2.17.69,4.06,2.01,5.46,1.43,1.52,3.48,2.32,5.93,2.32,1.68,0,3.44-.7,4.61-1.29,1.65-.82,3.62-.82,5.26,0,1.18.59,2.93,1.29,4.61,1.29,4.74,0,7.93-3.12,7.94-7.77,0-1.56-.7-3.43-1.78-5.39,1.97,1.08,3.83,1.78,5.39,1.78h0c2.17,0,4.05-.69,5.45-2.01,1.52-1.43,2.32-3.48,2.32-5.93,0-1.68-.7-3.44-1.29-4.61-.82-1.65-.82-3.62,0-5.26h0ZM15.18,7.77c0-1.49.54-3.98,4.14-3.98.72,0,1.79.32,2.92.89,2.71,1.35,5.94,1.35,8.66,0,1.13-.57,2.19-.89,2.92-.89,1.4,0,2.46.38,3.17,1.12.81.86.97,2.02.97,2.85,0,3.35-6.4,11.02-11.26,15.98-.04.04-.09.08-.13.12-.04-.04-.08-.08-.12-.12-5.09-5.21-11.26-12.8-11.26-15.98h0ZM7.77,37.95c-1.49,0-3.98-.54-3.98-4.14,0-.72.32-1.79.89-2.92,1.35-2.71,1.35-5.94,0-8.66-.57-1.13-.89-2.19-.89-2.92,0-1.4.38-2.46,1.12-3.17.86-.81,2.02-.97,2.85-.97h0c3.35,0,11.01,6.4,15.98,11.26.04.04.09.09.13.13-.04.04-.08.08-.12.12-5.21,5.09-12.79,11.26-15.98,11.26h0ZM37.95,45.36c0,1.49-.54,3.98-4.14,3.98-.72,0-1.79-.32-2.92-.89-1.35-.68-2.84-1.01-4.33-1.01s-2.97.34-4.33,1.01c-1.13.57-2.19.89-2.92.89-1.4,0-2.46-.38-3.17-1.12-.81-.86-.97-2.02-.97-2.85,0-3.35,6.4-11.01,11.26-15.98.04-.04.09-.09.13-.12.04.04.08.08.12.12,5.09,5.21,11.26,12.8,11.26,15.98ZM48.45,30.9c.57,1.13.89,2.19.89,2.92,0,1.4-.38,2.46-1.12,3.17-.86.81-2.02.97-2.85.97h0c-3.35,0-11.01-6.4-15.98-11.26-.04-.04-.09-.09-.13-.13.04-.04.08-.08.12-.12,5.21-5.09,12.79-11.26,15.98-11.26,1.49,0,3.98.54,3.98,4.14,0,.72-.32,1.79-.89,2.92-1.35,2.71-1.35,5.94,0,8.66Z" />
+                        </svg>
+                    </a>
+
+                    <!-- <a href="#" class="btn btn-primary" id="openList">Números da Sorte</a> -->
+
+                    <!-- MODAL -->
+                    <div class="modal-overlay" id="listModal" aria-hidden="true">
+                        <style>
+                            .btn-modal {
+                                background: #EF6B22;
+                                color: #fff;
+                                width: 100px;
+                            }
+
+                            .lgpd-checkbox-wrapper {
+                                padding: 0 0 10px 0;
+                            }
+
+                            .check-field {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 6px;
+                                padding: 5px 0;
+                            }
+
+                            .check-custom {
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                color: #163056;
+                            }
+
+                            .check-custom input {
+                                opacity: 0;
+                                position: absolute;
+                            }
+
+                            .check-mark {
+                                width: 18px;
+                                height: 18px;
+                                border: 2px solid #E4EBF3;
+                                border-radius: 6px;
+                                background: #fff;
+                                position: relative;
+                                transition: all 0.2s ease;
+                                flex-shrink: 0;
+                                margin-top: 2px;
+                            }
+
+                            .check-mark::after {
+                                content: "";
+                                position: absolute;
+                                left: 4px;
+                                top: 0px;
+                                width: 5px;
+                                height: 10px;
+                                border: solid #fff;
+                                border-width: 0 2px 2px 0;
+                                transform: rotate(45deg) scale(0);
+                                transition: all 0.2s ease;
+                            }
+
+                            .check-custom input:checked+.check-mark {
+                                background: #EF6B22;
+                                border-color: #EF6B22;
+                            }
+
+                            .check-custom input:checked+.check-mark::after {
+                                transform: rotate(45deg) scale(1);
+                            }
+
+                            .check-custom:hover .check-mark {
+                                border-color: #EF6B22;
+                            }
+
+                            .check-text {
+                                padding: 5px 0 0 0;
+                            }
+
+                            .check-text a {
+                                color: #EF6B22;
+                                text-decoration: underline;
+                            }
+
+                            .field-error {
+                                display: none;
+                                font-size: 13px;
+                                color: #dc2626;
+                                margin: 0;
+                            }
+
+                            .check-mark.error {
+                                border-color: #dc2626 !important;
+                                background: #fff7f7;
+                            }
+
+                            .modal-overlay {
+                                display: none;
+                                position: fixed;
+                                inset: 0;
+                                background: rgba(0, 0, 0, 0.5);
+                                z-index: 9999;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 20px;
+                            }
+
+                            .modal-overlay.show {
+                                display: flex;
+                            }
+
+                            .modal-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 18px 20px;
+                                border-bottom: 1px solid #E4EBF3;
+                                gap: 20px;
+                            }
+
+                            .modal-header h3 {
+                                margin: 0;
+                                color: #163056;
+                                font-size: 20px;
+                                font-weight: 700;
+                            }
+
+                            .modal-close {
+                                background: transparent;
+                                border: none;
+                                font-size: 34px;
+                                line-height: 1;
+                                cursor: pointer;
+                                color: #163056;
+                                border-radius: 8px;
+                                width: 40px;
+                                height: 40px;
+                            }
+
+                            .modal-close:hover {
+                                color: #EF6B22;
+                                background: #f3f3f3;
+                            }
+
+                            .modal-list {
+                                min-height: 60vh;
+                                color: #163056;
+                                font-size: 14px;
+                                line-height: 1.5;
+                            }
+
+                            .modal-list h3 {
+                                font-size: 20px;
+                                letter-spacing: -0.3px;
+                                line-height: 1.2;
+                            }
+
+                            .modal-list::-webkit-scrollbar {
+                                width: 6px;
+                            }
+
+                            .modal-list::-webkit-scrollbar-thumb {
+                                background: #d3dae2;
+                                border-radius: 3px;
+                            }
+
+                            .modal-list::-webkit-scrollbar-track {
+                                background: transparent;
+                            }
+
+                            .modal-list p {
+                                margin: 0 0 12px 0;
+                            }
+
+                            .modal-actions {
+                                display: flex;
+                                justify-content: center;
+                                gap: 12px;
+                                padding: 20px;
+                                border-top: 1px solid #E4EBF3;
+                            }
+
+
+                            .page-section {
+                                background: #163056;
+                                padding: 40px 20px;
+                                min-height: calc(100vh - 160px);
+                            }
+
+                            .tools-card {
+                                border-radius: 20px;
+                                margin-bottom: 24px;
+                                display: grid;
+                                grid-template-columns: 1fr 180px;
+                                gap: 12px;
+                                align-items: end;
+                            }
+
+                            .input-group {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+                                text-align: left;
+                            }
+
+                            .input-group label {
+                                color: #ffffff;
+                                font-size: 15px;
+                            }
+
+                            .input-group input {
+                                width: 100%;
+                                color: #163056;
+                                padding: 10px 12px;
+                                border: 2px solid #ffffff;
+                                border-radius: 12px;
+                                background: #fff;
+                                outline: none;
+                                font-family: 'Anteb', sans-serif;
+                                font-size: 16px;
+                                height: 40px;
+                            }
+
+                            .input-group input:focus {
+                                border-color: #ef6b22;
+                            }
+
+                            .table-card {
+                                background: #fff;
+                                overflow: hidden;
+                            }
+
+
+                            .table-wrap {
+                                overflow-x: auto;
+                                height: 550px;
+                            }
+
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                            }
+
+                            thead th {
+                                position: sticky;
+                                top: 0;
+                                background: #163056;
+                                color: #fff;
+                                z-index: 10;
+                            }
+
+                            th,
+                            td {
+                                padding: 10px;
+                                text-align: left;
+                                font-size: 15px;
+                                border-bottom: 1px solid #E4EBF3;
+                            }
+
+                            tbody {
+                                overflow-y: scroll;
+                            }
+
+                            tbody tr:hover {
+                                background: #fff7f2;
+                            }
+
+                            .lucky-number {
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                min-width: 68px;
+                                padding: 8px 12px;
+                                border-radius: 999px;
+                                background: #ef6b22;
+                                color: #fff;
+                                font-weight: 800;
+                                letter-spacing: 1px;
+                            }
+
+                            .cpf-mask {
+                                color: #637992;
+                            }
+
+                            .empty-message {
+                                display: none;
+                                color: #163056;
+                                background: #f8fafc;
+                                border-radius: 14px;
+                                padding: 16px;
+                                margin-top: 16px;
+                                text-align: center;
+                            }
+
+                            .footer-note {
+                                background: #163056;
+                                color: #778fb3;
+                                padding: 18px;
+                                text-align: center;
+                                border-top: 1px solid #657a992e;
+                                line-height: 1.5;
+                                font-size: 12px;
+                            }
+
+                            .footer-note p {
+                                margin: 0;
+                            }
+
+                            @media (max-width: 767px) {
+                                .logo-topo {
+                                    padding: 20px 0;
+                                    width: 300px;
+                                }
+
+                                .page-section {
+                                    padding: 35px 16px;
+                                }
+
+                                .intro-card h1 {
+                                    font-size: 32px;
+                                }
+
+                                .intro-card p {
+                                    font-size: 16px;
+                                }
+
+                                .tools-card {
+                                    grid-template-columns: 1fr;
+                                }
+
+                                .btn {
+                                    width: 100%;
+                                }
+
+                                .table-info {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                }
+                            }
+                        </style>
+                        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                            <div class="modal-header">
+                                <h3 id="modalTitle">Confira abaixo a lista de participantes cadastrados</h3>
+                                <button type="button" class="modal-close" id="modalClose"
+                                    aria-label="Fechar modal">×</button>
+                            </div>
+
+                            <div class="modal-list">
+                                <div class="table-wrap">
+                                    <table id="luckyTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Número</th>
+                                                <th>Nome</th>
+                                                <th>CPF</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="lucky-number">001</span></td>
+                                                <td>Maria da Silva</td>
+                                                <td class="cpf-mask">***.123.456-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">002</span></td>
+                                                <td>João Neto</td>
+                                                <td class="cpf-mask">***.987.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">003</span></td>
+                                                <td>Pedro Cavalcante</td>
+                                                <td class="cpf-mask">***.456.789-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">004</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">005</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="lucky-number">006</span></td>
+                                                <td>Aldemar Barbosa</td>
+                                                <td class="cpf-mask">***.321.654-**</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button type="button" class="btn btn-modal" id="okModal">OK</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Script Botão Números da sorte -->
+                    <script>
+
+                        const openList = document.getElementById("openList");
+                        const modalLucky = document.getElementById("listModal");
+                        const modalClose = document.getElementById("modalClose");
+                        const okModal = document.getElementById("okModal");
+
+                        function openModal(event) {
+                            event.preventDefault();
+                            modalLucky.classList.add("show");
+                            modalLucky.setAttribute("aria-hidden", "false");
+                        }
+
+                        function hideModal() {
+                            modalLucky.classList.remove("show");
+                            modalLucky.setAttribute("aria-hidden", "true");
+                        }
+
+                        if (openList) {
+                            openList.addEventListener("click", openModal);
+                        }
+
+                        if (modalClose) {
+                            modalClose.addEventListener("click", hideModal);
+                        }
+
+                        if (okModal) {
+                            okModal.addEventListener("click", hideModal);
+                        }
+
+                        if (modalLucky) {
+                            modalLucky.addEventListener("click", function (event) {
+                                if (event.target === modalLucky) {
+                                    hideModal();
+                                }
+                            });
+                        }
+
+                        document.addEventListener("keydown", function (event) {
+                            if (event.key === "Escape" && modal.classList.contains("show")) {
+                                hideModal();
+                            }
+                        });
+
+                    </script>
+
+
+                </div>
 
             </div>
 
