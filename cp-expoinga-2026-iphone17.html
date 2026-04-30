@@ -323,7 +323,7 @@
                         max-width: 500px;
                     }
 
-                    .form-box p {
+                    .form-box h2 {
                         font-size: 24px;
                         color: #163056;
                         font-weight: 600;
@@ -529,7 +529,7 @@
                 </style>
 
                 <div class="form-box">
-                    <p>Preencha o formulário:</p>
+                    <h2>Preencha o formulário:</h2>
 
                     <!-- <form method="post" id="form-simulacao" action="confirmacao.html"> -->
                     <form method="post" id="form-simulacao" action="#">
@@ -634,13 +634,6 @@
                                 .check-text a {
                                     color: #EF6B22;
                                     text-decoration: underline;
-                                }
-
-                                .field-error {
-                                    display: none;
-                                    font-size: 13px;
-                                    color: #dc2626;
-                                    margin: 0;
                                 }
 
                                 .check-mark.error {
@@ -770,8 +763,10 @@
 
                         <button class="btn btn-primary" type="submit">Enviar</button>
 
+                        <p id="successMsg">
+                            Enviado com sucesso!<strong> Em breve você receberá seu número da sorte.</strong>
+                        </p>
                     </form>
-
 
 
                     <!-- script formulario -->
@@ -786,10 +781,6 @@
                         const cpfError = document.getElementById('cpfError');
                         const whatsappError = document.getElementById('whatsappError');
                         const emailError = document.getElementById('emailError');
-
-                        const parceiroRadios = document.querySelectorAll('input[name="parceiro"]');
-                        const corbanGroup = document.getElementById('corbanGroup');
-                        const corbanRadios = document.querySelectorAll('input[name="corban"]');
 
                         function showCpfError() {
                             if (cpfError) cpfError.style.display = 'block';
@@ -897,31 +888,6 @@
                             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
                         }
 
-                        function updateCorbanVisibility() {
-                            const parceiroSelecionado = document.querySelector('input[name="parceiro"]:checked');
-
-                            if (!parceiroSelecionado) {
-                                corbanGroup.style.display = 'none';
-                                corbanRadios.forEach(radio => {
-                                    radio.checked = false;
-                                    radio.required = false;
-                                });
-                                return;
-                            }
-
-                            if (parceiroSelecionado.value === 'nao') {
-                                corbanGroup.style.display = 'flex';
-                                corbanRadios.forEach(radio => {
-                                    radio.required = true;
-                                });
-                            } else {
-                                corbanGroup.style.display = 'none';
-                                corbanRadios.forEach(radio => {
-                                    radio.checked = false;
-                                    radio.required = false;
-                                });
-                            }
-                        }
 
                         cpfInput.addEventListener('input', function (e) {
                             e.target.value = maskCPF(e.target.value);
@@ -1027,66 +993,36 @@
                             }
                         });
 
-                        parceiroRadios.forEach(radio => {
-                            radio.addEventListener('change', updateCorbanVisibility);
-                        });
 
                         form.addEventListener('submit', function (e) {
-                            const corbanVisivel = corbanGroup.style.display !== 'none';
-                            const corbanSelecionado = document.querySelector('input[name="corban"]:checked');
+                            e.preventDefault();
 
-                            if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+                            if (!form.checkValidity()) {
+                                form.reportValidity();
                                 return;
                             }
 
                             if (!validarCPF(cpfInput.value)) {
-                                e.preventDefault();
                                 showCpfError();
                                 cpfInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
                                 return;
                             }
 
                             if (!validarWhatsapp(telInput.value)) {
-                                e.preventDefault();
                                 showWhatsappError();
                                 telInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
                                 return;
                             }
 
                             if (!validarEmail(emailInput.value)) {
-                                e.preventDefault();
                                 showEmailError();
                                 emailInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
                                 return;
                             }
 
-                            if (corbanVisivel && !corbanSelecionado) {
-                                e.preventDefault();
-                                alert('Selecione se você é gerente ou dono do Corban.');
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
+                            if (!checkbox.checked) {
+                                showError();
+                                checkbox.focus();
                                 return;
                             }
 
@@ -1104,7 +1040,6 @@
                             }
                         });
 
-                        updateCorbanVisibility();
                     </script>
                 </div>
                 <div class="client-confirmation">
@@ -1501,105 +1436,106 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>001</td>
                                 <td>Maria da Silva</td>
+                                <td>001</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>002</td>
                                 <td>João Neto</td>
+                                <td>002</td>
                                 <td>***.456.759-**</td>
                             </tr>
                             <tr>
-                                <td>003</td>
                                 <td>Pedro Cavalcante</td>
+                                <td>003</td>
                                 <td>***.456.289-**</td>
                             </tr>
                             <tr>
-                                <td>004</td>
                                 <td>Ana Souza</td>
+                                <td>004</td>
                                 <td>***.456.889-**</td>
                             </tr>
                             <tr>
-                                <td>005</td>
                                 <td>Carlos Pereira</td>
+                                <td>005</td>
                                 <td>***.456.999-**</td>
                             </tr>
                             <tr>
-                                <td>006</td>
                                 <td>Juliana Martins</td>
+                                <td>006</td>
                                 <td>***.386.789-**</td>
                             </tr>
                             <tr>
-                                <td>007</td>
                                 <td>Rafael Costa</td>
+                                <td>007</td>
                                 <td>***.456.101-**</td>
                             </tr>
                             <tr>
-                                <td>008</td>
                                 <td>Fernanda Lima</td>
+                                <td>008</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>009</td>
                                 <td>Bruno Rocha</td>
+                                <td>009</td>
                                 <td>***.121.314-**</td>
                             </tr>
                             <tr>
-                                <td>010</td>
                                 <td>Patrícia Gomes</td>
+                                <td>010</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>011</td>
                                 <td>Lucas Almeida</td>
+                                <td>011</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>012</td>
                                 <td>Camila Ribeiro</td>
+                                <td>012</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>013</td>
                                 <td>Diego Fernandes</td>
+                                <td>013</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>014</td>
                                 <td>Mariana Lopes</td>
+                                <td>014</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>015</td>
                                 <td>Thiago Batista</td>
+                                <td>015</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>016</td>
                                 <td>Aline Cardoso</td>
+                                <td>016</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>017</td>
                                 <td>Gustavo Teixeira</td>
+                                <td>017</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>018</td>
                                 <td>Larissa Duarte</td>
+                                <td>018</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>019</td>
                                 <td>Felipe Nogueira</td>
+                                <td>019</td>
                                 <td>***.456.789-**</td>
                             </tr>
                             <tr>
-                                <td>020</td>
                                 <td>Renata Araujo</td>
+                                <td>020</td>
                                 <td>***.456.789-**</td>
                             </tr>
+
                         </tbody>
                     </table>
                 </div>
