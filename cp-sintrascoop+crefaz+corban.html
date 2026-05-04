@@ -322,8 +322,43 @@
                         pointer-events: none;
                     }
 
-                    /* .form-box input[type='text'],
-                    .form-box input[type='tel'], */
+                    /* SELECT */
+
+                    select {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                    }
+
+                    select {
+                        background-image: url("data:image/svg+xml;utf8,<svg fill='%23163056' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5 7l5 5 5-5z'/></svg>");
+                        background-repeat: no-repeat;
+                        background-position: right 12px center;
+                        background-size: 16px;
+                        padding-right: 40px;
+                        background-color: #fff;
+                    }
+
+                    select:invalid {
+                        color: #94a3b8;
+                    }
+
+                    select option {
+                        color: #163056;
+                    }
+
+                    .input-group select {
+                        height: 50px;
+                        border-radius: 12px;
+                        border: 2px solid #E4EBF3;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+
+                    .input-group select:focus {
+                        border-color: #ef6b22;
+                    }
+
                     .form-box select {
                         width: 100%;
                         padding: 12px 8px;
@@ -508,7 +543,7 @@
                         <div class="input-group">
                             <label for="empresa">Empresa <span class="required-asterisk">*</span></label>
                             <select id="empresa" name="Empresa" required>
-                                <option value="">Selecione...</option>
+                                <option value="" disabled selected hidden>Selecione</option>
                                 <option value="Agraria">Agraria</option>
                                 <option value="Aurora">Aurora</option>
                                 <option value="Camisc">Camisc - Coop. Agrícola Mista São Cristóvão</option>
