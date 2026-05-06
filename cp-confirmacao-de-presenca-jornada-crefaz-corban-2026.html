@@ -164,8 +164,8 @@
 
             #hero .container {
                 display: grid;
-                gap: 60px;
-                max-width: 1100px;
+                gap: 30px;
+                max-width: 900px;
                 align-items: center;
                 margin: 0 auto;
                 grid-template-columns: 1fr;
@@ -174,6 +174,8 @@
             .content {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                align-items: start;
+                gap: 40px;
             }
 
             h1 {
@@ -281,14 +283,14 @@
             .confirm-section {
                 padding: 20px;
                 border: 2px solid #ef6b22;
-                border-radius: 20px 20px 0 0;
+                border-radius: 20px;
                 background: #ef6b22;
             }
 
             #maps iframe {
                 width: 100%;
                 border-radius: 0 0 20px 20px;
-                height: 200px;
+                height: 150px;
             }
 
             .secundary-text {
@@ -303,7 +305,7 @@
             @media (max-width: 767px) {
 
                 #hero {
-                    padding: 30px 0;
+                    padding: 30px 0px;
                 }
 
                 #hero .container {
@@ -328,6 +330,10 @@
                     font-size: 22px;
                     margin: 0;
                     padding: 6px 0;
+                }
+
+                .secundary-text {
+                    font-size: 18px;
                 }
 
                 .card-title {
@@ -370,19 +376,22 @@
                                     <h3>21 de Maio de 2026</h3>
                                 </div>
                             </div>
-                            <a href="#maps">
-                                <div class="schedule">
-                                    <div class="icon-info">
-                                        <i class="fa-regular fa-map"></i>
-                                    </div>
-                                    <div class="schedule-text">
-                                        <h3>Stream Hotéis</h3>
-                                        <p>Rua General Osório, 830, Centro, Ribeirão Preto - SP</p>
-                                    </div>
+                            <div class="schedule">
+                                <div class="icon-info">
+                                    <i class="fa-regular fa-map"></i>
                                 </div>
-                            </a>
+                                <div class="schedule-text">
+                                    <h3>Stream Hotéis</h3>
+                                    <p>Rua General Osório, 830, Centro, Ribeirão Preto - SP</p>
+                                </div>
+                            </div>
                         </div>
-
+                        <div id="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.3712964030697!2d-47.80923142398157!3d-21.1774042783637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9befcf3d26133%3A0x5be7452667fd8069!2sR.%20Gen.%20Os%C3%B3rio%2C%20830%20-%20Centro%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014010-000!5e0!3m2!1spt-BR!2sbr!4v1778099273338!5m2!1spt-BR!2sbr"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
 
                     </div>
 
@@ -407,12 +416,7 @@
                             </a>
                         </div>
                     </div>
-                    <div id="maps">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.3712964030697!2d-47.80923142398157!3d-21.1774042783637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9befcf3d26133%3A0x5be7452667fd8069!2sR.%20Gen.%20Os%C3%B3rio%2C%20830%20-%20Centro%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014010-000!5e0!3m2!1spt-BR!2sbr!4v1778099273338!5m2!1spt-BR!2sbr"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+
 
                 </div>
             </div>
