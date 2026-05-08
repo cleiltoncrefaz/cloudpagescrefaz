@@ -11,18 +11,18 @@
 
 <!-- Global styles -->
 <style>
-     @font-face {
+    @font-face {
         font-family: 'Anteb';
-        /*src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');--*/
-        src: url('assets/Anteb-Regular.otf') format('opentype');
+        src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
+        src: url('../assets/Anteb-Regular.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Anteb';
-        /* src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-ExtraBold.otf') format('opentype'); */
-        src: url('assets/Anteb-Bold.otf') format('opentype');
+        src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-ExtraBold.otf') format('opentype');
+        src: url('../assets/Anteb-Bold.otf') format('opentype');
         font-weight: bold;
         font-style: normal;
     }
@@ -212,6 +212,7 @@
                 z-index: 999;
                 /* background: #1630568a; */
                 background: #fff;
+                box-shadow: 0 8px 13px rgb(0 33 71 / 40%);
             }
 
             #atention {
@@ -353,17 +354,16 @@
                 }
 
                 .menu {
+                    background: #fff;
                     position: absolute;
                     top: 100%;
                     left: 0;
                     margin: -1px 0 0 0;
                     text-align: center;
                     width: 100%;
-                    background: #fff;
                     max-height: 0;
                     overflow: hidden;
                     transition: max-height 0.3s ease;
-                    /* box-shadow: 0 12px 30px rgba(22, 48, 86, 0.12); */
                     border-radius: 0 0 20px 20px;
                 }
 
@@ -582,7 +582,9 @@
 
             <div class="content-image">
                 <!-- <img class="image-hero" src="assets/img-banner.png" title=""> -->
-                <img class="image-hero" src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/e4d85c2f-4ac5-4095-b06b-8c29b52c14ad.png" alt="" title="">
+                <img class="image-hero"
+                    src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/e4d85c2f-4ac5-4095-b06b-8c29b52c14ad.png"
+                    alt="" title="">
             </div>
 
         </div>
@@ -815,6 +817,7 @@
                 font-size: 32px;
                 color: #ffffff;
                 margin-bottom: 10px;
+                font-weight: 600;
             }
 
             .produto-subtitle {
@@ -1063,7 +1066,7 @@
                 position: absolute;
                 bottom: 0;
                 border-radius: 20px 20px 0 0;
-                max-width: 330px;
+                max-width: 360px;
                 display: block;
             }
 
@@ -1125,7 +1128,9 @@
 
             <div class="block-image">
                 <!-- <img class="img-trabalhador" src="assets/img-trabalhador.jpg" alt="" title=""> -->
-                <img class="img-trabalhador" src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/240605cb-314c-4c60-b77f-35d748702dd7.jpg" alt="" title="">
+                <img class="img-trabalhador"
+                    src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/240605cb-314c-4c60-b77f-35d748702dd7.jpg"
+                    alt="" title="">
             </div>
         </div>
     </section>
