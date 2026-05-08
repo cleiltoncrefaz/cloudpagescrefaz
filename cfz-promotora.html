@@ -724,6 +724,25 @@
                 overflow-x: auto;
             }
 
+            /* ----- Arrastar ---- */
+
+            .produtos-container {
+                cursor: grab;
+                user-select: none;
+            }
+
+            .produtos-container.dragging {
+                cursor: grabbing;
+            }
+
+            .produtos-container.dragging a,
+            .produtos-container.dragging button {
+                pointer-events: none;
+            }
+
+            /* ----- FIM Arrastar ---- */
+
+
             .card-carrossel {
                 display: flex;
                 justify-content: center;
@@ -919,7 +938,41 @@
                     d="M14.05,4.17l12.07,12.48c.5.51.9,1.09,1.21,1.71H0v6h27.42c-.35.76-.84,1.46-1.47,2.05l-12.48,12.07,4.17,4.31,12.48-12.07c.05-.05.11-.1.16-.16,2.38-2.38,3.72-5.53,3.77-8.9.06-3.44-1.23-6.71-3.62-9.18L18.37,0l-4.31,4.17Z" />
             </svg>
         </a> -->
+        <script>
+            const carousel = document.querySelector(".produtos-container");
 
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            carousel.addEventListener("mousedown", (e) => {
+                isDown = true;
+                carousel.classList.add("dragging");
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener("mouseleave", () => {
+                isDown = false;
+                carousel.classList.remove("dragging");
+            });
+
+            carousel.addEventListener("mouseup", () => {
+                isDown = false;
+                carousel.classList.remove("dragging");
+            });
+
+            carousel.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+
+                e.preventDefault();
+
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 1.5;
+
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        </script>
     </section>
 
     <!--Encontre a loja-->
