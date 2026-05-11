@@ -72,6 +72,8 @@
         font-family: 'Anteb', sans-serif;
         height: 80px;
         align-content: center;
+        text-decoration: none;
+        text-align: center;
     }
 
     .btn-primary {
@@ -138,24 +140,26 @@
 
             h1,
             h2 {
-                font-size: 45px;
+                font-size: 85px;
                 margin: 0;
                 padding: 0;
                 font-weight: 400;
-                text-align: center;
+                text-align: left;
                 line-height: 1.1;
                 letter-spacing: -1px;
                 color: #fff;
+
             }
 
             .credit-content {
-                background: #163056;
+                background: #ef6b22;
             }
 
             .logo-crefaz {
                 width: 250px;
                 margin: 0 auto;
                 fill: #fff;
+                display: none;
             }
 
             .card-text {
@@ -189,9 +193,9 @@
             }
 
             .btn-confirmation {
-                background: #ef6b22;
+                background: transparent;
                 color: #ffffff;
-                border: 2px solid #ef6b22;
+                border: 2px solid;
                 text-align: center;
                 text-decoration: none;
                 min-width: 350px;
@@ -206,19 +210,61 @@
                 fill: #fff;
             }
 
+            .content-image {
+                background: #ef6b22;
+                position: relative;
+            }
+
+            .content-image .container {
+                display: grid;
+                grid-template-columns: 0.9fr 1fr;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                gap: 20px;
+                padding: 60px 30px;
+            }
+
+            .content-text {
+                color: #fff;
+                padding: 30px 0;
+            }
+
+            .content-text p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .iphone {
+                pointer-events: none;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .content-form {
+                position: relative;
+                display: grid;
+            }
+
+
+            .iphone img {
+                width: 100%;
+            }
+
             @media (max-width: 767px) {
 
                 h1 {
-                    font-size: 36px;
+                    font-size: 65px;
+                    text-align: center;
                 }
 
                 h2 {
                     font-size: 28px;
                 }
 
-
                 .logo-crefaz {
                     width: 200px;
+                    display: none;
                 }
 
                 .logo-arena {
@@ -231,8 +277,21 @@
                 }
 
                 .btn-confirmation {
-                    min-width: 300px;
+                    min-width: 320px;
                     height: 70px;
+                }
+
+                .content-image {
+                    grid-template-columns: 1fr;
+                }
+
+                .iphone {
+                    max-width: 220px;
+                }
+
+                .content-image .container {
+                    grid-template-columns: 1fr;
+                    gap: 0;
                 }
             }
         </style>
@@ -252,7 +311,7 @@
             </a>
         </div>
 
-        <div class="credit-content">
+        <!-- <div class="credit-content">
             <svg class="logo-crefaz" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 123.75">
                 <path
@@ -260,11 +319,84 @@
             </svg>
             <div class="card-text">
                 <h1>Você pode ter <strong>dinheiro</strong> extra <strong>ainda hoje!</strong></h1>
-                <a href="#" class="btn btn-confirmation">
+                <a href="https://site.crefaz.com.br/simulacao" class="btn btn-confirmation">
                     Clique e simule agora
                 </a>
 
             </div>
+        </div> -->
+        <div class="credit-content">
+            <div class="content-image">
+                <style>
+                    .content-text p {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .content-image {
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 0.9fr 1fr;
+                        align-items: center;
+                        padding: 5px;
+                        justify-content: center;
+                        background: #163056;
+                        border-radius: 30px;
+                        height: 280px;
+                    }
+
+                    .content-text {
+                        color: #fff;
+                        padding: 30px 0;
+                    }
+
+                    .iphone {
+                        pointer-events: none;
+                        position: absolute;
+                        max-width: 300px;
+                        top: -120px;
+                        left: -40px;
+                    }
+
+                    .iphone img {
+                        width: 100%;
+                    }
+
+                    @media (max-width: 767px) {
+                        .content-image {
+                            grid-template-columns: 0.7fr 1fr;
+                            height: fit-content;
+                            margin: 20px 0;
+                        }
+
+                        .iphone {
+                            max-width: 130px;
+                            left: 0;
+                            top: -30px;
+                        }
+
+                        h1 {
+                            font-size: 30px;
+                            line-height: 1.1;
+                            text-align: left;
+                        }
+                    }
+                </style>
+                <div class="content-iphone">
+                    <div class="iphone">
+                        <!-- <img src="assets/iphone-17-dois-celulares-celular.png" alt="iPhone 17" class="iPhone 17"> -->
+                        <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/677ffe06-c94d-4519-9ae3-bc33dc1e1049.png"
+                            alt="iPhone 17" class="iPhone 17">
+                    </div>
+
+                </div>
+                <div class="content-text">
+                    <h1>Concorra a um iPhone 17!</h1>
+                </div>
+            </div>
+            <a href="https://site.crefaz.com.br/simulacao" class="btn btn-confirmation">
+                Clique e simule agora
+            </a>
         </div>
 
     </section>
@@ -274,8 +406,8 @@
         <style>
             #rodape {
                 font-family: 'Anteb', sans-serif;
-                background: #0d2041;
-                /* background: #163056; */
+                /* background: #0d2041; */
+                background: #163056;
                 color: #fff;
             }
 
