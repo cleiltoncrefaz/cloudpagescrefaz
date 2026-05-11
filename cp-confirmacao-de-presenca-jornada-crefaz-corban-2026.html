@@ -66,17 +66,18 @@
             text-decoration: none;
             text-align: center;
             align-content: center;
-            transition: all 0.1s ease;
+            transition: all 0.3s ease;
             width: 100%;
         }
 
         .btn-primary {
-            background: #163056;
+            background: var(--azul-crefaz);
             color: #fff;
         }
 
         .btn-primary:hover {
-            filter: brightness(1.1);
+            background: var(--azul-escuro);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -86,8 +87,9 @@
         }
 
         .btn-outline:hover {
-            background: #ef6b22;
-            color: #fff;
+            background: #ffffff;
+            color: #ef6b22;
+            transform: translateY(-2px);
         }
 
         .highlight {
@@ -164,7 +166,6 @@
         <style>
             #hero {
                 /* background: #f8f9ff; */
-                /* background: #0d2041; */
                 background: var(--azul-crefaz);
                 /* min-height: max(884px, 100dvh); */
                 font-family: 'Anteb', sans-serif;
@@ -178,7 +179,7 @@
             #hero .container {
                 display: grid;
                 gap: 30px;
-                max-width: 900px;
+                max-width: 1000px;
                 align-items: center;
                 margin: 0 auto;
                 grid-template-columns: 1fr;
@@ -281,14 +282,6 @@
                 font-weight: bold;
             }
 
-            /* .primary-content,
-            .secondary-content {
-                position: relative;
-                display: grid;
-                grid-template-columns: 1fr;
-                align-items: center;
-            } */
-
             .secondary-content {
                 padding: 40px 20px;
                 background: var(--laranja-crefaz);
@@ -338,7 +331,7 @@
                 }
 
                 h1 {
-                    font-size: 28px;
+                    font-size: 26px;
                     line-height: 1.2;
                     padding: 0;
                     text-align: center;
@@ -460,7 +453,7 @@
             }
 
             #mapstotal .container {
-                max-width: 900px;
+                max-width: 1000px;
                 align-content: center;
                 margin: 0 auto;
             }
