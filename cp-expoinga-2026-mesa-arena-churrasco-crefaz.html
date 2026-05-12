@@ -82,57 +82,38 @@
         text-align: center;
     }
 
-    .btn-primary {
-        background: var(--azul-crefaz);
-        color: #ffffff;
-        border: none;
-        text-align: center;
-        text-decoration: none;
-        min-width: 215px;
-    }
-
-    .btn-primary:hover {
-        background: var(--azul-escuro);
-        transform: translateY(-2px);
-    }
-
     .btn-outline {
         background: transparent;
         color: #ffffff;
-        border: 2px solid;
+        border: 2px solid #fff;
+        text-align: center;
+        text-decoration: none;
+        width: 350px;
+        margin: 0 auto;
     }
 
     .btn-outline:hover {
         background: #ffffff;
         color: #ef6b22;
+        border: 2px solid #ffffff;
         transform: translateY(-2px);
     }
 
-    .btn-primary-outline {
-        background: transparent;
-        border: 2px solid #163056;
-        color: #163056;
-        text-decoration: none;
-        width: 100%;
+    .btn-primary {
+        background: var(--azul-crefaz);
+        color: #ffffff;
         text-align: center;
+        text-decoration: none;
+        width: 350px;
+        margin: 0 auto;
     }
 
-    .btn-secondary-outline {
-        background: transparent;
-        border: 2px solid #EF6B22;
-        color: #EF6B22;
-        text-decoration: none;
-        width: 100%;
-        text-align: center;
-        transition: all 0.1s ease;
-        align-items: center;
-        display: flex;
+    .btn-primary:hover {
+        background: var(--azul-escuro);
+        color: #ffffff;
+        transform: translateY(-2px);
     }
 
-    .btn-secondary-outline:hover {
-        background: #ef6b22;
-        color: #fff;
-    }
 
     .highlight {
         color: #ef6b22;
@@ -195,9 +176,10 @@
             }
 
             .credit-content {
-                background: #ef6b22;
+                background: var(--laranja-crefaz);
                 padding: 60px 30px;
                 height: 100%;
+                display: grid;
             }
 
             .menu-content {
@@ -208,24 +190,6 @@
             .logo-arena {
                 max-width: 300px;
                 margin: 0 auto;
-            }
-
-            .btn-confirmation {
-                background: transparent;
-                color: #ffffff;
-                border: 2px solid;
-                text-align: center;
-                text-decoration: none;
-                min-width: 350px;
-                margin: 0 auto;
-            }
-
-
-            .btn-confirmation:hover {
-                background: transparent;
-                color: #fff;
-                border: 2px solid;
-                fill: #fff;
             }
 
             .content-form {
@@ -262,12 +226,12 @@
             @media (max-width: 767px) {
 
                 .credit-content .container {
-                    grid-template-columns: 0.8fr 1fr;
+                    grid-template-columns: 1.2fr 0.8fr;
                     gap: 10px;
                 }
 
                 .content-text h1 {
-                    font-size: 35px;
+                    font-size: 28px;
                     text-align: left;
                     padding: 0 0 5px 0;
                 }
@@ -290,13 +254,19 @@
                     gap: 20px;
                 }
 
-                .btn-confirmation {
-                    min-width: 320px;
+                .btn-outline {
+                    width: 300px;
+                    height: 70px;
+                }
+
+                .btn-primary {
+                    width: 300px;
                     height: 70px;
                 }
 
                 .iphone {
                     max-width: 220px;
+                    margin: 0 auto;
                 }
 
                 .iphone img {
@@ -311,25 +281,24 @@
             <img class="logo-arena"
                 src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/d080ab8c-68af-4270-9584-da2987140841.png"
                 alt="Logo Complexo Arena Crefaz" title="Logo Complexo Arena Crefaz">
-            <a href="#" class="btn btn-confirmation">
+            <a href="#" class="btn btn-outline">
                 Ver cardápio
             </a>
         </div>
 
         <div class="credit-content">
             <div class="container">
-
                 <div class="content-text">
                     <h1>Quer ganhar um iPhone 17?</h1>
-                    <a href="https://site.crefaz.com.br/expoinga" class="btn btn-primary">
-                        Clique e participe
-                    </a>
                 </div>
-
                 <div class="iphone">
-                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/5db551a6-528d-46cd-8219-74f97531a93c.png" alt="iPhone 17" class="iPhone 17">
+                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/5db551a6-528d-46cd-8219-74f97531a93c.png"
+                        alt="iPhone 17" class="iPhone 17">
                 </div>
             </div>
+            <a href="https://site.crefaz.com.br/expoinga" class="btn btn-primary">
+                Clique e participe
+            </a>
         </div>
 
     </section>
