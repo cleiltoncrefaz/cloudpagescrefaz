@@ -9,147 +9,166 @@
     <link rel="shortcut icon" href="assets/favicon-crefaz.ico" type="image/x-icon">
 </head>
 
+<!-- Global styles -->
+<style>
+    html {
+        --azul-escuro: #0d2041;
+        --azul-crefaz: #163056;
+        --laranja-crefaz: #ef6b22;
+    }
 
+    @font-face {
+        font-family: 'Anteb';
+        src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Anteb';
+        src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-ExtraBold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        font-family: 'Anteb', sans-serif;
+        overflow-x: hidden;
+    }
+
+
+    .input-success {
+        border: 2px solid #22c55e !important;
+    }
+
+    .input-error {
+        border: 2px solid #ef4444 !important;
+    }
+
+    .error-label {
+        color: #ef4444;
+        font-size: 11px;
+        margin-top: 4px;
+        font-weight: 600;
+        display: none;
+    }
+
+    ::selection {
+        background: #4dbeffbb;
+        color: #ffffff;
+    }
+
+    strong {
+        font-weight: 800;
+    }
+
+    .btn {
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 28px;
+        font-family: 'Anteb', sans-serif;
+        height: 80px;
+        align-content: center;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn-primary {
+        background: #163056;
+        color: #fff;
+        width: 100%;
+    }
+
+    .btn-primary-outline {
+        background: transparent;
+        border: 2px solid #163056;
+        color: #163056;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-secondary {
+        background: #EF6B22;
+        color: #fff;
+        width: 100%;
+    }
+
+    .btn-secondary-outline {
+        background: transparent;
+        border: 2px solid #EF6B22;
+        color: #EF6B22;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        transition: all 0.1s ease;
+        align-items: center;
+        display: flex;
+    }
+
+    .btn-secondary-outline:hover {
+        background: #ef6b22;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        filter: brightness(1.2);
+    }
+
+    .btn-secondary:hover {
+        filter: brightness(0.9);
+    }
+</style>
 
 <body>
 
     <!-- hero -->
     <section id="hero">
-
-        <!-- Global styles -->
-        <style>
-            html {
-                --azul-escuro: #0d2041;
-                --azul-crefaz: #163056;
-                --laranja-crefaz: #ef6b22;
-            }
-
-            @font-face {
-                font-family: 'Anteb';
-                src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'Anteb';
-                src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-ExtraBold.otf') format('opentype');
-                font-weight: bold;
-                font-style: normal;
-            }
-
-            * {
-                box-sizing: border-box;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                scroll-behavior: smooth;
-                font-family: 'Anteb', sans-serif;
-                overflow-x: hidden;
-            }
-
-
-            .input-success {
-                border: 2px solid #22c55e !important;
-            }
-
-            .input-error {
-                border: 2px solid #ef4444 !important;
-            }
-
-            .error-label {
-                color: #ef4444;
-                font-size: 11px;
-                margin-top: 4px;
-                font-weight: 600;
-                display: none;
-            }
-
-            ::selection {
-                background: #4dbeffbb;
-                color: #ffffff;
-            }
-
-            strong {
-                font-weight: 800;
-            }
-
-            .btn {
-                border: none;
-                border-radius: 10px;
-                padding: 10px;
-                cursor: pointer;
-                font-size: 24px;
-                font-family: 'Anteb', sans-serif;
-                height: 80px;
-                align-content: center;
-                text-decoration: none;
-                text-align: center;
-            }
-
-            .btn-outline {
-                background: transparent;
-                color: #ffffff;
-                border: 2px solid #fff;
-                text-align: center;
-                text-decoration: none;
-                width: 350px;
-                margin: 0 auto;
-            }
-
-            .btn-outline:hover {
-                background: #ffffff;
-                color: #ef6b22;
-                border: 2px solid #ffffff;
-                transform: translateY(-2px);
-            }
-
-            .btn-primary {
-                background: var(--azul-crefaz);
-                color: #ffffff;
-                text-align: center;
-                text-decoration: none;
-                width: 350px;
-                margin: 0 auto;
-            }
-
-            .btn-primary:hover {
-                background: var(--azul-escuro);
-                color: #ffffff;
-                transform: translateY(-2px);
-            }
-
-
-            .highlight {
-                color: #ef6b22;
-                font-weight: 800;
-            }
-
-            p {
-                margin: 0;
-                padding: 0;
-            }
-        </style>
-
         <style>
             #hero {
                 font-family: 'Anteb', sans-serif;
-                background: var(--azul-crefaz);
+                background: #163056;
+                display: grid;
                 align-items: center;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                min-height: 600px;
             }
 
-            .credit-content .container {
-                position: relative;
-                display: grid;
-                grid-template-columns: 1fr 0.8fr;
-                align-items: center;
-                padding: 5px;
-                justify-content: center;
-                border-radius: 30px;
-                max-width: 900px;
-                margin: 0 auto;
+            h1 {
+                font-size: 80px;
+                margin: 0;
+                padding: 0;
+                font-weight: 600;
+                text-align: left;
+                line-height: 1.1;
+                letter-spacing: -1px;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                font-size: 85px;
+                margin: 0;
+                padding: 0;
+                font-weight: 400;
+                text-align: left;
+                line-height: 1.1;
+                letter-spacing: -1px;
+                color: #fff;
+            }
+
+            .credit-content {
+                background: #ef6b22;
             }
 
             .logo-crefaz {
@@ -165,21 +184,18 @@
                 max-width: 500px;
             }
 
-            .menu-content {
+            .menu-content,
+            .credit-content {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 60px 20px;
+                padding: 60px 30px;
                 height: 100%;
             }
 
             .credit-content {
-                background: var(--laranja-crefaz);
-                padding: 60px 20px;
-                height: 100%;
-                gap: 20px;
-                display: grid;
+                gap: 40px;
             }
 
             .menu-content {
@@ -192,31 +208,64 @@
                 margin: 0 auto;
             }
 
-            .content-form {
+            .btn-confirmation {
+                background: transparent;
+                color: #ffffff;
+                border: 2px solid;
+                text-align: center;
+                text-decoration: none;
+                min-width: 350px;
+                margin: 0 auto;
+            }
+
+
+            .btn-confirmation:hover {
+                background: transparent;
+                color: #fff;
+                border: 2px solid;
+                fill: #fff;
+            }
+
+            .content-image {
+                background: var(--laranja-crefaz);
                 position: relative;
                 display: grid;
+                grid-template-columns: 0.6fr 1fr;
+                align-items: center;
+                padding: 10px 30px;
+                justify-content: center;
+                background: #163056;
+                border-radius: 30px;
+                height: 280px;
+                max-width: 800px;
+            }
+
+            .content-image .container {
+                display: grid;
+                grid-template-columns: 0.9fr 1fr;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                gap: 20px;
+                padding: 60px 30px;
             }
 
             .content-text {
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                justify-content: start;
+                color: #fff;
+                padding: 30px 0;
             }
 
-            .content-text h1 {
-                font-size: 75px;
-                color: #fff;
-                padding: 20px 0;
+            .content-text p {
                 margin: 0;
-                text-align: left;
-                line-height: 1;
-                text-transform: uppercase;
+                padding: 0;
             }
 
             .iphone {
                 pointer-events: none;
+                position: absolute;
                 max-width: 250px;
+                top: -50px;
+                left: 20px;
             }
 
             .iphone img {
@@ -225,15 +274,10 @@
 
             @media (max-width: 767px) {
 
-                .credit-content .container {
-                    grid-template-columns: 1.2fr 0.8fr;
-                    gap: 10px;
-                }
-
-                .content-text h1 {
+                h1 {
                     font-size: 28px;
+                    line-height: 1.1;
                     text-align: left;
-                    padding: 0 0 5px 0;
                 }
 
                 h2 {
@@ -254,49 +298,62 @@
                     gap: 20px;
                 }
 
-                .btn-outline {
-                    width: 300px;
+                .btn-confirmation {
+                    min-width: 320px;
                     height: 70px;
                 }
 
-                .btn-primary {
-                    width: 300px;
-                    height: 70px;
+                .content-image {
+                    width: 100%;
+                    grid-template-columns: 0.7fr 1fr;
+                    height: fit-content;
+                    margin: 20px 0;
+                    padding: 0;
                 }
 
                 .iphone {
-                    max-width: 220px;
-                    margin: 0 auto;
+                    max-width: 130px;
+                    left: 0;
+                    top: -30px;
                 }
 
-                .iphone img {
-                    width: 100px;
+                .content-image .container {
+                    grid-template-columns: 1fr;
+                    gap: 0;
                 }
-
-
             }
         </style>
 
         <div class="menu-content">
+
+            <!-- <img class="logo-arena" src="assets/logo-crefaz-arena.png" alt="Logo Complexo Arena Crefaz"
+                title="Logo Complexo Arena Crefaz"> -->
+
             <img class="logo-arena"
                 src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/d080ab8c-68af-4270-9584-da2987140841.png"
                 alt="Logo Complexo Arena Crefaz" title="Logo Complexo Arena Crefaz">
-            <a href="#" class="btn btn-outline">
+
+            <!-- <h2><strong>Aproveite o melhor sabor da Expoingá 2026 aqui na Crefaz Arena Churrasco!</strong></h2> -->
+            <a href="#" class="btn btn-confirmation">
                 Ver cardápio
             </a>
         </div>
 
         <div class="credit-content">
-            <div class="container">
+            <div class="content-image">
+                <div class="content-iphone">
+                    <div class="iphone">
+                        <!-- <img src="assets/iphone-17-dois-celulares-celular.png" alt="iPhone 17" class="iPhone 17"> -->
+                        <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/677ffe06-c94d-4519-9ae3-bc33dc1e1049.png"
+                            alt="iPhone 17" class="iPhone 17">
+                    </div>
+
+                </div>
                 <div class="content-text">
                     <h1>Quer ganhar <br>um iPhone 17?</h1>
                 </div>
-                <div class="iphone">
-                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/5db551a6-528d-46cd-8219-74f97531a93c.png"
-                        alt="iPhone 17" class="iPhone 17">
-                </div>
             </div>
-            <a href="https://site.crefaz.com.br/expoinga" class="btn btn-primary">
+            <a href="https://site.crefaz.com.br/expoinga" class="btn btn-confirmation">
                 Clique e participe
             </a>
         </div>
@@ -464,10 +521,20 @@
 
         <div class="footer-container">
             <div class="footer-section">
-                <svg class="logo-footer" id="Logo_Crefaz" data-name="Logo_Crefaz" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 560.59 106.16">
+                <svg class="logo-footer" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 150 28.41">
                     <path
-                        d="M560.59,7.11v21.78l-4.89,4.33-8.16,7.23-45.98,40.76-3.34,2.96c5.01.81,10.13,1.3,15.33,1.47,1.33.05,2.66.07,4,.07s2.67-.02,4-.07c9.71-.31,19.13-1.77,28.14-4.24,3.71-1.01,7.34-2.2,10.9-3.54v21.39c-12.65,4.03-26.07,6.34-39.99,6.63h-6.09c-12.09-.25-23.81-2.03-34.98-5.13-1.63-.45-3.25-.93-4.86-1.44v-21.38h0s5.11-4.54,5.11-4.54l8.1-7.18,46.37-41.11,3.17-2.81c-5.11-.84-10.34-1.37-15.65-1.55-.71-.09-1.42-.16-2.14-.2-.69-.05-1.39-.07-2.09-.07s-1.39.02-2.08.07c-.72.05-1.44.11-2.15.2-9.83.34-19.36,1.84-28.46,4.38-3.46.96-6.86,2.08-10.18,3.33V7.06c10.88-3.45,22.33-5.63,34.17-6.35,2.88-.17,5.78-.27,8.71-.27s5.82.09,8.7.27c10.27.62,20.25,2.34,29.81,5.04,1.52.43,3.02.88,4.52,1.36ZM461.42,34.39c1.75,4.58,2.88,9.47,3.28,14.57v56.92h-20.31v-10.83c-7.6,5.91-16.85,9.79-26.95,10.83-1.81.19-3.64.28-5.51.28s-3.7-.1-5.51-.28c-1.53-.16-3.05-.38-4.54-.68-6.82-1.3-13.17-3.92-18.79-7.58-5.43-3.53-10.17-8.03-13.98-13.26-2.19-3-4.07-6.23-5.59-9.67-2.92-6.56-4.54-13.83-4.54-21.47,0-.1,0-.19,0-.28.03-7.67,1.7-14.95,4.68-21.52,1.55-3.41,3.44-6.64,5.65-9.62.32-.43.64-.86.97-1.28,3.59-4.58,7.93-8.54,12.82-11.72,5.62-3.65,11.97-6.26,18.79-7.57,3.24-.63,6.6-.95,10.03-.95,12.23,0,23.5,4.15,32.46,11.12,2.26,1.76,4.38,3.7,6.33,5.8,1,1.07,1.95,2.18,2.85,3.33,3.27,4.16,5.94,8.83,7.85,13.86ZM443.58,60.56c.46-1.99.73-4.05.81-6.17.02-.39.02-.78.02-1.17s0-.78-.02-1.17c-.07-2.14-.36-4.22-.82-6.23-1.61-6.87-5.39-12.9-10.58-17.33-5.67-4.83-13.02-7.75-21.05-7.75-.62,0-1.23.02-1.84.05-7.17.4-13.72,3.13-18.9,7.44-7.1,5.9-11.66,14.78-11.74,24.71,0,.1,0,.19,0,.28,0,10.04,4.56,19.01,11.71,24.97,5.18,4.31,11.72,7.05,18.89,7.45.62.04,1.25.06,1.88.06,8.05,0,15.43-2.93,21.1-7.79,5.19-4.43,8.96-10.48,10.55-17.36ZM364.05,15.61c-7.76-7.8-17.94-13.2-29.32-14.97-1.13-.18-2.29-.32-3.45-.42-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-6.43.58-12.53,2.3-18.09,4.97-7.47,3.58-13.96,8.86-18.99,15.35-.45.58-.89,1.17-1.32,1.77v83.58h20.31v-29.86h0v-7.75h31.09v-20.31h-31.09v-18.08c5.41-5.36,12.7-8.84,20.79-9.35.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c2.1.13,4.16.47,6.13.98,5.72,1.5,10.82,4.5,14.86,8.57l7.39-7.39,2.16-2.16,4.91-4.91ZM275.18,39.94c-.49-1.93-1.08-3.82-1.78-5.66-1.87-4.99-4.49-9.62-7.7-13.76C256.93,9.22,243.69,1.56,228.62.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-15.07,1.34-28.32,9-37.09,20.31-.29.38-.59.76-.86,1.15-2.2,2.99-4.09,6.23-5.62,9.65-2.36,5.26-3.88,10.98-4.4,16.98-.14,1.52-.2,3.07-.2,4.63,0,5.39.81,10.59,2.3,15.49.64,2.1,1.41,4.14,2.3,6.12,1.53,3.42,3.42,6.66,5.62,9.65,9.63,13.15,25.18,21.68,42.72,21.68,8.07,0,15.73-1.81,22.58-5.04l-3.15-9.6-3.31-10.09c-4.75,2.72-10.25,4.28-16.11,4.28-12.36,0-23.11-6.91-28.6-17.07-2.48-4.58-3.88-9.83-3.88-15.41,0-1.6.11-3.17.34-4.7,2.18-15.04,14.66-26.74,30.06-27.71.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c15.32.97,27.75,12.57,30.02,27.5l-33.85.11,6.51,20.1,23.93-.08,11.48-.04,9.38-.03h1.18c.21-.71.41-1.43.59-2.15,1.05-4.16,1.61-8.51,1.61-13,0-1.68-.08-3.35-.23-4.99-.25-2.74-.72-5.42-1.38-8.01ZM175.93,15.61C167.39,7.02,155.93,1.35,143.17.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-6.43.58-12.53,2.3-18.09,4.97-7.47,3.58-13.96,8.86-18.99,15.35-.3.38-.59.76-.87,1.16-.15.2-.3.41-.45.61v83.58h20.31v-29.86h0V29.88c5.41-5.36,12.69-8.84,20.79-9.35.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c8.19.52,15.56,4.07,20.98,9.55l7.39-7.39,2.16-2.16,4.91-4.91ZM76.07,75.75c-5.89,5.98-14.08,9.68-23.13,9.68s-16.99-3.59-22.86-9.41c-5.94-5.88-9.62-14.05-9.62-23.07s3.7-17.24,9.68-23.13c5.4-5.33,12.66-8.78,20.72-9.29.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c8.19.52,15.56,4.07,20.98,9.55l7.39-7.39,2.16-2.16,4.91-4.91C81.94,7.02,70.48,1.35,57.71.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-12.63,1.13-23.99,6.69-32.5,15.13-1.64,1.62-3.17,3.35-4.59,5.18C4.14,29.48,0,40.73,0,52.94c0,14.68,5.97,27.95,15.61,37.54,9.57,9.52,22.77,15.4,37.33,15.4s28-5.99,37.59-15.67l-7.08-7.08-7.39-7.39Z" />
+                        d="M148.79,1.54c-2.56-.72-5.23-1.18-7.98-1.35-.77-.05-1.55-.07-2.33-.07s-1.56.02-2.33.07c-3.17.19-6.23.77-9.14,1.7v5.72c.89-.34,1.8-.63,2.73-.89,2.44-.68,4.99-1.08,7.62-1.17.19-.02.38-.04.58-.05.18-.01.37-.02.56-.02s.37,0,.56.02c.19.01.38.03.57.05,1.42.05,2.82.19,4.19.41l-.85.75-12.41,11-2.17,1.92-1.37,1.21h0v5.72c.43.14.86.27,1.3.39,2.99.83,6.12,1.31,9.36,1.37h1.63c3.72-.08,7.31-.69,10.7-1.77v-5.72c-.95.36-1.92.68-2.92.95-2.41.66-4.93,1.05-7.53,1.13-.35.01-.71.02-1.07.02s-.72,0-1.07-.02c-1.39-.04-2.76-.18-4.1-.39l.89-.79,12.3-10.91,2.18-1.94,1.31-1.16V1.9c-.4-.13-.8-.25-1.21-.36Z" />
+                    <path
+                        d="M121.36,5.49c-.24-.31-.5-.61-.76-.89-.52-.56-1.09-1.08-1.69-1.55-2.4-1.86-5.41-2.97-8.69-2.97-.92,0-1.81.09-2.68.26-1.83.35-3.52,1.05-5.03,2.02-1.31.85-2.47,1.91-3.43,3.14-.09.11-.18.22-.26.34-.59.8-1.1,1.66-1.51,2.57-.8,1.76-1.24,3.71-1.25,5.76,0,.03,0,.05,0,.08,0,2.05.43,3.99,1.21,5.75.41.92.91,1.78,1.5,2.59,1.02,1.4,2.29,2.6,3.74,3.55,1.5.98,3.2,1.68,5.03,2.03.4.08.8.14,1.22.18.48.05.98.08,1.47.08s.99-.03,1.47-.08c2.7-.28,5.18-1.32,7.21-2.9v2.9h5.43v-15.23c-.11-1.36-.41-2.67-.88-3.9-.51-1.35-1.22-2.6-2.1-3.71ZM115.87,20.85c-1.52,1.3-3.49,2.08-5.65,2.08-.17,0-.34,0-.5-.02-1.92-.11-3.67-.84-5.05-1.99-1.91-1.59-3.13-4-3.13-6.68,0-.03,0-.05,0-.08.02-2.66,1.24-5.03,3.14-6.61,1.39-1.15,3.14-1.88,5.06-1.99.16,0,.33-.01.49-.01,2.15,0,4.12.78,5.63,2.07,1.39,1.18,2.4,2.8,2.83,4.64.13.54.2,1.1.22,1.67,0,.1,0,.21,0,.31s0,.21,0,.31c-.02.57-.09,1.12-.22,1.65-.43,1.84-1.44,3.46-2.82,4.64Z" />
+                    <path
+                        d="M97.41,4.18c-2.08-2.09-4.8-3.53-7.85-4.01-.3-.05-.61-.09-.92-.11-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-1.72.15-3.35.61-4.84,1.33-2,.96-3.74,2.37-5.08,4.11-.12.16-.24.31-.35.47v6.86h0v15.51h5.43v-7.99h0v-2.07h8.32v-5.43h-8.32v-4.84c1.45-1.43,3.4-2.37,5.56-2.5.18-.01.37-.02.56-.02s.37,0,.56.02c.56.03,1.11.13,1.64.26,1.53.4,2.9,1.2,3.98,2.29l1.98-1.98.58-.58,1.31-1.31Z" />
+                    <path
+                        d="M73.63,10.69c-.13-.52-.29-1.02-.48-1.51-.5-1.33-1.2-2.57-2.06-3.68-2.35-3.03-5.89-5.08-9.92-5.43-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-4.03.36-7.58,2.41-9.92,5.43-.08.1-.16.2-.23.31-.59.8-1.09,1.67-1.5,2.58-.63,1.41-1.04,2.94-1.18,4.54-.04.41-.05.82-.05,1.24,0,1.44.22,2.83.62,4.14.17.56.38,1.11.61,1.64.41.92.91,1.78,1.5,2.58,2.58,3.52,6.74,5.8,11.43,5.8,2.16,0,4.21-.48,6.04-1.35l-.84-2.57-.89-2.7c-1.27.73-2.74,1.14-4.31,1.14-3.31,0-6.18-1.85-7.65-4.57-.66-1.23-1.04-2.63-1.04-4.12,0-.43.03-.85.09-1.26.58-4.02,3.92-7.16,8.04-7.42.18-.01.37-.02.56-.02s.37,0,.56.02c4.1.26,7.43,3.36,8.03,7.36l-9.06.03,1.74,5.38,6.4-.02h3.07s2.51-.02,2.51-.02h.32c.06-.19.11-.38.16-.58.28-1.11.43-2.28.43-3.48,0-.45-.02-.9-.06-1.33-.07-.73-.19-1.45-.37-2.14Z" />
+                    <path
+                        d="M47.07,4.18C44.79,1.88,41.72.36,38.31.06c-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-1.72.15-3.35.61-4.84,1.33-2,.96-3.74,2.37-5.08,4.11-.08.1-.16.2-.23.31-.04.05-.08.11-.12.16v22.36h5.43v-7.99h0V7.99c1.45-1.43,3.4-2.37,5.56-2.5.18-.01.37-.02.56-.02s.37,0,.56.02c2.19.14,4.16,1.09,5.61,2.56l1.98-1.98.58-.58,1.31-1.31Z" />
+                    <path
+                        d="M20.35,20.27c-1.58,1.6-3.77,2.59-6.19,2.59s-4.55-.96-6.12-2.52c-1.59-1.57-2.57-3.76-2.57-6.17s.99-4.61,2.59-6.19c1.44-1.43,3.39-2.35,5.55-2.48.18-.01.37-.02.56-.02s.37,0,.56.02c2.19.14,4.16,1.09,5.61,2.56l1.98-1.98.58-.58,1.31-1.31C21.93,1.88,18.86.36,15.44.06c-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-3.38.3-6.42,1.79-8.7,4.05-.44.43-.85.9-1.23,1.39C1.11,7.89,0,10.9,0,14.17c0,3.93,1.6,7.48,4.18,10.04,2.56,2.55,6.09,4.12,9.99,4.12s7.49-1.6,10.06-4.19l-1.89-1.89-1.98-1.98Z" />
                 </svg>
                 <a href="https://site.crefaz.com.br/" title="Site Crefaz " alt="Site Crefaz" target="_blank">
                     crefaz.com.br
