@@ -11,6 +11,13 @@
 
 <!-- Global styles -->
 <style>
+    html {
+        --azul-escuro: #0d2041;
+        --azul-crefaz: #163056;
+        --laranja-crefaz: #ef6b22;
+        --text-footer: #778fb3;
+    }
+
     @font-face {
         font-family: 'Anteb';
         src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
@@ -75,7 +82,7 @@
 
             #atention {
                 display: block;
-                background: #163056;
+                background: var(--azul-crefaz);
                 padding: 10px;
                 text-align: center;
                 font-size: 14px;
@@ -92,19 +99,19 @@
 
             .header {
                 width: 100%;
-                background: #ef6b22;
+                background: var(--laranja-crefaz);
             }
 
             .logo-topo {
                 display: block;
-                width: 350px;
-                margin: 0 auto;
+                width: 150px;
                 fill: #fff;
             }
 
             .logosmenu {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 max-width: 550px;
                 padding: 20px 0;
                 gap: 20px;
@@ -161,14 +168,6 @@
                             d="M294.72,27.97c-3.23,2.98-7.9,4.34-12.25,4.02-.37-.03-2.23-.26-2.24-.64,1.73-1.35,3.3-2.63,4.4-4.58.24-.43.91-2.19,1.03-2.3.17-.17,1.8-.63,2.27-.87,8.15-4.23,4.48-16.86-5.08-15.86-5.62.59-5.84,8.72-8.04,12.8-1.75,3.25-7.51,1.89-6.76-2.81.36-2.26,3.39-10.54,4.73-12.33,5.61-7.51,17.51-6.53,23.25.26,5.53,6.56,5.02,16.47-1.32,22.3ZM245.16,26.47c1.2-1.77,4.05-9.56,4.44-11.73.22-1.21.25-2.44-.54-3.43-1.58-1.96-4.71-1.98-6.03.27-2.22,3.78-2.42,11.46-7.24,12.7-9.44,2.42-15.09-11.1-5.39-15.99.45-.23,1.34-.37,1.63-.62.37-.31.62-1.52.92-2.05,1.36-2.41,2.66-2.82,4.26-4.54.16-.18.33-.25.26-.54-16.28-3.62-26.8,16.85-13.83,27.76,6.13,5.16,16.76,5.18,21.53-1.83ZM270.32,5.63c.72-1.31,1.71-2.48,2.82-3.47.32-.28,2.1-1.23,1.7-1.62-7.19-1.55-14.21,1.86-17.93,8.03-.64,1.06-2.07,3.83-2.02,4.99.03.53.31,1.07.36,1.63.32,3.44-1.47,6.81-4.5,8.43-.62.33-1.74.56-2.16.89-.6.49-1.22,3.1-2.15,3.78l-3.32,3.15c5.63,1.82,12.09-.86,15.9-5.13,1.35-1.51,3.93-5.55,3.97-7.54.03-1.55-.47-2.53-.17-4.29.45-2.66,2.24-4.79,4.59-6.01.5-.26,1.8-.6,2.04-.84.2-.2.6-1.53.87-2.01ZM13.99,50.56c-1.98-1.22-5.41-2.99-5.59-5.55-.37-5.36,7.18-4.94,10.61-3.96,1.56.44,3.03,1.67,4.62.84,1.4-.73,2.08-4.01,2.75-5.42-7.42-4.13-22.03-5.15-25.65,4.44-4.03,10.66,9.68,15.95,16.47,20.45,1.65,1.1,3.57,2.22,3.44,4.48-.3,5.11-8.63,4.46-12.05,3.59-1.99-.51-5.27-2.61-6.56-.09-.24.48-1.23,4.04-1.09,4.31.48.94,7.22,2.89,8.54,3.15,8.77,1.75,20.59-1.79,19.36-12.71-.77-6.88-9.69-10.36-14.85-13.54ZM54.28,48.3c-.53.29-1.57,1.14-1.95,1.29-.33.13-.23-.13-.28-.25-1.68-3.83-2.18-2.58-6.09-2.91-.13-.09-.37.14-.37.2v29.73h8.08v-20.84c2.75-1.72,7.65-5.17,10.7-2.34.49.45,1.52,2.38,1.52,2.97v20.21h8.08v-21.29c0-.78-.6-2.96-.89-3.78-3.01-8.29-12.65-6.32-18.81-2.99ZM145.52,51.98c.25.47,1.05,2.31,1.05,2.72v21.65h-5.12l-1.44-3.05c-3.18,3.39-6.86,4.45-11.45,3.54-9.33-1.87-10.02-15.46-.64-18.32.73-.22,2.4-.67,3.1-.67h7.46c-.15-7.37-9.15-4.3-13.48-2.95l-2.12-6.34c-.02-.38,1.23-.88,1.59-1.04,6.88-2.91,17.05-2.98,21.05,4.46ZM138.66,63.51s-.25-.27-.27-.27h-6.65c-3.2.55-5.05,4.89-2.05,6.9,1.62,1.1,7.73.97,8.65-1.02.05-.11.31-1.06.31-1.12v-4.49ZM159.44,56.38c-1.43-.76-2.28-1.75-.91-3.18,1.45-1.52,4.51-1.05,6.36-.65,1.96.43,3.87,1.97,5.36-.21.24-.35,1.47-3.11,1.46-3.39-.02-.38-.32-.48-.59-.65-2.8-1.85-8.18-2.9-11.48-2.61-9.73.86-13.93,10.89-4.69,16.26,2.32,1.35,9.24,3.06,9.98,5.29,1.07,3.21-4.15,3.53-6.22,3.34-2.39-.22-5.69-2.51-7.27-.04-.2.31-1.47,3.2-1.47,3.39,0,.39,1.37,1.09,1.76,1.29,7.11,3.61,21.97,2.82,21.05-8.12-.58-6.95-8.6-8.19-13.35-10.72ZM92.06,70.77c-.93-.1-2.14-.66-2.7-1.43-.5-.68-1.18-2.49-1.18-3.31v-13.11s.25-.27.27-.27h7.64l-2.34-6.11h-5.57v-8.44c-1.59.33-6.26.53-7.28,1.61-.12.12-.62.93-.62,1v5.84h-3.86s-.27.25-.27.27v5.57s.25.27.27.27h3.59s.27.25.27.27v15.99c0,.92,1.17,3.55,1.72,4.38,3.12,4.72,11.79,5.79,16.18,2.45.02-.22-1.48-3.83-1.74-4.14-1.32-1.61-2.79-.65-4.38-.83ZM107.76,51.39c-.66-1.02-1.64-3.95-2.52-4.58-.97-.69-3.12-.07-4.31-.27v29.82h8.08v-17.52s.32-.75.39-.87c.84-1.39,5.96-4.13,7.6-4.61.88-.26,1.67-.31,2.54-.52l-1.37-6.29c-3.95-.11-7.36,2.66-10.41,4.84ZM32.3,76.36h8.08v-29.82h-8.08v29.82ZM36.35,33.16c-5.89-.07-6.02,8.8-.36,9.07,6.19.29,6.58-8.99.36-9.07ZM262.06,28.86c6.27,4.62,16.79,3.94,21.01-3.11,1-1.67,3.82-9.59,4.12-11.51.18-1.16.09-2.52-.74-3.4-1.77-1.85-5.15-1.44-6.19.96-1.22,2.83-2.41,8.15-4.09,10.46-2.01,2.77-6.72,2.34-9.37.77-.79-.47-1.31-1.22-1.94-1.65-.15-.1-.18-.25-.45-.18-.49,1.66-1.42,3.13-2.37,4.55-1.09,1.63-2.08,1.57,0,3.11ZM237.74,20.13c1.41-2.98,2.16-7.08,3.7-9.95,2.07-3.85,7.51-3.17,10.56-.9.4.3,1.06,1.29,1.53,1.15.23-.07,1.84-3.51,2.29-4.18.31-.47,1.59-1.75,1.5-2.12-.17-.75-3.75-2.61-4.6-2.95-6.7-2.64-15.2-.91-18.35,6.07-.79,1.74-3.51,9.39-3.57,10.98-.13,3.43,3.9,5.06,6.24,2.91.19-.17.58-.77.69-1.01ZM298.92,67.65c-2.76,8.15-12.08,11.63-19.77,8.17l-.02,14.71c-.1.08-.27,0-.34.02-.23.1-.25.16-.61.19-2.17.16-4.78,0-6.94-.19v-44.02c2.26-.01,4.32-.61,5.49,1.81,2.24-1.22,4.37-2.49,6.99-2.71,12.62-1.01,18.96,10.88,15.19,22.02ZM291.54,59.92c-.58-6.86-6.6-9.39-12.23-5.72l.06,14.57c7.56,4.24,12.85-.92,12.17-8.85ZM267.47,60.1c.67,11.27-7.4,18.19-18.41,16.98-18.54-2.04-18.15-29.64.23-31.39,9.66-.92,17.58,4.36,18.18,14.41ZM250.73,52.52c-9.34.98-9.21,16.95-.23,17.73,11.72,1.01,11.26-18.89.23-17.73ZM233.88,59.38c.99,12.43-7.81,19.47-19.8,17.46-16.84-2.8-16.6-29.68,2.16-31.16,9.04-.7,16.89,4.21,17.64,13.69ZM223.22,54.68c-1.41-1.44-3.74-2.34-5.76-2.19-10.11.73-9.72,18.88,1.41,17.76,6.95-.7,8.79-11.03,4.34-15.57ZM194.17,69.8c-7.53,1.82-12.21-2.15-11.5-9.88.5-5.45,4.93-8.08,10.1-7.23,1.75.29,4.61,1.89,6.01.43.31-.33,1.43-3.04,1.56-3.57.08-.32.21-.52.04-.86-.41-.83-5.47-2.39-6.56-2.61-12.02-2.45-21.12,5.93-19.39,18.13,1.46,10.28,10.36,14.4,19.95,12.45.95-.19,6.34-1.71,6.18-2.82-.06-.38-1.09-2.9-1.33-3.35-1.37-2.54-3.09-1.16-5.06-.69Z" />
                     </g>
                 </svg>
-                <span class="moreLogo">+</span>
-                <svg class="logo-topo" xmlns="http://www.w3.org/2000/svg" id="Camada_2" data-name="Camada 2"
-                    viewBox="0 0 300 46.48">
-                    <g id="Camada_1-2" data-name="Camada 1">
-                        <path
-                            d="M29.22,45.98v-20.82s-9.5,12.29-9.5,12.29l6.91.02v8.51s-26.63,0-26.63,0L29.17,9.31c.09-.11.1-.23.16-.26.08-.05.22-.04.35.06h9.68s0,22.6,0,22.6L66.34,2.02c.52-.57.94-1.08,1.45-1.52l8.31,9.38-4.58,4.5-5.18,5.07-5.29,5.17-5.18,5.07-5.29,5.17-5.18,5.07-5.1,5.03c-.39.28-.72.55-1.01,1h-10.08ZM210.5,41.79c-2.79.04-5.58-.79-7.61-2.74l-.77-.75c-.55-.53-.92-1.17-1.28-1.85-.78-1.46-1.08-2.98-1.3-4.67V1.69C199.32.65,198.58,0,197.6,0h-.88c-.99.12-1.72.65-1.94,1.7l.02,29.85c.23,2.24.54,4.33,1.5,6.32.55,1.25,1.21,2.39,2.16,3.34l1.03,1.02c2.65,2.47,5.96,3.94,9.58,4.22l1.88.03c1.32-.48,1.96-1.92,1.44-3.28-.31-.81-.98-1.42-1.89-1.41ZM229.23,41.94c-3.14-2.23-5.28-5.36-5.61-9.29l-.02-15.99c-.41-1.1-1.44-1.66-2.6-1.53-.94.02-1.74.62-2.04,1.54v16.99c.45,3.58,1.97,6.81,4.38,9.44.48.53.86,1.06,1.47,1.46.7.66,1.54,1.33,2.57,1.4,1.03.07,2.05-.59,2.47-1.53.42-.92.15-1.92-.63-2.47ZM220.56,9.85c1.34.28,2.6-.3,2.94-1.57.33-1.2-.34-2.52-1.72-2.81-.65-.13-1.34-.05-1.87.27-.8.48-1.19,1.47-1.01,2.36.17.84.78,1.57,1.66,1.75ZM300,17.09v26.37c0,1.09-1.09,1.73-1.99,1.9-1.1.21-2.1-.31-2.57-1.3-.3-.64-1.1-.93-1.76-.48-2.15,1.45-4.5,2.39-7.03,2.74l-1.52.11c-.6.05-1.04.02-1.62,0-3.86-.15-7.4-1.67-10.21-4.29-2.83-2.64-4.25-6.04-4.53-9.9v-4.04c.24-3.3,1.4-6.51,3.65-8.95,2.84-3.09,6.7-4.92,10.89-5.16h2.21c2.95.24,5.73,1.14,8.16,2.84.51.36,1.31.33,1.61-.31.54-1.13,1.62-1.77,2.95-1.41.8.21,1.77.87,1.77,1.87ZM295.21,32.02v-3.58c-.21-2.55-1.17-4.94-3.01-6.68-2.13-2.01-4.81-2.96-7.74-2.99-3.32-.04-6.51,1.2-8.68,3.73-1.28,1.5-2.05,3.29-2.24,5.21l-.1.99c-.1,1.02-.1,1.99,0,3.01l.1.99c.35,2.36,1.3,4.59,3.08,6.18,1.9,1.69,4.16,2.68,6.73,2.81,3.88.36,7.78-1.21,10.01-4.31,1.13-1.58,1.67-3.43,1.84-5.37ZM262.09,40.75l-17.64-.09c-.28,0-.43-.4-.45-.58-.03-.26.13-.45.34-.69l17.45-20.04c.82-.95,1.26-1.94.49-3.13-.31-.47-.87-1.07-1.6-1.07h-20.98c-1.14-.01-2.23,1.5-1.72,3.18.25.81.87,1.53,1.83,1.53l14.09.03c.31,0,.46.39.47.58.01.25-.09.42-.3.66l-17.57,20.13c-.68.78-1.05,1.63-.63,2.63.28.67,1.03,1.52,2.02,1.52h23.82c1.19,0,1.79-1.01,1.97-2.04.16-.89-.44-2.61-1.61-2.61ZM185.48,17.25l.02,25.88c0,1.03-.81,1.91-1.82,2.19-.84.23-1.67.03-2.31-.51-.25-.21-.38-.58-.58-.87-.42-.65-1.14-.72-1.75-.3-2.5,1.72-5.39,2.68-8.44,2.81h-1.62c-3.1-.15-6.06-1.1-8.56-2.92-4.21-3.06-5.94-6.79-6.3-11.94v-2.73c.3-4.13,1.53-7.72,4.64-10.55,2.78-2.53,6.18-3.99,9.93-4.21h2.19c3.01.21,5.84,1.17,8.3,2.89.63.44,1.4.06,1.68-.56.55-1.19,1.85-1.57,3.07-1.14.81.29,1.54.95,1.54,1.95ZM180.7,28.88c-.18-2.39-.87-4.69-2.47-6.49-1.85-2.08-4.35-3.3-7.11-3.55h-2.73c-2.81.28-5.29,1.52-7.15,3.66-1.46,1.68-2.14,3.81-2.35,6.04v3.35c.2,2.32.91,4.53,2.46,6.26,2.34,2.61,5.82,3.87,9.39,3.55,2.5-.13,4.74-1.07,6.62-2.7,2.87-2.49,3.62-6.41,3.34-10.12ZM115.53,16.79l.03,26.45c0,1.13-.84,1.85-1.84,2.08-1.07.24-2.16-.13-2.65-1.15-.18-.37-.42-.63-.74-.74-.41-.14-.79-.11-1.15.15-6.07,4.34-15.03,3.73-20.43-1.57l-.55-.54c-2.39-2.34-3.63-6-3.89-9.35v-3.8c0-1.27.32-2.45.66-3.65.78-2.71,2.27-5,4.42-6.81,2.67-2.24,5.88-3.56,9.37-3.78h2.21c2.98.2,5.79,1.14,8.24,2.83.53.37,1.11.34,1.55-.15l.67-1.05c.69-.57,1.49-.77,2.45-.5.51.16,1.59.71,1.65,1.56ZM110.43,26.39c-.48-1.83-1.39-3.48-2.79-4.75-2.12-1.93-4.77-2.85-7.63-2.88-2.88-.03-5.55.87-7.73,2.76-1.02.88-1.75,1.95-2.31,3.19-1.64,3.61-1.42,10.14,1.24,13.11l.71.79c1.93,1.88,4.37,2.92,7.04,3.1h1.95c4.8-.37,8.74-3.48,9.65-8.21.42-2.19.44-4.97-.13-7.12ZM147.46,15.36c-.83-.35-2.22-.23-2.64.74l-9.15,21.25-9.11-21.43c-.64-.79-1.62-.99-2.54-.66-1.22.36-2.12,1.63-1.67,2.7l11.08,26.18c.33.79.96,1.13,1.75,1.22,1.12.12,2.19-.1,2.65-1.19l11.27-26.26c.17-1.19-.5-2.18-1.64-2.55Z" />
-                    </g>
-                </svg>
             </div>
         </div>
     </section>
@@ -179,7 +178,7 @@
             #hero {
                 font-family: 'Anteb', sans-serif;
                 margin: 0;
-                background: #0d2041;
+                background: var(--azul-escuro);
                 /* background-image: url(assets/img-bg-headline.jpg); */
                 background-size: cover;
                 background-position: center;
@@ -236,7 +235,7 @@
             }
 
             .highlight {
-                color: #ef6b22;
+                color: var(--laranja-crefaz);
                 font-weight: 800;
             }
 
@@ -247,7 +246,7 @@
                 }
 
                 h1 {
-                    font-size: 36px;
+                    font-size: 35px;
                     line-height: 1;
                     padding: 0;
                     text-align: center;
@@ -294,7 +293,7 @@
 
                     .input-group input {
                         width: 100%;
-                        color: #163056;
+                        color: var(--azul-crefaz);
                         padding: 14px 12px;
                         border: 2px solid #E4EBF3;
                         border-radius: 12px;
@@ -310,12 +309,12 @@
                     }
 
                     .input-group input:focus {
-                        border: 2px solid #ef6b22;
+                        border: 2px solid var(--laranja-crefaz);
                         background: transparent;
                     }
 
                     .input-group label {
-                        color: #163056;
+                        color: var(--azul-crefaz);
                         font-size: 16px;
                         transition: 0.2s ease;
                         padding: 0 0 10px 0;
@@ -344,7 +343,7 @@
                     }
 
                     select option {
-                        color: #163056;
+                        color: var(--azul-crefaz);
                     }
 
                     .input-group select {
@@ -356,7 +355,7 @@
                     }
 
                     .input-group select:focus {
-                        border-color: #ef6b22;
+                        border-color: var(--laranja-crefaz);
                     }
 
                     .form-box select {
@@ -374,7 +373,7 @@
 
                     input::placeholder,
                     textarea::placeholder {
-                        color: #163056;
+                        color: var(--azul-crefaz);
                     }
 
                     input::placeholder {
@@ -387,7 +386,7 @@
 
                     input:-webkit-autofill {
                         -webkit-box-shadow: 0 0 0 1000px #f8fafc inset;
-                        -webkit-text-fill-color: #163056;
+                        -webkit-text-fill-color: var(--azul-crefaz);
                     }
 
                     .input-group input:focus+label,
@@ -396,17 +395,17 @@
                         left: 0;
                         padding: 0 6px;
                         font-size: 16px;
-                        color: #163056;
+                        color: var(--azul-crefaz);
                     }
 
                     .required-asterisk {
-                        color: #ef6b22;
+                        color: var(--laranja-crefaz);
                     }
 
                     .form-button {
                         width: 100%;
                         padding: 12px;
-                        background: #ef6b22;
+                        background: var(--laranja-crefaz);
                         color: #fff;
                         border: none;
                         border-radius: 12px;
@@ -431,14 +430,14 @@
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
-                        color: #163056;
+                        color: var(--azul-crefaz);
                         justify-content: space-between;
                     }
 
                     #successMsg {
                         display: none;
                         margin: 12px 0px 0px;
-                        color: #163056;
+                        color: var(--azul-crefaz);
                         font-size: 16px;
                         font-weight: 400;
                         text-align: center;
@@ -452,7 +451,7 @@
                     }
 
                     .primary-button {
-                        background: #163056;
+                        background: var(--azul-crefaz);
                         color: #fff;
                         padding: 14px;
                         border: none;
@@ -511,7 +510,8 @@
 
                 <div class="form-box">
                     <!-- <h2>Preencha o formulário e garanta sua inscrição!</h2> -->
-                    <form method="post" id="form-simulacao" action="#">
+                    <iframe name="hidden_iframe" style="display:none;"></iframe>
+                    <form method="post" id="form-simulacao" target="hidden_iframe">
                         <input type="hidden" name="submitted" value="true">
 
                         <div class="input-group">
@@ -593,7 +593,7 @@
                                     gap: 8px;
                                     cursor: pointer;
                                     font-size: 14px;
-                                    color: #163056;
+                                    color: var(--azul-crefaz);
                                 }
 
                                 .check-custom input {
@@ -627,8 +627,8 @@
                                 }
 
                                 .check-custom input:checked+.check-mark {
-                                    background: #EF6B22;
-                                    border-color: #EF6B22;
+                                    background: var(--laranja-crefaz);
+                                    border-color: var(--laranja-crefaz);
                                 }
 
                                 .check-custom input:checked+.check-mark::after {
@@ -636,7 +636,7 @@
                                 }
 
                                 .check-custom:hover .check-mark {
-                                    border-color: #EF6B22;
+                                    border-color: var(--laranja-crefaz);
                                 }
 
                                 .check-text {
@@ -644,7 +644,7 @@
                                 }
 
                                 .check-text a {
-                                    color: #EF6B22;
+                                    color: var(--laranja-crefaz);
                                     text-decoration: underline;
                                 }
 
@@ -694,7 +694,7 @@
 
                                 .modal-header h3 {
                                     margin: 0;
-                                    color: #163056;
+                                    color: var(--azul-crefaz);
                                     font-size: 22px;
                                     font-weight: 700;
                                 }
@@ -765,13 +765,13 @@
                                 }
 
                                 .btn-primary {
-                                    background: #163056;
+                                    background: var(--azul-crefaz);
                                     color: #fff;
                                     font-family: 'Anteb', sans-serif;
                                 }
 
                                 .btn-secondary {
-                                    background: #EF6B22;
+                                    background: var(--laranja-crefaz);
                                     color: #fff;
                                     font-family: 'Anteb', sans-serif;
                                 }
@@ -787,13 +787,13 @@
                                     <span class="check-mark"></span>
 
                                     <span class="check-text">
-                                        Eu aceito o
-                                        <a href="#" id="openRegulamento">regulamento</a>
-                                        e a
-                                        <a href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank"
+                                        Eu aceito a <!-- <a href="#" id="openRegulamento">regulamento</a> -->
+                                        <a href="#" id="openPrivacy">Política de Privacidade</a>
+
+                                        <!-- <a href="https://site.crefaz.com.br/politica-de-privacidade" target="_blank"
                                             rel="noopener noreferrer">
                                             Política de Privacidade
-                                        </a>
+                                        </a> -->
                                     </span>
                                 </label>
 
@@ -1018,36 +1018,30 @@
                                         hideModal();
                                     }
                                 });
-
-                                if (form) {
-                                    form.addEventListener("submit", function (event) {
-                                        if (!checkbox.checked) {
-                                            event.preventDefault();
-                                            showError();
-                                        }
-                                    });
-                                }
                             </script>
                         </div>
 
                         <button class="form-button" type="submit">Enviar</button>
                     </form>
 
-                    <p id="successMsg">
+                    <!-- <p id="successMsg">
                         Você vai receber o material no seu <strong>e-mail.</strong>
+                    </p> -->
+
+                    <p id="successMsg">
+                        Cadastro realizado com sucesso!
                     </p>
 
                     <script>
                         const form = document.getElementById('form-simulacao');
                         const cpfInput = document.getElementById('cpf');
                         const telInput = document.getElementById('celular');
-                        const emailInput = document.getElementById('email');
                         const msg = document.getElementById('successMsg');
                         const btn = form.querySelector('button[type="submit"], input[type="submit"]');
+                        const ebookUrl = "https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/af0656f6-ef16-4d42-bdce-046fd030e3a4.pdf";
 
                         const cpfError = document.getElementById('cpfError');
                         const whatsappError = document.getElementById('whatsappError');
-                        const emailError = document.getElementById('emailError');
 
                         function showCpfError() {
                             if (cpfError) cpfError.style.display = 'block';
@@ -1225,91 +1219,36 @@
                             }
                         });
 
-                        emailInput.addEventListener('input', function () {
-                            const value = emailInput.value.trim();
-
-                            if (!value) {
-                                hideEmailError();
-                                emailInput.classList.remove('input-valid');
-                                return;
-                            }
-
-                            if (validarEmail(value)) {
-                                hideEmailError();
-                                emailInput.classList.add('input-valid');
-                            } else {
-                                showEmailError();
-                            }
-                        });
-
-                        emailInput.addEventListener('blur', function () {
-                            const value = emailInput.value.trim();
-
-                            if (!value) {
-                                hideEmailError();
-                                emailInput.classList.remove('input-valid');
-                                return;
-                            }
-
-                            if (validarEmail(value)) {
-                                hideEmailError();
-                                emailInput.classList.add('input-valid');
-                            } else {
-                                showEmailError();
-                            }
-                        });
-
+                        //Baixar o ebook
 
                         form.addEventListener('submit', function (e) {
+                            e.preventDefault();
 
-                            if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
-                                return;
-                            }
+                            let hasError = false;
 
                             if (!validarCPF(cpfInput.value)) {
-                                e.preventDefault();
                                 showCpfError();
-                                cpfInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
-                                return;
+                                hasError = true;
                             }
 
                             if (!validarWhatsapp(telInput.value)) {
-                                e.preventDefault();
                                 showWhatsappError();
-                                telInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
-                                return;
+                                hasError = true;
                             }
 
-                            if (!validarEmail(emailInput.value)) {
-                                e.preventDefault();
-                                showEmailError();
-                                emailInput.focus();
-
-                                if (btn) {
-                                    btn.disabled = false;
-                                    btn.style.opacity = '1';
-                                    btn.textContent = 'Enviar';
-                                }
-                                return;
+                            if (!checkbox.checked) {
+                                showError();
+                                hasError = true;
                             }
+
+                            if (hasError) return;
 
                             cpfInput.value = cpfInput.value.replace(/\D/g, '');
                             telInput.value = telInput.value.replace(/\D/g, '');
 
                             if (msg) {
                                 msg.style.display = 'block';
+                                msg.innerHTML = 'Cadastro realizado com sucesso! Seu e-book será aberto em instantes.';
                             }
 
                             if (btn) {
@@ -1317,26 +1256,403 @@
                                 btn.style.opacity = '0.85';
                                 btn.textContent = 'Enviado!';
                             }
+
+                            window.open(ebookUrl, "_blank");
+
+                            form.submit();
                         });
 
-                        document.getElementById('cargo').addEventListener('change', function () {
-                            var container = document.getElementById('login-crefazon-container');
-                            var input = document.getElementById('login-crefazon');
-
-                            if (this.value === 'Parceiro') {
-                                container.style.display = 'block';
-                                input.setAttribute('required', 'required');
-                            } else {
-                                container.style.display = 'none';
-                                input.removeAttribute('required');
-                            }
-                        });
                     </script>
                 </div>
             </div>
 
         </div>
 
+        <!-- Politica de Privacidade Modal -->
+        <div aria-hidden="true" class="modal-overlay" id="privacyModal">
+            <div aria-modal="true" class="modal-box" role="dialog">
+                <div class="modal-header">
+                    <h3>Política de Privacidade e Proteção de Dados</h3>
+                    <button aria-label="Fechar modal" class="modal-close" id="closePrivacy"
+                        type="button">&times;</button>
+                </div>
+
+                <div class="modal-content">
+                    <p>A Crefaz valoriza a sua confiança e está comprometida em proteger a sua privacidade e a segurança
+                        dos
+                        seus dados pessoais. Esta Política de Privacidade foi elaborada para explicar, de forma clara e
+                        transparente, como coletamos, utilizamos, compartilhamos e armazenamos as suas informações
+                        sempre
+                        que você utiliza nossos serviços, incluindo o site, o aplicativo e outras plataformas digitais.
+                    </p>
+
+                    <p>Nosso objetivo é garantir que o tratamento dos seus dados seja realizado de forma ética, segura e
+                        em
+                        conformidade com a Lei n° 13.709/2018 - a Lei Geral de Proteção de Dados Pessoais (LGPD) e
+                        demais
+                        normas aplicáveis ao setor financeiro.</p>
+
+                    <p>A política também tem como propósito:</p>
+                    <ul>
+                        <li>Informar você sobre quais dados são coletados e por que os coletamos;</li>
+                        <li>Explicar como e por quanto tempo esses dados são utilizados e armazenados;</li>
+                        <li>Esclarecer com quem os dados podem ser compartilhados;</li>
+                        <li>Reforçar os seus direitos como titular dos dados e como exercê-los.</li>
+                    </ul>
+
+                    <p>Portanto, recomendamos que você leia esta Política com atenção, já que ao utilizar nossos
+                        serviços,
+                        você confirma que compreende e concorda com as práticas descritas neste documento.</p>
+
+                    <p>Caso não esteja de acordo, poderá optar por não utilizar nossos serviços ou entrar em contato
+                        conosco
+                        para maiores esclarecimentos.</p>
+
+                    <h2>1. DEFINIÇÕES</h2>
+
+                    <p>Para fins de melhor compreensão desta Política, adotam-se as seguintes definições:</p>
+                    <ul>
+                        <li><strong>Dados Pessoais:</strong> qualquer informação que identifique ou possa identificar
+                            uma
+                            pessoa natural, como nome, CPF, telefone, e-mail, dados bancários, entre outros.</li>
+                        <li><strong>Dados Pessoais Sensíveis:</strong> dados relacionados à origem racial ou étnica,
+                            convicções religiosas, opinião política, saúde, vida sexual, dados genéticos, biométricos,
+                            entre
+                            outros, conforme definido no art. 5° II, da LGPD.</li>
+                        <li><strong>Titular dos Dados:</strong> pessoa natural a quem se referem os dados pessoais
+                            tratados
+                            pela instituição.</li>
+                        <li><strong>Tratamento de Dados:</strong> toda operação realizada com dados pessoais, como
+                            coleta,
+                            produção, recepção, classificação, utilização, acesso, reprodução, transmissão,
+                            armazenamento,
+                            eliminação, entre outros.</li>
+                        <li><strong>Controlador:</strong> pessoa jurídica ou natural que toma as decisões sobre o
+                            tratamento
+                            dos dados pessoais. No caso, a própria instituição financeira.</li>
+                        <li><strong>Operador:</strong> pessoa jurídica ou natural que realiza o tratamento de dados
+                            pessoais
+                            em nome do controlador.</li>
+                        <li><strong>Encarregado (DPO):</strong> pessoa indicada pelo controlador para atuar como canal
+                            de
+                            comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção
+                            de
+                            Dados (ANPD).</li>
+                        <li><strong>ANPD:</strong> é uma autarquia de natureza especial, vinculada ao Ministério da
+                            Justiça
+                            e Segurança Pública, responsável por zelar pela proteção de dados pessoais e por
+                            regulamentar,
+                            implementar e fiscalizar o cumprimento da LGPD no Brasil.</li>
+                        <li><strong>Base Legal:</strong> fundamento jurídico previsto na LGPD que autoriza o tratamento
+                            de
+                            dados pessoais, como, por exemplo, o consentimento do titular, a execução de contrato, o
+                            cumprimento de obrigação legal, o legítimo interesse do controlador, entre outros.</li>
+                        <li><strong>Consentimento:</strong> manifestação livre, informada e inequívoca pela qual o
+                            titular
+                            concorda com o tratamento de seus dados pessoais para uma finalidade determinada.</li>
+                        <li><strong>Cookies:</strong> arquivos instalados no navegador do usuário que coletam dados e
+                            armazenam informações sobre a sua navegação, podendo ser utilizados para autenticação,
+                            segurança, preferências, análises de acesso e publicidade.</li>
+                        <li><strong>Cookies Necessários:</strong> cookies essenciais para o funcionamento adequado do
+                            site e
+                            prestação dos serviços solicitados pelo usuário.</li>
+                        <li><strong>Analytics:</strong> cookies utilizados para coletar informações sobre a forma como
+                            os
+                            visitantes utilizam o site, como páginas mais acessadas e erros encontrados, visando à
+                            melhoria
+                            da experiência do usuário.</li>
+                        <li><strong>Cookies de Publicidade:</strong> cookies utilizados para apresentar anúncios
+                            personalizados com base nos interesses e hábitos de navegação do usuário.</li>
+                    </ul>
+
+                    <h2>2. COLETA DAS INFORMAÇÕES</h2>
+
+                    <h3>2.1 Informações fornecidas por você</h3>
+                    <p>Coletamos seus dados pessoais de forma transparente e segura, em conformidade com a Lei de
+                        Proteção
+                        de Dados (LGPD) e as regras do Banco Central.</p>
+                    <p>Essas informações são necessárias para que possamos oferecer os serviços que você solicita, como
+                        abrir uma conta, simulação de crédito ou processar transações. Por exemplo, quando visita nosso
+                        site, registra-se como usuário, usa determinados recursos do site, ou quando solicita ou usa um
+                        dos
+                        demais serviços oferecidos por nós.</p>
+                    <p>As suas informações coletadas são pessoais e individualmente identificáveis, como por exemplo seu
+                        nome, identificação oficial (CPF/CNPJ), endereço de e-mail, número de telefone, que você fornece
+                        quando utiliza nossos serviços e outros dados relevantes para a prestação dos serviços
+                        contratados.
+                    </p>
+                    <p>É importante destacar que você é responsável pela precisão das informações compartilhadas
+                        conosco,
+                        inclusive quando se refere a terceiros. Portanto, certifique-se de que todos os dados fornecidos
+                        sejam verdadeiros e atualizados.</p>
+
+                    <h3>2.2 Informações coletadas automaticamente</h3>
+                    <p>Além dos dados que você nos fornece diretamente, coletamos automaticamente algumas informações
+                        técnicas durante sua interação com nossos canais digitais.</p>
+                    <p>Isso ocorre porque, ao acessar nosso site ou aplicativo, seu dispositivo (celular, tablet ou
+                        computador) envia detalhes que nos ajudam a melhorar sua experiência e segurança.</p>
+                    <p>Isso porque precisamos identificar seu endereço IP para prevenir fraudes, o tipo de navegador
+                        para
+                        adaptar o layout das páginas, e as ações realizadas (como cliques e tempo de uso) para corrigir
+                        erros técnicos.</p>
+                    <p>Tudo isso é feito de forma anônima sempre que possível, sem invadir sua privacidade.</p>
+
+                    <h3>2.3 Informações coletadas por cookies e tecnologias correlatas</h3>
+                    <p>Utilizamos cookies ou outras tecnologias correlatas para rastrear informações. Isso é feito para
+                        otimizar o funcionamento dos nossos serviços. As informações que coletamos via cookies são dados
+                        essenciais para o funcionamento do nosso site, para customizar sua experiência, para obter
+                        métricas
+                        de acesso e, eventualmente, para apresentar publicidade de nossos serviços. Por exemplo, os
+                        cookies
+                        permitem que as páginas do nosso site sejam carregadas mais rapidamente porque determinada
+                        informação é armazenada em seu navegador de internet.</p>
+                    <p>Você pode desativar cookies nas configurações do seu navegador, mas isso pode afetar funções como
+                        login automático, salvamento de preferências e outras funcionalidades do nosso site ou
+                        aplicativo
+                        que poderão não funcionar corretamente.</p>
+                    <p>Utilizamos medidas de segurança que garantem a plena funcionalidade de cookies e outras
+                        tecnologias
+                        de rastreamento para o devido monitoramento durante o uso dos serviços, além de realizarmos
+                        todas as
+                        precauções cabíveis para que os dados dos usuários permaneçam resguardados.</p>
+
+                    <h3>2.4 Informações coletadas de terceiros</h3>
+                    <p>Em situações específicas, recebemos dados seus por meio de fontes externas autorizadas. Isso
+                        inclui,
+                        parceiros comerciais que validam informações para emissão de crédito, como bureaus de crédito,
+                        órgãos públicos em cumprimento a obrigações legais, como a Receita Federal, ou empresas de
+                        marketing
+                        que compartilham apenas dados obtidos legalmente.</p>
+                    <p>Antes de aceitar qualquer informação, verificamos rigorosamente se esses agentes têm permissão
+                        para
+                        repassá-las, alinhando-nos sempre aos princípios de transparência e necessidade.</p>
+
+                    <h2>3. FINALIDADE DA COLETA E USO DAS INFORMAÇÕES</h2>
+
+                    <p>Coletamos e utilizamos suas informações, com a finalidade de fornecer, desenvolver e melhorar
+                        nossos
+                        serviços, e promover nossa empresa. Veja alguns exemplos de como usamos suas informações:</p>
+                    <ul>
+                        <li>Para fornecer os serviços solicitados por você;</li>
+                        <li>Para fornecer ofertas de produtos personalizados de acordo com o seu perfil;</li>
+                        <li>Para operacionalizar e manter as funcionalidades dos serviços;</li>
+                        <li>Para responder solicitações de usuários e resolver controvérsias;</li>
+                        <li>Para analisar a utilização dos serviços e personalizar o conteúdo;</li>
+                        <li>Para entregar publicidade personalizada;</li>
+                        <li>Para diagnosticar problemas técnicos e implantar medidas de segurança;</li>
+                        <li>Para evitar, investigar e responder a fraudes, acesso ou uso não autorizado dos nossos
+                            serviços,
+                            a violações dos Termos de Uso e da Política de Privacidade ou outros comportamentos
+                            ilícitos;
+                        </li>
+                        <li>Para cumprir com as obrigações legais.</li>
+                    </ul>
+
+                    <h2>4. INFORMAÇÕES DE MENORES DE IDADE</h2>
+
+                    <p>Não solicitamos, recolhemos, processamos, armazenamos ou compartilhamos, informações de pessoas
+                        menores de 18 anos (crianças e adolescentes). Se descobrirmos a ocorrência de qualquer tipo de
+                        manuseio, de forma não autorizada, das referidas informações, as excluiremos de nossos
+                        registros.
+                    </p>
+
+                    <h2>5. COMPARTILHAMENTO DE INFORMAÇÕES</h2>
+
+                    <p>O compartilhamento de dados pessoais ocorre de forma criteriosa e transparente, sempre com base
+                        legal
+                        e finalidades legítimas. Suas informações podem ser compartilhadas com terceiros apenas quando
+                        necessário para viabilizar os serviços contratados, cumprir obrigações legais ou regulatórias,
+                        ou
+                        garantir a segurança das operações, bem como, para oferta de produtos personalizados de acordo
+                        com o
+                        seu perfil.</p>
+                    <p>Compartilhamos dados com prestadores de serviços de tecnologia, como provedores de infraestrutura
+                        em
+                        nuvem que armazenam os dados de forma segura. Também podemos compartilhar com representantes
+                        comerciais, escritórios de contabilidade, consultores jurídicos e agências de cobrança, quando
+                        essas
+                        entidades atuarem em nome da instituição financeira.</p>
+                    <p>Além disso, parceiros de marketing e publicidade digital podem receber informações mínimas para
+                        fins
+                        de comunicação, respeitando as diretrizes da LGPD. Também mantemos parcerias com empresas
+                        especializadas em prevenção a fraudes e verificação de identidade, essenciais para a segurança
+                        das
+                        transações realizadas via aplicativo.</p>
+                    <p>Em casos previstos em lei, informações também poderão ser compartilhadas com autoridades
+                        públicas,
+                        como órgãos reguladores, autoridades fiscais, policiais ou judiciais, especialmente quando
+                        houver
+                        determinação legal ou regulatória.</p>
+                    <p>Todo compartilhamento é realizado com o mínimo necessário de dados, de forma proporcional e com
+                        garantia contratual de que os terceiros respeitem os padrões de segurança e confidencialidade
+                        exigidos pela legislação. Firmamos contratos com cláusulas específicas de proteção de dados com
+                        os
+                        nossos fornecedores e parceiros.</p>
+
+                    <h2>6. ARMAZENAMENTO DAS INFORMAÇÕES</h2>
+
+                    <p>Suas informações serão armazenadas somente pelo tempo necessário para o cumprimento das
+                        finalidades
+                        para as quais foram coletadas, inclusive para fins de quaisquer obrigações legais, contratuais,
+                        prestação de contas ou eventual requisição de autoridades competentes, de acordo com os
+                        requisitos
+                        legais aplicáveis.</p>
+                    <p>Quando as informações coletadas não forem mais necessárias, aplicamos medidas adequadas para sua
+                        destruição segura ou anonimização.</p>
+
+                    <h2>7. PROTEÇÃO E SEGURANÇA DAS INFORMAÇÕES</h2>
+
+                    <p>A segurança dos seus dados pessoais é uma prioridade para nós. Por isso, adotamos uma combinação
+                        de
+                        medidas técnicas, organizacionais e administrativas para garantir a integridade,
+                        confidencialidade e
+                        disponibilidade das informações coletadas por meio do nosso aplicativo.</p>
+                    <p>Utilizamos tecnologias como criptografia, autenticação multifatorial e monitoramento contínuo das
+                        operações, que nos permitem proteger seus dados contra acessos não autorizados, vazamentos,
+                        alterações indevidas e outras ameaças digitais.</p>
+                    <p>Além das tecnologias de proteção, contamos com políticas internas de governança e controle,
+                        incluindo
+                        gestão de acessos, registro de logs (rastreabilidade), treinamento de equipes, resposta a
+                        incidentes. Nossos processos seguem rigorosamente os princípios e exigências da Lei Geral de
+                        Proteção de Dados Pessoais (LGPD), bem como as normativas do Banco Central do Brasil aplicáveis
+                        ao
+                        setor financeiro.</p>
+                    <p>Apesar de todo o cuidado técnico adotado pela instituição, é fundamental destacar que a segurança
+                        da
+                        informação também depende da sua conduta como usuário deste site.</p>
+                    <p>Assim, recomendamos fortemente que você nunca compartilhe suas senhas ou códigos de autenticação
+                        com
+                        terceiros, evite fornecer informações pessoais por telefone ou redes sociais e utilize senhas
+                        seguras.</p>
+                    <p>Essas ações contribuem para prevenir golpes, fraudes e acessos indevidos aos seus dados.</p>
+                    <p>Ainda que atuemos com as melhores práticas de mercado, é importante reconhecer que podem ocorrer
+                        riscos como falhas técnicas, ataques cibernéticos e ações de terceiros mal-intencionados.</p>
+                    <p>Mesmo nesses casos, estamos preparados para agir de forma rápida e eficaz, minimizando danos e
+                        comunicando os titulares e autoridades competentes quando exigido por lei.</p>
+
+                    <h2>8. SEUS DIREITOS DE PRIVACIDADE</h2>
+
+                    <p>Nós respeitamos e asseguramos os seus direitos, em conformidade com a Lei Geral de Proteção de
+                        Dados
+                        Pessoais - LGPD (Lei n° 13.709/2018).</p>
+                    <p>Para garantir a transparência e o controle sobre o tratamento de suas informações,
+                        disponibilizamos
+                        canais apropriados para que você possa exercer seus direitos de maneira simples, gratuita e
+                        segura.
+                    </p>
+                    <p>Você, na qualidade de titular dos dados pessoais, poderá exercer os seguintes direitos:</p>
+                    <ul>
+                        <li><strong>Direito de acesso:</strong> solicitar a confirmação da existência de tratamento e o
+                            acesso aos seus dados pessoais armazenados por nós, inclusive por meio eletrônico.</li>
+                        <li><strong>Direito de correção:</strong> requerer a correção de dados incompletos, inexatos ou
+                            desatualizados, garantindo a veracidade das informações que mantemos sobre você.</li>
+                        <li><strong>Direito de exclusão:</strong> solicitar a anonimização, bloqueio ou eliminação de
+                            dados
+                            pessoais desnecessários, excessivos ou tratados em desconformidade com a LGPD, observadas as
+                            exceções legais e regulatórias aplicáveis ao setor financeiro.</li>
+                        <li><strong>Direito de oposição:</strong> opor-se ao tratamento de dados realizado com base em
+                            legítimo interesse, mediante avaliação dos fundamentos e justificativas pela instituição.
+                        </li>
+                        <li><strong>Direito à portabilidade:</strong> solicitar a transferência dos seus dados pessoais
+                            para
+                            outro prestador de serviço ou produto, mediante requisição expressa, conforme regulamentação
+                            da
+                            ANPD e observadas as limitações técnicas e regulatórias.</li>
+                        <li><strong>Direito de revogação do consentimento:</strong> revogar, a qualquer momento, o
+                            consentimento previamente concedido para o tratamento de seus dados, mediante manifestação
+                            expressa, sendo informadas as consequências da revogação.</li>
+                        <li><strong>Direito à revisão de decisões automatizadas:</strong> requerer a revisão de decisões
+                            tomadas exclusivamente com base em tratamento automatizado de dados pessoais que afetem seus
+                            interesses, incluindo decisões destinadas a definir seu perfil pessoal, profissional, de
+                            consumo
+                            ou de crédito.</li>
+                    </ul>
+
+                    <h2>9. TRANSFERÊNCIA INTERNACIONAL DE DADOS PESSOAIS</h2>
+
+                    <p>No contexto das operações do site, pode ser necessário transferir seus dados pessoais para outros
+                        países, especialmente em situações como o uso de serviços de armazenamento em nuvem, suporte
+                        técnico
+                        de empresas localizadas no exterior ou contratação de prestadores internacionais que operam sob
+                        contrato com a instituição financeira.</p>
+                    <p>Essas transferências internacionais são realizadas com estrita observância à Lei Geral de
+                        Proteção de
+                        Dados Pessoais (LGPD) e às diretrizes emitidas pela Autoridade Nacional de Proteção de Dados
+                        (ANPD).
+                        Somente realizamos transferências quando o país destinatário ou a organização receptora
+                        assegurar um
+                        nível de proteção de dados pessoais adequado, equivalente ao previsto pela legislação
+                        brasileira,
+                        conforme reconhecido pela ANPD.</p>
+                    <p>Em casos excepcionais autorizados por leis, as transferências poderão ocorrer mesmo que não haja
+                        decisão de adequação ou garantias específicas, desde que observadas as salvaguardas legais.</p>
+                    <p>Reafirmamos nosso compromisso com a segurança e a transparência: apenas os dados estritamente
+                        necessários são transferidos, com aplicação de controles de proteção compatíveis com os padrões
+                        técnicos e administrativos exigidos pela LGPD.</p>
+
+                    <h2>10. ATUALIZAÇÃO DA POLÍTICA DE PRIVACIDADE</h2>
+
+                    <p>Esta Política pode ser atualizada a qualquer tempo, sem aviso prévio, para se adequar às
+                        alterações
+                        da legislação aplicável ou aos nossos procedimentos internos. Portanto, recomendamos que você a
+                        verifique periodicamente para que tenha conhecimento sobre as modificações.</p>
+
+                    <h2>11. CONTATO</h2>
+
+                    <p>Para sanar dúvidas ou realizar solicitações referentes a esta Política, favor entrar em contato
+                        conosco pelo e-mail: Aleksandro Oliveira Domingues Marques endereço eletrônico:
+                        dpo@crefaz.com.br.
+                    </p>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="acceptPrivacy" type="button">Entendi</button>
+                </div>
+            </div>
+            <script>
+                const openPrivacy = document.getElementById("openPrivacy");
+                const privacyModal = document.getElementById("privacyModal");
+                const closePrivacy = document.getElementById("closePrivacy");
+                const acceptPrivacy = document.getElementById("acceptPrivacy");
+
+                function openPrivacyModal(event) {
+                    event.preventDefault();
+                    privacyModal.classList.add("show");
+                    privacyModal.setAttribute("aria-hidden", "false");
+                }
+
+                function hidePrivacyModal() {
+                    privacyModal.classList.remove("show");
+                    privacyModal.setAttribute("aria-hidden", "true");
+                }
+
+                if (openPrivacy) {
+                    openPrivacy.addEventListener("click", openPrivacyModal);
+                }
+
+                if (closePrivacy) {
+                    closePrivacy.addEventListener("click", hidePrivacyModal);
+                }
+
+                if (acceptPrivacy) {
+                    acceptPrivacy.addEventListener("click", hidePrivacyModal);
+                }
+
+                if (privacyModal) {
+                    privacyModal.addEventListener("click", function (event) {
+                        if (event.target === privacyModal) {
+                            hidePrivacyModal();
+                        }
+                    });
+                }
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape" && privacyModal.classList.contains("show")) {
+                        hidePrivacyModal();
+                    }
+                });
+            </script>
+        </div>
     </section>
 
     <!-- rodapé -->
@@ -1344,30 +1660,34 @@
         <style>
             #rodape {
                 font-family: 'Anteb', sans-serif;
-                background: #163056;
+                background: var(--azul-crefaz);
                 color: #fff;
             }
 
             .footer-container {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
+                grid-template-columns: 1fr;
+                gap: 40px;
                 max-width: 1000px;
                 margin: 0 auto;
                 padding: 40px 0px;
             }
 
-            .logo-footer {
-                width: 130px;
-                fill: #fff;
+            .footer-container a {
+                color: var(--text-footer);
+                text-decoration: none;
             }
 
             .footer-section {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: start;
+                justify-content: space-between;
+                align-items: center;
                 gap: 20px;
+            }
+
+            .logo-footer {
+                width: 120px;
+                fill: #fff;
             }
 
             .footer-title {
@@ -1380,13 +1700,6 @@
                 font-size: 14px;
                 color: #ffffff;
                 line-height: 1.5;
-            }
-
-            .social-icons {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                justify-content: end;
             }
 
             .security-icons {
@@ -1407,18 +1720,41 @@
                 justify-content: center;
             }
 
+            /*---------------------------------------------*/
+            /*----------------REDES SOCIAIS----------------*/
+            /*---------------------------------------------*/
+
+            .crefazoficial {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                justify-content: end;
+            }
+
+            .crefazoficial p {
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                font-weight: 300;
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 6px;
+                align-items: center;
+                justify-content: end;
+            }
+
             .icon-social {
-                background: #163056;
-                width: 38px;
+                background: var(--azul-crefaz);
+                width: 22px;
                 fill: #ffffff;
-                border-radius: 10px;
-                padding: 6px;
+                padding: 2px;
                 transition: all 0.2s ease;
             }
 
             .icon-social:hover {
-                fill: #fff;
-                background: #27436d;
+                fill: var(--laranja-crefaz);
                 transform: translatey(-1px);
             }
 
@@ -1429,21 +1765,41 @@
                 justify-content: end;
             }
 
-            .footer-container a {
-                font-size: 14px;
-                color: #778fb3;
-                text-decoration: none;
-                transition: all 0.3s ease;
-            }
-
             .footer-section a {
                 font-size: 18px;
+                height: 22px;
+                color: #fff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 300;
             }
 
             .footer-section a:hover,
             .footer-container a:hover {
                 color: #fff;
                 text-decoration: underline;
+            }
+
+            .content-enterprise {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #msg-footer {
+                color: var(--text-footer);
+                padding: 18px 40px;
+                text-align: center;
+                border-top: 1px solid #657a992e;
+                line-height: 1.5;
+                text-transform: uppercase;
+            }
+
+            #msg-footer p {
+                margin: 0;
+                padding: 0;
+                font-family: 'Anteb', sans-serif;
+                font-size: 12px;
             }
 
             @media (max-width: 768px) {
@@ -1455,6 +1811,7 @@
 
                 .logo-footer {
                     padding: 0;
+                    width: 110px;
                 }
 
                 .social-icons {
@@ -1463,12 +1820,19 @@
 
                 .footer-section {
                     justify-content: center;
-                    align-items: center;
+                    flex-wrap: wrap;
+                    /* flex-direction: column; */
+                    gap: 30px;
+                }
+
+                .content-enterprise {
+                    flex-direction: column;
+                    gap: 40px;
                 }
 
                 .privacity {
                     flex-direction: column;
-                    gap: 8px;
+                    gap: 10px;
                 }
 
                 .security-icons {
@@ -1476,7 +1840,7 @@
                     gap: 10px;
                 }
 
-                */ #msg-footer p {
+                #msg-footer p {
                     font-size: 10px;
                 }
             }
@@ -1484,93 +1848,74 @@
 
         <div class="footer-container">
             <div class="footer-section">
-                <svg class="logo-footer" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 150 28.41">
+                <svg class="logo-footer" id="Logo_Crefaz" data-name="Logo_Crefaz" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 560.59 106.16">
                     <path
-                        d="M148.79,1.54c-2.56-.72-5.23-1.18-7.98-1.35-.77-.05-1.55-.07-2.33-.07s-1.56.02-2.33.07c-3.17.19-6.23.77-9.14,1.7v5.72c.89-.34,1.8-.63,2.73-.89,2.44-.68,4.99-1.08,7.62-1.17.19-.02.38-.04.58-.05.18-.01.37-.02.56-.02s.37,0,.56.02c.19.01.38.03.57.05,1.42.05,2.82.19,4.19.41l-.85.75-12.41,11-2.17,1.92-1.37,1.21h0v5.72c.43.14.86.27,1.3.39,2.99.83,6.12,1.31,9.36,1.37h1.63c3.72-.08,7.31-.69,10.7-1.77v-5.72c-.95.36-1.92.68-2.92.95-2.41.66-4.93,1.05-7.53,1.13-.35.01-.71.02-1.07.02s-.72,0-1.07-.02c-1.39-.04-2.76-.18-4.1-.39l.89-.79,12.3-10.91,2.18-1.94,1.31-1.16V1.9c-.4-.13-.8-.25-1.21-.36Z" />
-                    <path
-                        d="M121.36,5.49c-.24-.31-.5-.61-.76-.89-.52-.56-1.09-1.08-1.69-1.55-2.4-1.86-5.41-2.97-8.69-2.97-.92,0-1.81.09-2.68.26-1.83.35-3.52,1.05-5.03,2.02-1.31.85-2.47,1.91-3.43,3.14-.09.11-.18.22-.26.34-.59.8-1.1,1.66-1.51,2.57-.8,1.76-1.24,3.71-1.25,5.76,0,.03,0,.05,0,.08,0,2.05.43,3.99,1.21,5.75.41.92.91,1.78,1.5,2.59,1.02,1.4,2.29,2.6,3.74,3.55,1.5.98,3.2,1.68,5.03,2.03.4.08.8.14,1.22.18.48.05.98.08,1.47.08s.99-.03,1.47-.08c2.7-.28,5.18-1.32,7.21-2.9v2.9h5.43v-15.23c-.11-1.36-.41-2.67-.88-3.9-.51-1.35-1.22-2.6-2.1-3.71ZM115.87,20.85c-1.52,1.3-3.49,2.08-5.65,2.08-.17,0-.34,0-.5-.02-1.92-.11-3.67-.84-5.05-1.99-1.91-1.59-3.13-4-3.13-6.68,0-.03,0-.05,0-.08.02-2.66,1.24-5.03,3.14-6.61,1.39-1.15,3.14-1.88,5.06-1.99.16,0,.33-.01.49-.01,2.15,0,4.12.78,5.63,2.07,1.39,1.18,2.4,2.8,2.83,4.64.13.54.2,1.1.22,1.67,0,.1,0,.21,0,.31s0,.21,0,.31c-.02.57-.09,1.12-.22,1.65-.43,1.84-1.44,3.46-2.82,4.64Z" />
-                    <path
-                        d="M97.41,4.18c-2.08-2.09-4.8-3.53-7.85-4.01-.3-.05-.61-.09-.92-.11-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-1.72.15-3.35.61-4.84,1.33-2,.96-3.74,2.37-5.08,4.11-.12.16-.24.31-.35.47v6.86h0v15.51h5.43v-7.99h0v-2.07h8.32v-5.43h-8.32v-4.84c1.45-1.43,3.4-2.37,5.56-2.5.18-.01.37-.02.56-.02s.37,0,.56.02c.56.03,1.11.13,1.64.26,1.53.4,2.9,1.2,3.98,2.29l1.98-1.98.58-.58,1.31-1.31Z" />
-                    <path
-                        d="M73.63,10.69c-.13-.52-.29-1.02-.48-1.51-.5-1.33-1.2-2.57-2.06-3.68-2.35-3.03-5.89-5.08-9.92-5.43-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-4.03.36-7.58,2.41-9.92,5.43-.08.1-.16.2-.23.31-.59.8-1.09,1.67-1.5,2.58-.63,1.41-1.04,2.94-1.18,4.54-.04.41-.05.82-.05,1.24,0,1.44.22,2.83.62,4.14.17.56.38,1.11.61,1.64.41.92.91,1.78,1.5,2.58,2.58,3.52,6.74,5.8,11.43,5.8,2.16,0,4.21-.48,6.04-1.35l-.84-2.57-.89-2.7c-1.27.73-2.74,1.14-4.31,1.14-3.31,0-6.18-1.85-7.65-4.57-.66-1.23-1.04-2.63-1.04-4.12,0-.43.03-.85.09-1.26.58-4.02,3.92-7.16,8.04-7.42.18-.01.37-.02.56-.02s.37,0,.56.02c4.1.26,7.43,3.36,8.03,7.36l-9.06.03,1.74,5.38,6.4-.02h3.07s2.51-.02,2.51-.02h.32c.06-.19.11-.38.16-.58.28-1.11.43-2.28.43-3.48,0-.45-.02-.9-.06-1.33-.07-.73-.19-1.45-.37-2.14Z" />
-                    <path
-                        d="M47.07,4.18C44.79,1.88,41.72.36,38.31.06c-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-1.72.15-3.35.61-4.84,1.33-2,.96-3.74,2.37-5.08,4.11-.08.1-.16.2-.23.31-.04.05-.08.11-.12.16v22.36h5.43v-7.99h0V7.99c1.45-1.43,3.4-2.37,5.56-2.5.18-.01.37-.02.56-.02s.37,0,.56.02c2.19.14,4.16,1.09,5.61,2.56l1.98-1.98.58-.58,1.31-1.31Z" />
-                    <path
-                        d="M20.35,20.27c-1.58,1.6-3.77,2.59-6.19,2.59s-4.55-.96-6.12-2.52c-1.59-1.57-2.57-3.76-2.57-6.17s.99-4.61,2.59-6.19c1.44-1.43,3.39-2.35,5.55-2.48.18-.01.37-.02.56-.02s.37,0,.56.02c2.19.14,4.16,1.09,5.61,2.56l1.98-1.98.58-.58,1.31-1.31C21.93,1.88,18.86.36,15.44.06c-.42-.04-.85-.06-1.28-.06s-.86.02-1.28.06c-3.38.3-6.42,1.79-8.7,4.05-.44.43-.85.9-1.23,1.39C1.11,7.89,0,10.9,0,14.17c0,3.93,1.6,7.48,4.18,10.04,2.56,2.55,6.09,4.12,9.99,4.12s7.49-1.6,10.06-4.19l-1.89-1.89-1.98-1.98Z" />
+                        d="M560.59,7.11v21.78l-4.89,4.33-8.16,7.23-45.98,40.76-3.34,2.96c5.01.81,10.13,1.3,15.33,1.47,1.33.05,2.66.07,4,.07s2.67-.02,4-.07c9.71-.31,19.13-1.77,28.14-4.24,3.71-1.01,7.34-2.2,10.9-3.54v21.39c-12.65,4.03-26.07,6.34-39.99,6.63h-6.09c-12.09-.25-23.81-2.03-34.98-5.13-1.63-.45-3.25-.93-4.86-1.44v-21.38h0s5.11-4.54,5.11-4.54l8.1-7.18,46.37-41.11,3.17-2.81c-5.11-.84-10.34-1.37-15.65-1.55-.71-.09-1.42-.16-2.14-.2-.69-.05-1.39-.07-2.09-.07s-1.39.02-2.08.07c-.72.05-1.44.11-2.15.2-9.83.34-19.36,1.84-28.46,4.38-3.46.96-6.86,2.08-10.18,3.33V7.06c10.88-3.45,22.33-5.63,34.17-6.35,2.88-.17,5.78-.27,8.71-.27s5.82.09,8.7.27c10.27.62,20.25,2.34,29.81,5.04,1.52.43,3.02.88,4.52,1.36ZM461.42,34.39c1.75,4.58,2.88,9.47,3.28,14.57v56.92h-20.31v-10.83c-7.6,5.91-16.85,9.79-26.95,10.83-1.81.19-3.64.28-5.51.28s-3.7-.1-5.51-.28c-1.53-.16-3.05-.38-4.54-.68-6.82-1.3-13.17-3.92-18.79-7.58-5.43-3.53-10.17-8.03-13.98-13.26-2.19-3-4.07-6.23-5.59-9.67-2.92-6.56-4.54-13.83-4.54-21.47,0-.1,0-.19,0-.28.03-7.67,1.7-14.95,4.68-21.52,1.55-3.41,3.44-6.64,5.65-9.62.32-.43.64-.86.97-1.28,3.59-4.58,7.93-8.54,12.82-11.72,5.62-3.65,11.97-6.26,18.79-7.57,3.24-.63,6.6-.95,10.03-.95,12.23,0,23.5,4.15,32.46,11.12,2.26,1.76,4.38,3.7,6.33,5.8,1,1.07,1.95,2.18,2.85,3.33,3.27,4.16,5.94,8.83,7.85,13.86ZM443.58,60.56c.46-1.99.73-4.05.81-6.17.02-.39.02-.78.02-1.17s0-.78-.02-1.17c-.07-2.14-.36-4.22-.82-6.23-1.61-6.87-5.39-12.9-10.58-17.33-5.67-4.83-13.02-7.75-21.05-7.75-.62,0-1.23.02-1.84.05-7.17.4-13.72,3.13-18.9,7.44-7.1,5.9-11.66,14.78-11.74,24.71,0,.1,0,.19,0,.28,0,10.04,4.56,19.01,11.71,24.97,5.18,4.31,11.72,7.05,18.89,7.45.62.04,1.25.06,1.88.06,8.05,0,15.43-2.93,21.1-7.79,5.19-4.43,8.96-10.48,10.55-17.36ZM364.05,15.61c-7.76-7.8-17.94-13.2-29.32-14.97-1.13-.18-2.29-.32-3.45-.42-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-6.43.58-12.53,2.3-18.09,4.97-7.47,3.58-13.96,8.86-18.99,15.35-.45.58-.89,1.17-1.32,1.77v83.58h20.31v-29.86h0v-7.75h31.09v-20.31h-31.09v-18.08c5.41-5.36,12.7-8.84,20.79-9.35.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c2.1.13,4.16.47,6.13.98,5.72,1.5,10.82,4.5,14.86,8.57l7.39-7.39,2.16-2.16,4.91-4.91ZM275.18,39.94c-.49-1.93-1.08-3.82-1.78-5.66-1.87-4.99-4.49-9.62-7.7-13.76C256.93,9.22,243.69,1.56,228.62.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-15.07,1.34-28.32,9-37.09,20.31-.29.38-.59.76-.86,1.15-2.2,2.99-4.09,6.23-5.62,9.65-2.36,5.26-3.88,10.98-4.4,16.98-.14,1.52-.2,3.07-.2,4.63,0,5.39.81,10.59,2.3,15.49.64,2.1,1.41,4.14,2.3,6.12,1.53,3.42,3.42,6.66,5.62,9.65,9.63,13.15,25.18,21.68,42.72,21.68,8.07,0,15.73-1.81,22.58-5.04l-3.15-9.6-3.31-10.09c-4.75,2.72-10.25,4.28-16.11,4.28-12.36,0-23.11-6.91-28.6-17.07-2.48-4.58-3.88-9.83-3.88-15.41,0-1.6.11-3.17.34-4.7,2.18-15.04,14.66-26.74,30.06-27.71.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c15.32.97,27.75,12.57,30.02,27.5l-33.85.11,6.51,20.1,23.93-.08,11.48-.04,9.38-.03h1.18c.21-.71.41-1.43.59-2.15,1.05-4.16,1.61-8.51,1.61-13,0-1.68-.08-3.35-.23-4.99-.25-2.74-.72-5.42-1.38-8.01ZM175.93,15.61C167.39,7.02,155.93,1.35,143.17.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-6.43.58-12.53,2.3-18.09,4.97-7.47,3.58-13.96,8.86-18.99,15.35-.3.38-.59.76-.87,1.16-.15.2-.3.41-.45.61v83.58h20.31v-29.86h0V29.88c5.41-5.36,12.69-8.84,20.79-9.35.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c8.19.52,15.56,4.07,20.98,9.55l7.39-7.39,2.16-2.16,4.91-4.91ZM76.07,75.75c-5.89,5.98-14.08,9.68-23.13,9.68s-16.99-3.59-22.86-9.41c-5.94-5.88-9.62-14.05-9.62-23.07s3.7-17.24,9.68-23.13c5.4-5.33,12.66-8.78,20.72-9.29.69-.05,1.38-.07,2.08-.07s1.4.02,2.09.07c8.19.52,15.56,4.07,20.98,9.55l7.39-7.39,2.16-2.16,4.91-4.91C81.94,7.02,70.48,1.35,57.71.21c-1.57-.14-3.17-.21-4.77-.21s-3.2.07-4.77.21c-12.63,1.13-23.99,6.69-32.5,15.13-1.64,1.62-3.17,3.35-4.59,5.18C4.14,29.48,0,40.73,0,52.94c0,14.68,5.97,27.95,15.61,37.54,9.57,9.52,22.77,15.4,37.33,15.4s28-5.99,37.59-15.67l-7.08-7.08-7.39-7.39Z" />
                 </svg>
-                <a href="https://site.crefaz.com.br/" title="Site Crefaz " alt="Site Crefaz" target="_blank">
-                    crefaz.com.br
-                </a>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/crefazoficial/" title="Facebook" alt="Facebook" target="_blank">
-                    <svg class="icon-social" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 48 47.82">
-                        <path
-                            d="M24,0C10.75,0,0,10.75,0,24c0,11.26,7.75,20.7,18.2,23.29v-15.96h-4.95v-7.33h4.95v-3.16c0-8.17,3.7-11.95,11.72-11.95,1.52,0,4.14.3,5.22.6v6.65c-.57-.06-1.55-.09-2.77-.09-3.94,0-5.46,1.49-5.46,5.37v2.59h7.84l-1.35,7.33h-6.49v16.49c11.88-1.44,21.09-11.55,21.09-23.82,0-13.25-10.75-24-24-24Z" />
-                    </svg>
 
+
+
+                <a href="https://site.crefaz.com.br/" title="Site Crefaz " alt="Site Crefaz" target="_blank">
+                    www.<strong>crefaz</strong>.com.br
                 </a>
-                <a href="https://www.instagram.com/crefazoficial/" title="Instagram" alt="Instagram" target="_blank">
-                    <svg class="icon-social" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 47.97 47.99">
-                        <path
-                            d="M47.83,14.12c-.11-2.55-.52-4.3-1.11-5.82-.59-1.59-1.41-2.93-2.75-4.27-1.33-1.33-2.67-2.16-4.25-2.77-1.53-.59-3.27-1-5.82-1.12-2.57-.12-3.38-.15-9.9-.15s-7.33.03-9.89.14c-2.55.11-4.3.52-5.82,1.12-1.58.62-2.93,1.43-4.26,2.78-1.34,1.33-2.16,2.67-2.77,4.25-.59,1.53-1,3.27-1.11,5.82-.11,2.57-.14,3.38-.14,9.9s.03,7.33.14,9.89c.11,2.55.52,4.3,1.11,5.82.62,1.58,1.44,2.93,2.77,4.26,1.33,1.33,2.67,2.16,4.25,2.77,1.53.59,3.27,1,5.82,1.12,2.56.11,3.38.14,9.89.14s7.33-.03,9.89-.14c2.55-.11,4.3-.52,5.82-1.12,1.57-.61,2.92-1.43,4.25-2.77,1.33-1.33,2.16-2.67,2.77-4.25.59-1.53,1-3.27,1.11-5.82.11-2.56.14-3.38.14-9.89s-.03-7.33-.14-9.89ZM43.52,33.67c-.1,2.34-.5,3.61-.82,4.45-.43,1.12-.96,1.92-1.79,2.76-.84.84-1.64,1.36-2.76,1.79-.84.33-2.12.72-4.45.83-2.53.11-3.29.14-9.69.14s-7.17-.03-9.69-.14c-2.34-.1-3.61-.5-4.45-.83-1.11-.43-1.92-.96-2.76-1.79-.84-.84-1.36-1.64-1.79-2.76-.33-.84-.72-2.12-.83-4.45-.11-2.53-.14-3.29-.14-9.69s.03-7.17.14-9.69c.1-2.34.5-3.61.83-4.45.43-1.12.96-1.92,1.79-2.76.84-.84,1.64-1.36,2.76-1.79.84-.33,2.12-.72,4.45-.83,2.52-.11,3.28-.14,9.69-.14s7.17.03,9.69.14c2.34.1,3.61.5,4.45.83,1.12.43,1.92.96,2.76,1.79.84.84,1.36,1.64,1.79,2.76.33.84.72,2.12.82,4.45.11,2.53.14,3.29.14,9.69s-.03,7.17-.14,9.69Z" />
-                        <path
-                            d="M24,11.67c-6.81,0-12.33,5.52-12.33,12.33s5.52,12.33,12.33,12.33,12.33-5.52,12.33-12.33-5.52-12.33-12.33-12.33ZM24,32c-4.42,0-8-3.58-8-8s3.58-8,8-8,8,3.58,8,8-3.58,8-8,8Z" />
-                        <path
-                            d="M36.82,8.31c-1.59,0-2.88,1.28-2.88,2.88s1.28,2.88,2.88,2.88,2.88-1.28,2.88-2.88-1.29-2.88-2.88-2.88Z" />
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/company/crefazoficial/posts/?feedView=all" title="LinkedIn"
-                    alt="LinkedIn" target="_blank">
-                    <svg class="icon-social" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 47.89 47.9">
-                        <path
-                            d="M35.16,0H12.76C5.79.17.17,5.78,0,12.75v22.4c.18,7.07,5.97,12.75,13.09,12.75h21.73c7,0,12.72-5.5,13.07-12.42V12.41c-.34-6.81-5.88-12.24-12.73-12.41ZM14.21,40.82h-7.11v-22.86h7.11v22.86ZM10.65,14.84c-2.28,0-4.12-1.84-4.12-4.12s1.84-4.11,4.12-4.11,4.12,1.84,4.12,4.11-1.85,4.12-4.12,4.12ZM40.81,40.82h-7.1v-11.12c0-2.64-.05-6.06-3.69-6.06s-4.26,2.89-4.26,5.88v11.3h-7.09v-22.86h6.81v3.12h.09c.95-1.8,3.27-3.7,6.72-3.7,7.19,0,8.52,4.74,8.52,10.89v12.55Z" />
-                    </svg>
-                </a>
-            </div>
-            <div class="security-icons">
-                <div class="footer-title">Autorizado</div>
-                <div class="security-imgs">
-                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/f56a9041-98d8-42be-ad63-1fd0fa08d88f.png"
-                        alt="Banco Central do Brasil">
-                    <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/d32ada86-18ed-4f45-88e9-ea85e6a51267.png"
-                        alt="Site Seguro">
+
+                <div class="crefazoficial">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/crefazoficial/" title="Instagram" alt="Instagram"
+                            target="_blank">
+                            <svg class="icon-social" id="Icone_Instagram" data-name="Icone_Instagram"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                                <path
+                                    d="M39.29,6.4c-1.41-3.47-3.99-5.57-7.68-6.24-.66-.12-1.35-.15-2.02-.15C23.14,0,16.7,0,10.26,0,6.77,0,3.96,1.4,1.88,4.21.61,5.94.01,7.91,0,10.06c0,6.63-.02,13.25,0,19.88.01,4.44,2.77,8.21,6.97,9.58.72.23,1.49.33,2.24.49h21.56c.96-.23,1.96-.35,2.86-.72,3.44-1.42,5.52-3.99,6.21-7.66.05-.28.1-.56.15-.84V9.22c-.23-.94-.35-1.93-.71-2.82ZM36.65,29.88c0,3.01-1.7,5.46-4.5,6.41-.72.25-1.53.36-2.29.36-6.57.03-13.15.02-19.72.01-3.3,0-5.9-2.06-6.63-5.24-.12-.5-.15-1.03-.15-1.55,0-6.57-.01-13.15,0-19.72,0-3.02,1.71-5.49,4.52-6.43.75-.25,1.58-.35,2.37-.35,3.25-.04,6.51-.02,9.76-.02v.02c3.48,0,6.95-.04,10.43.01,2.97.04,5.74,2.59,6.13,5.54.05.4.09.8.09,1.2,0,6.59.01,13.17,0,19.76ZM20,10c-5.5,0-9.98,4.47-10,9.98-.02,5.5,4.48,10.02,9.99,10.02,5.49,0,9.98-4.47,10-9.98.02-5.5-4.48-10.02-10-10.02ZM20.01,26.66c-3.68,0-6.65-2.95-6.67-6.64-.02-3.69,2.98-6.69,6.67-6.68,3.68,0,6.65,2.98,6.65,6.66,0,3.68-2.96,6.65-6.65,6.66ZM33.34,9.19c-.02,1.37-1.13,2.47-2.5,2.47s-2.48-1.09-2.49-2.47c-.01-1.38,1.11-2.52,2.49-2.52s2.52,1.16,2.5,2.52Z" />
+                            </svg>
+                        </a>
+
+                        <a href="https://www.facebook.com/crefazoficial/" title="Facebook" alt="Facebook"
+                            target="_blank">
+                            <svg class="icon-social" id="Icone_Facebook" data-name="Camada 1"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                                <path
+                                    d="M39.29,6.4c-1.41-3.47-3.99-5.57-7.68-6.24-.66-.12-1.34-.15-2.02-.15C23.14,0,16.7,0,10.26,0,6.77,0,3.96,1.4,1.88,4.21.61,5.94.01,7.91,0,10.06c0,6.63-.02,13.25,0,19.88.01,4.44,2.77,8.21,6.97,9.58.72.23,1.49.33,2.24.49h21.56c.96-.23,1.96-.35,2.86-.72,3.44-1.42,5.52-3.99,6.21-7.66.05-.28.1-.56.15-.84V9.22c-.23-.94-.35-1.93-.71-2.82ZM36.65,29.88c0,3.01-1.7,5.46-4.5,6.41-.72.25-1.53.36-2.29.36-1.27,0-2.53,0-3.8,0v-10.43c0-.08.01-.16.02-.28h4.46c.22-1.75.45-3.46.67-5.21h-5.12s-.03-.07-.03-.08c0-1.26-.03-2.52.02-3.78.05-1.21.73-1.88,1.94-1.94,1.02-.05,2.04-.04,3.06-.05.1,0,.2,0,.3,0v-4.65c-.08-.02-.14-.03-.21-.04-.83-.05-1.66-.13-2.48-.16-1.02-.04-2.04-.06-3.05.15-1.24.27-2.34.79-3.23,1.73-1.16,1.23-1.65,2.73-1.71,4.38-.06,1.36-.02,2.73-.03,4.09v.37h-4.49v5.22h4.49v.4c0,3.43,0,6.86,0,10.29-3.51,0-7.02.01-10.53,0-3.3,0-5.9-2.06-6.63-5.24-.12-.5-.15-1.03-.15-1.55,0-6.57-.01-13.15,0-19.72,0-3.02,1.71-5.49,4.52-6.43.75-.25,1.58-.35,2.37-.35,3.25-.04,6.51-.02,9.76-.02v.02c3.48,0,6.95-.04,10.43.01,2.97.04,5.74,2.59,6.13,5.54.05.4.09.8.09,1.2,0,6.59.01,13.17,0,19.76Z" />
+                            </svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/crefazoficial/posts/?feedView=all" title="LinkedIn"
+                            alt="LinkedIn" target="_blank">
+                            <svg class="icon-social" id="Camada_1" data-name="Camada 1"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                                <path
+                                    d="M33.25,22.98c.02,3.25.01,6.49.02,9.74,0,.05,0,.1-.01.17h-5.23v-.35c0-2.75,0-5.51-.01-8.26,0-.62-.05-1.26-.17-1.87-.32-1.73-1.44-2.31-3.04-2.12-1.46.17-2.27,1.03-2.5,2.61-.08.58-.12,1.17-.12,1.75-.01,2.63,0,5.26,0,7.89v.39h-5.22v-16.83h4.99v2.27c.07-.04.1-.04.12-.06,1.11-1.79,2.78-2.57,4.84-2.62,1.15-.03,2.28.12,3.33.62,1.37.65,2.13,1.79,2.55,3.19.34,1.13.46,2.3.47,3.47ZM8.45,32.94h5.19v-16.84h-5.19v16.84ZM11.02,7.69c-1.66.02-3.01,1.39-3.01,3.04,0,1.68,1.39,3.07,3.06,3.06,1.66-.01,3.01-1.4,3-3.07-.01-1.68-1.38-3.04-3.05-3.02ZM40,9.22v21.56c-.05.28-.1.56-.15.84-.69,3.67-2.77,6.24-6.21,7.66-.9.37-1.9.49-2.86.72H9.22c-.75-.16-1.52-.25-2.24-.49C2.78,38.15.02,34.37.01,29.93,0,23.31,0,16.68,0,10.06c0-2.14.6-4.11,1.87-5.84C3.96,1.4,6.77,0,10.26,0c6.44,0,12.89,0,19.33,0,.67,0,1.36.03,2.02.15,3.7.67,6.27,2.77,7.68,6.24.36.89.48,1.88.71,2.82ZM36.65,10.11c0-.4-.04-.81-.09-1.2-.39-2.94-3.16-5.5-6.13-5.54-3.48-.05-6.95-.01-10.43-.01v-.02c-3.25,0-6.51-.02-9.76.02-.79,0-1.63.1-2.37.35-2.81.94-4.52,3.41-4.52,6.43,0,6.57,0,13.15,0,19.72,0,.52.04,1.05.15,1.55.74,3.18,3.33,5.23,6.63,5.24,6.57.01,13.15.02,19.72-.01.77,0,1.57-.12,2.29-.36,2.8-.95,4.49-3.4,4.5-6.41.01-6.59,0-13.17,0-19.76Z" />
+
+                            </svg>
+                        </a>
+                    </div>
+                    <p>@<strong>crefaz</strong>oficial
+                    </p>
                 </div>
             </div>
-            <div class="privacity">
-                <a href="https://site.crefaz.com.br/politica-de-privacidade">Política de Privacidade</a>
+            <div class="content-enterprise">
+                <div class="security-icons">
+                    <div class="footer-title">Autorizado</div>
+                    <div class="security-imgs">
+                        <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/f56a9041-98d8-42be-ad63-1fd0fa08d88f.png"
+                            alt="Banco Central do Brasil">
+                        <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/d32ada86-18ed-4f45-88e9-ea85e6a51267.png"
+                            alt="Site Seguro">
+                    </div>
+                </div>
+                <div class="privacity">
+                    <a href="https://site.crefaz.com.br/politica-de-privacidade">Política de Privacidade</a>
 
-                <a href="https://site.crefaz.com.br/seguranca-cibernetica">Política de Segurança Cibernética</a>
+                    <a href="https://site.crefaz.com.br/seguranca-cibernetica">Política de Segurança Cibernética</a>
+                </div>
             </div>
         </div>
         <!-- Mensagem de rodapé -->
         <div id="msg-footer">
-            <style>
-                #msg-footer {
-                    background: #163056;
-                    color: #778fb3;
-                    padding: 18px;
-                    text-align: center;
-                    border-top: 1px solid #657a992e;
-                    line-height: 1.5;
-
-                    p {
-                        margin: 0;
-                        padding: 0;
-                        font-family: 'Anteb', sans-serif;
-                        font-size: 12px;
-                    }
-                }
-            </style>
-            <div>
-                <p>CREFAZ SOCIEDADE DE CREDITO AO MICROEMPREENDEDOR E A EPP LTDA. | 18.188.384/0001-83
-                    <br>Avenida Duque de Caxias, 882 - 87020-025 - Maringá/PR
-                </p>
-            </div>
+            <p>CREFAZ SOCIEDADE DE CREDITO AO MICROEMPREENDEDOR E A EPP LTDA.<span> CNPJ: 18.188.384/0001-83</span>
+                <br>Avenida Duque de Caxias, 882 - 87020-025 - Maringá/PR
+            </p>
         </div>
     </section>
 
