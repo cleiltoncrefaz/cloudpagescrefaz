@@ -11,6 +11,13 @@
 
 <!-- Global styles -->
 <style>
+    html {
+        --azul-escuro: #0d2041;
+        --azul-crefaz: #163056;
+        --laranja-crefaz: #ef6b22;
+        --text-footer: #B6CCEB;
+    }
+
     @font-face {
         font-family: 'Anteb';
         src: url('https://site.crefaz.com.br/parcerias/fonts/Anteb-Regular.otf') format('opentype');
@@ -29,32 +36,15 @@
 
     * {
         box-sizing: border-box;
-        scroll-behavior: smooth;
         scroll-margin-top: 60px;
     }
-
+    
     body {
         margin: 0;
         padding: 0;
         font-family: 'Anteb', sans-serif;
         overflow-x: hidden;
-    }
-
-
-    .input-success {
-        border: 2px solid #22c55e !important;
-    }
-
-    .input-error {
-        border: 2px solid #ef4444 !important;
-    }
-
-    .error-label {
-        color: #ef4444;
-        font-size: 11px;
-        margin-top: 4px;
-        font-weight: 600;
-        display: none;
+        scroll-behavior: smooth;
     }
 
     ::selection {
@@ -161,7 +151,6 @@
         font-weight: normal;
         line-height: 1.2;
         letter-spacing: -0.3px;
-        margin: 10px 0 20px 0;
     }
 
     p {
@@ -172,7 +161,7 @@
     }
 
     .highlight {
-        color: #ef6b22;
+        color: var(--laranja-crefaz);
         font-weight: bold;
     }
 
@@ -865,71 +854,143 @@
             .produto-description li {
                 margin-bottom: 10px;
             }
+
+            /*Carrossel Botões*/
+
+            .carousel-wrapper {
+                position: relative;
+                max-width: 1150px;
+                margin: 0 auto;
+            }
+
+            .produtos-container {
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+
+                scrollbar-width: none;
+            }
+
+            .produtos-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .carousel-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+                width: 38px;
+                height: 38px;
+                border: none;
+                border-radius: 50%;
+                background: #163056;
+                color: #ef6b22;
+                cursor: pointer;
+                font-size: 16px;
+                transition: 0.2s ease;
+            }
+
+            .carousel-arrow:hover {
+                background: #ef6b22;
+                color: #fff;
+            }
+
+            .carousel-arrow.left {
+                left: -10px;
+            }
+
+            .carousel-arrow.right {
+                right: -10px;
+            }
+
+            @media (max-width: 767px) {
+                .carousel-arrow {
+                    display: none;
+                }
+            }
         </style>
 
         <!-- <h2>A CFZ tem o <span class="highlight">crédito ideal</span> pra você!</h2> -->
         <h2>Nossos <span class="highlight">produtos</span></h2>
-        <div class="produtos-container">
-            <div class="card-carrossel">
 
 
-                <div class="produto-card cp-energia">
-                    <div class="card-text">
-                        <div class="produto-title">Crédito parcelado na conta de luz</div>
-                        <div class="produto-description">
-                            <li>• Em até 24x.</li>
-                            <li>• Pagamento pela conta de luz.</li>
-                            <p class="produto-subtitle">De R$ 400 a R$ 4.000</p>
+        <div class="carousel-wrapper">
+
+            <button class="carousel-arrow left" id="prevBtn">
+                &#10094;
+            </button>
+
+            <div class="produtos-container">
+                <div class="card-carrossel">
+
+
+                    <div class="produto-card cp-energia">
+                        <div class="card-text">
+                            <div class="produto-title">Crédito parcelado na conta de luz</div>
+                            <div class="produto-description">
+                                <li>• Em até 24x.</li>
+                                <li>• Pagamento pela conta de luz.</li>
+                                <p class="produto-subtitle">De R$ 400 a R$ 4.000</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="produto-card credito-trabalhador">
-                    <div class="card-text">
-                        <div class="produto-title">Crédito do Trabalhador</div>
-                        <div class="produto-description">
-                            <li>• Em até 48x. </li>
-                            <li>• Parcelado na folha de pagamento.</li>
-                            <p class="produto-subtitle">De R$ 1.000 a R$ 25 mil</p>
+                    <div class="produto-card credito-trabalhador">
+                        <div class="card-text">
+                            <div class="produto-title">Crédito do Trabalhador</div>
+                            <div class="produto-description">
+                                <li>• Em até 48x. </li>
+                                <li>• Parcelado na folha de pagamento.</li>
+                                <p class="produto-subtitle">De R$ 1.000 a R$ 25 mil</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="produto-card cp-auto">
-                    <div class="card-text">
-                        <div class="produto-title">Crédito com garantia de veículo</div>
-                        <div class="produto-description">
-                            <li>• Em até 48x fixas.</li>
-                            <li>• Seu carro como garantia.</li>
-                            <p class="produto-subtitle">De R$ 5.000 a R$ 100 mil</p>
+                    <div class="produto-card cp-auto">
+                        <div class="card-text">
+                            <div class="produto-title">Crédito com garantia de veículo</div>
+                            <div class="produto-description">
+                                <li>• Em até 48x fixas.</li>
+                                <li>• Seu carro como garantia.</li>
+                                <p class="produto-subtitle">De R$ 5.000 a R$ 100 mil</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="produto-card cdc">
-                    <div class="card-text">
-                        <div class="produto-title">Crédito direto ao consumidor - CDC energia</div>
-                        <div class="produto-description">
-                            <li>• Compras em até 24x.</li>
-                            <li>• Pagamento pela conta de luz.</li>
-                            <p class="produto-subtitle">De R$ 500 a R$ 5.000</p>
+                    <div class="produto-card cdc">
+                        <div class="card-text">
+                            <div class="produto-title">Crédito direto ao consumidor - CDC energia</div>
+                            <div class="produto-description">
+                                <li>• Compras em até 24x.</li>
+                                <li>• Pagamento pela conta de luz.</li>
+                                <p class="produto-subtitle">De R$ 500 a R$ 5.000</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="produto-card crefaz-mais-saude">
-                    <div class="card-text">
-                        <div class="produto-title">Crefaz Mais Saúde</div>
-                        </p>
-                        <div class="produto-description">
-                            <li>• Economia de no mínimo 40% em consultas médicas e odontológicas</li>
-                            <li>• Descontos a partir de 20% em exames de laboratório.</li>
-                            <li>• Medicamentos até 35% mais baratos.</li>
+                    <div class="produto-card crefaz-mais-saude">
+                        <div class="card-text">
+                            <div class="produto-title">Crefaz Mais Saúde</div>
+                            </p>
+                            <div class="produto-description">
+                                <li>• Economia de no mínimo 40% em consultas médicas e odontológicas</li>
+                                <li>• Descontos a partir de 20% em exames de laboratório.</li>
+                                <li>• Medicamentos até 35% mais baratos.</li>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <button class="carousel-arrow right" id="nextBtn">
+                &#10095;
+            </button>
+
         </div>
+
+
         <!-- <a href="#" class="btn btn-secondary">
             Simule agora
             <svg class="icon-btn-secondary" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
@@ -938,7 +999,32 @@
                     d="M14.05,4.17l12.07,12.48c.5.51.9,1.09,1.21,1.71H0v6h27.42c-.35.76-.84,1.46-1.47,2.05l-12.48,12.07,4.17,4.31,12.48-12.07c.05-.05.11-.1.16-.16,2.38-2.38,3.72-5.53,3.77-8.9.06-3.44-1.23-6.71-3.62-9.18L18.37,0l-4.31,4.17Z" />
             </svg>
         </a> -->
+
+
         <script>
+            const carousel = document.querySelector(".produtos-container");
+            const nextBtn = document.getElementById("nextBtn");
+            const prevBtn = document.getElementById("prevBtn");
+
+            const scrollAmount = 320;
+
+            nextBtn.addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: scrollAmount,
+                    behavior: "smooth"
+                });
+            });
+
+            prevBtn.addEventListener("click", () => {
+                carousel.scrollBy({
+                    left: -scrollAmount,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+
+        <!--Arrastar com o mouse -->
+        <!-- <script>
             const carousel = document.querySelector(".produtos-container");
 
             let isDown = false;
@@ -972,7 +1058,7 @@
 
                 carousel.scrollLeft = scrollLeft - walk;
             });
-        </script>
+        </script> -->
     </section>
 
     <!--Encontre a loja-->
@@ -1105,6 +1191,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 position: relative;
+                padding: 20px 20px 20px 80px;
             }
 
             .block-text {
@@ -1113,7 +1200,7 @@
                 justify-content: center;
                 align-items: start;
                 gap: 20px;
-                padding: 50px;
+                padding: 50px 0px;
             }
 
             .block-image {
@@ -1174,7 +1261,7 @@
         </style>
         <div class="container">
             <div class="block-text">
-                <h2>Trabalhe <span class="highlight"><br>com a gente</span></h2>
+                <h2>Trabalhe com a <span class="highlight">CFZ</span></h2>
                 <p>Faça parte de uma empresa que valoriza o desenvolvimento profissional e o bem-estar dos
                     colaboradores.
                 </p>
@@ -1202,15 +1289,14 @@
         <style>
             #rodape {
                 font-family: 'Anteb', sans-serif;
-                /* background: #0d2041; */
-                background: #163056;
+                background: var(--azul-crefaz);
                 color: #fff;
                 border-radius: 50px 50px 0 0;
             }
 
             .footer-container {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1.4fr 0.8fr 0.8fr;
                 gap: 30px;
                 max-width: 1000px;
                 margin: 0 auto;
@@ -1222,51 +1308,58 @@
                 fill: #fff;
             }
 
-            .footer-section {
+            .logo-section {
                 display: flex;
+                flex-direction: column;
                 justify-content: start;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .footer-title {
-                font-size: 16px;
-                font-weight: 400;
-                color: #778fb3;
+                align-items: start;
+                gap: 30px;
             }
 
             .footer-text {
-                font-size: 14px;
-                color: #ffffff;
+                font-size: 12px;
+                color: var(--text-footer);
                 line-height: 1.5;
+                padding: 0 30px 0 0;
             }
 
-            .security-icons {
-                display: flex;
-                flex-direction: column;
-                align-items: end;
-                gap: 20px;
-            }
-
-            .security-icons img {
-                width: 150px;
-            }
-
-            .footer-container a {
-                font-size: 14px;
-                color: #778fb3;
-                text-decoration: none;
-                transition: all 0.3s ease;
-            }
-
-            .footer-section a {
+            .logo-section a {
                 font-size: 18px;
             }
 
-            .footer-section a:hover,
+            .logo-section a:hover,
             .footer-container a:hover {
                 color: #fff;
                 text-decoration: underline;
+            }
+
+            .contact-section {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .contact-section p {
+                font-size: 14px;
+                margin: 0;
+                padding: 0px 0 0px 0;
+            }
+
+            .contact-section h4 {
+                font-size: 18px;
+                margin: 0;
+                padding: 5px 0 0 0;
+            }
+
+            .contact-section a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
             }
 
             #msg-footer {
@@ -1281,7 +1374,6 @@
                 font-size: 18px;
                 margin: 0;
                 padding: 0;
-                font-family: 'Anteb', sans-serif;
             }
 
             @media (max-width: 768px) {
@@ -1295,17 +1387,30 @@
                     padding: 0;
                 }
 
-                .footer-section {
+                .logo-section {
                     justify-content: center;
-                }
-
-                .security-icons {
-                    flex-direction: column;
-                    gap: 20px;
                     align-items: center;
+                    padding: 0 30px;
+                    text-align: center;
                 }
 
-                .security-icons a,
+                .security-section {
+                    flex-direction: column;
+                    gap: 30px;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-text {
+                    padding: 0;
+                }
+
+                .contact-section {
+                    padding: 0 30px;
+                    text-align: center;
+                }
+
+                .security-section a,
                 #msg-footer p {
                     font-size: 16px;
                 }
@@ -1313,29 +1418,1080 @@
         </style>
 
         <div class="footer-container">
-            <div class="footer-section">
+            <div class="logo-section">
                 <svg class="logo-footer" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 467.58 272.86">
                     <path
                         d="M467.58,11.9v37.63l-8.44,7.48-14.1,12.5-79.44,70.43-5.77,5.11c8.66,1.39,17.5,2.25,26.49,2.53,2.29.08,4.6.12,6.91.12s4.62-.04,6.91-.12c16.78-.54,33.06-3.05,48.62-7.32,6.4-1.74,12.68-3.8,18.82-6.12v36.96c-21.86,6.97-45.05,10.95-69.09,11.45h-10.53c-20.89-.44-41.14-3.5-60.43-8.87-2.82-.78-5.62-1.61-8.39-2.5v-36.97l8.83-7.83,14-12.41,80.12-71.03,5.48-4.85c-8.83-1.45-17.86-2.36-27.03-2.67-1.7-.07-11.13-.2-14.62,0-16.98.58-33.46,3.18-49.18,7.57-5.98,1.67-11.84,3.59-17.6,5.76V11.82c18.79-5.97,38.58-9.73,59.05-10.97,4.97-.3,9.99-.46,15.04-.46s10.06.16,15.03.46c17.75,1.07,34.99,4.05,51.51,8.71,2.62.74,5.23,1.52,7.81,2.35ZM131.43,130.87c-10.18,10.32-24.32,16.72-39.96,16.72s-29.36-6.21-39.5-16.26c-10.27-10.17-16.62-24.27-16.62-39.86s6.39-29.78,16.72-39.96c9.33-9.2,21.88-15.17,35.81-16.05,1.19-.08,2.39-.12,3.6-.12s2.42.04,3.61.12c14.15.9,26.88,7.04,36.25,16.5l12.77-12.77,3.73-3.73,8.49-8.49C141.58,12.14,121.77,2.34,99.72.37c-2.71-.24-5.47-.37-8.25-.37s-5.54.13-8.25.37c-21.83,1.95-41.45,11.56-56.15,26.15-2.83,2.8-5.48,5.79-7.93,8.95C7.15,50.94,0,70.37,0,91.47c0,25.36,10.31,48.29,26.97,64.86,16.53,16.46,39.33,26.61,64.5,26.61s48.37-10.35,64.95-27.07l-12.22-12.22-12.77-12.77ZM305.13,26.97c-13.41-13.48-31-22.81-50.66-25.87-1.96-.31-3.95-.56-5.96-.73-2.71-.24-5.47-.37-8.25-.37s-5.54.13-8.25.37c-11.11.99-21.65,3.97-31.26,8.58-12.91,6.19-24.13,15.31-32.81,26.52-.78,1-1.54,2.03-2.28,3.06v144.41h35.09v-64.99h53.71v-35.09h-53.71v-31.23c9.35-9.26,21.94-15.28,35.91-16.15,1.19-.08,2.39-.12,3.6-.12s2.42.04,3.61.12c3.64.22,7.18.81,10.6,1.7,9.88,2.58,18.7,7.78,25.67,14.81l12.77-12.77,3.73-3.73,8.49-8.49ZM71.97,221.45c-.75,0-1.46.63-1.46,1.46v47.87c0,.91.71,1.46,1.46,1.46h6.22c.75,0,1.46-.63,1.46-1.46v-10.71h6.77c3.54,0,6.57-.55,9.13-1.69,2.56-1.14,4.45-2.4,5.67-3.86,1.22-1.42,2.17-3.11,2.87-5.04.67-1.93,1.06-3.35,1.14-4.25.08-.91.12-1.81.12-2.68v-3.7c0-.87-.04-1.77-.16-2.72-.12-.91-.51-2.36-1.22-4.29-.71-1.93-1.65-3.62-2.87-5s-3.07-2.64-5.63-3.74c-2.56-1.1-5.55-1.65-9.05-1.65h-14.45ZM86.34,230.23c1.93,0,3.58.35,5.94,1.46,2.36,1.14,3.94,4.09,3.94,8.31v1.38c0,4.13-1.57,7.17-3.94,8.35-2.36,1.18-4.02,1.58-5.94,1.58h-6.69v-21.06h6.69ZM132.26,241.01c.59,0,.91-.35.91-1.02v-6.06c0-.67-.31-1.06-.98-1.22-2.05-.31-4.13-.47-6.3-.47s-4.53.2-6.77.63c-4.53.87-7.17,2.17-7.17,2.91v35c0,.91.71,1.46,1.46,1.46h6.22c.75,0,1.46-.63,1.46-1.46v-28.07l.24-.47c.31-.63,2.68-1.54,6.46-1.54,1.61,0,3.11.12,4.49.31ZM141.33,236.37c-2.95,2.79-4.41,7.32-4.41,13.62v5.16c0,6.26,1.46,10.79,4.41,13.54,2.91,2.79,6.81,4.17,11.73,4.17s8.78-1.38,11.73-4.13c2.91-2.76,4.37-7.28,4.37-13.58v-5.16c0-6.3-1.46-10.83-4.37-13.62-2.95-2.76-6.85-4.13-11.73-4.13s-8.82,1.38-11.73,4.13ZM158.06,242.63c1.3,1.3,1.97,2.99,1.97,5.16v9.53c0,4.29-2.91,7.09-7.01,7.09s-7.01-2.79-7.01-7.09v-9.53c0-2.13.67-3.86,1.97-5.16,1.3-1.3,2.99-1.93,5.04-1.93s3.74.63,5.04,1.93ZM197.52,270.77c0,.83.71,1.46,1.46,1.46h6.18c.79,0,1.46-.63,1.46-1.46v-16.77c0-5.12-.31-8.9-.98-11.3,1.89-1.34,3.9-2.01,6.06-2.01,4.41,0,6.69,1.73,6.69,7.09v22.99c0,.91.71,1.46,1.46,1.46h6.22c.75,0,1.46-.63,1.46-1.46v-22.32c0-6.02-1.22-10.24-3.66-12.64-2.48-2.4-6.1-3.58-10.94-3.58s-8.39,1.22-10.9,3.7c-1.5-1.18-2.95-2.05-4.33-2.6-1.42-.51-2.6-.83-3.54-.94-.98-.12-2.4-.16-4.29-.16s-4.65.39-8.11,1.18c-3.46.83-5.2,1.57-5.2,2.28v35.08c0,.91.71,1.46,1.46,1.46h6.22c.75,0,1.46-.63,1.46-1.46v-28.78l.87-.32c1.3-.43,3.39-.98,4.69-.98,2.32,0,3.94.51,4.88,1.5.94.98,1.42,2.91,1.42,5.79v22.79ZM238.52,236.37c-2.95,2.79-4.41,7.32-4.41,13.62v5.16c0,6.26,1.46,10.79,4.41,13.54,2.91,2.79,6.81,4.17,11.73,4.17s8.78-1.38,11.73-4.13c2.91-2.76,4.37-7.28,4.37-13.58v-5.16c0-6.3-1.46-10.83-4.37-13.62-2.95-2.76-6.85-4.13-11.73-4.13s-8.82,1.38-11.73,4.13ZM255.25,242.63c1.3,1.3,1.97,2.99,1.97,5.16v9.53c0,4.29-2.91,7.09-7.01,7.09s-7.01-2.79-7.01-7.09v-9.53c0-2.13.67-3.86,1.97-5.16,1.3-1.3,2.99-1.93,5.04-1.93s3.74.63,5.04,1.93ZM294.04,264.24c-.67.12-1.18.16-1.54.16-3.98.04-5.94-2.05-5.94-6.18v-16.85h6.69c.83,0,1.46-.71,1.46-1.46v-5.59c0-.75-.63-1.42-1.46-1.42h-6.69v-10c0-.91-.71-1.46-1.46-1.46h-5.16c-.83,0-1.34.47-1.61,1.46l-.91,4.09v5.91h-4.65c-.91,0-1.46.67-1.46,1.42v5.59c0,.75.63,1.46,1.46,1.46h4.65v17.64c.04,9.25,4.21,13.86,12.52,13.86,1.14,0,2.48-.12,4.09-.31.98-.16,1.46-.67,1.46-1.54v-5.31c0-.75-.63-1.46-1.46-1.46ZM306.11,236.37c-2.95,2.79-4.41,7.32-4.41,13.62v5.16c0,6.26,1.46,10.79,4.41,13.54,2.91,2.79,6.81,4.17,11.73,4.17s8.78-1.38,11.73-4.13c2.91-2.76,4.37-7.28,4.37-13.58v-5.16c0-6.3-1.46-10.83-4.37-13.62-2.95-2.76-6.85-4.13-11.73-4.13s-8.82,1.38-11.73,4.13ZM322.84,242.63c1.3,1.3,1.97,2.99,1.97,5.16v9.53c0,4.29-2.91,7.09-7.01,7.09s-7.01-2.79-7.01-7.09v-9.53c0-2.13.67-3.86,1.97-5.16,1.3-1.3,2.99-1.93,5.04-1.93s3.74.63,5.04,1.93ZM361.63,241.01c.59,0,.91-.35.91-1.02v-6.06c0-.67-.31-1.06-.98-1.22-2.05-.31-4.13-.47-6.3-.47s-4.53.2-6.77.63c-4.53.87-7.17,2.17-7.17,2.91v35c0,.91.71,1.46,1.46,1.46h6.22c.75,0,1.46-.63,1.46-1.46v-28.07l.24-.47c.31-.63,2.68-1.54,6.46-1.54,1.61,0,3.11.12,4.49.31ZM371.45,241.68c3.23-.67,5.83-.98,7.83-.98,6.06.04,9.09,2.44,9.09,7.2v.39h-8.03c-4.25,0-7.6.91-10,2.68-2.44,1.81-3.66,5.12-3.66,9.88s1.77,8.11,4.84,9.8c3.07,1.69,6.26,2.21,10.67,2.21,2.64,0,5.83-.39,9.65-1.22,3.78-.79,5.67-1.73,5.67-2.79v-21.06c0-10.2-6.06-15.55-16.3-15.55-4.25,0-7.99.47-11.22,1.38-.51.28-.79.71-.79,1.22l1.14,6.1c.2.51.59.75,1.1.75ZM388.38,262.39c0,.83-.67,1.46-2.05,1.89-1.38.47-2.87.71-4.49.71-4.02,0-6.02-1.58-6.02-4.69,0-2.79,2.4-4.21,7.17-4.21h5.39v6.3Z" />
                 </svg>
+                <p class="footer-text">A CFZ PROMOTORA DE VENDAS LTDA atua como correspondente bancário, nos termos da
+                    Resolução CMN nº 4.935/2021, realizando apenas a intermediação operacional de propostas. A CFZ não é
+                    instituição financeira, não concede crédito e não participa da decisão, aprovação ou definição das
+                    condições das operações, as quais são de responsabilidade exclusiva da instituição financeira
+                    parceira.</p>
             </div>
+            <div class="security-section">
+                <style>
+                    .security-section {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                    }
 
-            <div class="security-icons">
-                <!-- <div class="footer-title">Autorizado</div> -->
+                    .security-section img {
+                        width: 150px;
+                    }
+
+                    .legal-links {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 18px;
+                    }
+
+                    .legal-links a {
+                        color: var(--text-footer);
+                        text-decoration: none;
+                        font-size: 14px;
+                        transition: all 0.2s ease;
+                    }
+
+                    .legal-links a:hover {
+                        color: #fff;
+                    }
+                </style>
                 <img src="https://image.parceiros.crefaz.com.br/lib/fe3711737164057b751772/m/1/d32ada86-18ed-4f45-88e9-ea85e6a51267.png"
                     alt="Site Seguro">
-                <a href="https://site.crefaz.com.br/politica-de-privacidade">Política de Privacidade</a>
-                <a href="https://site.crefaz.com.br/seguranca-cibernetica">Política de Segurança Cibernética</a>
+                <div class="legal-links">
+                    <a href="#" id="openTermosUso">Termos de uso da plataforma digital</a>
+                    <a href="#" id="openLgpd">Termos de consentimento LGPD</a>
+                    <a href="#" id="openPrivacidade">Política de Privacidade</a>
+                    <a href="#" id="openAtendimento">Política de atendimento ao cliente</a>
+                    <a href="#" id="openCookies">Política de Cookies</a>
+                </div>
+            </div>
+            <div class="contact-section">
+                <h4>SAC CFZ:</h4>
+                <div class="contact-info">
+                    <div>
+                        <p>Para demandas relacionadas à operação de crédito:</p>
+                    </div>
+                    <div>
+                        <p>Ouvidoria da instituição financeira:</p>
+                        <a href="tel:0800590127">0800 590 127</a>
+                    </div>
+                    <div>
+                        <p>Nos termos da Resolução CMN<br><strong>nº 4.860/2020.</strong></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Mensagem de rodapé -->
         <div id="msg-footer">
             <p>Correspondente autorizado Crefaz</p>
         </div>
+        <!------------------------------------------------------------------------>
+        <!--------------------------------- MODALS ------------------------------->
+        <!------------------------------------------------------------------------>
+    
+        <style>
+            .modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.45);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.25s ease;
+                z-index: 9999;
+                padding: 20px;
+            }
+    
+            .modal-overlay.show {
+                opacity: 1;
+                visibility: visible;
+            }
+    
+            .modal-box {
+                width: 100%;
+                max-width: 720px;
+                max-height: 85vh;
+                background: #fff;
+                border-radius: 24px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .modal-header {
+                padding: 24px;
+                border-bottom: 1px solid #E4EBF3;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 30px;
+            }
+    
+            .modal-header h3 {
+                margin: 0;
+                padding: 0;
+                font-size: 22px;
+                color: var(--azul-crefaz);
+            }
+    
+            .modal-close {
+                background: transparent;
+                border: none;
+                font-size: 34px;
+                line-height: 1;
+                cursor: pointer;
+                color: var(--azul-crefaz);
+                border-radius: 8px;
+                width: 40px;
+                height: 40px;
+            }
+    
+            .modal-close:hover {
+                color: var(--laranja-crefaz);
+                background: #f3f3f3;
+            }
+    
+            .modal-content {
+                padding: 24px;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .modal-content p {
+                line-height: 1.4;
+                color: #163056;
+            }
+    
+            .modal-actions {
+                padding: 24px;
+                border-top: 1px solid #E4EBF3;
+            }
+    
+            .btn-modal {
+                width: 100%;
+                border: none;
+                background: #EF6B22;
+                color: #fff;
+                height: 52px;
+                border-radius: 14px;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 0.2s ease;
+                font-family: 'Anteb', sans-serif;
+            }
+    
+            .btn-modal:hover {
+                opacity: 0.9;
+            }
+        </style>
+    
+        <!-- TERMOS DE USO -->
+        <div class="modal-overlay" id="modalTermosUso" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true">
+    
+                <div class="modal-header">
+                    <h3>Termos de uso da plataforma digital - CFZ Promotora de vendas LTDA</h3>
+                    <button type="button" class="modal-close" data-close="modalTermosUso">
+                        &times;
+                    </button>
+                </div>
+    
+                <div class="modal-content">
+                    <p>
+                    <p><strong>1. ACEITA&Ccedil;&Atilde;O DOS TERMOS</strong></p>
+                    <p>A CFZ PROMOTORA DE VENDAS LTDA, pessoa jur&iacute;dica de direito privado, inscrita no CNPJ sob nº
+                        28.424.732/0001-28, doravante denominada simplesmente “CFZ”, disponibiliza ao usu&aacute;rio a
+                        presente plataforma digital, destinada &agrave; intermedia&ccedil;&atilde;o operacional de produtos
+                        e servi&ccedil;os ofertados por institui&ccedil;&otilde;es financeiras parceiras.</p>
+                    <p>Ao acessar, navegar ou utilizar a plataforma, o usu&aacute;rio declara, para todos os fins de
+                        direito, que leu, compreendeu e concorda integralmente com as disposi&ccedil;&otilde;es constantes
+                        deste Termo de Uso, obrigando-se ao seu fiel cumprimento, bem como reconhece que sua
+                        utiliza&ccedil;&atilde;o implica aceita&ccedil;&atilde;o plena das condi&ccedil;&otilde;es aqui
+                        estabelecidas.
+                    </p>
+                    <p><strong>2. NATUREZA DA ATUA&Ccedil;&Atilde;O DA CFZ
+                        </strong></p>
+                    <p>A CFZ atua exclusivamente na qualidade de correspondente banc&aacute;rio, nos termos da
+                        Resolu&ccedil;&atilde;o CMN nº 4.935/2021, exercendo atividades de recep&ccedil;&atilde;o, coleta,
+                        encaminhamento de propostas e suporte operacional &agrave; formaliza&ccedil;&atilde;o de
+                        opera&ccedil;&otilde;es junto &agrave;s institui&ccedil;&otilde;es financeiras parceiras.
+                    </p>
+                    <p>Em nenhuma hip&oacute;tese a CFZ se caracteriza como institui&ccedil;&atilde;o financeira, n&atilde;o
+                        sendo respons&aacute;vel pela concess&atilde;o de cr&eacute;dito, an&aacute;lise final de risco,
+                        defini&ccedil;&atilde;o de taxas, encargos, limites ou quaisquer condi&ccedil;&otilde;es contratuais
+                        das opera&ccedil;&otilde;es ofertadas, sendo tais atribui&ccedil;&otilde;es de compet&ecirc;ncia
+                        exclusiva da institui&ccedil;&atilde;o financeira respons&aacute;vel pela opera&ccedil;&atilde;o.
+                    </p>
+                    <p><strong>3. OBJETO E FUNCIONALIDADE DA PLATAFORMA
+                        </strong></p>
+                    <p>A plataforma disponibilizada pela CFZ tem por finalidade viabilizar o contato inicial do
+                        usu&aacute;rio com produtos financeiros, permitindo o envio de dados cadastrais, financeiros e
+                        documentais necess&aacute;rios &agrave; an&aacute;lise de cr&eacute;dito pelas
+                        institui&ccedil;&otilde;es financeiras parceiras. A utiliza&ccedil;&atilde;o da plataforma
+                        n&atilde;o implica qualquer obriga&ccedil;&atilde;o de contrata&ccedil;&atilde;o, tampouco constitui
+                        garantia de aprova&ccedil;&atilde;o de cr&eacute;dito, sendo certo que toda e qualquer
+                        decis&atilde;o relacionada &agrave; concess&atilde;o, condi&ccedil;&otilde;es e
+                        formaliza&ccedil;&atilde;o da opera&ccedil;&atilde;o &eacute; de responsabilidade exclusiva da
+                        institui&ccedil;&atilde;o financeira.
+                    </p>
+                    <p><strong>4. DECLARA&Ccedil;&Otilde;ES E RESPONSABILIDADES DO USU&Aacute;RIO
+                        </strong></p>
+                    <p>O usu&aacute;rio declara, sob as penas da lei, que todas as informa&ccedil;&otilde;es fornecidas
+                        s&atilde;o verdadeiras, completas e atualizadas, responsabilizando-se integralmente por sua
+                        exatid&atilde;o e veracidade, bem como por quaisquer consequ&ecirc;ncias decorrentes de
+                        omiss&otilde;es ou inconsist&ecirc;ncias. O usu&aacute;rio reconhece que seus dados poder&atilde;o
+                        ser compartilhados com institui&ccedil;&otilde;es financeiras parceiras, bureaus de cr&eacute;dito,
+                        prestadores de servi&ccedil;os e demais terceiros envolvidos na cadeia operacional, para fins de
+                        an&aacute;lise, valida&ccedil;&atilde;o, preven&ccedil;&atilde;o &agrave; fraude e cumprimento de
+                        obriga&ccedil;&otilde;es legais e regulat&oacute;rias, estando ciente de que tais tratamentos
+                        s&atilde;o indispens&aacute;veis &agrave; eventual contrata&ccedil;&atilde;o de produtos
+                        financeiros.
+                    </p>
+                    <p><strong>5. LIMITA&Ccedil;&Atilde;O DE RESPONSABILIDADE DA CFZ
+                        </strong></p>
+                    <p>A CFZ n&atilde;o possui qualquer inger&ecirc;ncia sobre os crit&eacute;rios de an&aacute;lise de
+                        cr&eacute;dito adotados pelas institui&ccedil;&otilde;es financeiras, tampouco sobre suas
+                        pol&iacute;ticas internas, n&atilde;o podendo ser responsabilizada por eventual negativa de
+                        cr&eacute;dito, altera&ccedil;&atilde;o de condi&ccedil;&otilde;es, cancelamento de propostas ou
+                        quaisquer decis&otilde;es tomadas no &acirc;mbito da rela&ccedil;&atilde;o entre o usu&aacute;rio e
+                        a institui&ccedil;&atilde;o financeira.
+                    </p>
+                    <p>Da mesma forma, a CFZ n&atilde;o se responsabiliza por falhas, atrasos, indisponibilidades ou
+                        inconsist&ecirc;ncias decorrentes de sistemas de terceiros, incluindo institui&ccedil;&otilde;es
+                        financeiras, bureaus de cr&eacute;dito e prestadores de servi&ccedil;os tecnol&oacute;gicos, uma vez
+                        que tais elementos extrapolam sua esfera de controle operacional.
+                    </p>
+                    <p><strong>6. AUS&Ecirc;NCIA DE V&Iacute;NCULO CONTRATUAL FINANCEIRO
+                        </strong></p>
+                    <p>O usu&aacute;rio declara estar ciente de que a utiliza&ccedil;&atilde;o da plataforma n&atilde;o
+                        estabelece rela&ccedil;&atilde;o contratual direta com a CFZ para fins de concess&atilde;o de
+                        cr&eacute;dito ou fornecimento de produtos financeiros, limitando-se a atua&ccedil;&atilde;o da CFZ
+                        &agrave; intermedia&ccedil;&atilde;o operacional, nos termos da regulamenta&ccedil;&atilde;o
+                        vigente. Eventual contrata&ccedil;&atilde;o de produto financeiro ser&aacute; formalizada
+                        diretamente com a institui&ccedil;&atilde;o financeira parceira, a qual ser&aacute; integralmente
+                        respons&aacute;vel pela opera&ccedil;&atilde;o, seus termos, condi&ccedil;&otilde;es e
+                        obriga&ccedil;&otilde;es decorrentes, inexistindo solidariedade ou corresponsabilidade da CFZ quanto
+                        ao cumprimento dessas obriga&ccedil;&otilde;es.
+                    </p>
+                    <p><strong>7. PROPRIEDADE INTELECTUAL
+                        </strong></p>
+                    <p>Todo o conte&uacute;do disponibilizado na plataforma, incluindo textos, imagens, sistemas, marcas,
+                        logotipos e demais elementos, &eacute; de propriedade exclusiva da CFZ ou de seus licenciantes,
+                        sendo protegido pela legisla&ccedil;&atilde;o aplic&aacute;vel. &Eacute; vedada a
+                        reprodu&ccedil;&atilde;o, distribui&ccedil;&atilde;o, modifica&ccedil;&atilde;o ou
+                        utiliza&ccedil;&atilde;o indevida de tais conte&uacute;dos sem autoriza&ccedil;&atilde;o
+                        pr&eacute;via e expressa, sob pena de responsabiliza&ccedil;&atilde;o civil e penal.
+                    </p>
+                    <p><strong>8. PROTE&Ccedil;&Atilde;O DE DADOS PESSOAIS
+                        </strong></p>
+                    <p>A CFZ compromete-se a adotar medidas t&eacute;cnicas e administrativas adequadas para a
+                        prote&ccedil;&atilde;o dos dados pessoais tratados no &acirc;mbito da plataforma, em conformidade
+                        com a Lei nº 13.709/2018, observando, sempre que aplic&aacute;vel, seu papel como operadora de dados
+                        pessoais em rela&ccedil;&atilde;o &agrave;s institui&ccedil;&otilde;es financeiras parceiras. O
+                        usu&aacute;rio reconhece que determinados tratamentos de dados s&atilde;o necess&aacute;rios para o
+                        cumprimento de obriga&ccedil;&otilde;es legais, regulat&oacute;rias e contratuais, bem como para a
+                        viabiliza&ccedil;&atilde;o das opera&ccedil;&otilde;es solicitadas.
+                    </p>
+                    <p><strong>9. ALTERA&Ccedil;&Otilde;ES DA PLATAFORMA E DOS TERMOS
+                        </strong></p>
+                    <p>A CFZ poder&aacute;, a qualquer tempo e a seu exclusivo crit&eacute;rio, modificar, suspender ou
+                        descontinuar, total ou parcialmente, a plataforma ou suas funcionalidades, bem como alterar este
+                        Termo de Uso, mediante atualiza&ccedil;&atilde;o em seu ambiente digital. O usu&aacute;rio reconhece
+                        que &eacute; de sua responsabilidade consultar periodicamente este documento, sendo que a
+                        continuidade de uso da plataforma ap&oacute;s eventuais altera&ccedil;&otilde;es ser&aacute;
+                        interpretada como concord&acirc;ncia com as novas condi&ccedil;&otilde;es.
+                    </p>
+                    <p><strong>10. DISPOSI&Ccedil;&Otilde;ES GERAIS E FORO
+                        </strong></p>
+                    <p>Este Termo de Uso ser&aacute; regido pela legisla&ccedil;&atilde;o brasileira, aplicando-se, no que
+                        couber, as disposi&ccedil;&otilde;es do C&oacute;digo de Defesa do Consumidor. Fica eleito o foro do
+                        domic&iacute;lio do usu&aacute;rio ou outro que venha a ser considerado competente nos termos da
+                        legisla&ccedil;&atilde;o aplic&aacute;vel para dirimir quaisquer controv&eacute;rsias oriundas deste
+                        instrumento.</p>
+                    </p>
+                </div>
+    
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal" data-accept="modalTermosUso">
+                        Concordo
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- LGPD -->
+        <div class="modal-overlay" id="modalLgpd" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true">
+    
+                <div class="modal-header">
+                    <h3>Termos de consentimento LGPD - CFZ Promotora de vendas LTDA</h3>
+                    <button type="button" class="modal-close" data-close="modalLgpd">
+                        &times;
+                    </button>
+                </div>
+    
+                <div class="modal-content">
+                    <p><strong>1. MANIFESTA&Ccedil;&Atilde;O DE CONSENTIMENTO<br></strong></p>
+                    <p>Por meio deste instrumento, o titular dos dados pessoais declara, de forma livre, informada e
+                        inequ&iacute;voca, que autoriza a CFZ PROMOTORA DE VENDAS LTDA, pessoa jur&iacute;dica de direito
+                        privado, inscrita no CNPJ sob nº 28.424.732/0001-28, doravante denominada “CFZ”, a realizar o
+                        tratamento de seus dados pessoais nos termos da Lei nº 13.709/2018, para as finalidades descritas
+                        neste Termo, estando ciente da natureza e extens&atilde;o do tratamento realizado no contexto da
+                        utiliza&ccedil;&atilde;o da plataforma e dos servi&ccedil;os intermediados.<br></p>
+                    <p>O titular declara que teve acesso pr&eacute;vio e integral &agrave; Pol&iacute;tica de Privacidade,
+                        compreendendo as pr&aacute;ticas de tratamento de dados adotadas, bem como reconhece que o presente
+                        consentimento se refere especificamente &agrave;s hip&oacute;teses em que tal base legal &eacute;
+                        necess&aacute;ria, sem preju&iacute;zo das demais bases legais aplic&aacute;veis.<br></p>
+                    <p><strong>2. FINALIDADE DO TRATAMENTO DE DADOS</strong></p>
+                    <p>O titular autoriza o tratamento de seus dados pessoais para viabilizar a
+                        intermedia&ccedil;&atilde;o de produtos e servi&ccedil;os financeiros, incluindo a coleta,
+                        an&aacute;lise preliminar, valida&ccedil;&atilde;o de informa&ccedil;&otilde;es e encaminhamento de
+                        propostas &agrave;s institui&ccedil;&otilde;es financeiras parceiras, bem como para a
+                        execu&ccedil;&atilde;o de procedimentos necess&aacute;rios &agrave; eventual
+                        contrata&ccedil;&atilde;o.<br></p>
+                    <p>O titular est&aacute; ciente de que seus dados poder&atilde;o ser utilizados para
+                        identifica&ccedil;&atilde;o, autentica&ccedil;&atilde;o, verifica&ccedil;&atilde;o de
+                        consist&ecirc;ncia cadastral, an&aacute;lise de perfil, preven&ccedil;&atilde;o &agrave; fraude,
+                        atendimento ao cliente, melhoria dos servi&ccedil;os e cumprimento de obriga&ccedil;&otilde;es
+                        legais e regulat&oacute;rias aplic&aacute;veis ao setor financeiro.
+                        <br>
+                    </p>
+                    <p><strong>3. COMPARTILHAMENTO DE DADOS PESSOAIS
+                            <br></strong></p>
+                    <p>O titular autoriza expressamente o compartilhamento de seus dados pessoais com
+                        institui&ccedil;&otilde;es financeiras parceiras, respons&aacute;veis pela an&aacute;lise e eventual
+                        concess&atilde;o de cr&eacute;dito, bem como com bureaus de cr&eacute;dito, prestadores de
+                        servi&ccedil;os, empresas de preven&ccedil;&atilde;o &agrave; fraude e demais terceiros
+                        necess&aacute;rios &agrave; execu&ccedil;&atilde;o das finalidades descritas neste Termo.
+                        <br>
+                    </p>
+                    <p>O titular reconhece que tal compartilhamento &eacute; essencial para a an&aacute;lise de
+                        cr&eacute;dito, valida&ccedil;&atilde;o de identidade, preven&ccedil;&atilde;o de fraudes e
+                        cumprimento de exig&ecirc;ncias legais e regulat&oacute;rias, podendo ocorrer inclusive sem
+                        consentimento adicional quando fundamentado em obriga&ccedil;&atilde;o legal ou regulat&oacute;ria.
+                        <br>
+                    </p>
+                    <p><strong>4. CONSULTA A BASES DE DADOS E BUREAUS DE CR&Eacute;DITO
+                            <br></strong></p>
+                    <p>O titular autoriza a realiza&ccedil;&atilde;o de consultas a bases p&uacute;blicas e privadas,
+                        incluindo bureaus de cr&eacute;dito, sistemas de informa&ccedil;&atilde;o, cadastros positivos e
+                        negativos, bem como a outras fontes leg&iacute;timas, com a finalidade de an&aacute;lise de risco,
+                        valida&ccedil;&atilde;o de informa&ccedil;&otilde;es, preven&ccedil;&atilde;o &agrave; fraude e
+                        cumprimento de obriga&ccedil;&otilde;es regulat&oacute;rias.
+                        <br>
+                    </p>
+                    <p>O titular declara estar ciente de que tais consultas poder&atilde;o influenciar a an&aacute;lise e
+                        decis&atilde;o das institui&ccedil;&otilde;es financeiras, sendo realizadas de acordo com
+                        crit&eacute;rios pr&oacute;prios dessas institui&ccedil;&otilde;es.
+                        <br>
+                    </p>
+                    <p><strong>5. TRATAMENTO DE DADOS PARA PREVEN&Ccedil;&Atilde;O &Agrave; FRAUDE E PLD/FT
+                            <br></strong></p>
+                    <p>O titular autoriza o tratamento de seus dados pessoais para fins de preven&ccedil;&atilde;o &agrave;
+                        fraude, identifica&ccedil;&atilde;o de comportamentos at&iacute;picos, verifica&ccedil;&atilde;o de
+                        integridade cadastral e cumprimento das normas de preven&ccedil;&atilde;o &agrave; lavagem de
+                        dinheiro e ao financiamento do terrorismo, nos termos da Circular BCB nº 3.978/2020.
+                        <br>
+                    </p>
+                    <p>O titular reconhece que tais procedimentos poder&atilde;o envolver o cruzamento de dados,
+                        an&aacute;lise automatizada e consulta a listas restritivas, podendo resultar na suspens&atilde;o ou
+                        n&atilde;o prosseguimento de determinada solicita&ccedil;&atilde;o, sem necessidade de detalhamento,
+                        quando tal medida for necess&aacute;ria &agrave; efic&aacute;cia dos controles ou exigida por norma
+                        legal.
+                        <br>
+                    </p>
+                    <p><strong>6. TRATAMENTO DE DADOS DE NAVEGA&Ccedil;&Atilde;O E TECNOLOGIAS DIGITAIS
+                            <br></strong><br></p>
+                    <p>O titular autoriza a coleta e o tratamento de dados de navega&ccedil;&atilde;o, incluindo
+                        endere&ccedil;o IP, localiza&ccedil;&atilde;o aproximada, tipo de dispositivo, comportamento de uso
+                        e intera&ccedil;&atilde;o com a plataforma, podendo tais informa&ccedil;&otilde;es ser utilizadas
+                        para melhoria da experi&ecirc;ncia do usu&aacute;rio, seguran&ccedil;a da informa&ccedil;&atilde;o,
+                        preven&ccedil;&atilde;o &agrave; fraude e personaliza&ccedil;&atilde;o de conte&uacute;do.
+                        <br>
+                    </p>
+                    <p>O titular declara estar ciente da utiliza&ccedil;&atilde;o de cookies e tecnologias similares, nos
+                        termos da Pol&iacute;tica de Cookies, podendo gerenciar suas prefer&ecirc;ncias conforme as
+                        configura&ccedil;&otilde;es disponibilizadas.
+                        <br>
+                    </p>
+                    <p><strong>7. PRAZO DE TRATAMENTO E ARMAZENAMENTO
+                            <br></strong></p>
+                    <p>O titular est&aacute; ciente de que seus dados pessoais poder&atilde;o ser armazenados pelo
+                        per&iacute;odo necess&aacute;rio ao cumprimento das finalidades descritas neste Termo, incluindo
+                        obriga&ccedil;&otilde;es legais, regulat&oacute;rias e contratuais, bem como para o exerc&iacute;cio
+                        regular de direitos em processos administrativos, judiciais ou arbitrais, nos termos da
+                        legisla&ccedil;&atilde;o aplic&aacute;vel.
+                        <br>
+                    </p>
+                    <p><strong>8. DIREITOS DO TITULAR E REVOGA&Ccedil;&Atilde;O DO CONSENTIMENTO
+                            <br></strong></p>
+                    <p>O titular poder&aacute;, a qualquer tempo, exercer seus direitos previstos na LGPD, incluindo acesso,
+                        corre&ccedil;&atilde;o, exclus&atilde;o, portabilidade, oposi&ccedil;&atilde;o ao tratamento e
+                        revoga&ccedil;&atilde;o do consentimento, por meio dos canais disponibilizados pela CFZ.
+                        <br>
+                    </p>
+                    <p>O titular declara estar ciente de que a revoga&ccedil;&atilde;o do consentimento poder&aacute;
+                        impactar a continuidade de determinados servi&ccedil;os ou inviabilizar a an&aacute;lise e eventual
+                        contrata&ccedil;&atilde;o de produtos financeiros, quando o tratamento for indispens&aacute;vel para
+                        tais finalidades.
+                        <br>
+                    </p>
+                    <p><strong>9. DECLARA&Ccedil;&Otilde;ES FINAIS
+                            <br></strong></p>
+                    <p>O titular declara que compreende integralmente os termos deste documento, que suas d&uacute;vidas
+                        foram esclarecidas e que est&aacute; ciente de que o presente consentimento &eacute;
+                        necess&aacute;rio para a viabiliza&ccedil;&atilde;o dos servi&ccedil;os intermediados pela CFZ,
+                        especialmente no contexto de an&aacute;lise de cr&eacute;dito e cumprimento de
+                        obriga&ccedil;&otilde;es regulat&oacute;rias.<br>O titular reconhece, ainda, que a CFZ atua como
+                        correspondente banc&aacute;rio, n&atilde;o sendo respons&aacute;vel pela decis&atilde;o final de
+                        concess&atilde;o de cr&eacute;dito, a qual compete exclusivamente &agrave; institui&ccedil;&atilde;o
+                        financeira parceira.</p>
+                </div>
+    
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal" data-accept="modalLgpd">
+                        Concordo
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- PRIVACIDADE -->
+        <div class="modal-overlay" id="modalPrivacidade" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true">
+    
+                <div class="modal-header">
+                    <h3>Política de Privacidade e proteção de dados - CFZ Promotora de vendas LTDA</h3>
+                    <button type="button" class="modal-close" data-close="modalPrivacidade">
+                        &times;
+                    </button>
+                </div>
+    
+                <div class="modal-content">
+                    <p><strong>1. APRESENTA&Ccedil;&Atilde;O E COMPROMISSO COM A PRIVACIDADE</strong></p>
+                    <p><br />A CFZ PROMOTORA DE VENDAS LTDA, pessoa jur&iacute;dica de direito privado, inscrita no CNPJ sob
+                        n&ordm; 28.424.732/0001-28, doravante denominada &ldquo;CFZ&rdquo;, reconhece a import&acirc;ncia da
+                        privacidade, da prote&ccedil;&atilde;o de dados pessoais e da seguran&ccedil;a da
+                        informa&ccedil;&atilde;o, comprometendo-se a realizar o tratamento de dados de forma transparente,
+                        &eacute;tica e em conformidade com a Lei n&ordm; 13.709/2018, bem como com as normas
+                        aplic&aacute;veis ao setor financeiro.<br /><br />A presente Pol&iacute;tica tem por finalidade
+                        informar, de forma clara e acess&iacute;vel, como os dados pessoais s&atilde;o coletados,
+                        utilizados, compartilhados, armazenados e protegidos no contexto da utiliza&ccedil;&atilde;o da
+                        plataforma digital da CFZ, bem como esclarecer os direitos dos titulares e os meios para seu
+                        exerc&iacute;cio.<br /><br />Ao utilizar os servi&ccedil;os da CFZ, o usu&aacute;rio declara estar
+                        ciente e de acordo com as pr&aacute;ticas descritas nesta Pol&iacute;tica, podendo, a qualquer
+                        momento, deixar de utilizar a plataforma ou solicitar esclarecimentos adicionais por meio dos canais
+                        disponibilizados.<br /><br /><strong>2. DEFINI&Ccedil;&Otilde;ES RELEVANTES<br /></strong><br />Para
+                        fins desta Pol&iacute;tica, consideram-se dados pessoais quaisquer informa&ccedil;&otilde;es que
+                        identifiquem ou possam identificar uma pessoa natural, tais como nome, CPF, telefone,
+                        endere&ccedil;o e dados financeiros. Consideram-se dados pessoais sens&iacute;veis aqueles definidos
+                        no art. 5&ordm;, II, da LGPD, incluindo informa&ccedil;&otilde;es sobre origem racial,
+                        convic&ccedil;&atilde;o religiosa, dados biom&eacute;tricos ou de sa&uacute;de. O titular dos dados
+                        &eacute; a pessoa natural a quem se referem os dados tratados. O tratamento de dados compreende toda
+                        e qualquer opera&ccedil;&atilde;o realizada com dados pessoais, incluindo coleta,
+                        utiliza&ccedil;&atilde;o, acesso, armazenamento, compartilhamento e
+                        elimina&ccedil;&atilde;o.<br /><br />No contexto desta Pol&iacute;tica, a CFZ atua, em regra, como
+                        operadora de dados pessoais, realizando o tratamento em nome das institui&ccedil;&otilde;es
+                        financeiras parceiras, que figuram como controladoras, sem preju&iacute;zo de
+                        situa&ccedil;&otilde;es espec&iacute;ficas em que possa atuar como controladora, especialmente no
+                        que se refere &agrave; gest&atilde;o de sua pr&oacute;pria plataforma digital e relacionamento
+                        inicial com usu&aacute;rios.<br /><br /><strong>3. COLETA DE DADOS PESSOAIS<br /></strong><br />A
+                        CFZ realiza a coleta de dados pessoais de forma transparente, leg&iacute;tima e necess&aacute;ria
+                        &agrave; presta&ccedil;&atilde;o de seus servi&ccedil;os, sendo que tais dados podem ser fornecidos
+                        diretamente pelo usu&aacute;rio, coletados automaticamente durante a navega&ccedil;&atilde;o ou
+                        obtidos por meio de terceiros devidamente autorizados.<br /><br />Os dados fornecidos diretamente
+                        pelo usu&aacute;rio incluem informa&ccedil;&otilde;es cadastrais, dados de contato,
+                        informa&ccedil;&otilde;es financeiras e documentos necess&aacute;rios &agrave; an&aacute;lise de
+                        cr&eacute;dito, sendo o usu&aacute;rio integralmente respons&aacute;vel pela veracidade,
+                        atualiza&ccedil;&atilde;o e exatid&atilde;o dessas informa&ccedil;&otilde;es. A coleta tamb&eacute;m
+                        pode ocorrer quando o usu&aacute;rio interage com a plataforma, solicita servi&ccedil;os ou realiza
+                        simula&ccedil;&otilde;es.<br /><br />Adicionalmente, a CFZ poder&aacute; coletar automaticamente
+                        informa&ccedil;&otilde;es t&eacute;cnicas relacionadas ao uso da plataforma, tais como
+                        endere&ccedil;o IP, tipo de dispositivo, navegador, localiza&ccedil;&atilde;o aproximada, tempo de
+                        navega&ccedil;&atilde;o e intera&ccedil;&otilde;es realizadas, com a finalidade de garantir
+                        seguran&ccedil;a, prevenir fraudes, melhorar a experi&ecirc;ncia do usu&aacute;rio e assegurar o
+                        adequado funcionamento dos servi&ccedil;os.<br /><br />A CFZ tamb&eacute;m poder&aacute; utilizar
+                        cookies e tecnologias similares para coleta de informa&ccedil;&otilde;es, sendo tais mecanismos
+                        essenciais para o funcionamento da plataforma, personaliza&ccedil;&atilde;o de conte&uacute;do e
+                        an&aacute;lise de desempenho, podendo o usu&aacute;rio gerenciar tais prefer&ecirc;ncias diretamente
+                        em seu navegador, ciente de que a desativa&ccedil;&atilde;o poder&aacute; impactar determinadas
+                        funcionalidades.<br /><br />Em determinadas situa&ccedil;&otilde;es, a CFZ poder&aacute; receber
+                        dados pessoais por meio de terceiros, tais como bureaus de cr&eacute;dito, parceiros comerciais e
+                        fontes p&uacute;blicas ou autorizadas, sempre observando a legalidade do compartilhamento e a
+                        necessidade para as finalidades pretendidas.<br /><br /><strong>4. FINALIDADE DO TRATAMENTO DE
+                            DADOS</strong><br /><br />Os dados pessoais tratados pela CFZ s&atilde;o utilizados para
+                        viabilizar a intermedia&ccedil;&atilde;o de produtos e servi&ccedil;os financeiros, incluindo a
+                        recep&ccedil;&atilde;o, an&aacute;lise preliminar e encaminhamento de propostas &agrave;s
+                        institui&ccedil;&otilde;es financeiras parceiras, bem como para cumprimento de
+                        obriga&ccedil;&otilde;es legais e regulat&oacute;rias, preven&ccedil;&atilde;o &agrave; fraude,
+                        valida&ccedil;&atilde;o de identidade, atendimento ao usu&aacute;rio e melhoria cont&iacute;nua dos
+                        servi&ccedil;os.<br /><br />O tratamento de dados tamb&eacute;m poder&aacute; ocorrer para fins de
+                        comunica&ccedil;&atilde;o com o usu&aacute;rio, envio de informa&ccedil;&otilde;es relevantes,
+                        an&aacute;lise de comportamento, personaliza&ccedil;&atilde;o de conte&uacute;do e
+                        a&ccedil;&otilde;es de marketing, sempre observando os limites legais e respeitando os direitos do
+                        titular.<br /><br /><strong>5. BASE LEGAL PARA O TRATAMENTO<br /></strong><br />O tratamento de
+                        dados pessoais realizado pela CFZ est&aacute; fundamentado nas bases legais previstas na LGPD,
+                        incluindo a execu&ccedil;&atilde;o de contrato ou de procedimentos preliminares relacionados a
+                        contrato, o cumprimento de obriga&ccedil;&atilde;o legal ou regulat&oacute;ria, o leg&iacute;timo
+                        interesse e o consentimento do titular, quando aplic&aacute;vel.<br /><br />A CFZ compromete-se a
+                        utilizar apenas as bases legais adequadas a cada finalidade, observando os princ&iacute;pios da
+                        necessidade, adequa&ccedil;&atilde;o e transpar&ecirc;ncia.<br /><br /><strong>6. COMPARTILHAMENTO
+                            DE DADOS PESSOAIS<br /></strong><br />Os dados pessoais poder&atilde;o ser compartilhados com
+                        institui&ccedil;&otilde;es financeiras parceiras, respons&aacute;veis pela an&aacute;lise e eventual
+                        concess&atilde;o de cr&eacute;dito, bem como com bureaus de cr&eacute;dito, prestadores de
+                        servi&ccedil;os, parceiros comerciais e autoridades p&uacute;blicas, quando necess&aacute;rio para
+                        cumprimento de obriga&ccedil;&otilde;es legais ou regulat&oacute;rias.<br /><br />O compartilhamento
+                        ser&aacute; sempre limitado ao m&iacute;nimo necess&aacute;rio para o cumprimento das finalidades
+                        espec&iacute;ficas, sendo realizado com terceiros que adotem medidas adequadas de seguran&ccedil;a e
+                        prote&ccedil;&atilde;o de dados, preferencialmente mediante instrumentos contratuais que assegurem a
+                        conformidade com a legisla&ccedil;&atilde;o aplic&aacute;vel.<br /><br /><strong>7. ARMAZENAMENTO E
+                            RETEN&Ccedil;&Atilde;O DE DADOS<br /></strong><br />Os dados pessoais ser&atilde;o armazenados
+                        pelo per&iacute;odo necess&aacute;rio ao cumprimento das finalidades para as quais foram coletados,
+                        incluindo obriga&ccedil;&otilde;es legais, regulat&oacute;rias e contratuais, bem como para o
+                        exerc&iacute;cio regular de direitos em processos administrativos, judiciais ou
+                        arbitrais.<br /><br />Ap&oacute;s o t&eacute;rmino do prazo de reten&ccedil;&atilde;o, os dados
+                        ser&atilde;o eliminados ou anonimizados, salvo nas hip&oacute;teses legalmente permitidas de
+                        conserva&ccedil;&atilde;o.<br /><br /><strong>8. SEGURAN&Ccedil;A DA
+                            INFORMA&Ccedil;&Atilde;O<br /></strong><br />A CFZ adota medidas t&eacute;cnicas,
+                        administrativas e organizacionais adequadas para proteger os dados pessoais contra acessos
+                        n&atilde;o autorizados, perda, destrui&ccedil;&atilde;o, altera&ccedil;&atilde;o ou qualquer forma
+                        de tratamento inadequado ou il&iacute;cito, observando as melhores pr&aacute;ticas do setor e os
+                        requisitos aplic&aacute;veis ao ambiente regulado do sistema financeiro.<br /><br />Tais medidas
+                        incluem controle de acesso, criptografia, monitoramento de sistemas, gest&atilde;o de incidentes e
+                        pol&iacute;ticas internas de seguran&ccedil;a, sem preju&iacute;zo da exist&ecirc;ncia de riscos
+                        inerentes ao ambiente digital, os quais s&atilde;o continuamente avaliados e
+                        mitigados.<br /><br /><strong>9. DIREITOS DOS TITULARES DE DADOS</strong><br /><br />O titular dos
+                        dados pessoais poder&aacute;, a qualquer tempo, exercer seus direitos previstos na LGPD, incluindo o
+                        direito de confirma&ccedil;&atilde;o da exist&ecirc;ncia de tratamento, acesso aos dados,
+                        corre&ccedil;&atilde;o de informa&ccedil;&otilde;es incompletas ou desatualizadas,
+                        anonimiza&ccedil;&atilde;o, bloqueio ou elimina&ccedil;&atilde;o de dados desnecess&aacute;rios,
+                        portabilidade, oposi&ccedil;&atilde;o ao tratamento, revoga&ccedil;&atilde;o do consentimento e
+                        revis&atilde;o de decis&otilde;es automatizadas.<br /><br />As solicita&ccedil;&otilde;es
+                        poder&atilde;o ser realizadas por meio dos canais disponibilizados pela CFZ, sendo atendidas nos
+                        prazos e condi&ccedil;&otilde;es estabelecidos pela legisla&ccedil;&atilde;o
+                        aplic&aacute;vel.<br /><br /><strong>10. TRANSFER&Ecirc;NCIA INTERNACIONAL DE
+                            DADOS</strong><br /><br />Quando necess&aacute;rio, os dados pessoais poder&atilde;o ser
+                        transferidos para outros pa&iacute;ses, especialmente em raz&atilde;o da utiliza&ccedil;&atilde;o de
+                        servi&ccedil;os tecnol&oacute;gicos e de armazenamento em nuvem, sendo garantido que tais
+                        transfer&ecirc;ncias observar&atilde;o os requisitos da LGPD e assegurem n&iacute;vel adequado de
+                        prote&ccedil;&atilde;o de dados.<br /><br /><strong>11. ATUALIZA&Ccedil;&Otilde;ES DESTA
+                            POL&Iacute;TICA<br /></strong><br />A presente Pol&iacute;tica poder&aacute; ser atualizada a
+                        qualquer tempo, visando sua adequa&ccedil;&atilde;o a altera&ccedil;&otilde;es legislativas,
+                        regulat&oacute;rias ou operacionais, sendo recomend&aacute;vel que o usu&aacute;rio a consulte
+                        periodicamente.<br /><br /><strong>12. CANAL DE CONTATO</strong><br />Para d&uacute;vidas,
+                        solicita&ccedil;&otilde;es ou exerc&iacute;cio de direitos relacionados a esta Pol&iacute;tica, o
+                        usu&aacute;rio poder&aacute; entrar em contato por meio do seguinte canal:
+                        [e-mail/DPO].<br /><br /><strong>13. PREVEN&Ccedil;&Atilde;O &Agrave; LAVAGEM DE DINHEIRO E AO
+                            FINANCIAMENTO DO TERRORISMO (PLD/FT)<br /></strong><br />A CFZ, no &acirc;mbito de sua
+                        atua&ccedil;&atilde;o como correspondente banc&aacute;rio e participante da cadeia operacional de
+                        institui&ccedil;&otilde;es financeiras reguladas, adota procedimentos e controles voltados &agrave;
+                        preven&ccedil;&atilde;o &agrave; lavagem de dinheiro e ao financiamento do terrorismo, em
+                        conformidade com a Circular BCB n&ordm; 3.978/2020 e demais normativos aplic&aacute;veis. Nesse
+                        contexto, o usu&aacute;rio declara estar ciente de que seus dados pessoais poder&atilde;o ser
+                        utilizados para fins de identifica&ccedil;&atilde;o, qualifica&ccedil;&atilde;o e
+                        verifica&ccedil;&atilde;o cadastral, incluindo valida&ccedil;&atilde;o de informa&ccedil;&otilde;es,
+                        an&aacute;lise de consist&ecirc;ncia de dados e verifica&ccedil;&atilde;o de compatibilidade entre
+                        perfil e opera&ccedil;&atilde;o solicitada.<br /><br />O usu&aacute;rio reconhece que, para
+                        atendimento das exig&ecirc;ncias regulat&oacute;rias, poder&atilde;o ser realizadas consultas a
+                        bases p&uacute;blicas e privadas, bem como a listas restritivas, listas de san&ccedil;&otilde;es
+                        nacionais e internacionais e demais fontes necess&aacute;rias &agrave; verifica&ccedil;&atilde;o de
+                        integridade, reputa&ccedil;&atilde;o e regularidade, podendo tais procedimentos resultar na
+                        continuidade, suspens&atilde;o ou n&atilde;o prosseguimento de determinada
+                        solicita&ccedil;&atilde;o, independentemente de comunica&ccedil;&atilde;o pr&eacute;via detalhada,
+                        quando tal comunica&ccedil;&atilde;o puder comprometer a efic&aacute;cia dos mecanismos de
+                        preven&ccedil;&atilde;o ou estiver sujeita a restri&ccedil;&otilde;es legais.<br /><br />A CFZ
+                        poder&aacute;, ainda, manter registros e evid&ecirc;ncias das opera&ccedil;&otilde;es realizadas,
+                        bem como dos dados coletados e analisados, pelo prazo necess&aacute;rio ao cumprimento de
+                        obriga&ccedil;&otilde;es legais e regulat&oacute;rias, inclusive para eventual atendimento a
+                        autoridades competentes, nos termos da legisla&ccedil;&atilde;o
+                        aplic&aacute;vel.<br /><br /><strong>14. MONITORAMENTO, AN&Aacute;LISE E DETEC&Ccedil;&Atilde;O DE
+                            IND&Iacute;CIOS DE IRREGULARIDADE</strong><br /><br />A CFZ adota mecanismos de monitoramento e
+                        an&aacute;lise de opera&ccedil;&otilde;es e comportamentos, com o objetivo de identificar
+                        situa&ccedil;&otilde;es at&iacute;picas, inconsistentes ou potencialmente relacionadas a
+                        pr&aacute;ticas il&iacute;citas, incluindo fraude, lavagem de dinheiro ou financiamento do
+                        terrorismo. O usu&aacute;rio declara estar ciente de que tais mecanismos poder&atilde;o envolver
+                        an&aacute;lise automatizada e/ou manual de informa&ccedil;&otilde;es, cruzamento de dados,
+                        utiliza&ccedil;&atilde;o de ferramentas tecnol&oacute;gicas e aplica&ccedil;&atilde;o de
+                        crit&eacute;rios internos de avalia&ccedil;&atilde;o de risco.<br /><br />Sempre que identificados
+                        ind&iacute;cios de irregularidade, inconsist&ecirc;ncia cadastral, diverg&ecirc;ncia de
+                        informa&ccedil;&otilde;es ou qualquer elemento que possa indicar risco, a CFZ poder&aacute; adotar
+                        medidas preventivas, incluindo a solicita&ccedil;&atilde;o de informa&ccedil;&otilde;es adicionais,
+                        a suspens&atilde;o tempor&aacute;ria do processamento da solicita&ccedil;&atilde;o ou o seu
+                        n&atilde;o prosseguimento, sem que isso gere qualquer direito &agrave; indeniza&ccedil;&atilde;o ou
+                        obriga&ccedil;&atilde;o de justificativa detalhada, nos limites permitidos pela
+                        legisla&ccedil;&atilde;o aplic&aacute;vel.<br /><br /><strong>15. COMPARTILHAMENTO DE
+                            INFORMA&Ccedil;&Otilde;ES PARA FINS DE PLD/FT E ANTIFRAUDE</strong><br /><br />Para cumprimento
+                        de obriga&ccedil;&otilde;es legais, regulat&oacute;rias e contratuais, a CFZ poder&aacute;
+                        compartilhar dados pessoais e informa&ccedil;&otilde;es relacionadas &agrave;s
+                        opera&ccedil;&otilde;es com institui&ccedil;&otilde;es financeiras parceiras, prestadores de
+                        servi&ccedil;os especializados, bureaus de cr&eacute;dito, empresas de preven&ccedil;&atilde;o
+                        &agrave; fraude e autoridades competentes, sempre observando os princ&iacute;pios da necessidade,
+                        adequa&ccedil;&atilde;o e proporcionalidade.<br /><br />O usu&aacute;rio reconhece que tal
+                        compartilhamento &eacute; essencial para a valida&ccedil;&atilde;o de identidade,
+                        preven&ccedil;&atilde;o a fraudes, an&aacute;lise de risco e cumprimento das normas
+                        aplic&aacute;veis ao sistema financeiro, incluindo aquelas relacionadas &agrave;
+                        preven&ccedil;&atilde;o &agrave; lavagem de dinheiro e ao financiamento do terrorismo, podendo
+                        ocorrer independentemente de consentimento espec&iacute;fico quando fundamentado em
+                        obriga&ccedil;&atilde;o legal ou regulat&oacute;ria.<br /><br /><strong>16. MEDIDAS DE
+                            PREVEN&Ccedil;&Atilde;O &Agrave; FRAUDE E SEGURAN&Ccedil;A OPERACIONAL</strong><br /><br />A CFZ
+                        adota medidas t&eacute;cnicas e operacionais destinadas &agrave; preven&ccedil;&atilde;o de fraudes
+                        e &agrave; prote&ccedil;&atilde;o da integridade das opera&ccedil;&otilde;es realizadas por meio de
+                        sua plataforma, incluindo, mas n&atilde;o se limitando, &agrave; valida&ccedil;&atilde;o de
+                        identidade, autentica&ccedil;&atilde;o de usu&aacute;rios, an&aacute;lise de comportamento,
+                        detec&ccedil;&atilde;o de padr&otilde;es suspeitos e utiliza&ccedil;&atilde;o de ferramentas
+                        tecnol&oacute;gicas de seguran&ccedil;a.<br /><br />O usu&aacute;rio compromete-se a utilizar a
+                        plataforma de forma l&iacute;cita e de boa-f&eacute;, abstendo-se de fornecer
+                        informa&ccedil;&otilde;es falsas, utilizar dados de terceiros sem autoriza&ccedil;&atilde;o ou
+                        praticar qualquer conduta que possa comprometer a seguran&ccedil;a das opera&ccedil;&otilde;es. A
+                        CFZ poder&aacute;, a seu crit&eacute;rio, bloquear, restringir ou suspender o acesso &agrave;
+                        plataforma sempre que identificar ind&iacute;cios de uso indevido, fraude ou tentativa de
+                        viola&ccedil;&atilde;o de seus sistemas, sem preju&iacute;zo das medidas legais
+                        cab&iacute;veis.<br /><br /><strong>17. REGISTRO, CONSERVA&Ccedil;&Atilde;O E
+                            DISPONIBILIZA&Ccedil;&Atilde;O DE INFORMA&Ccedil;&Otilde;ES</strong><br /><br />A CFZ
+                        poder&aacute; manter registros detalhados das intera&ccedil;&otilde;es realizadas na plataforma,
+                        incluindo dados cadastrais, logs de acesso, informa&ccedil;&otilde;es de navega&ccedil;&atilde;o e
+                        evid&ecirc;ncias relacionadas &agrave;s opera&ccedil;&otilde;es intermediadas, com a finalidade de
+                        garantir rastreabilidade, seguran&ccedil;a, cumprimento de obriga&ccedil;&otilde;es legais e
+                        regulat&oacute;rias, bem como suporte a eventuais investiga&ccedil;&otilde;es ou demandas
+                        administrativas e judiciais.<br /><br />Tais registros poder&atilde;o ser disponibilizados &agrave;s
+                        institui&ccedil;&otilde;es financeiras parceiras e &agrave;s autoridades competentes, sempre que
+                        necess&aacute;rio para o cumprimento de obriga&ccedil;&otilde;es legais, regulat&oacute;rias ou para
+                        a defesa de direitos, nos termos da legisla&ccedil;&atilde;o aplic&aacute;vel.</p>
+                </div>
+    
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal" data-accept="modalPrivacidade">
+                        Concordo
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- ATENDIMENTO -->
+        <div class="modal-overlay" id="modalAtendimento" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true">
+    
+                <div class="modal-header">
+                    <h3>Política de atendimento ao cliente - CFZ Promotora de vendas LTDA</h3>
+                    <button type="button" class="modal-close" data-close="modalAtendimento">
+                        &times;
+                    </button>
+                </div>
+    
+                <div class="modal-content">
+                    <p><strong>1. OBJETIVO E FINALIDADE
+                        </strong></p>
+    
+                    <p>A presente Pol&iacute;tica de Atendimento ao Cliente tem por objetivo estabelecer diretrizes,
+                        princ&iacute;pios e procedimentos aplic&aacute;veis ao atendimento prestado pela CFZ PROMOTORA DE
+                        VENDAS LTDA, pessoa jur&iacute;dica de direito privado, inscrita no CNPJ sob nº 28.424.732/0001-28,
+                        doravante denominada “CFZ”, no contexto de sua atua&ccedil;&atilde;o como correspondente
+                        banc&aacute;rio, assegurando a presta&ccedil;&atilde;o de informa&ccedil;&otilde;es claras,
+                        adequadas e tempestivas aos usu&aacute;rios, em conformidade com a regulamenta&ccedil;&atilde;o
+                        aplic&aacute;vel ao sistema financeiro nacional e com as melhores pr&aacute;ticas de relacionamento
+                        com clientes.
+                    </p>
+    
+                    <p>Esta Pol&iacute;tica visa garantir que o atendimento seja realizado de forma transparente,
+                        &eacute;tica, eficiente e compat&iacute;vel com a natureza da atua&ccedil;&atilde;o da CFZ,
+                        observando-se, especialmente, a correta delimita&ccedil;&atilde;o de responsabilidades entre a CFZ e
+                        as institui&ccedil;&otilde;es financeiras parceiras.
+                    </p>
+    
+                    <p><strong>2. NATUREZA DA ATUA&Ccedil;&Atilde;O NO ATENDIMENTO
+                        </strong></p>
+    
+                    <p>A CFZ atua exclusivamente na qualidade de correspondente banc&aacute;rio, nos termos da
+                        Resolu&ccedil;&atilde;o CMN nº 4.935/2021, sendo respons&aacute;vel pelo atendimento inicial ao
+                        cliente, coleta de informa&ccedil;&otilde;es, encaminhamento de demandas e suporte operacional
+                        relacionado &agrave;s propostas intermediadas.
+                    </p>
+    
+                    <p>O cliente declara estar ciente de que a CFZ n&atilde;o &eacute; institui&ccedil;&atilde;o financeira,
+                        n&atilde;o realiza concess&atilde;o de cr&eacute;dito, n&atilde;o define condi&ccedil;&otilde;es
+                        contratuais e n&atilde;o possui inger&ecirc;ncia sobre decis&otilde;es relacionadas &agrave;
+                        aprova&ccedil;&atilde;o, manuten&ccedil;&atilde;o ou renegocia&ccedil;&atilde;o de
+                        opera&ccedil;&otilde;es financeiras, sendo tais atribui&ccedil;&otilde;es de responsabilidade
+                        exclusiva da institui&ccedil;&atilde;o financeira parceira.
+                    </p>
+    
+                    <p><strong>3. ESCOPO DO ATENDIMENTO PRESTADO
+                        </strong></p>
+    
+                    <p>O atendimento realizado pela CFZ compreende a presta&ccedil;&atilde;o de informa&ccedil;&otilde;es
+                        gerais sobre produtos e servi&ccedil;os, orienta&ccedil;&atilde;o quanto &agrave;
+                        utiliza&ccedil;&atilde;o da plataforma, recep&ccedil;&atilde;o de solicita&ccedil;&otilde;es,
+                        encaminhamento de demandas &agrave;s institui&ccedil;&otilde;es financeiras parceiras e
+                        acompanhamento operacional das solicita&ccedil;&otilde;es intermediadas.
+                    </p>
+    
+                    <p>Sempre que a demanda envolver aspectos contratuais, financeiros, operacionais ou decis&oacute;rios
+                        relacionados &agrave; opera&ccedil;&atilde;o de cr&eacute;dito ou produto financeiro, a CFZ
+                        atuar&aacute; como canal de encaminhamento, direcionando o cliente &agrave;
+                        institui&ccedil;&atilde;o financeira respons&aacute;vel, sem assumir responsabilidade pela
+                        resolu&ccedil;&atilde;o final da demanda.
+                    </p>
+    
+                    <p><strong>4. PRINC&Iacute;PIOS DO ATENDIMENTO
+                        </strong></p>
+    
+                    <p>O atendimento ao cliente pela CFZ ser&aacute; pautado pelos princ&iacute;pios da transpar&ecirc;ncia,
+                        clareza, boa-f&eacute;, dilig&ecirc;ncia e respeito aos direitos do consumidor, assegurando que as
+                        informa&ccedil;&otilde;es prestadas sejam corretas, compreens&iacute;veis e compat&iacute;veis com a
+                        realidade dos servi&ccedil;os intermediados.
+                    </p>
+    
+                    <p>A CFZ compromete-se a evitar qualquer pr&aacute;tica que possa induzir o cliente a erro quanto
+                        &agrave; natureza de sua atua&ccedil;&atilde;o, &agrave; responsabilidade pela
+                        opera&ccedil;&atilde;o financeira ou &agrave;s condi&ccedil;&otilde;es dos produtos ofertados,
+                        observando rigorosamente os limites de sua fun&ccedil;&atilde;o como correspondente banc&aacute;rio.
+                    </p>
+    
+                    <p><strong>5. CANAIS DE ATENDIMENTO E ACESSIBILIDADE
+                        </strong></p>
+    
+                    <p>A CFZ disponibiliza canais de atendimento adequados &agrave; natureza de suas atividades, incluindo
+                        meios digitais e/ou telef&ocirc;nicos, de forma a garantir acessibilidade, efici&ecirc;ncia e
+                        rastreabilidade das intera&ccedil;&otilde;es realizadas com os clientes.
+                    </p>
+    
+                    <p>O cliente ser&aacute; devidamente informado sobre os canais dispon&iacute;veis, hor&aacute;rios de
+                        atendimento e formas de contato, sendo assegurado o registro das demandas apresentadas, sempre que
+                        aplic&aacute;vel, com vistas &agrave; organiza&ccedil;&atilde;o, controle e eventual
+                        comprova&ccedil;&atilde;o das intera&ccedil;&otilde;es realizadas.
+                    </p>
+    
+                    <p><strong>6. PRAZOS E TRATAMENTO DAS DEMANDAS
+                        </strong></p>
+    
+                    <p>As solicita&ccedil;&otilde;es recebidas pela CFZ ser&atilde;o tratadas com dilig&ecirc;ncia e
+                        tempestividade, observando-se a complexidade da demanda e a necessidade de eventual encaminhamento
+                        &agrave; institui&ccedil;&atilde;o financeira parceira.
+                    </p>
+    
+                    <p>Nos casos em que a resolu&ccedil;&atilde;o depender de atua&ccedil;&atilde;o da
+                        institui&ccedil;&atilde;o financeira, a CFZ atuar&aacute; como intermediadora da
+                        comunica&ccedil;&atilde;o, n&atilde;o se responsabilizando por prazos, decis&otilde;es ou
+                        provid&ecirc;ncias adotadas por terceiros, sem preju&iacute;zo do acompanhamento e suporte ao
+                        cliente dentro de sua esfera de atua&ccedil;&atilde;o.
+                    </p>
+    
+                    <p><strong>7. REGISTRO E RASTREABILIDADE DAS INTERA&Ccedil;&Otilde;ES
+                        </strong></p>
+    
+                    <p>A CFZ poder&aacute; registrar e armazenar as intera&ccedil;&otilde;es realizadas com os clientes,
+                        incluindo atendimentos, comunica&ccedil;&otilde;es, solicita&ccedil;&otilde;es e encaminhamentos,
+                        com a finalidade de garantir rastreabilidade, controle interno, melhoria cont&iacute;nua dos
+                        servi&ccedil;os e suporte a eventuais demandas administrativas, regulat&oacute;rias ou judiciais.
+                    </p>
+    
+                    <p>Tais registros poder&atilde;o ser utilizados como meio de prova para demonstrar a regularidade da
+                        atua&ccedil;&atilde;o da CFZ, bem como para atender solicita&ccedil;&otilde;es de autoridades
+                        competentes, nos termos da legisla&ccedil;&atilde;o aplic&aacute;vel.
+                    </p>
+    
+                    <p><strong>8. DIRECIONAMENTO &Agrave; INSTITUI&Ccedil;&Atilde;O FINANCEIRA E OUVIDORIA
+                        </strong></p>
+    
+                    <p>Nos casos em que a demanda do cliente ultrapasse o escopo de atua&ccedil;&atilde;o da CFZ,
+                        especialmente quando envolver quest&otilde;es contratuais, financeiras, renegocia&ccedil;&atilde;o,
+                        cobran&ccedil;a ou decis&otilde;es relacionadas &agrave; opera&ccedil;&atilde;o de cr&eacute;dito, o
+                        cliente ser&aacute; devidamente orientado a contatar diretamente a institui&ccedil;&atilde;o
+                        financeira respons&aacute;vel.
+                    </p>
+    
+                    <p>A CFZ informar&aacute;, sempre que necess&aacute;rio, os canais oficiais da institui&ccedil;&atilde;o
+                        financeira, incluindo servi&ccedil;o de atendimento ao consumidor e ouvidoria, em conformidade com a
+                        Resolu&ccedil;&atilde;o CMN nº 4.860/2020, n&atilde;o se responsabilizando pela
+                        condu&ccedil;&atilde;o ou resultado das demandas tratadas diretamente por tais canais.
+                    </p>
+    
+                    <p><strong>9. PROTE&Ccedil;&Atilde;O DE DADOS NO ATENDIMENTO
+                        </strong></p>
+    
+                    <p>O atendimento prestado pela CFZ observar&aacute; as disposi&ccedil;&otilde;es da Lei nº 13.709/2018,
+                        garantindo que o tratamento de dados pessoais realizado no contexto das intera&ccedil;&otilde;es com
+                        clientes seja adequado, necess&aacute;rio e seguro, respeitando os direitos dos titulares e os
+                        princ&iacute;pios da legisla&ccedil;&atilde;o aplic&aacute;vel.
+                    </p>
+    
+                    <p>Os dados coletados durante o atendimento poder&atilde;o ser utilizados para registro, controle,
+                        melhoria dos servi&ccedil;os, cumprimento de obriga&ccedil;&otilde;es legais e regulat&oacute;rias e
+                        eventual compartilhamento com institui&ccedil;&otilde;es financeiras parceiras, quando
+                        necess&aacute;rio.
+                    </p>
+    
+                    <p><strong>10. RESPONSABILIDADES E LIMITA&Ccedil;&Otilde;ES
+                        </strong></p>
+    
+                    <p>A CFZ limita sua atua&ccedil;&atilde;o ao atendimento operacional e &agrave;
+                        intermedia&ccedil;&atilde;o de demandas, n&atilde;o assumindo responsabilidade por decis&otilde;es,
+                        condi&ccedil;&otilde;es ou obriga&ccedil;&otilde;es decorrentes das opera&ccedil;&otilde;es
+                        financeiras contratadas pelo cliente junto &agrave; institui&ccedil;&atilde;o financeira parceira.
+                    </p>
+    
+                    <p>O cliente declara estar ciente de que eventuais reclama&ccedil;&otilde;es relacionadas &agrave;
+                        concess&atilde;o de cr&eacute;dito, condi&ccedil;&otilde;es contratuais, cobran&ccedil;as,
+                        renegocia&ccedil;&otilde;es ou quaisquer aspectos financeiros dever&atilde;o ser direcionadas
+                        &agrave; institui&ccedil;&atilde;o financeira respons&aacute;vel, sem preju&iacute;zo do suporte
+                        prestado pela CFZ na intermedia&ccedil;&atilde;o da comunica&ccedil;&atilde;o.
+                    </p>
+    
+                    <p><strong>11. ATUALIZA&Ccedil;&Atilde;O DA POL&Iacute;TICA
+                        </strong></p>
+    
+                    <p>A presente Pol&iacute;tica poder&aacute; ser atualizada a qualquer tempo, visando sua
+                        adequa&ccedil;&atilde;o a altera&ccedil;&otilde;es legais, regulat&oacute;rias ou operacionais,
+                        sendo recomend&aacute;vel que o cliente a consulte periodicamente.
+                    </p>
+    
+                    <p><strong>12. DISPOSI&Ccedil;&Otilde;ES FINAIS E CONTATO
+                        </strong></p>
+    
+                    <p>Para esclarecimentos, d&uacute;vidas ou solicita&ccedil;&otilde;es relacionadas a esta
+                        Pol&iacute;tica, o cliente poder&aacute; entrar em contato por meio dos canais oficiais
+                        disponibilizados pela CFZ, conforme indicado na plataforma.</p>
+                </div>
+    
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal" data-accept="modalAtendimento">
+                        Concordo
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- COOKIES -->
+        <div class="modal-overlay" id="modalCookies" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true">
+    
+                <div class="modal-header">
+                    <h3>Política de Cookies - CFZ Promotora de vendas LTDA</h3>
+    
+                    <button type="button" class="modal-close" data-close="modalCookies">
+                        &times;
+                    </button>
+                </div>
+    
+                <div class="modal-content">
+                    <p><strong>1. APRESENTA&Ccedil;&Atilde;O E FINALIDADE</strong></p>
+                    <p>A CFZ PROMOTORA DE VENDAS LTDA, pessoa jur&iacute;dica de direito privado, inscrita no CNPJ sob
+                        n&ordm; 28.424.732/0001-28, doravante denominada &ldquo;CFZ&rdquo;, utiliza cookies e
+                        tecnologias similares em sua plataforma digital com o objetivo de garantir o adequado
+                        funcionamento do ambiente, melhorar a experi&ecirc;ncia do usu&aacute;rio, aprimorar a
+                        seguran&ccedil;a das opera&ccedil;&otilde;es e viabilizar an&aacute;lises de desempenho e
+                        comportamento.</p>
+                    <p>A presente Pol&iacute;tica tem por finalidade esclarecer, de forma transparente, quais cookies
+                        s&atilde;o utilizados, para quais finalidades, como ocorre o tratamento das
+                        informa&ccedil;&otilde;es coletadas e quais s&atilde;o as op&ccedil;&otilde;es
+                        dispon&iacute;veis ao usu&aacute;rio para gerenciar tais tecnologias, em conformidade com a Lei
+                        n&ordm; 13.709/2018 e demais normas aplic&aacute;veis.</p>
+                    <p>Ao acessar e utilizar a plataforma da CFZ, o usu&aacute;rio declara estar ciente da
+                        utiliza&ccedil;&atilde;o de cookies nos termos desta Pol&iacute;tica, podendo, a qualquer tempo,
+                        gerenciar suas prefer&ecirc;ncias conforme descrito neste documento.</p>
+                    <p><strong>2. CONCEITO E FUNCIONAMENTO DOS COOKIES</strong></p>
+                    <p>Cookies s&atilde;o pequenos arquivos de dados armazenados no dispositivo do usu&aacute;rio
+                        quando este acessa a plataforma, permitindo o reconhecimento de seu navegador, a
+                        reten&ccedil;&atilde;o de prefer&ecirc;ncias e a coleta de informa&ccedil;&otilde;es sobre sua
+                        intera&ccedil;&atilde;o com o ambiente digital. Esses arquivos desempenham papel essencial para
+                        o funcionamento adequado do site, podendo tamb&eacute;m ser utilizados para fins de
+                        seguran&ccedil;a, personaliza&ccedil;&atilde;o de conte&uacute;do e an&aacute;lise
+                        estat&iacute;stica.</p>
+                    <p>Os cookies n&atilde;o s&atilde;o utilizados para acessar informa&ccedil;&otilde;es pessoais
+                        armazenadas no dispositivo do usu&aacute;rio sem sua autoriza&ccedil;&atilde;o, sendo empregados
+                        de forma limitada &agrave;s finalidades leg&iacute;timas e necess&aacute;rias &agrave;
+                        opera&ccedil;&atilde;o da plataforma.</p>
+                    <p><strong>3. TIPOS DE COOKIES UTILIZADOS</strong></p>
+                    <p>A CFZ utiliza diferentes categorias de cookies, de acordo com sua finalidade e necessidade
+                        operacional.</p>
+                    <p>Os cookies essenciais s&atilde;o indispens&aacute;veis para o funcionamento da plataforma,
+                        permitindo a navega&ccedil;&atilde;o, a utiliza&ccedil;&atilde;o de funcionalidades
+                        b&aacute;sicas, a autentica&ccedil;&atilde;o de usu&aacute;rios e a prote&ccedil;&atilde;o
+                        contra fraudes e acessos indevidos, n&atilde;o sendo poss&iacute;vel desativ&aacute;-los sem
+                        comprometer o funcionamento do servi&ccedil;o.</p>
+                    <p>Os cookies de desempenho e an&aacute;lise s&atilde;o utilizados para coletar
+                        informa&ccedil;&otilde;es sobre a forma como os usu&aacute;rios interagem com a plataforma, tais
+                        como p&aacute;ginas acessadas, tempo de navega&ccedil;&atilde;o e eventuais erros, permitindo
+                        &agrave; CFZ aprimorar continuamente seus servi&ccedil;os e identificar falhas operacionais,
+                        sendo tais dados, sempre que poss&iacute;vel, tratados de forma agregada ou anonimizada.
+                    </p>
+                    <p>Os cookies de funcionalidade permitem que a plataforma memorize prefer&ecirc;ncias do
+                        usu&aacute;rio, como idioma, localiza&ccedil;&atilde;o e configura&ccedil;&otilde;es
+                        personalizadas, proporcionando uma experi&ecirc;ncia mais adequada e eficiente.</p>
+                    <p>Os cookies de marketing e publicidade s&atilde;o utilizados para apresentar conte&uacute;dos e
+                        ofertas alinhadas ao perfil e aos interesses do usu&aacute;rio, podendo envolver a
+                        utiliza&ccedil;&atilde;o de ferramentas de terceiros para segmenta&ccedil;&atilde;o e
+                        mensura&ccedil;&atilde;o de campanhas, sempre observando os limites legais
+                        aplic&aacute;veis.</p>
+                    <p><strong>4. COOKIES DE TERCEIROS E TECNOLOGIAS CORRELATAS</strong></p>
+                    <p>A plataforma poder&aacute; utilizar cookies e tecnologias similares fornecidos por terceiros,
+                        tais como ferramentas de an&aacute;lise, plataformas de publicidade e servi&ccedil;os de
+                        seguran&ccedil;a, os quais podem coletar informa&ccedil;&otilde;es de navega&ccedil;&atilde;o de
+                        forma independente, nos termos de suas pr&oacute;prias pol&iacute;ticas de privacidade.
+                    </p>
+                    <p>A CFZ adota crit&eacute;rios de sele&ccedil;&atilde;o de fornecedores que observem
+                        padr&otilde;es adequados de prote&ccedil;&atilde;o de dados, n&atilde;o sendo respons&aacute;vel
+                        por pr&aacute;ticas adotadas por terceiros fora de seu ambiente, sem preju&iacute;zo das medidas
+                        de dilig&ecirc;ncia e mitiga&ccedil;&atilde;o de riscos adotadas no &acirc;mbito contratual e
+                        operacional.</p>
+                    <p><strong>5. FINALIDADE DO USO DOS COOKIES</strong></p>
+                    <p>Os cookies utilizados pela CFZ t&ecirc;m como principais finalidades garantir a
+                        seguran&ccedil;a da plataforma, prevenir fraudes, assegurar a integridade das
+                        opera&ccedil;&otilde;es, melhorar a usabilidade, personalizar a experi&ecirc;ncia do
+                        usu&aacute;rio, realizar an&aacute;lises estat&iacute;sticas, identificar padr&otilde;es de
+                        comportamento e viabilizar a&ccedil;&otilde;es de comunica&ccedil;&atilde;o e marketing.
+                    </p>
+                    <p>A utiliza&ccedil;&atilde;o dessas tecnologias tamb&eacute;m contribui para o cumprimento de
+                        obriga&ccedil;&otilde;es legais e regulat&oacute;rias aplic&aacute;veis ao setor financeiro,
+                        especialmente no que se refere &agrave; preven&ccedil;&atilde;o de fraudes e &agrave;
+                        seguran&ccedil;a das opera&ccedil;&otilde;es digitais.</p>
+                    <p><strong>6. BASE LEGAL PARA UTILIZA&Ccedil;&Atilde;O DE COOKIES</strong></p>
+                    <p>O uso de cookies pela CFZ fundamenta-se nas bases legais previstas na Lei n&ordm; 13.709/2018,
+                        especialmente no leg&iacute;timo interesse para funcionamento da plataforma, seguran&ccedil;a e
+                        preven&ccedil;&atilde;o &agrave; fraude, bem como no consentimento do usu&aacute;rio, quando
+                        aplic&aacute;vel, especialmente em rela&ccedil;&atilde;o a cookies n&atilde;o essenciais, como
+                        os de marketing e publicidade.</p>
+                    <p>A CFZ compromete-se a respeitar as escolhas do usu&aacute;rio, garantindo mecanismos adequados
+                        de gest&atilde;o de consentimento sempre que necess&aacute;rio.</p>
+                    <p><strong>7. GERENCIAMENTO DE COOKIES PELO USU&Aacute;RIO</strong></p>
+                    <p>O usu&aacute;rio poder&aacute;, a qualquer tempo, gerenciar, bloquear ou excluir cookies
+                        diretamente nas configura&ccedil;&otilde;es de seu navegador, sendo poss&iacute;vel recusar ou
+                        limitar o uso de determinadas categorias, ressalvados os cookies essenciais, cuja
+                        desativa&ccedil;&atilde;o poder&aacute; comprometer o funcionamento da plataforma.</p>
+                    <p>A CFZ poder&aacute; disponibilizar, ainda, ferramentas espec&iacute;ficas para gest&atilde;o de
+                        prefer&ecirc;ncias de cookies, permitindo ao usu&aacute;rio selecionar, de forma granular, as
+                        categorias que deseja autorizar.</p>
+                    <p><strong>8. SEGURAN&Ccedil;A DAS INFORMA&Ccedil;&Otilde;ES COLETADAS</strong></p>
+                    <p>As informa&ccedil;&otilde;es coletadas por meio de cookies s&atilde;o tratadas de acordo com
+                        padr&otilde;es adequados de seguran&ccedil;a da informa&ccedil;&atilde;o, incluindo medidas
+                        t&eacute;cnicas e administrativas destinadas a proteger os dados contra acessos n&atilde;o
+                        autorizados, uso indevido ou qualquer forma de tratamento inadequado.</p>
+                    <p>A CFZ adota pr&aacute;ticas compat&iacute;veis com o ambiente regulado do sistema financeiro,
+                        visando garantir a integridade, confidencialidade e disponibilidade das
+                        informa&ccedil;&otilde;es tratadas.</p>
+                    <p><strong>9. PRAZO DE ARMAZENAMENTO DOS COOKIES</strong></p>
+                    <p>Os cookies poder&atilde;o ser armazenados por per&iacute;odos distintos, conforme sua
+                        finalidade, podendo ser classificados como cookies de sess&atilde;o, que s&atilde;o
+                        automaticamente exclu&iacute;dos ao t&eacute;rmino da navega&ccedil;&atilde;o, ou cookies
+                        persistentes, que permanecem armazenados por per&iacute;odo determinado, respeitando-se sempre o
+                        princ&iacute;pio da necessidade e os prazos compat&iacute;veis com as finalidades do
+                        tratamento.</p>
+                    <p><strong>10. ATUALIZA&Ccedil;&Otilde;ES DESTA POL&Iacute;TICA</strong></p>
+                    <p>A presente Pol&iacute;tica poder&aacute; ser atualizada a qualquer tempo, visando sua
+                        adequa&ccedil;&atilde;o a altera&ccedil;&otilde;es legais, regulat&oacute;rias ou operacionais,
+                        sendo recomend&aacute;vel que o usu&aacute;rio a consulte periodicamente para ci&ecirc;ncia das
+                        eventuais modifica&ccedil;&otilde;es.</p>
+                    <p><strong>11. CONTATO</strong></p>
+                    <p>Para esclarecimentos, solicita&ccedil;&otilde;es ou d&uacute;vidas relacionadas a esta
+                        Pol&iacute;tica, o usu&aacute;rio poder&aacute; entrar em contato por meio do seguinte canal:
+                        [e-mail/DPO].</p>
+                </div>
+    
+                <div class="modal-actions">
+                    <button type="button" class="btn-modal" data-accept="modalCookies">
+                        Concordo
+                    </button>
+                </div>
+    
+            </div>
+        </div>
+    
+        <script>
+            const modalLinks = {
+                openTermosUso: "modalTermosUso",
+                openLgpd: "modalLgpd",
+                openPrivacidade: "modalPrivacidade",
+                openAtendimento: "modalAtendimento",
+                openCookies: "modalCookies"
+            };
+    
+            Object.entries(modalLinks).forEach(([triggerId, modalId]) => {
+    
+                const trigger = document.getElementById(triggerId);
+                const modal = document.getElementById(modalId);
+    
+                if (!trigger || !modal) return;
+    
+                trigger.addEventListener("click", function (e) {
+                    e.preventDefault();
+    
+                    modal.classList.add("show");
+                    modal.setAttribute("aria-hidden", "false");
+                });
+            });
+    
+            document.querySelectorAll("[data-close]").forEach((button) => {
+    
+                button.addEventListener("click", function () {
+    
+                    const modal = document.getElementById(
+                        button.dataset.close
+                    );
+    
+                    if (!modal) return;
+    
+                    modal.classList.remove("show");
+                    modal.setAttribute("aria-hidden", "true");
+                });
+            });
+    
+            document.querySelectorAll("[data-accept]").forEach((button) => {
+    
+                button.addEventListener("click", function () {
+    
+                    const modal = document.getElementById(
+                        button.dataset.accept
+                    );
+    
+                    if (!modal) return;
+    
+                    modal.classList.remove("show");
+                    modal.setAttribute("aria-hidden", "true");
+                });
+            });
+    
+            document.querySelectorAll(".modal-overlay").forEach((modal) => {
+    
+                modal.addEventListener("click", function (e) {
+    
+                    if (e.target === modal) {
+    
+                        modal.classList.remove("show");
+                        modal.setAttribute("aria-hidden", "true");
+                    }
+                });
+            });
+    
+            document.addEventListener("keydown", function (e) {
+    
+                if (e.key === "Escape") {
+    
+                    document.querySelectorAll(".modal-overlay.show")
+                        .forEach((modal) => {
+    
+                            modal.classList.remove("show");
+                            modal.setAttribute("aria-hidden", "true");
+                        });
+                }
+            });
+        </script>
+    
+        <!------------------------------------------------------------------------>
+        <!------------------------------- FIM MODALS ----------------------------->
+        <!------------------------------------------------------------------------>
     </section>
 
-    <script src="https://kit.fontawesome.com/03b6164f41.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
