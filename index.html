@@ -2,93 +2,352 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/favicon-crefaz.ico" type="image/x-icon">
-    <title>Cloud Pages Crefaz</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Pages Crefaz — Portfólio & Previews</title>
+  <style>
+    :root {
+      --azul-crefaz: #163056;
+      --azul-escuro: #0d2041;
+      --laranja-crefaz: #ef6b22;
+      --laranja-escuro: #b14008;
+      --verde-assistencia-saude: #1ba789;
+      --bg-pagina: #0d2041;
+      --borda-card: #e2e8f0;
+    }
 
-        body {
-            width: 100vw;
-            height: 100vh;
-            background: #0d2041;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            text-align: center;
-            color: white;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-pagina);
+      color: var(--azul-crefaz);
+      line-height: 1.5;
+    }
 
-        h1 {
-            margin-bottom: 40px;
-            font-size: 2.5em;
-        }
+    /* Cabeçalho */
+    header {
+      background: var(--azul-escuro);
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-        .links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            justify-content: center;
-            @media (max-width: 768px) {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        
-        a {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
+    header h1 {
+      font-size: 45px;
+      font-weight: 700;
+      padding-bottom: 32px;
+      letter-spacing: -0.5px;
+    }
 
-        a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-            transform: translateY(-5px);
-        }
-    </style>
+    header p {
+      font-size: 15px;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    /* Barra de Pesquisa */
+    .search-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      font-size: 15px;
+      outline: none;
+      color: var(--azul-crefaz);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--laranja-crefaz);
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 24px;
+    }
+
+    /* Card da CloudPage */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--borda-card);
+      box-shadow: 0 4px 14px rgba(13, 32, 65, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(13, 32, 65, 0.12);
+      border-color: var(--laranja-crefaz);
+    }
+
+    /* Área da Miniatura (Preview) */
+    .preview-box {
+      position: relative;
+      width: 100%;
+      height: 195px;
+      background-color: #e9eef5;
+      overflow: hidden;
+      border-bottom: 1px solid var(--borda-card);
+    }
+
+    .preview-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .preview-box img {
+      transform: scale(1.04);
+    }
+
+    /* Placeholder enquanto a imagem carrega */
+    .preview-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #64748b;
+      background: #eef2f6;
+      z-index: 0;
+    }
+
+    .preview-box img {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Conteúdo do Card */
+    .card-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--azul-crefaz);
+      margin-bottom: 6px;
+    }
+
+    .card-url {
+      font-size: 12.5px;
+      color: #64748b;
+      word-break: break-all;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--laranja-crefaz);
+    }
+
+    .card:hover .card-footer span {
+      text-decoration: underline;
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Cloud Pages Crefaz</h1>
-        <div class="links">
-            <a href="https://cleiltoncrefaz.github.io/formulario-canal-aberto" target="_blank">Canal Aberto - Site</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpage-crefaz-mais-saude" target="_blank">Cloud Page Crefaz Mais</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-sintrascoop+crefaz+corban" target="_blank">Crefaz + Sintrascoop + Avaliza</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-expoinga-2026-iphone17" target="_blank">Expoingá 2026</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-anuncio-vagas-para-trabalhar-lojas" target="_blank">Vagas para trabalhar Lojas CFZ</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-jornada-crefaz-corban-2026" target="_blank">Jornada Crefaz Corban 2026</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-corban-360-2026" target="_blank">Corban 360º 2026</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/paixao-de-cristo-e-crefaz" target="_blank">Paixão de Cristo + Crefaz</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/credito_com_garantia_de_veiculo_vs2" target="_blank">Crédito com Garantia de Veículo</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cloudpage-educacao-financeira" target="_blank">Educação Financeira</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-consignado-clt-sintrascoop" target="_blank">Sintrascoop + Crefaz</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/CP_Energia_TelevendasA" target="_blank">Energia Televendas A</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/CP_Energia_TelevendasB" target="_blank">Energia Televendas B</a>
-            <a href="https://cleiltoncrefaz.github.io/cloudpagescrefaz/credito_com_garantia_de_veiculo_IPVA" target="_blank">CP Auto - IPVA</a>
-        </div>
+
+  <header>
+    <h1>Cloud Pages Crefaz</h1>
+    <!-- <p>Visualize a prévia e acesse rapidamente todas as landing pages e formulários publicados.</p> -->
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar página pelo nome...">
     </div>
+  </header>
+
+  <main class="container">
+    <div id="pagesGrid" class="grid"></div>
+    <div id="emptyState" class="empty-state">Nenhuma página encontrada com esse termo.</div>
+  </main>
+
+  <script>
+    // Lista completa das suas páginas[cite: 1]
+    const cloudPages = [
+      {
+        titulo: "Canal Aberto - Site",
+        url: "https://cleiltoncrefaz.github.io/formulario-canal-aberto"
+      },
+      {
+        titulo: "Cloud Page Crefaz Mais",
+        url: "https://cleiltoncrefaz.github.io/cloudpage-crefaz-mais-saude"
+      },
+      {
+        titulo: "Crefaz + Sintrascoop + Avaliza",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-sintrascoop+crefaz+corban"
+      },
+      {
+        titulo: "Expoingá 2026",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-expoinga-2026-iphone17"
+      },
+      {
+        titulo: "Vagas para trabalhar Lojas CFZ",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-anuncio-vagas-para-trabalhar-lojas"
+      },
+      {
+        titulo: "Jornada Crefaz Corban 2026",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-jornada-crefaz-corban-2026"
+      },
+      {
+        titulo: "Corban 360º 2026",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-corban-360-2026"
+      },
+      {
+        titulo: "Paixão de Cristo + Crefaz",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/paixao-de-cristo-e-crefaz"
+      },
+      {
+        titulo: "Crédito com Garantia de Veículo",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/credito_com_garantia_de_veiculo_vs2"
+      },
+      {
+        titulo: "Educação Financeira",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cloudpage-educacao-financeira"
+      },
+      {
+        titulo: "Sintrascoop + Crefaz",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/cp-consignado-clt-sintrascoop"
+      },
+      {
+        titulo: "Energia Televendas A",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/CP_Energia_TelevendasA"
+      },
+      {
+        titulo: "Energia Televendas B",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/CP_Energia_TelevendasB"
+      },
+      {
+        titulo: "CP Auto - IPVA",
+        url: "https://cleiltoncrefaz.github.io/cloudpagescrefaz/credito_com_garantia_de_veiculo_IPVA"
+      }
+    ];
+
+    const grid = document.getElementById('pagesGrid');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+
+    // Gera a URL da miniatura automaticamente sem precisar subir imagens
+    function getPreviewUrl(pageUrl) {
+      return `https://s0.wp.com/mshots/v1/${encodeURIComponent(pageUrl)}?w=800&h=500`;
+    }
+
+    function renderCards(filter = '') {
+      const term = filter.toLowerCase().trim();
+      const filtered = cloudPages.filter(p =>
+        p.titulo.toLowerCase().includes(term) || p.url.toLowerCase().includes(term)
+      );
+
+      grid.innerHTML = '';
+
+      if (filtered.length === 0) {
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+
+      filtered.forEach(page => {
+        const card = document.createElement('a');
+        card.className = 'card';
+        card.href = page.url;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+
+        const shortUrl = page.url.replace('https://cleiltoncrefaz.github.io/', '');
+
+        card.innerHTML = `
+          <div class="preview-box">
+            <div class="preview-loading">Gerando prévia...</div>
+            <img
+              src="${getPreviewUrl(page.url)}"
+              alt="Preview ${page.titulo}"
+              loading="lazy"
+              onerror="this.src='https://api.microlink.io/?url=${encodeURIComponent(page.url)}&screenshot=true&meta=false&embed=screenshot.url'"
+            >
+          </div>
+          <div class="card-body">
+            <div>
+              <h2 class="card-title">${page.titulo}</h2>
+              <p class="card-url">/${shortUrl}</p>
+            </div>
+            <div class="card-footer">
+              <span>Abrir página</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => renderCards(e.target.value));
+    renderCards();
+  </script>
+
 </body>
 
-
 </html>
-
-
-
-
