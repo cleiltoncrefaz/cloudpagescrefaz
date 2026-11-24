@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cloud Pages Crefaz</title>
   <link rel="shortcut icon" href="assets/favicon-crefaz.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Google Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --azul-crefaz: #163056;
@@ -90,10 +97,10 @@
 
     /* Card da CloudPage */
     .card {
-      background: #ffffff;
+      background: var(--azul-crefaz);
       border-radius: 20px;
       overflow: hidden;
-      border: 2px solid #fff;
+      border: 2px solid var(--azul-crefaz);
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       display: flex;
       flex-direction: column;
@@ -111,9 +118,8 @@
       position: relative;
       width: 100%;
       height: 195px;
-      background-color: #e9eef5;
+      background: #e9eef5;
       overflow: hidden;
-      border-bottom: 1px solid var(--borda-card);
     }
 
     .preview-box img {
@@ -149,7 +155,7 @@
 
     /* Conteúdo do Card */
     .card-body {
-      padding: 18px 20px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -157,15 +163,15 @@
     }
 
     .card-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--azul-crefaz);
+      color: #fff;
       margin-bottom: 6px;
     }
 
     .card-url {
-      font-size: 12.5px;
-      color: #64748b;
+      font-size: 14px;
+      color: #8699b5;
       word-break: break-all;
       margin-bottom: 14px;
     }
@@ -174,9 +180,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: 12px;
       padding-top: 12px;
-      border-top: 1px solid #f1f5f9;
-      font-size: 13px;
       font-weight: 600;
       color: var(--laranja-crefaz);
     }
@@ -227,7 +232,7 @@
         titulo: "Canal Aberto - Site",
         url: "https://cleiltoncrefaz.github.io/formulario-canal-aberto"
       },
-       {
+      {
         titulo: "Festival pé vermelho",
         url: "https://cleiltoncrefaz.github.io/festival-pe-vermelho-sorteio"
       },
